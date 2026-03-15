@@ -1,0 +1,11 @@
+{
+  "name": "heirstone-consulting",
+  "version": "1.0.0",
+  "description": "Heirstone Consulting & Strategic Advisory Website",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
