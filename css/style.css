@@ -902,3 +902,37 @@ textarea.form-input {
 .mobile-nav a:hover {
   color: var(--gold);
 }
+
+/* Enhanced mobile nav */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  background: var(--dark-navy);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+  padding: 12px 0;
+  z-index: 999;
+  flex-direction: column;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+.mobile-nav.open {
+  display: flex;
+}
+.mobile-nav a {
+  display: block;
+  padding: 12px 28px;
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: background 0.15s, color 0.15s;
+}
+.mobile-nav a:hover {
+  background: rgba(255,255,255,0.05);
+  color: var(--gold);
+}
+.mobile-nav a:last-child {
+  border-bottom: none;
+}
