@@ -43,17 +43,48 @@ document.addEventListener('DOMContentLoaded', () => {
   // Contact form submit
   const form = document.querySelector('.contact-form');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
       const original = btn.textContent;
-      btn.textContent = 'Message Sent!';
-      btn.style.background = '#4CAF50';
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      // Collect form data
+      const data = {};
+      new FormData(form).forEach((v, k) => data[k] = v);
+      // Fallback: read inputs by type/placeholder if no name attributes
+      if (!data.email) {
+        const emailInput = form.querySelector('input[type="email"]');
+        const nameInput = form.querySelector('input[type="text"]');
+        const msgInput = form.querySelector('textarea');
+        if(emailInput) data.email = emailInput.value;
+        if(nameInput) data.name = nameInput.value;
+        if(msgInput) data.message = msgInput.value;
+      }
+      data.source = 'Heirstone Consulting Website';
+      data.timestamp = new Date().toISOString();
+
+      // Store locally as fallback
+      try {
+        const leads = JSON.parse(localStorage.getItem('heirstone_leads') || '[]');
+        leads.push(data);
+        localStorage.setItem('heirstone_leads', JSON.stringify(leads));
+      } catch(err) {}
+
+      // Try to POST to backend (replace URL with real endpoint when ready)
+      // await fetch('/api/contact', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(data) });
+
+      btn.textContent = 'Message Sent ✓';
+      btn.style.background = '#166534';
+      btn.style.color = '#fff';
       setTimeout(() => {
         btn.textContent = original;
         btn.style.background = '';
+        btn.style.color = '';
+        btn.disabled = false;
         form.reset();
-      }, 3000);
+      }, 3500);
     });
   }
 
