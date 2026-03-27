@@ -17,6 +17,8 @@ const mimeTypes = {
   '.ico': 'image/x-icon',
   '.woff': 'font/woff',
   '.woff2': 'font/woff2',
+  '.xml': 'application/xml',
+  '.txt': 'text/plain',
 };
 
 const server = http.createServer((req, res) => {
