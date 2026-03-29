@@ -22,6 +22,14 @@ const mimeTypes = {
 };
 
 const server = http.createServer((req, res) => {
+  // Redirect non-www to www
+  const host = req.headers.host || '';
+  if (host && !host.startsWith('www.') && !host.startsWith('localhost') && !host.startsWith('127.')) {
+    res.writeHead(301, { 'Location': 'https://www.' + host + req.url });
+    res.end();
+    return;
+  }
+
   let urlPath = req.url.split('?')[0]; // strip query strings
 
   // Default to index.html
