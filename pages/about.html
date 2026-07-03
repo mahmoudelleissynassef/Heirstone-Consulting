@@ -16,22 +16,27 @@
   <meta property="og:description" content="Learn about Heirstone Consulting's team, methodology, and approach to delivering strategy for real estate developers, tourism authorities, and governments globally."/>
   <meta property="og:url" content="https://www.heirstoneconsulting.com/pages/about.html"/>
   <meta property="og:image" content="https://www.heirstoneconsulting.com/og-image.jpg"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
 </head>
 <body>
+  
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <nav class="navbar">
     <a href="../index.html" class="navbar-brand">
-      <svg class="navbar-logo" viewBox="0 0 60 60" fill="none">
-        <rect width="60" height="60" rx="4" fill="#c9a84c" opacity="0.15"/>
-        <path d="M12 46V20l18-8 18 8v26" stroke="#c9a84c" stroke-width="2.5" fill="none"/>
-        <path d="M22 46V32h16v14" stroke="#c9a84c" stroke-width="2.5" fill="none"/>
-        <path d="M12 28h36" stroke="#c9a84c" stroke-width="1.5" opacity="0.5"/>
+      <svg class="navbar-logo" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="13" y="13" width="34" height="34" stroke="#9DB0C0" stroke-width="2"/>
+        <rect x="13" y="13" width="34" height="34" transform="rotate(45 30 30)" stroke="#9DB0C0" stroke-width="2"/>
       </svg>
-      <span class="navbar-brand-text">Heirstone Consulting &<br>Strategic Advisory</span>
+      <span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
     </a>
     <ul class="navbar-nav">
       <li><a href="../index.html">Home</a></li>
-      <li class="dropdown"><a href="#">Our Expertise</a>
+      <li class="dropdown"><a href="services.html">Our Expertise</a>
         <div class="dropdown-menu">
           <a href="real-estate-strategy.html">Real Estate Strategy</a>
           <a href="tourism-development.html">Tourism Development</a>
@@ -43,37 +48,41 @@
       <li><a href="services.html">Services</a></li>
       <li><a href="contact.html" class="navbar-cta">Contact</a></li>
     </ul>
-    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
   <div class="mobile-nav" id="mobileNav">
     <a href="../index.html">Home</a>
     <a href="real-estate-strategy.html">Real Estate Strategy</a>
     <a href="tourism-development.html">Tourism Development</a>
+    <a href="national-vision-strategy.html">National Vision Strategy</a>
+    <a href="special-projects.html">Special Projects</a>
     <a href="about.html">About Us</a>
     <a href="services.html">Services</a>
     <a href="contact.html">Contact</a>
   </div>
 
-  <div class="page-hero">
+  <div class="page-hero" id="main">
     <h1>About Heirstone Consulting</h1>
   </div>
 
   <section style="padding:80px 60px;max-width:1100px;margin:0 auto;">
     <div class="about-inner" style="margin-bottom:60px;">
       <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=800&auto=format&fit=crop" alt="Dubai skyline" />
+        <img src="../Media/about.webp" alt="Aerial view of a developing city district with new towers and infrastructure" width="1400" height="801" loading="lazy" />
       </div>
       <div class="about-text">
         <h2>Who We Are</h2>
-        <p>Heirstone Consulting & Strategic Advisory is a premier strategy consulting firm based in Dubai, UAE. We deliver commercially grounded, globally informed strategies across real estate, tourism, and national development.</p>
+        <p>Heirstone Consulting & Strategic Advisory is a specialist strategy advisory for opaque, ambitious markets. With offices in Dubai and Cairo, we advise sovereigns, institutional capital and developers operating where conventional consulting frameworks break down — frontier and high-growth markets across MENA, Africa and Central Asia.</p>
         <p>We operate at the intersection of business ambition and institutional reality — providing advice that is both visionary and implementable. Our team brings together decades of experience from global advisory firms, governments, and private sector organizations.</p>
-        <p>Our work spans from individual asset strategy to national transformation programs, always anchored in commercial rigor and a deep understanding of the markets we serve.</p>
+        <p>Our remit spans single-asset positioning to national transformation programmes. Every engagement is partner-led, evidence-based, and built for decision-makers who answer to boards, ministries and capital — with a particular focus on markets where data is limited and strategic clarity is decisive.</p>
       </div>
     </div>
 
     <h2 class="section-title" style="text-align:center;margin-bottom:48px;">Why Choose Heirstone?</h2>
     <div class="divider-gold"></div>
-    <div class="why-grid" style="max-width:100%;">
+    <div class="why-grid" style="max-width:900px;grid-template-columns:repeat(2,1fr);">
       <div class="why-item">
         <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
@@ -106,19 +115,25 @@
     </div>
   </section>
 
+  <section class="cta-band">
+    <h2>Discuss Your Mandate</h2>
+    <p>Speak directly with a senior partner about your project, asset or programme.</p>
+    <a href="contact.html" class="btn-primary">Get in Touch</a>
+  </section>
+
   <footer class="footer">
     <div style="max-width:1200px;margin:0 auto;">
       <div class="footer-grid">
         <div class="footer-brand">
           <h3>Heirstone Consulting &<br>Strategic Advisory</h3>
-          <p>Premier strategy consulting firm delivering commercially grounded, globally informed strategies.</p>
-          <div class="footer-social"><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a></div>
+          <p>A specialist strategy advisory for frontier and high-growth markets across MENA, Africa and Central Asia.</p>
+          <div class="footer-social"><a href="https://www.linkedin.com/company/heirstoneconsulting" target="_blank" rel="noopener" aria-label="Heirstone Consulting on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a></div>
         </div>
         <div class="footer-col"><h4>Our Expertise</h4><ul><li><a href="real-estate-strategy.html">Real Estate Strategy</a></li><li><a href="tourism-development.html">Tourism Development</a></li><li><a href="national-vision-strategy.html">National Vision Strategy</a></li><li><a href="special-projects.html">Special Projects</a></li></ul></div>
         <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li></ul></div>
         <div class="footer-col"><h4>Contact Info</h4>
-          <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Dubai, UAE</span></div>
-          <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>info@heirstoneconsulting.com</span></div>
+          <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Dubai, UAE · Cairo, Egypt</span></div>
+          <div class="footer-contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a></div>
         </div>
       </div>
       <div class="footer-bottom"><p>© 2026 Heirstone Consulting & Strategic Advisory. All rights reserved.</p></div>
