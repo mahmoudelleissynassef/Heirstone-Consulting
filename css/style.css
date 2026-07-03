@@ -802,6 +802,29 @@ textarea:focus-visible {
   letter-spacing: 0.04em;
 }
 
+/* Experience page — full mandate grid */
+.exp-page-section {
+  padding: 64px 60px 80px;
+  background: var(--bg-white);
+}
+
+.exp-page-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .exp-page-section {
+    padding: 48px 24px 60px;
+  }
+  .exp-page-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ============================================
    WHO WE SERVE (HOME)
    ============================================ */
