@@ -11,20 +11,22 @@
 }
 
 :root {
-  --dark-navy: #0d1b2a;
-  --navy: #112233;
-  --navy-footer: #0f1e2d;
-  --brand: #5F6E7E;        /* logo slate — light backgrounds */
-  --brand-dark: #4C5967;   /* hover state on light backgrounds */
-  --brand-light: #9DB0C0;  /* slate tint — dark backgrounds */
-  --text-primary: #1a2a3a;
-  --text-secondary: #4a5568;
-  --text-light: #718096;
-  --bg-light: #f5f7fa;
-  --bg-white: #ffffff;
-  --border: #e2e8f0;
-  --card-shadow: 0 2px 12px rgba(0,0,0,0.07);
-  --card-shadow-hover: 0 8px 30px rgba(0,0,0,0.12);
+  /* Official brand palette (Heirstone Brand Guidelines v1.0) */
+  --dark-navy: #0E1B2A;     /* Ink Navy — primary */
+  --navy: #13273A;          /* Navy Panel */
+  --navy-footer: #0b1521;   /* deepened ink for footer */
+  --brand: #5D6E82;         /* Slate — secondary / logo mark */
+  --brand-dark: #4A5A6C;    /* hover state on light backgrounds */
+  --brand-light: #8FA0B2;   /* Slate tint — on-navy surfaces */
+  --mist: #97A6B6;          /* Mist */
+  --text-primary: #263340;  /* near ink for headings/body on paper */
+  --text-secondary: #3C4956;
+  --text-light: #6E7F92;
+  --bg-light: #F6F4EF;      /* Paper — warm neutral ground (never pure white) */
+  --bg-white: #FCFBF8;      /* warm off-white for content sections & cards */
+  --border: #E4DED2;        /* warm hairline */
+  --card-shadow: 0 2px 12px rgba(14,27,42,0.06);
+  --card-shadow-hover: 0 8px 30px rgba(14,27,42,0.11);
 }
 
 html {
@@ -32,7 +34,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
   color: var(--text-primary);
   background: var(--bg-white);
   line-height: 1.6;
@@ -125,7 +127,7 @@ textarea:focus-visible {
 }
 
 .brand-name {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.26em;
@@ -135,7 +137,7 @@ textarea:focus-visible {
 }
 
 .brand-sub {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
   font-size: 9px;
   font-weight: 500;
   letter-spacing: 0.46em;
@@ -1044,7 +1046,7 @@ textarea:focus-visible {
   padding: 12px 16px;
   font-size: 16px;
   color: #ffffff;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
   transition: border-color 0.2s, box-shadow 0.2s;
   width: 100%;
 }
@@ -1227,7 +1229,7 @@ textarea.form-input {
 }
 
 .footer-brand h3 {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
   font-size: 12.5px;
   font-weight: 600;
   text-transform: uppercase;
