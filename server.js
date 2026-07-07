@@ -14,6 +14,7 @@ const mimeTypes = {
   '.jpeg': 'image/jpeg',
   '.gif': 'image/gif',
   '.svg': 'image/svg+xml',
+  '.webp': 'image/webp',
   '.ico': 'image/x-icon',
   '.woff': 'font/woff',
   '.woff2': 'font/woff2',
@@ -31,6 +32,21 @@ const server = http.createServer((req, res) => {
   }
 
   let urlPath = req.url.split('?')[0]; // strip query strings
+  const qs = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
+
+  // Canonicalise to clean URLs: redirect *.html and /index to extensionless paths
+  if (/\.html$/i.test(urlPath)) {
+    let clean = urlPath.replace(/\.html$/i, '');
+    if (clean === '/index') clean = '/';
+    res.writeHead(301, { 'Location': clean + qs });
+    res.end();
+    return;
+  }
+  if (urlPath === '/index') {
+    res.writeHead(301, { 'Location': '/' + qs });
+    res.end();
+    return;
+  }
 
   // Default to index.html
   if (urlPath === '/') urlPath = '/index.html';
