@@ -624,31 +624,51 @@ textarea:focus-visible {
 .services-tags {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  max-width: 940px;
+  gap: 16px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
 .service-tag {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  text-align: left;
+  flex-direction: column;
+  overflow: hidden;
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 18px 20px;
-  font-size: 14.5px;
-  font-weight: 500;
-  line-height: 1.4;
-  color: var(--text-primary);
   background: var(--bg-white);
   box-shadow: var(--card-shadow);
+  color: var(--text-primary);
   transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
   cursor: pointer;
 }
 
-.service-tag::after {
+.tag-photo {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 2px solid var(--brand);
+}
+
+.tag-placeholder {
+  background:
+    radial-gradient(circle at 50% 42%, rgba(255,255,255,0.14), transparent 62%),
+    linear-gradient(135deg, var(--brand) 0%, var(--dark-navy) 100%);
+}
+
+.tag-label {
+  padding: 14px 16px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.tag-label::after {
   content: '→';
   flex-shrink: 0;
   font-size: 16px;
@@ -663,7 +683,7 @@ textarea:focus-visible {
   transform: translateY(-2px);
 }
 
-.service-tag:hover::after {
+.service-tag:hover .tag-label::after {
   opacity: 1;
   transform: translateX(3px);
 }
