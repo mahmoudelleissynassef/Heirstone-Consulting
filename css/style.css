@@ -511,9 +511,22 @@ textarea:focus-visible {
 
 .sectors-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* Six tracks so five cards sit 3-up then 2 centred (each card spans 2). */
+  grid-template-columns: repeat(6, 1fr);
   gap: 24px;
   margin-bottom: 60px;
+}
+
+.sectors-grid > .sector-card {
+  grid-column: span 2;
+}
+
+.sectors-grid > .sector-card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.sectors-grid > .sector-card:nth-child(5) {
+  grid-column: 4 / span 2;
 }
 
 .sector-card {
@@ -1390,6 +1403,12 @@ textarea.form-input {
   .sectors-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+  .sectors-grid > .sector-card,
+  .sectors-grid > .sector-card:nth-child(4),
+  .sectors-grid > .sector-card:nth-child(5) {
+    grid-column: auto;
+  }
+
   .why-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1447,6 +1466,12 @@ textarea.form-input {
   .sectors-grid {
     grid-template-columns: 1fr 1fr;
   }
+  .sectors-grid > .sector-card,
+  .sectors-grid > .sector-card:nth-child(4),
+  .sectors-grid > .sector-card:nth-child(5) {
+    grid-column: auto;
+  }
+
   .why-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1472,6 +1497,12 @@ textarea.form-input {
   .sectors-grid {
     grid-template-columns: 1fr;
   }
+  .sectors-grid > .sector-card,
+  .sectors-grid > .sector-card:nth-child(4),
+  .sectors-grid > .sector-card:nth-child(5) {
+    grid-column: auto;
+  }
+
   .why-grid {
     grid-template-columns: 1fr;
   }
