@@ -25,7 +25,7 @@ const mimeTypes = {
 };
 
 // Translated editions live under /<code>/. English is the root.
-const LANGS = ['ar', 'zh', 'ja', 'es', 'fr', 'it', 'pt', 'de', 'fi', 'da', 'ro', 'ru', 'ky', 'kk', 'tr'];
+const LANGS = ['ar', 'zh', 'ja', 'es', 'fr', 'it', 'pt', 'el', 'de', 'fi', 'da', 'ro', 'ru', 'ky', 'kk', 'tr'];
 const SUPPORTED = new Set(['en', ...LANGS]);
 const BOTS = /bot|crawl|spider|slurp|facebookexternalhit|embedly|preview|lighthouse|headless/i;
 

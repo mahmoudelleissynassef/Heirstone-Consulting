@@ -57,8 +57,8 @@
   color: #fff;
   max-width: 860px;
   overflow-wrap: break-word;              /* long compounds (de, fi, …) never push past the edge */
-  hyphens: auto;
 }
+@media (max-width: 600px) { .ph h1 { hyphens: auto; } }   /* hyphenate only where width is tight */
 .ph-meta { margin-top: 20px; font-size: 12.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--brand-light); }
 .ph-lead { margin-top: 26px; font-size: 18px; line-height: 1.75; color: rgba(255,255,255,.8); max-width: 640px; }
 .ph-lead em { display: block; font-size: 23px; line-height: 1.35; color: var(--brand-light) !important; margin-bottom: 12px; }

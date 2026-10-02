@@ -27,7 +27,7 @@ import extract as ex
 ROOT = ex.ROOT
 SITE = "https://www.heirstoneconsulting.com"
 
-ORDER = ["en", "ar", "zh", "ja", "es", "fr", "it", "pt", "de", "fi", "da", "ro", "ru", "ky", "kk", "tr"]
+ORDER = ["en", "ar", "zh", "ja", "es", "fr", "it", "pt", "el", "de", "fi", "da", "ro", "ru", "ky", "kk", "tr"]
 CJK_FONTS = "family=Noto+Serif+{v}:wght@500;600;700&family=Noto+Sans+{v}:wght@300;400;500;600;700"
 CYR_FONTS = "family=Noto+Serif:wght@500;600;700&family=Noto+Sans:wght@300;400;500;600;700"
 L = {
@@ -43,6 +43,8 @@ L = {
     "fr": dict(name="Français", html="fr", og="fr_FR"),
     "it": dict(name="Italiano", html="it", og="it_IT"),
     "pt": dict(name="Português", html="pt", og="pt_PT"),
+    "el": dict(name="Ελληνικά", html="el", og="el_GR", fonts=CYR_FONTS,
+               serif="'Noto Serif', serif", sans="'Noto Sans', sans-serif"),
     "de": dict(name="Deutsch", html="de", og="de_DE"),
     "fi": dict(name="Suomi", html="fi", og="fi_FI"),
     "da": dict(name="Dansk", html="da", og="da_DK"),

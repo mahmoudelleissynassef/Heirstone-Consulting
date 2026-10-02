@@ -513,5 +513,6 @@
 }
 
 /* Long-word languages (kk, ky, ru, de, fi): the hero headline sizes down so no word overruns */
-.hero-content h1 { overflow-wrap: break-word; hyphens: auto; }
+.hero-content h1 { overflow-wrap: break-word; }
+@media (max-width: 600px) { .hero-content h1 { hyphens: auto; } }   /* hyphenate only where width is tight */
 html:is([lang=kk],[lang=ky],[lang=ru],[lang=de],[lang=fi]) .hero-content h1 { font-size: clamp(32px, 4.4vw, 60px); }
