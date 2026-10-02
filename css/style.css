@@ -1848,3 +1848,7 @@ textarea.form-input {
   border: 1px solid rgba(255,255,255,0.14);
 }
 .mobile-nav .mobile-lang a[aria-current] { border-color: var(--brand-light); color: #fff; }
+
+/* CJK typesetting: never start a line with ー, 。, 、 etc.; balance short headlines */
+html:is([lang=ja],[lang=zh-Hans]) { line-break: strict; }
+html:is([lang=ja],[lang=zh-Hans]) :is(h1, h2, h3) { text-wrap: balance; }

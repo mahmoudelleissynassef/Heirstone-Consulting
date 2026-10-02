@@ -46,6 +46,8 @@
 .ph-crumbs a:hover { color: #fff; }
 .ph-crumbs [aria-current] { color: rgba(255,255,255,.5); }
 .ph-sep { opacity: .45; }
+.ph-inner > * { min-width: 0; }           /* let grid columns shrink below their longest word */
+.ph-crumbs, .ph-lead { overflow-wrap: break-word; }
 .ph h1 {
   font-family: var(--f-serif);
   font-size: clamp(36px, 4.4vw, 62px);
@@ -54,6 +56,8 @@
   letter-spacing: -0.02em;
   color: #fff;
   max-width: 860px;
+  overflow-wrap: break-word;              /* long compounds (de, fi, …) never push past the edge */
+  hyphens: auto;
 }
 .ph-meta { margin-top: 20px; font-size: 12.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--brand-light); }
 .ph-lead { margin-top: 26px; font-size: 18px; line-height: 1.75; color: rgba(255,255,255,.8); max-width: 640px; }
@@ -352,4 +356,9 @@
 @media (prefers-reduced-motion: reduce) {
   .ph-media img, .faq-acc.open > :not(h3) { animation: none; }
   .rv { opacity: 1; transform: none; transition: none; }
+}
+
+/* Languages with very long compound words: a slightly smaller mobile title */
+@media (max-width: 480px) {
+  html:is([lang=de],[lang=fi],[lang=da],[lang=ru],[lang=ky],[lang=kk],[lang=tr]) .ph h1 { font-size: clamp(28px, 8.2vw, 36px); }
 }

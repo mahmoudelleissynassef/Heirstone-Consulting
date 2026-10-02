@@ -17,7 +17,7 @@ translation changed the inline markup (links, emphasis) of its source.
 Usage: python i18n/build.py            (build all)
        python i18n/build.py --check    (report coverage only, write nothing)
 """
-import os, re, sys, json, glob
+import os, re, sys, json, glob, datetime
 from urllib.parse import urljoin, urlparse
 from bs4 import BeautifulSoup, NavigableString
 
@@ -27,7 +27,7 @@ import extract as ex
 ROOT = ex.ROOT
 SITE = "https://www.heirstoneconsulting.com"
 
-ORDER = ["en", "zh", "ja", "es", "fr", "it", "pt", "de", "fi", "da", "ro", "ky", "kk", "tr"]
+ORDER = ["en", "zh", "ja", "es", "fr", "it", "pt", "de", "fi", "da", "ro", "ru", "ky", "kk", "tr"]
 CJK_FONTS = "family=Noto+Serif+{v}:wght@500;600;700&family=Noto+Sans+{v}:wght@300;400;500;600;700"
 CYR_FONTS = "family=Noto+Serif:wght@500;600;700&family=Noto+Sans:wght@300;400;500;600;700"
 L = {
@@ -44,6 +44,8 @@ L = {
     "fi": dict(name="Suomi", html="fi", og="fi_FI"),
     "da": dict(name="Dansk", html="da", og="da_DK"),
     "ro": dict(name="Română", html="ro", og="ro_RO"),
+    "ru": dict(name="Русский", html="ru", og="ru_RU", fonts=CYR_FONTS,
+               serif="'Noto Serif', serif", sans="'Noto Sans', sans-serif"),
     "ky": dict(name="Кыргызча", html="ky", og="ky_KG", fonts=CYR_FONTS,
                serif="'Noto Serif', serif", sans="'Noto Sans', sans-serif"),
     "kk": dict(name="Қазақша", html="kk", og="kk_KZ", fonts=CYR_FONTS,
@@ -315,6 +317,34 @@ def finish_head(soup, rel, lang, tr, src):
 
 
 # ------------------------------------------------------------------ main
+def write_sitemap(lastmod):
+    """Rebuild sitemap.xml: every English URL (priority kept) in every language,
+    each entry carrying the full set of hreflang alternates."""
+    path = os.path.join(ROOT, "sitemap.xml")
+    old = open(path, encoding="utf-8").read()
+    entries = []
+    for block in re.findall(r"<url>(.*?)</url>", old, re.S):
+        loc = re.search(r"<loc>([^<]+)</loc>", block).group(1)
+        p = loc[len(SITE):] or "/"
+        if p.strip("/").split("/")[0] in ORDER:
+            continue  # language copy from a previous build
+        pr = re.search(r"<priority>([^<]+)</priority>", block)
+        entries.append((p, pr.group(1) if pr else "0.7"))
+    out = ['<?xml version="1.0" encoding="UTF-8"?>',
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">']
+    for p, pr in entries:
+        alts = [f'    <xhtml:link rel="alternate" hreflang="{L[l]["html"]}" href="{SITE}{lang_url(l, p)}"/>' for l in ORDER]
+        alts.append(f'    <xhtml:link rel="alternate" hreflang="x-default" href="{SITE}{p}"/>')
+        for l in ORDER:
+            out.append(f"  <url><loc>{SITE}{lang_url(l, p)}</loc><lastmod>{lastmod}</lastmod>"
+                       f"<changefreq>monthly</changefreq><priority>{pr}</priority>")
+            out.extend(alts)
+            out.append("  </url>")
+    out.append("</urlset>\n")
+    open(path, "w", encoding="utf-8", newline="").write("\n".join(out))
+    return len(entries) * len(ORDER)
+
+
 def main(check=False):
     src = json.load(open(os.path.join(ROOT, "i18n", "source.json"), encoding="utf-8"))
     label_id = ex.sid("Language")
@@ -357,6 +387,8 @@ def main(check=False):
         print(f"[{lang}] {len(uniq)} problem(s)")
         for e in uniq[:8]:
             print("   ", e)
+    if not check and not all_errors and only == ORDER:
+        print(f"sitemap.xml: {write_sitemap(datetime.date.today().isoformat())} URLs")
     print(f"{'checked' if check else 'wrote'} {written} files; "
           f"{'OK' if not all_errors else 'INCOMPLETE: ' + ', '.join(all_errors)}")
     return 0 if not all_errors else 1
