@@ -1,5 +1,8 @@
 // Heirstone Consulting - Main JS
 
+// UI strings: translated pages provide window.HS_I18N (English text -> translation)
+const T = (s) => (window.HS_I18N && window.HS_I18N[s]) || s;
+
 document.addEventListener('DOMContentLoaded', () => {
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -12,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const setOpen = (open) => {
       mobileNav.classList.toggle('open', open);
       hamburger.setAttribute('aria-expanded', String(open));
-      hamburger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      hamburger.setAttribute('aria-label', open ? T('Close menu') : T('Open menu'));
     };
 
     hamburger.addEventListener('click', () => {
@@ -67,6 +70,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 6000);
   }
 
+  // Language switcher: remember an explicit choice so device-language detection never overrides it
+  document.querySelectorAll('[data-lang]').forEach(link => {
+    link.addEventListener('click', () => {
+      document.cookie = 'hs_lang=' + link.dataset.lang + '; path=/; max-age=31536000; samesite=lax';
+    });
+  });
+
   // Contact form submit (FormSubmit AJAX endpoint)
   const form = document.querySelector('.contact-form');
   if (form) {
@@ -90,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const original = btn.textContent;
       btn.disabled = true;
-      btn.textContent = 'Sending…';
+      btn.textContent = T('Sending…');
       setStatus('', null);
 
       const data = Object.fromEntries(new FormData(form).entries());
@@ -106,13 +116,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!res.ok) throw new Error('Request failed: ' + res.status);
         await res.json();
         form.reset();
-        btn.textContent = 'Message Sent';
-        setStatus('Thank you — your message has been sent. We typically respond within one business day.', 'success');
+        btn.textContent = T('Message Sent');
+        setStatus(T('Thank you — your message has been sent. We typically respond within one business day.'), 'success');
         setTimeout(() => { btn.textContent = original; btn.disabled = false; }, 4000);
       } catch (err) {
         btn.textContent = original;
         btn.disabled = false;
-        setStatus('Something went wrong and your message was not sent. Please email us directly at <a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>.', 'error');
+        setStatus(T('Something went wrong and your message was not sent. Please email us directly at <a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>.'), 'error');
       }
     });
   }

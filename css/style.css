@@ -11,6 +11,9 @@
 }
 
 :root {
+  /* type stacks — translated pages override these per language (CJK, Cyrillic) */
+  --f-serif: 'Playfair Display', serif;
+  --f-sans: 'Libre Franklin', sans-serif;
   /* Official brand palette (Heirstone Brand Guidelines v1.0) */
   --dark-navy: #0E1B2A;     /* Ink Navy — primary */
   --navy: #13273A;          /* Navy Panel */
@@ -34,7 +37,7 @@ html {
 }
 
 body {
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: var(--f-sans);
   color: var(--text-primary);
   background: var(--bg-white);
   line-height: 1.6;
@@ -127,7 +130,7 @@ textarea:focus-visible {
 }
 
 .brand-name {
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: var(--f-sans);
   font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.26em;
@@ -137,7 +140,7 @@ textarea:focus-visible {
 }
 
 .brand-sub {
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: var(--f-sans);
   font-size: 9px;
   font-weight: 500;
   letter-spacing: 0.46em;
@@ -264,7 +267,7 @@ textarea:focus-visible {
 }
 
 .page-hero h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--f-serif);
   font-size: 42px;
   font-weight: 700;
   color: #ffffff;
@@ -328,7 +331,7 @@ textarea:focus-visible {
 }
 
 .hero-content h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--f-serif);
   font-size: 52px;
   font-weight: 700;
   color: #ffffff;
@@ -466,7 +469,7 @@ textarea:focus-visible {
 }
 
 .section-title {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--f-serif);
   font-size: 34px;
   font-weight: 700;
   color: var(--text-primary);
@@ -579,7 +582,7 @@ textarea:focus-visible {
 }
 
 .sector-tagline {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--f-serif);
   font-style: italic;
   font-size: 14px;
   color: var(--brand);
@@ -619,7 +622,7 @@ textarea:focus-visible {
 }
 
 .services-category-title {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--f-serif);
   font-size: 22px;
   font-weight: 600;
   color: var(--text-primary);
@@ -746,7 +749,7 @@ textarea:focus-visible {
 
 .step-num {
   display: block;
-  font-family: 'Playfair Display', serif;
+  font-family: var(--f-serif);
   font-size: 30px;
   font-weight: 700;
   color: var(--brand-light);
@@ -797,7 +800,7 @@ textarea:focus-visible {
 }
 
 .about-text h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--f-serif);
   font-size: 34px;
   font-weight: 700;
   color: var(--text-primary);
@@ -873,7 +876,7 @@ textarea:focus-visible {
 }
 
 .exp-card h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--f-serif);
   font-size: 20px;
   font-weight: 700;
   color: var(--text-primary);
@@ -897,12 +900,6 @@ textarea:focus-visible {
   color: var(--text-primary) !important;
 }
 
-.exp-outcome::before {
-  content: 'Outcome — ';
-  font-weight: 600;
-  color: var(--brand);
-  letter-spacing: 0.04em;
-}
 
 /* Experience page — full mandate grid */
 .exp-page-section {
@@ -1112,7 +1109,7 @@ textarea:focus-visible {
   padding: 12px 16px;
   font-size: 16px;
   color: #ffffff;
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: var(--f-sans);
   transition: border-color 0.2s, box-shadow 0.2s;
   width: 100%;
 }
@@ -1181,7 +1178,7 @@ textarea.form-input {
 }
 
 .methodology-title {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--f-serif);
   font-size: 26px;
   font-weight: 700;
   text-align: center;
@@ -1234,7 +1231,7 @@ textarea.form-input {
 
 .method-card-icon::before {
   content: counter(method-step, decimal-leading-zero);
-  font-family: 'Playfair Display', serif;
+  font-family: var(--f-serif);
   font-size: 16px;
   font-weight: 700;
   color: var(--brand);
@@ -1264,7 +1261,7 @@ textarea.form-input {
 }
 
 .cta-band h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--f-serif);
   font-size: 30px;
   font-weight: 700;
   color: #ffffff;
@@ -1295,7 +1292,7 @@ textarea.form-input {
 }
 
 .footer-brand h3 {
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: var(--f-sans);
   font-size: 12.5px;
   font-weight: 600;
   text-transform: uppercase;
@@ -1568,7 +1565,7 @@ textarea.form-input {
 }
 
 .page-prose h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--f-serif);
   font-size: 26px;
   font-weight: 700;
   color: var(--text-primary);
@@ -1653,7 +1650,7 @@ textarea.form-input {
 }
 
 .faq-inner > h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--f-serif);
   font-size: 28px;
   font-weight: 700;
   color: var(--text-primary);
@@ -1736,7 +1733,7 @@ textarea.form-input {
 }
 
 .insight-card h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--f-serif);
   font-size: 20px;
   font-weight: 700;
   color: var(--text-primary);
@@ -1809,3 +1806,45 @@ textarea.form-input {
     transition: none;
   }
 }
+
+/* ============================================
+   LANGUAGE SWITCHER (injected by i18n/build.py)
+   ============================================ */
+.lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: none;
+  border: 1px solid rgba(255,255,255,0.22);
+  color: rgba(255,255,255,0.85);
+  padding: 7px 11px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: border-color .2s, color .2s;
+}
+.lang-btn svg { width: 15px; height: 15px; }
+.lang-btn:hover, .lang-switch:focus-within .lang-btn { border-color: rgba(255,255,255,0.5); color: #fff; }
+.navbar-nav .lang-menu {
+  left: auto;
+  right: 0;
+  min-width: 190px;
+  max-height: 72vh;
+  overflow-y: auto;
+}
+.lang-menu a[aria-current] { color: #fff; background: rgba(255,255,255,0.06); }
+.lang-menu a[aria-current]::after { content: ' ✓'; opacity: .7; }
+.mobile-lang {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 18px 0 6px;
+}
+.mobile-nav .mobile-lang a {
+  font-size: 13px;
+  padding: 7px 11px;
+  border: 1px solid rgba(255,255,255,0.14);
+}
+.mobile-nav .mobile-lang a[aria-current] { border-color: var(--brand-light); color: #fff; }
