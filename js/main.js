@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Contact form submit (FormSubmit AJAX endpoint)
+  // Contact form submit: Resend via /api/contact, FormSubmit as the backup route
   const form = document.querySelector('.contact-form');
   if (form) {
     form.addEventListener('submit', async (e) => {
@@ -105,18 +105,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const data = Object.fromEntries(new FormData(form).entries());
       if (!data._subject) data._subject = 'Website enquiry — heirstoneconsulting.com';
-      data._template = 'table';
+      data.page = location.pathname;
+      data.lang = document.documentElement.lang || 'en';
 
-      try {
+      // Backup route: FormSubmit, used only when our own Resend endpoint is unavailable
+      const viaFormSubmit = async () => {
         const res = await fetch('https://formsubmit.co/ajax/info@heirstoneconsulting.com', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body: JSON.stringify(data)
+          body: JSON.stringify({ ...data, _template: 'table' })
         });
         if (!res.ok) throw new Error('Request failed: ' + res.status);
         const out = await res.json();
         // FormSubmit answers 200 with success "false" when it did not forward the message
         if (String(out.success) !== 'true') throw new Error(out.message || 'Not forwarded');
+      };
+
+      try {
+        let res = null, out = {};
+        try {
+          res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(data)
+          });
+          out = await res.json().catch(() => ({}));
+        } catch (netErr) {
+          res = null; // endpoint unreachable
+        }
+        if (!res || out.fallback) await viaFormSubmit();
+        else if (!res.ok || !out.ok) throw new Error('Rejected: ' + res.status);
         form.reset();
         btn.textContent = T('Message Sent');
         setStatus(T('Thank you — your message has been sent. We typically respond within one business day.'), 'success');
