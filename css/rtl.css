@@ -1,0 +1,68 @@
+/* ============================================
+   RIGHT-TO-LEFT (Arabic) — loaded only by /ar/ pages, after every other stylesheet.
+   Flex and grid layouts mirror on their own via dir="rtl"; this file flips the
+   rules that use physical left/right, arrows and directional gradients.
+   ============================================ */
+
+/* Arabic script: a touch more line height, no Latin letter-spacing on running text */
+[dir=rtl] body { line-height: 1.8; }
+[dir=rtl] :is(h1, h2, h3, h4, p, li, a, button, label) { letter-spacing: 0 !important; }
+
+/* ---------- global chrome (style.css) */
+[dir=rtl] .skip-link { left: auto; right: 12px; }
+[dir=rtl] .dropdown-menu { left: auto; right: 0; }
+[dir=rtl] .dropdown-menu a:hover { padding-left: 18px; padding-right: 24px; }
+[dir=rtl] .navbar-nav .lang-menu { right: auto; left: 0; }
+[dir=rtl] .hero-overlay { transform: scaleX(-1); }       /* dark side follows the text to the right */
+
+[dir=rtl] .card-more::after { content: ' ←'; transition: margin-right 0.2s; }
+[dir=rtl] .sector-card:hover .card-more::after { margin-left: 0; margin-right: 4px; }
+[dir=rtl] .tag-label::after { content: '←'; }
+[dir=rtl] .service-tag:hover .tag-label::after { transform: translateX(-3px); }
+
+[dir=rtl] .page-prose ul li { padding-left: 0; padding-right: 26px; }
+[dir=rtl] .page-prose ul li::before { left: auto; right: 3px; }
+
+/* Arrow icons inside links and buttons point the reading way */
+[dir=rtl] :is(.eng-all, .px-cta, .svc-list a, .eng-prev, .eng-next, .btn, .rel a) svg { transform: scaleX(-1); }
+[dir=rtl] :is(.eng-all, .px-cta, .svc-list a):hover svg { transform: scaleX(-1) translateX(4px); }
+
+/* ---------- homepage (home.css) */
+[dir=rtl] .hero-ticker { direction: ltr; }               /* the marquee keeps its loop; words still render RTL */
+[dir=rtl] .eng-count { margin-right: 0; margin-left: 12px; }
+[dir=rtl] .eng-track { scroll-padding-left: 0; scroll-padding-right: var(--edge); }
+[dir=rtl] .eng-num { right: auto; left: 22px; }
+[dir=rtl] .eng-progress span { left: auto; right: 0; }
+[dir=rtl] .px-tab { text-align: right; }
+[dir=rtl] .px-tab::before { left: auto; right: 0; }
+[dir=rtl] .tl-fill { left: auto; right: 0; }
+@media (max-width: 860px) {
+  [dir=rtl] .tl { border-left: 0; padding-left: 0; border-right: 1px solid var(--border); padding-right: 28px; }
+  [dir=rtl] .tl-dot { left: auto; right: -38px; }
+}
+
+/* ---------- inner pages (pages.css) */
+[dir=rtl] .ph::after { right: auto; left: -120px; }
+[dir=rtl] .ph-media::before { inset: 18px 18px -18px -18px; }
+[dir=rtl] .ph--photo::before { transform: scaleX(-1); }
+[dir=rtl] .page-prose h2::before { left: auto; right: 0; }
+[dir=rtl] .page-prose li { padding-left: 0; padding-right: 30px; }
+[dir=rtl] .page-prose li::before { left: auto; right: 2px; }
+[dir=rtl] :is(.methodology-title, .methodology-section .methodology-title, .faq-inner > h2, .cta-band) { text-align: right; }
+[dir=rtl] .faq-acc h3 { padding-right: 0; padding-left: 48px; }
+[dir=rtl] .faq-acc h3::before, [dir=rtl] .faq-acc h3::after { right: auto; left: 6px; }
+[dir=rtl] .cta-band::before, [dir=rtl] .cta-band::after { right: auto; left: 8%; }
+[dir=rtl] .svc-n { left: auto; right: 26px; }
+[dir=rtl] .svc-list a:hover { padding-left: 0; padding-right: 8px; }
+[dir=rtl] .exp-page-grid .exp-outcome { padding: 0 18px 0 0; border-left: 0; border-right: 2px solid var(--dark-navy); }
+[dir=rtl] .about-page .section-title { text-align: right !important; }
+[dir=rtl] .about-page .why-item { text-align: right; }
+@media (max-width: 860px) {
+  [dir=rtl] .ph-media::before { inset: 12px 12px -12px -12px; }
+}
+
+/* Brand wordmark, emails and URLs stay left-to-right inside Arabic text */
+[dir=rtl] :is(.logo, .logo-text, a[href^="mailto:"]) { direction: ltr; unicode-bidi: isolate; }
+
+/* Arabic has no true italic: keep the accent colour, drop the synthetic slant */
+[dir=rtl] :is(em, i, cite) { font-style: normal; }

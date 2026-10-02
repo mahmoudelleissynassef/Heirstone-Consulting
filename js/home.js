@@ -13,18 +13,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const next = document.querySelector('.eng-next');
     const cur = document.querySelector('.eng-cur');
     const bar = document.querySelector('.eng-progress span');
-    const pad = () => parseFloat(getComputedStyle(track).scrollPaddingLeft) || 0;
+    // Direction-aware: in Arabic (rtl) the first card sits at the right and the track scrolls leftwards.
+    const rtl = getComputedStyle(track).direction === 'rtl';
+    const pad = () => parseFloat(getComputedStyle(track)[rtl ? 'scrollPaddingRight' : 'scrollPaddingLeft']) || 0;
+    // distance from a card's leading edge to the track's leading edge (+ snap padding)
+    const offset = (c) => {
+      const t = track.getBoundingClientRect(), r = c.getBoundingClientRect();
+      return rtl ? (t.right - pad()) - r.right : r.left - (t.left + pad());
+    };
     let index = 0;
 
     const nearest = () => {
-      const x = track.scrollLeft + pad();
       let best = 0, dist = Infinity;
       cards.forEach((c, i) => {
-        const d = Math.abs(c.offsetLeft - x);
+        const d = Math.abs(offset(c));
         if (d < dist) { dist = d; best = i; }
       });
-      // at the far right the last cards can't snap to the left edge
-      if (track.scrollLeft >= track.scrollWidth - track.clientWidth - 4) best = cards.length - 1;
+      // at the far end the last cards can't snap to the leading edge
+      if (Math.abs(track.scrollLeft) >= track.scrollWidth - track.clientWidth - 4) best = cards.length - 1;
       return best;
     };
 
@@ -39,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const go = (i) => {
       const k = Math.max(0, Math.min(cards.length - 1, i));
-      track.scrollTo({ left: cards[k].offsetLeft - pad(), behavior: reducedMotion ? 'auto' : 'smooth' });
+      const dx = offset(cards[k]);
+      track.scrollBy({ left: rtl ? -dx : dx, behavior: reducedMotion ? 'auto' : 'smooth' });
     };
 
     let timer = null, visible = false, stopped = reducedMotion;
@@ -55,8 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { passive: true });
 
     track.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowRight') { e.preventDefault(); stop(); go(index + 1); }
-      if (e.key === 'ArrowLeft')  { e.preventDefault(); stop(); go(index - 1); }
+      const fwd = rtl ? 'ArrowLeft' : 'ArrowRight', back = rtl ? 'ArrowRight' : 'ArrowLeft';
+      if (e.key === fwd)  { e.preventDefault(); stop(); go(index + 1); }
+      if (e.key === back) { e.preventDefault(); stop(); go(index - 1); }
     });
 
     // mouse drag to scroll (touch already scrolls natively)

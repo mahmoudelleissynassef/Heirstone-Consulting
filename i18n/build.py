@@ -27,11 +27,14 @@ import extract as ex
 ROOT = ex.ROOT
 SITE = "https://www.heirstoneconsulting.com"
 
-ORDER = ["en", "zh", "ja", "es", "fr", "it", "pt", "de", "fi", "da", "ro", "ru", "ky", "kk", "tr"]
+ORDER = ["en", "ar", "zh", "ja", "es", "fr", "it", "pt", "de", "fi", "da", "ro", "ru", "ky", "kk", "tr"]
 CJK_FONTS = "family=Noto+Serif+{v}:wght@500;600;700&family=Noto+Sans+{v}:wght@300;400;500;600;700"
 CYR_FONTS = "family=Noto+Serif:wght@500;600;700&family=Noto+Sans:wght@300;400;500;600;700"
 L = {
     "en": dict(name="English", html="en", og="en_GB"),
+    "ar": dict(name="العربية", html="ar", og="ar_AE", dir="rtl",
+               fonts="family=Noto+Naskh+Arabic:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700",
+               serif="'Playfair Display', 'Noto Naskh Arabic', serif", sans="'Libre Franklin', 'IBM Plex Sans Arabic', sans-serif"),
     "zh": dict(name="中文", html="zh-Hans", og="zh_CN", fonts=CJK_FONTS.format(v="SC"),
                serif="'Playfair Display', 'Noto Serif SC', serif", sans="'Libre Franklin', 'Noto Sans SC', sans-serif"),
     "ja": dict(name="日本語", html="ja", og="ja_JP", fonts=CJK_FONTS.format(v="JP"),
@@ -281,6 +284,8 @@ def rewrite_links(soup, rel, lang):
 def finish_head(soup, rel, lang, tr, src):
     soup.html["lang"] = L[lang]["html"]
     head = soup.head
+    if L[lang].get("dir") == "rtl":
+        soup.html["dir"] = "rtl"
     canon = head.find("link", rel="canonical")
     if canon:
         canon["href"] = SITE + lang_url(lang, page_url(rel))
@@ -296,6 +301,8 @@ def finish_head(soup, rel, lang, tr, src):
         style.string = f":root{{--f-serif:{L[lang]['serif']};--f-sans:{L[lang]['sans']};}}"
         head.append(link)
         head.append(style)
+    if L[lang].get("dir") == "rtl":  # mirrored layout, loaded after every other stylesheet
+        head.append(soup.new_tag("link", rel="stylesheet", href="/css/rtl.css"))
     ui = {src["segments"][i]: tr[i] for i in src["js"] if i in tr}
     main = soup.find("script", src=re.compile(r"main\.js$"))
     if main:
