@@ -114,7 +114,9 @@ document.addEventListener('DOMContentLoaded', () => {
           body: JSON.stringify(data)
         });
         if (!res.ok) throw new Error('Request failed: ' + res.status);
-        await res.json();
+        const out = await res.json();
+        // FormSubmit answers 200 with success "false" when it did not forward the message
+        if (String(out.success) !== 'true') throw new Error(out.message || 'Not forwarded');
         form.reset();
         btn.textContent = T('Message Sent');
         setStatus(T('Thank you — your message has been sent. We typically respond within one business day.'), 'success');
