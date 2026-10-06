@@ -66,3 +66,14 @@
 
 /* Arabic has no true italic: keep the accent colour, drop the synthetic slant */
 [dir=rtl] :is(em, i, cite) { font-style: normal; }
+
+/* Reports */
+[dir=rtl] .rp-cover img { margin-left: 0; margin-right: auto; }
+[dir=rtl] .rp-findings li { padding: 0 64px 30px 0; }
+[dir=rtl] .rp-findings li::before { left: auto; right: 0; }
+[dir=rtl] .rp-num { padding: 34px 0 34px 32px; }
+[dir=rtl] .rp-num:not(:nth-child(3n+1)) { padding-right: 32px; padding-left: 0; border-left: 0; border-right: 1px solid var(--border); }
+[dir=rtl] .rp-card-stat .rp-n { margin-right: 0; margin-left: 6px; }
+[dir=rtl] .rg-x { right: auto; left: 14px; }
+@media (max-width: 600px) { [dir=rtl] .rp-findings li { padding-right: 48px; } }
+[dir=rtl] .rg-report { font-style: normal; }

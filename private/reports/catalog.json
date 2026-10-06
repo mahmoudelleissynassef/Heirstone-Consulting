@@ -1,0 +1,44 @@
+{
+ "branded-residences": {
+  "file": "branded-residences.pdf",
+  "sector": "Branded Residences",
+  "title": "Who keeps the premium",
+  "pages": 30,
+  "download_name": "Heirstone Consulting Research - Branded Residences - Who keeps the premium.pdf"
+ },
+ "surplus-state-property": {
+  "file": "surplus-state-property.pdf",
+  "sector": "Surplus State Property",
+  "title": "The second price",
+  "pages": 28,
+  "download_name": "Heirstone Consulting Research - Surplus State Property - The second price.pdf"
+ },
+ "seasonal-coastal-cities": {
+  "file": "seasonal-coastal-cities.pdf",
+  "sector": "Seasonal Coastal Cities",
+  "title": "Built for August",
+  "pages": 27,
+  "download_name": "Heirstone Consulting Research - Seasonal Coastal Cities - Built for August.pdf"
+ },
+ "heritage-destinations": {
+  "file": "heritage-destinations.pdf",
+  "sector": "Heritage Destinations",
+  "title": "The gate and the night",
+  "pages": 28,
+  "download_name": "Heirstone Consulting Research - Heritage Destinations - The gate and the night.pdf"
+ },
+ "cruise-ferry-terminals": {
+  "file": "cruise-ferry-terminals.pdf",
+  "sector": "Cruise and Ferry Terminals",
+  "title": "Guaranteed Passage",
+  "pages": 27,
+  "download_name": "Heirstone Consulting Research - Cruise and Ferry Terminals - Guaranteed Passage.pdf"
+ },
+ "event-venues-legacy": {
+  "file": "event-venues-legacy.pdf",
+  "sector": "Event Venues and Legacy",
+  "title": "Planning for day two",
+  "pages": 28,
+  "download_name": "Heirstone Consulting Research - Event Venues and Legacy - Planning for day two.pdf"
+ }
+}

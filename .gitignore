@@ -5,3 +5,6 @@ Heirstone Consulting branding kit.zip
 
 # Local dev preview config
 .claude/
+
+# Report leads collected at runtime (never commit)
+data/

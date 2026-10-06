@@ -319,7 +319,7 @@ def finish_head(soup, rel, lang, tr, src):
             continue
         objs = data.get("@graph", [data]) if isinstance(data, dict) else data
         for o in objs if isinstance(objs, list) else [objs]:
-            if isinstance(o, dict) and o.get("@type") in ("WebSite", "WebPage", "Article", "BlogPosting", "FAQPage"):
+            if isinstance(o, dict) and o.get("@type") in ("WebSite", "WebPage", "Article", "BlogPosting", "FAQPage", "Report", "CollectionPage"):
                 o["inLanguage"] = L[lang]["html"]
             if isinstance(o, dict) and isinstance(o.get("url"), str):
                 o["url"] = rewrite(o["url"], "/", lang)
