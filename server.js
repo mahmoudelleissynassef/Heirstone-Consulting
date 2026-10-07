@@ -225,7 +225,8 @@ const MAIL_TEXT = {
 function reportEmail(r, name, link, l, otherLink) {
   const t = MAIL_TEXT[l] || MAIL_TEXT.en;
   const ed = edition(r, l);
-  const title = `${ed.sector || r.sector}: ${ed.title || r.title}`;
+  const sep = l === 'fr' ? ' : ' : ': ';  // French puts a space before the colon
+  const title = `${ed.sector || r.sector}${sep}${ed.title || r.title}`;
   const first = esc(name.split(/\s+/)[0]);
   const html = '<div style="background:#F6F4EF;padding:32px 0;font-family:Arial,Helvetica,sans-serif;color:#263340">'
     + '<div style="max-width:560px;margin:0 auto;background:#FCFBF8;border:1px solid #E4DED2">'
@@ -245,7 +246,7 @@ function reportEmail(r, name, link, l, otherLink) {
   const text = `${t.dear} ${name.split(/\s+/)[0]},\n\n${t.ready}\n${title}\n\n${t.button}: ${link}\n${t.valid(LINK_DAYS)}\n`
     + (otherLink ? `\n${t.other} ${otherLink}\n` : '')
     + `\n${t.discuss}\n\nHeirstone Consulting\nDubai · Cairo · heirstoneconsulting.com\n\n${t.why}`;
-  return { title, html, text, subject: `${t.subject}: ${title}` };
+  return { title, html, text, subject: `${t.subject}${sep}${title}` };
 }
 
 function handleReportRequest(req, res) {
