@@ -1,44 +1,478 @@
 {
+ "africa-real-estate-capital": {
+  "series": "africa",
+  "sector": "Real Estate Capital in Africa",
+  "title": "The money is already here",
+  "editions": {
+   "en": {
+    "file": "africa-real-estate-capital.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - Real Estate Capital in Africa - The money is already here.pdf",
+    "sector": "Real Estate Capital in Africa",
+    "title": "The money is already here"
+   },
+   "fr": {
+    "file": "africa-real-estate-capital.fr.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - Financer l'immobilier en Afrique - L'argent est déjà là.pdf",
+    "sector": "Financer l’immobilier en Afrique",
+    "title": "L’argent est déjà là"
+   }
+  }
+ },
+ "africa-diaspora-buyers": {
+  "series": "africa",
+  "sector": "Diaspora Buyers",
+  "title": "The absent owner",
+  "editions": {
+   "en": {
+    "file": "africa-diaspora-buyers.pdf",
+    "pages": 30,
+    "download_name": "Heirstone Consulting Research - Diaspora Buyers - The absent owner.pdf",
+    "sector": "Diaspora Buyers",
+    "title": "The absent owner"
+   },
+   "fr": {
+    "file": "africa-diaspora-buyers.fr.pdf",
+    "pages": 30,
+    "download_name": "Heirstone Consulting Research - Acheteurs de la diaspora - Le propriétaire absent.pdf",
+    "sector": "Acheteurs de la diaspora",
+    "title": "Le propriétaire absent"
+   }
+  }
+ },
+ "africa-regional-headquarters": {
+  "series": "africa",
+  "sector": "Africa Regional Headquarters",
+  "title": "Where Africa is run from",
+  "editions": {
+   "en": {
+    "file": "africa-regional-headquarters.pdf",
+    "pages": 30,
+    "download_name": "Heirstone Consulting Research - Africa Regional Headquarters - Where Africa is run from.pdf",
+    "sector": "Africa Regional Headquarters",
+    "title": "Where Africa is run from"
+   },
+   "fr": {
+    "file": "africa-regional-headquarters.fr.pdf",
+    "pages": 30,
+    "download_name": "Heirstone Consulting Research - Sièges régionaux en Afrique - D'où l'on dirige l'Afrique.pdf",
+    "sector": "Sièges régionaux en Afrique",
+    "title": "D’où l’on dirige l’Afrique"
+   }
+  }
+ },
+ "africa-retail-real-estate": {
+  "series": "africa",
+  "sector": "Retail Real Estate in Africa",
+  "title": "The market is the anchor",
+  "editions": {
+   "en": {
+    "file": "africa-retail-real-estate.pdf",
+    "pages": 30,
+    "download_name": "Heirstone Consulting Research - Retail Real Estate in Africa - The market is the anchor.pdf",
+    "sector": "Retail Real Estate in Africa",
+    "title": "The market is the anchor"
+   },
+   "fr": {
+    "file": "africa-retail-real-estate.fr.pdf",
+    "pages": 30,
+    "download_name": "Heirstone Consulting Research - L'immobilier commercial en Afrique - La vraie locomotive, c'est le marché.pdf",
+    "sector": "L’immobilier commercial en Afrique",
+    "title": "La vraie locomotive, c’est le marché"
+   }
+  }
+ },
+ "africa-hotel-development": {
+  "series": "africa",
+  "sector": "Hotel Development in Africa",
+  "title": "Hotels on paper",
+  "editions": {
+   "en": {
+    "file": "africa-hotel-development.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - Hotel Development in Africa - Hotels on paper.pdf",
+    "sector": "Hotel Development in Africa",
+    "title": "Hotels on paper"
+   },
+   "fr": {
+    "file": "africa-hotel-development.fr.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - Développement hôtelier en Afrique - Des hôtels sur le papier.pdf",
+    "sector": "Développement hôtelier en Afrique",
+    "title": "Des hôtels sur le papier"
+   }
+  }
+ },
+ "africa-digital-infrastructure": {
+  "series": "africa",
+  "sector": "Digital Infrastructure Real Estate",
+  "title": "Borrowed ground",
+  "editions": {
+   "en": {
+    "file": "africa-digital-infrastructure.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - Digital Infrastructure Real Estate - Borrowed ground.pdf",
+    "sector": "Digital Infrastructure Real Estate",
+    "title": "Borrowed ground"
+   },
+   "fr": {
+    "file": "africa-digital-infrastructure.fr.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - Immobilier des infrastructures numériques - Un sol d'emprunt.pdf",
+    "sector": "Immobilier des infrastructures numériques",
+    "title": "Un sol d’emprunt"
+   }
+  }
+ },
+ "africa-worker-housing": {
+  "series": "africa",
+  "sector": "Worker Housing in African Industrial Parks",
+  "title": "Factories need beds",
+  "editions": {
+   "en": {
+    "file": "africa-worker-housing.pdf",
+    "pages": 30,
+    "download_name": "Heirstone Consulting Research - Worker Housing in African Industrial Parks - Factories need beds.pdf",
+    "sector": "Worker Housing in African Industrial Parks",
+    "title": "Factories need beds"
+   },
+   "fr": {
+    "file": "africa-worker-housing.fr.pdf",
+    "pages": 30,
+    "download_name": "Heirstone Consulting Research - Le logement des travailleurs dans les parcs industriels africains - Les usines ont besoin de lits.pdf",
+    "sector": "Le logement des travailleurs dans les parcs industriels africains",
+    "title": "Les usines ont besoin de lits"
+   }
+  }
+ },
+ "africa-student-housing": {
+  "series": "africa",
+  "sector": "Universities and Student Housing in Africa",
+  "title": "The bed behind the seat",
+  "editions": {
+   "en": {
+    "file": "africa-student-housing.pdf",
+    "pages": 28,
+    "download_name": "Heirstone Consulting Research - Universities and Student Housing in Africa - The bed behind the seat.pdf",
+    "sector": "Universities and Student Housing in Africa",
+    "title": "The bed behind the seat"
+   },
+   "fr": {
+    "file": "africa-student-housing.fr.pdf",
+    "pages": 28,
+    "download_name": "Heirstone Consulting Research - Universités et logement étudiant en Afrique - Le lit derrière la place.pdf",
+    "sector": "Universités et logement étudiant en Afrique",
+    "title": "Le lit derrière la place"
+   }
+  }
+ },
+ "africa-schools-education": {
+  "series": "africa",
+  "sector": "Private Schools in Africa",
+  "title": "The empty seat",
+  "editions": {
+   "en": {
+    "file": "africa-schools-education.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - Private Schools in Africa - The empty seat.pdf",
+    "sector": "Private Schools in Africa",
+    "title": "The empty seat"
+   },
+   "fr": {
+    "file": "africa-schools-education.fr.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - L'enseignement privé en Afrique - La place vide.pdf",
+    "sector": "L’enseignement privé en Afrique",
+    "title": "La place vide"
+   }
+  }
+ },
+ "africa-industrial-cities-exports": {
+  "series": "africa",
+  "sector": "Industrial Cities and Exports",
+  "title": "The port is the cheap part",
+  "editions": {
+   "en": {
+    "file": "africa-industrial-cities-exports.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - Industrial Cities and Exports - The port is the cheap part.pdf",
+    "sector": "Industrial Cities and Exports",
+    "title": "The port is the cheap part"
+   },
+   "fr": {
+    "file": "africa-industrial-cities-exports.fr.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - Villes industrielles et exportations - Le port, c'est le moins cher.pdf",
+    "sector": "Villes industrielles et exportations",
+    "title": "Le port, c’est le moins cher"
+   }
+  }
+ },
+ "africa-agro-industrial-zones": {
+  "series": "africa",
+  "sector": "Agro-Industrial Zones in North and Sub-Saharan Africa",
+  "title": "The crop comes first",
+  "editions": {
+   "en": {
+    "file": "africa-agro-industrial-zones.pdf",
+    "pages": 28,
+    "download_name": "Heirstone Consulting Research - Agro-Industrial Zones in North and Sub-Saharan Africa - The crop comes first.pdf",
+    "sector": "Agro-Industrial Zones in North and Sub-Saharan Africa",
+    "title": "The crop comes first"
+   },
+   "fr": {
+    "file": "africa-agro-industrial-zones.fr.pdf",
+    "pages": 28,
+    "download_name": "Heirstone Consulting Research - Zones agro-industrielles en Afrique du Nord et en Afrique subsaharienne - La récolte d'abord.pdf",
+    "sector": "Zones agro-industrielles en Afrique du Nord et en Afrique subsaharienne",
+    "title": "La récolte d’abord"
+   }
+  }
+ },
+ "africa-trade-corridors": {
+  "series": "africa",
+  "sector": "Trade Corridors in Africa",
+  "title": "Where cargo stops",
+  "editions": {
+   "en": {
+    "file": "africa-trade-corridors.pdf",
+    "pages": 30,
+    "download_name": "Heirstone Consulting Research - Trade Corridors in Africa - Where cargo stops.pdf",
+    "sector": "Trade Corridors in Africa",
+    "title": "Where cargo stops"
+   },
+   "fr": {
+    "file": "africa-trade-corridors.fr.pdf",
+    "pages": 30,
+    "download_name": "Heirstone Consulting Research - Corridors commerciaux en Afrique - Là où le fret s'arrête.pdf",
+    "sector": "Corridors commerciaux en Afrique",
+    "title": "Là où le fret s’arrête"
+   }
+  }
+ },
+ "africa-mining-towns": {
+  "series": "africa",
+  "sector": "Mining Towns",
+  "title": "The fence and the city",
+  "editions": {
+   "en": {
+    "file": "africa-mining-towns.pdf",
+    "pages": 28,
+    "download_name": "Heirstone Consulting Research - Mining Towns - The fence and the city.pdf",
+    "sector": "Mining Towns",
+    "title": "The fence and the city"
+   },
+   "fr": {
+    "file": "africa-mining-towns.fr.pdf",
+    "pages": 28,
+    "download_name": "Heirstone Consulting Research - Villes minières - La clôture et la ville.pdf",
+    "sector": "Villes minières",
+    "title": "La clôture et la ville"
+   }
+  }
+ },
+ "africa-air-access-tourism": {
+  "series": "africa",
+  "sector": "Air Access and Tourism in Africa",
+  "title": "Empty seats, full terminals",
+  "editions": {
+   "en": {
+    "file": "africa-air-access-tourism.pdf",
+    "pages": 28,
+    "download_name": "Heirstone Consulting Research - Air Access and Tourism in Africa - Empty seats, full terminals.pdf",
+    "sector": "Air Access and Tourism in Africa",
+    "title": "Empty seats, full terminals"
+   },
+   "fr": {
+    "file": "africa-air-access-tourism.fr.pdf",
+    "pages": 28,
+    "download_name": "Heirstone Consulting Research - Desserte aérienne et tourisme en Afrique - Sièges vides, terminaux pleins.pdf",
+    "sector": "Desserte aérienne et tourisme en Afrique",
+    "title": "Sièges vides, terminaux pleins"
+   }
+  }
+ },
+ "africa-state-resort-programmes": {
+  "series": "africa",
+  "sector": "State Resort Programmes, Twenty Years On",
+  "title": "The plan and the beach",
+  "editions": {
+   "en": {
+    "file": "africa-state-resort-programmes.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - State Resort Programmes, Twenty Years On - The plan and the beach.pdf",
+    "sector": "State Resort Programmes, Twenty Years On",
+    "title": "The plan and the beach"
+   },
+   "fr": {
+    "file": "africa-state-resort-programmes.fr.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - Programmes publics de stations touristiques, vingt ans après - Le plan et la plage.pdf",
+    "sector": "Programmes publics de stations touristiques, vingt ans après",
+    "title": "Le plan et la plage"
+   }
+  }
+ },
+ "africa-conservation-tourism": {
+  "series": "africa",
+  "sector": "Conservation Tourism in Africa",
+  "title": "The bed and the hectare",
+  "editions": {
+   "en": {
+    "file": "africa-conservation-tourism.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - Conservation Tourism in Africa - The bed and the hectare.pdf",
+    "sector": "Conservation Tourism in Africa",
+    "title": "The bed and the hectare"
+   },
+   "fr": {
+    "file": "africa-conservation-tourism.fr.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - Tourisme de conservation en Afrique - Le lit et l'hectare.pdf",
+    "sector": "Tourisme de conservation en Afrique",
+    "title": "Le lit et l’hectare"
+   }
+  }
+ },
+ "africa-diaspora-heritage-travel": {
+  "series": "africa",
+  "sector": "Diaspora and Heritage Travel in Africa",
+  "title": "The return ticket",
+  "editions": {
+   "en": {
+    "file": "africa-diaspora-heritage-travel.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - Diaspora and Heritage Travel in Africa - The return ticket.pdf",
+    "sector": "Diaspora and Heritage Travel in Africa",
+    "title": "The return ticket"
+   },
+   "fr": {
+    "file": "africa-diaspora-heritage-travel.fr.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - Tourisme de diaspora et de mémoire en Afrique - Le billet retour.pdf",
+    "sector": "Tourisme de diaspora et de mémoire en Afrique",
+    "title": "Le billet retour"
+   }
+  }
+ },
+ "africa-meetings-conventions": {
+  "series": "africa",
+  "sector": "Meetings and Conventions in Africa",
+  "title": "The price of a plenary seat",
+  "editions": {
+   "en": {
+    "file": "africa-meetings-conventions.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - Meetings and Conventions in Africa - The price of a plenary seat.pdf",
+    "sector": "Meetings and Conventions in Africa",
+    "title": "The price of a plenary seat"
+   },
+   "fr": {
+    "file": "africa-meetings-conventions.fr.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - Congrès et réunions en Afrique - Le prix d'un siège en plénière.pdf",
+    "sector": "Congrès et réunions en Afrique",
+    "title": "Le prix d’un siège en plénière"
+   }
+  }
+ },
  "branded-residences": {
-  "file": "branded-residences.pdf",
+  "series": "general",
   "sector": "Branded Residences",
   "title": "Who keeps the premium",
-  "pages": 30,
-  "download_name": "Heirstone Consulting Research - Branded Residences - Who keeps the premium.pdf"
+  "editions": {
+   "en": {
+    "file": "branded-residences.pdf",
+    "pages": 30,
+    "download_name": "Heirstone Consulting Research - Branded Residences - Who keeps the premium.pdf",
+    "sector": "Branded Residences",
+    "title": "Who keeps the premium"
+   }
+  }
  },
  "surplus-state-property": {
-  "file": "surplus-state-property.pdf",
+  "series": "general",
   "sector": "Surplus State Property",
   "title": "The second price",
-  "pages": 28,
-  "download_name": "Heirstone Consulting Research - Surplus State Property - The second price.pdf"
+  "editions": {
+   "en": {
+    "file": "surplus-state-property.pdf",
+    "pages": 28,
+    "download_name": "Heirstone Consulting Research - Surplus State Property - The second price.pdf",
+    "sector": "Surplus State Property",
+    "title": "The second price"
+   }
+  }
+ },
+ "marinas": {
+  "series": "general",
+  "sector": "Marinas and Yacht Waterfronts",
+  "title": "The berth is not the business",
+  "editions": {
+   "en": {
+    "file": "marinas.pdf",
+    "pages": 27,
+    "download_name": "Heirstone Consulting Research - Marinas and Yacht Waterfronts - The berth is not the business.pdf",
+    "sector": "Marinas and Yacht Waterfronts",
+    "title": "The berth is not the business"
+   }
+  }
  },
  "seasonal-coastal-cities": {
-  "file": "seasonal-coastal-cities.pdf",
+  "series": "general",
   "sector": "Seasonal Coastal Cities",
-  "title": "Built for August",
-  "pages": 27,
-  "download_name": "Heirstone Consulting Research - Seasonal Coastal Cities - Built for August.pdf"
+  "title": "Beyond August",
+  "editions": {
+   "en": {
+    "file": "seasonal-coastal-cities.pdf",
+    "pages": 27,
+    "download_name": "Heirstone Consulting Research - Seasonal Coastal Cities - Beyond August.pdf",
+    "sector": "Seasonal Coastal Cities",
+    "title": "Beyond August"
+   }
+  }
  },
  "heritage-destinations": {
-  "file": "heritage-destinations.pdf",
+  "series": "general",
   "sector": "Heritage Destinations",
   "title": "The gate and the night",
-  "pages": 28,
-  "download_name": "Heirstone Consulting Research - Heritage Destinations - The gate and the night.pdf"
+  "editions": {
+   "en": {
+    "file": "heritage-destinations.pdf",
+    "pages": 28,
+    "download_name": "Heirstone Consulting Research - Heritage Destinations - The gate and the night.pdf",
+    "sector": "Heritage Destinations",
+    "title": "The gate and the night"
+   }
+  }
  },
  "cruise-ferry-terminals": {
-  "file": "cruise-ferry-terminals.pdf",
+  "series": "general",
   "sector": "Cruise and Ferry Terminals",
   "title": "Guaranteed Passage",
-  "pages": 27,
-  "download_name": "Heirstone Consulting Research - Cruise and Ferry Terminals - Guaranteed Passage.pdf"
+  "editions": {
+   "en": {
+    "file": "cruise-ferry-terminals.pdf",
+    "pages": 27,
+    "download_name": "Heirstone Consulting Research - Cruise and Ferry Terminals - Guaranteed Passage.pdf",
+    "sector": "Cruise and Ferry Terminals",
+    "title": "Guaranteed Passage"
+   }
+  }
  },
  "event-venues-legacy": {
-  "file": "event-venues-legacy.pdf",
+  "series": "general",
   "sector": "Event Venues and Legacy",
   "title": "Planning for day two",
-  "pages": 28,
-  "download_name": "Heirstone Consulting Research - Event Venues and Legacy - Planning for day two.pdf"
+  "editions": {
+   "en": {
+    "file": "event-venues-legacy.pdf",
+    "pages": 28,
+    "download_name": "Heirstone Consulting Research - Event Venues and Legacy - Planning for day two.pdf",
+    "sector": "Event Venues and Legacy",
+    "title": "Planning for day two"
+   }
+  }
  }
 }

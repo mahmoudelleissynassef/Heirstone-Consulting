@@ -161,6 +161,9 @@ const REPORTS_DIR = path.join(ROOT, 'private', 'reports');
 let REPORTS = {};
 try { REPORTS = JSON.parse(fs.readFileSync(path.join(REPORTS_DIR, 'catalog.json'), 'utf8')); }
 catch (e) { console.error('Reports catalog missing:', e.message); }
+// Edition of a report in the requested language (catalog: editions.en / editions.fr), falling back to English.
+const edition = (r, l) => (r.editions && (r.editions[l] || r.editions.en)) || r;
+const editionLang = (r, l) => (r.editions && r.editions[l] ? l : 'en');
 const LEADS_DIR = process.env.LEADS_DIR || path.join(ROOT, 'data');
 const LEADS_FILE = path.join(LEADS_DIR, 'report-leads.jsonl');
 const PUBLIC_ORIGIN = process.env.PUBLIC_ORIGIN || 'https://www.heirstoneconsulting.com';
@@ -204,25 +207,45 @@ function readJsonBody(req, res, json, done) {
   });
 }
 
-function reportEmail(r, name, link) {
-  const title = `${r.sector}: ${r.title}`;
+const MAIL_TEXT = {
+  en: { dear: 'Dear', ready: 'Thank you for your interest. Your copy of our report is ready:', button: 'Download the report (PDF)',
+    valid: (d) => `This personal link is valid for ${d} days. If the button does not work, copy this address into your browser:`,
+    other: 'This report is also available in French:', otherLink: 'Download the French edition (PDF)',
+    discuss: 'If you would like to discuss the findings, simply reply to this email.',
+    why: 'You received this email because this address was entered to request a Heirstone report. To stop receiving Heirstone research, reply with "unsubscribe".',
+    subject: 'Your Heirstone report' },
+  fr: { dear: 'Bonjour', ready: 'Merci de votre intérêt. Votre exemplaire de notre rapport est prêt :', button: 'Télécharger le rapport (PDF)',
+    valid: (d) => `Ce lien personnel est valable ${d} jours. Si le bouton ne fonctionne pas, copiez cette adresse dans votre navigateur :`,
+    other: 'Ce rapport est également disponible en anglais :', otherLink: 'Télécharger l’édition anglaise (PDF)',
+    discuss: 'Pour échanger sur les conclusions, il vous suffit de répondre à cet e-mail.',
+    why: 'Vous recevez cet e-mail car cette adresse a été saisie pour demander un rapport Heirstone. Pour ne plus recevoir nos publications, répondez « désinscription ».',
+    subject: 'Votre rapport Heirstone' },
+};
+
+function reportEmail(r, name, link, l, otherLink) {
+  const t = MAIL_TEXT[l] || MAIL_TEXT.en;
+  const ed = edition(r, l);
+  const title = `${ed.sector || r.sector}: ${ed.title || r.title}`;
   const first = esc(name.split(/\s+/)[0]);
   const html = '<div style="background:#F6F4EF;padding:32px 0;font-family:Arial,Helvetica,sans-serif;color:#263340">'
     + '<div style="max-width:560px;margin:0 auto;background:#FCFBF8;border:1px solid #E4DED2">'
     + '<div style="background:#0E1B2A;padding:22px 32px;color:#fff;font-size:13px;letter-spacing:4px">HEIRSTONE CONSULTING RESEARCH</div>'
     + '<div style="padding:32px">'
-    + `<p style="font-size:15px;line-height:1.6;margin:0 0 16px">Dear ${first},</p>`
-    + `<p style="font-size:15px;line-height:1.6;margin:0 0 8px">Thank you for your interest. Your copy of our report is ready:</p>`
+    + `<p style="font-size:15px;line-height:1.6;margin:0 0 16px">${t.dear} ${first},</p>`
+    + `<p style="font-size:15px;line-height:1.6;margin:0 0 8px">${esc(t.ready)}</p>`
     + `<p style="font-family:Georgia,serif;font-size:22px;line-height:1.3;color:#0E1B2A;margin:16px 0 24px">${esc(title)}</p>`
-    + `<p style="margin:0 0 26px"><a href="${link}" style="display:inline-block;background:#0E1B2A;color:#fff;text-decoration:none;padding:14px 26px;font-size:14px;font-weight:bold">Download the report (PDF)</a></p>`
-    + `<p style="font-size:13px;line-height:1.6;color:#6E7F92;margin:0 0 20px">This personal link is valid for ${LINK_DAYS} days. If the button does not work, copy this address into your browser:<br><span style="word-break:break-all">${link}</span></p>`
-    + '<p style="font-size:15px;line-height:1.6;margin:0 0 6px">If you would like to discuss the findings, simply reply to this email.</p>'
+    + `<p style="margin:0 0 26px"><a href="${link}" style="display:inline-block;background:#0E1B2A;color:#fff;text-decoration:none;padding:14px 26px;font-size:14px;font-weight:bold">${esc(t.button)}</a></p>`
+    + `<p style="font-size:13px;line-height:1.6;color:#6E7F92;margin:0 0 20px">${esc(t.valid(LINK_DAYS))}<br><span style="word-break:break-all">${link}</span></p>`
+    + (otherLink ? `<p style="font-size:14px;line-height:1.6;margin:0 0 22px">${esc(t.other)} <a href="${otherLink}" style="color:#0E1B2A;font-weight:bold">${esc(t.otherLink)}</a></p>` : '')
+    + `<p style="font-size:15px;line-height:1.6;margin:0 0 6px">${esc(t.discuss)}</p>`
     + '<p style="font-size:15px;line-height:1.6;margin:0">Heirstone Consulting<br><span style="color:#6E7F92">Dubai &middot; Cairo &middot; <a href="https://www.heirstoneconsulting.com" style="color:#5D6E82">heirstoneconsulting.com</a></span></p>'
     + '</div></div>'
-    + '<p style="max-width:560px;margin:14px auto 0;font-size:11px;line-height:1.5;color:#97A6B6;text-align:center">You received this email because this address was entered to request a Heirstone report. To stop receiving Heirstone research, reply with "unsubscribe".</p>'
+    + '<p style="max-width:560px;margin:14px auto 0;font-size:11px;line-height:1.5;color:#97A6B6;text-align:center">' + esc(t.why) + '</p>'
     + '</div>';
-  const text = `Dear ${name.split(/\s+/)[0]},\n\nYour copy of our report "${title}" is ready.\nDownload (valid for ${LINK_DAYS} days): ${link}\n\nIf you would like to discuss the findings, reply to this email.\n\nHeirstone Consulting\nDubai · Cairo · heirstoneconsulting.com\n\nTo stop receiving Heirstone research, reply with "unsubscribe".`;
-  return { title, html, text };
+  const text = `${t.dear} ${name.split(/\s+/)[0]},\n\n${t.ready}\n${title}\n\n${t.button}: ${link}\n${t.valid(LINK_DAYS)}\n`
+    + (otherLink ? `\n${t.other} ${otherLink}\n` : '')
+    + `\n${t.discuss}\n\nHeirstone Consulting\nDubai · Cairo · heirstoneconsulting.com\n\n${t.why}`;
+  return { title, html, text, subject: `${t.subject}: ${title}` };
 }
 
 function handleReportRequest(req, res) {
@@ -239,10 +262,14 @@ function handleReportRequest(req, res) {
     if (rateLimited('report:' + ip)) return json(429, { ok: false, error: 'rate_limited' });
     if (!process.env.RESEND_API_KEY) return json(503, { ok: false, error: 'unavailable' });
 
-    const link = `${PUBLIC_ORIGIN}/api/reports/download?t=${makeToken({ r: slug, e: email, x: Date.now() + LINK_DAYS * 864e5 })}`;
-    const mail = reportEmail(r, name, link);
+    const l = editionLang(r, field('edition', 5));
+    const exp = Date.now() + LINK_DAYS * 864e5;
+    const linkFor = (ll) => `${PUBLIC_ORIGIN}/api/reports/download?t=${makeToken({ r: slug, e: email, l: ll, x: exp })}`;
+    const link = linkFor(l);
+    const other = r.editions && Object.keys(r.editions).find((k) => k !== l);
+    const mail = reportEmail(r, name, link, l, other ? linkFor(other) : '');
     try {
-      const sent = await resendSend({ from: REPORT_FROM, to: [email], reply_to: CONTACT_TO[0], subject: `Your Heirstone report: ${mail.title}`, html: mail.html, text: mail.text });
+      const sent = await resendSend({ from: REPORT_FROM, to: [email], reply_to: CONTACT_TO[0], subject: mail.subject, html: mail.html, text: mail.text });
       if (sent.status < 200 || sent.status >= 300) {
         console.error('Report email failed', sent.status, sent.body.slice(0, 300));
         return json(502, { ok: false, error: 'send_failed' });
@@ -252,8 +279,8 @@ function handleReportRequest(req, res) {
       return json(502, { ok: false, error: 'send_failed' });
     }
 
-    saveLead({ ts: new Date().toISOString(), event: 'request', name, email, org, report: slug, lang, page });
-    const rows = [['Name', name], ['Email', email], ['Organisation', org || '—'], ['Report', mail.title], ['Page', page || '—'], ['Language', lang || 'en']];
+    saveLead({ ts: new Date().toISOString(), event: 'request', name, email, org, report: slug, edition: l, lang, page });
+    const rows = [['Name', name], ['Email', email], ['Organisation', org || '—'], ['Report', mail.title], ['Edition', l === 'fr' ? 'French' : 'English'], ['Page', page || '—'], ['Site language', lang || 'en']];
     const exportLink = `${PUBLIC_ORIGIN}/api/reports/leads.csv?k=${exportKey()}`;
     resendSend({
       from: CONTACT_FROM, to: CONTACT_TO, reply_to: email,
@@ -281,17 +308,18 @@ function handleReportDownload(req, res, qs) {
   const tok = readToken(new URLSearchParams(qs).get('t'));
   const r = tok && REPORTS[tok.r];
   if (!r) return reportLinkPage(res, 410);
-  const file = path.join(REPORTS_DIR, path.basename(r.file));
+  const ed = edition(r, tok.l || 'en');
+  const file = path.join(REPORTS_DIR, path.basename(ed.file));
   fs.stat(file, (err, st) => {
     if (err) { console.error('Report file missing', file); return reportLinkPage(res, 404); }
-    const name = r.download_name || path.basename(r.file);
+    const name = ed.download_name || path.basename(ed.file);
     res.writeHead(200, {
       'Content-Type': 'application/pdf', 'Content-Length': st.size,
-      'Content-Disposition': `attachment; filename="${name.replace(/[^\x20-\x7e]/g, '').replace(/"/g, '')}"; filename*=UTF-8''${encodeURIComponent(name)}`,
+      'Content-Disposition': `attachment; filename="${name.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^\x20-\x7e]/g, '').replace(/"/g, '')}"; filename*=UTF-8''${encodeURIComponent(name)}`,
       'Cache-Control': 'private, no-store', 'X-Robots-Tag': 'noindex',
     });
     if (req.method === 'HEAD') return res.end();
-    if (!req.headers.range) saveLead({ ts: new Date().toISOString(), event: 'download', email: tok.e, report: tok.r });
+    if (!req.headers.range) saveLead({ ts: new Date().toISOString(), event: 'download', email: tok.e, report: tok.r, edition: editionLang(r, tok.l || 'en') });
     fs.createReadStream(file).pipe(res);
   });
 }
@@ -304,9 +332,9 @@ function handleLeadsExport(req, res, qs) {
   }
   let lines = [];
   try { lines = fs.readFileSync(LEADS_FILE, 'utf8').split('\n').filter(Boolean).map((l) => { try { return JSON.parse(l); } catch (e) { return null; } }).filter(Boolean); } catch (e) {}
-  const cols = ['ts', 'event', 'name', 'email', 'org', 'report', 'lang', 'page'];
+  const cols = ['ts', 'event', 'name', 'email', 'org', 'report', 'edition', 'lang', 'page'];
   const cell = (v) => `"${String(v == null ? '' : v).replace(/"/g, '""')}"`;
-  const csv = '﻿' + ['time,event,name,email,organisation,report,language,page'].concat(lines.map((o) => cols.map((c) => cell(o[c])).join(','))).join('\r\n');
+  const csv = '﻿' + ['time,event,name,email,organisation,report,edition,site language,page'].concat(lines.map((o) => cols.map((c) => cell(o[c])).join(','))).join('\r\n');
   send(res, 200, { 'Content-Type': 'text/csv; charset=utf-8', 'Content-Disposition': 'attachment; filename="heirstone-report-leads.csv"', 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex' }, csv);
 }
 

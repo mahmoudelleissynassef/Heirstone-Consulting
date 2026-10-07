@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Messages live in the page (hidden) so each language edition carries its own translation
   const msg = (k) => (dlg.querySelector(`.rg-msg[data-msg="${k}"]`) || {}).innerHTML || '';
   const EMAIL_RE = /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]{2,}$/;
+  const picker = dlg.querySelector('.rg-edition');
   let current = null;
 
   const setStatus = (html, isError) => {
@@ -34,6 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const open = (btn) => {
     current = btn.dataset.report;
     titleEl.textContent = reportTitle(btn);
+    // Language picker only for reports published in more than one language; default to the page language
+    const eds = (btn.dataset.editions || 'en').split(' ');
+    if (picker) {
+      picker.hidden = eds.length < 2;
+      const pref = (document.documentElement.lang || 'en').slice(0, 2);
+      const pick = eds.includes(pref) ? pref : 'en';
+      picker.querySelectorAll('input[name="edition"]').forEach((i) => { i.checked = i.value === pick; i.closest('label').hidden = !eds.includes(i.value); });
+    }
     form.hidden = false;
     done.hidden = true;
     setStatus('', false);
@@ -65,14 +74,14 @@ document.addEventListener('DOMContentLoaded', () => {
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
           name: d.name, email: (d.email || '').trim(), org: d.org || '', consent: true, _honey: d._honey || '',
-          report: current, lang: document.documentElement.lang || 'en', page: location.pathname,
+          report: current, edition: d.edition || 'en', lang: document.documentElement.lang || 'en', page: location.pathname,
         }),
       });
       const out = await res.json().catch(() => ({}));
       if (res.status === 429) throw new Error('rate');
       if (!res.ok || !out.ok) throw new Error('error');
       dlg.querySelector('.rg-email').textContent = d.email.trim();
-      form.reset();
+      form.reset();  // (the picker is set again on the next open)
       setStatus('', false);
       form.hidden = true;
       done.hidden = false;

@@ -77,3 +77,4 @@
 [dir=rtl] .rg-x { right: auto; left: 14px; }
 @media (max-width: 600px) { [dir=rtl] .rp-findings li { padding-right: 48px; } }
 [dir=rtl] .rg-report { font-style: normal; }
+@media (max-width: 600px) { [dir=rtl] .rp-card-cover { padding: 18px 16px 18px 0; } }
