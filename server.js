@@ -204,7 +204,7 @@ let NEWSLETTER = {};
 try { NEWSLETTER = JSON.parse(fs.readFileSync(path.join(ROOT, 'newsletter', 'config.json'), 'utf8')); }
 catch (e) { console.error('Newsletter config missing:', e.message); }
 const nlIds = NEWSLETTER.resend || {};
-const NL_SEGMENT = process.env.NEWSLETTER_SEGMENT_ID || nlIds.segment_id || '';
+const NL_SEGMENT = /^off$/i.test(process.env.NEWSLETTER_SEGMENT_ID || '') ? '' : (process.env.NEWSLETTER_SEGMENT_ID || nlIds.segment_id || ''); // 'off' pauses sign-ups
 const NL_TOPICS = {
   en: process.env.NEWSLETTER_TOPIC_EN || (nlIds.topics || {}).en || '',
   fr: process.env.NEWSLETTER_TOPIC_FR || (nlIds.topics || {}).fr || '',
@@ -341,14 +341,14 @@ const MAIL_TEXT = {
     other: 'This report is also available in French:', otherLink: 'Download the French edition (PDF)',
     discuss: 'If you would like to discuss the findings, simply reply to this email.',
     why: 'You received this email because this address was entered to request a Heirstone report. To stop receiving Heirstone research, reply with "unsubscribe".',
-    whyNl: (n) => `You received this email because this address was entered to request a Heirstone report. As agreed on the form, we will also send you ${n}, our research newsletter, about once a month. Every issue has a one-click unsubscribe link, or reply "unsubscribe" at any time.`,
+    whyNl: (n) => `You received this email because this address was entered to request a Heirstone report. As agreed on the form, we will also send you ${n}, our research newsletter on new reports and findings. Every issue has a one-click unsubscribe link, or reply "unsubscribe" at any time.`,
     subject: 'Your Heirstone report' },
   fr: { dear: 'Bonjour', ready: 'Merci de votre intérêt. Votre exemplaire de notre rapport est prêt :', button: 'Télécharger le rapport (PDF)',
     valid: (d) => `Ce lien personnel est valable ${d} jours. Si le bouton ne fonctionne pas, copiez cette adresse dans votre navigateur :`,
     other: 'Ce rapport est également disponible en anglais :', otherLink: 'Télécharger l’édition anglaise (PDF)',
     discuss: 'Pour échanger sur les conclusions, il vous suffit de répondre à cet e-mail.',
     why: 'Vous recevez cet e-mail car cette adresse a été saisie pour demander un rapport Heirstone. Pour ne plus recevoir nos publications, répondez « désinscription ».',
-    whyNl: (n) => `Vous recevez cet e-mail car cette adresse a été saisie pour demander un rapport Heirstone. Comme convenu dans le formulaire, nous vous enverrons aussi ${n}, notre lettre de recherche, environ une fois par mois. Chaque numéro comporte un lien de désinscription en un clic ; vous pouvez aussi répondre « désinscription » à tout moment.`,
+    whyNl: (n) => `Vous recevez cet e-mail car cette adresse a été saisie pour demander un rapport Heirstone. Comme convenu dans le formulaire, nous vous enverrons aussi ${n}, notre lettre de recherche sur nos nouveaux rapports et résultats. Chaque numéro comporte un lien de désinscription en un clic ; vous pouvez aussi répondre « désinscription » à tout moment.`,
     subject: 'Votre rapport Heirstone' },
 };
 

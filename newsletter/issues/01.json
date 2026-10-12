@@ -1,16 +1,15 @@
 {
   "number": 1,
-  "date": "2026-11-03",
   "campaign": "brief-01-hotels",
   "editions": {
     "en": {
       "subject": "Africa's hotel pipeline is a record. Openings have halved.",
       "preheader": "Why signed rooms don't open, and the US$388bn of local savings that could fund them.",
       "intro": [
-        "Welcome to the first issue of **The Heirstone Brief**. Each month we take one finding from our research that changes how a project should be planned, and point you to the evidence behind it. Every report is free and fully referenced, and the Africa Series is published in English and French.",
-        "This month: why Africa's record hotel pipeline opens fewer rooms each year than it did in 2017, and where the local capital that could change that already sits."
+        "Welcome to the first issue of **The Heirstone Brief**. In each issue we take one finding from our research that changes how a project should be planned, and point you to the evidence behind it. Every report is free and fully referenced, and the Africa Series is published in English and French.",
+        "In this first issue: why Africa's record hotel pipeline opens fewer rooms each year than it did in 2017, and where the local capital that could change that already sits."
       ],
-      "signoff": { "name": "Mahmoud Elleissy Nassef", "role": "Founder, Heirstone Consulting" },
+      "signoff": { "name": "Mahmoud Elleissy Nassef", "role": "Founder and Managing Director, Heirstone Consulting" },
       "lead": {
         "report": "africa-hotel-development",
         "dek": "Africa's hotel chains have never signed more rooms, yet they now open fewer than half as many each year as they did in 2017. We matched W Hospitality Group's pipeline surveys against what actually opened in 43 African countries: the cost of capital explains the gap better than demand. The report sets out the Heirstone Opening Test for telling a hotel that will open from one that will not.",
@@ -56,10 +55,10 @@
       "subject": "Hôtels en Afrique : record de projets, ouvertures divisées par deux",
       "preheader": "Pourquoi les chambres signées n'ouvrent pas, et les 388 Md US$ d'épargne locale qui pourraient les financer.",
       "intro": [
-        "Bienvenue dans le premier numéro de **La Lettre Heirstone**. Chaque mois, nous retenons un résultat de nos recherches qui change la manière de préparer un projet, et nous vous renvoyons aux données qui le fondent. Tous nos rapports sont gratuits et entièrement sourcés, et la Série Afrique paraît en français et en anglais.",
-        "Ce mois-ci : pourquoi le portefeuille record de projets hôteliers en Afrique ouvre chaque année moins de chambres qu'en 2017, et où se trouve déjà le capital local qui pourrait changer la donne."
+        "Bienvenue dans le premier numéro de **La Lettre Heirstone**. Dans chaque numéro, nous retenons un résultat de nos recherches qui change la manière de préparer un projet, et nous vous renvoyons aux données qui le fondent. Tous nos rapports sont gratuits et entièrement sourcés, et la Série Afrique paraît en français et en anglais.",
+        "Dans ce premier numéro : pourquoi le portefeuille record de projets hôteliers en Afrique ouvre chaque année moins de chambres qu'en 2017, et où se trouve déjà le capital local qui pourrait changer la donne."
       ],
-      "signoff": { "name": "Mahmoud Elleissy Nassef", "role": "Fondateur, Heirstone Consulting" },
+      "signoff": { "name": "Mahmoud Elleissy Nassef", "role": "Fondateur et directeur général, Heirstone Consulting" },
       "lead": {
         "report": "africa-hotel-development",
         "dek": "Le portefeuille de projets des chaînes hôtelières en Afrique n'a jamais été aussi garni, alors que le nombre de chambres ouvertes chaque année a reculé de plus de moitié entre 2017 et 2023. Nous avons confronté les enquêtes de W Hospitality Group à ce qui a réellement ouvert dans 43 pays africains : le coût du capital explique l'écart mieux que la demande. Le rapport propose le Test Heirstone d'ouverture pour distinguer l'hôtel qui ouvrira de celui qui n'ouvrira pas.",

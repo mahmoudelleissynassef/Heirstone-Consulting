@@ -1,11 +1,17 @@
 {
-  "name": { "en": "The Heirstone Brief", "fr": "La Lettre Heirstone" },
+  "name": {
+    "en": "The Heirstone Brief",
+    "fr": "La Lettre Heirstone"
+  },
   "from": "Heirstone Consulting Research <research@heirstoneconsulting.com>",
   "reply_to": "info@heirstoneconsulting.com",
   "site": "https://www.heirstoneconsulting.com",
-  "postal_address": "",
+  "postal_address": "Heirstone Consulting L.L.C-FZ, Meydan Grandstand, 6th Floor, Meydan Road, Nad Al Sheba, Dubai, United Arab Emirates",
   "resend": {
-    "segment_id": "",
-    "topics": { "en": "", "fr": "" }
+    "segment_id": "8955b93b-0278-4bd8-b562-ba82dd6959e3",
+    "topics": {
+      "en": "1b6885ff-6496-4c0c-86d1-57780f5f534f",
+      "fr": "5f4f3d13-cde0-4bcf-9a15-46ff61c59333"
+    }
   }
 }

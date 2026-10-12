@@ -1,8 +1,9 @@
 """Heirstone newsletter tool: render issues, send tests, draft broadcasts in Resend, manage the list.
 
-    python newsletter/nl.py render  2026-11                 HTML + text previews in newsletter/out/
-    python newsletter/nl.py test    2026-11 --to me@x.com   send both editions to one inbox (subject marked TEST)
-    python newsletter/nl.py draft   2026-11                 create the EN and FR broadcasts in Resend (not sent)
+    python newsletter/nl.py render  01                      HTML + text previews in newsletter/out/
+    python newsletter/nl.py test    01 --to me@x.com        send both editions to one inbox (subject marked TEST)
+    python newsletter/nl.py draft   01                      create the EN and FR broadcasts in Resend (not sent)
+    (issues are newsletter/issues/<number>.json; the masthead shows today's date, or --date YYYY-MM-DD)
     python newsletter/nl.py contacts template <file.xlsx>   create the contacts workbook (headers + guide)
     python newsletter/nl.py contacts sync <file.xlsx|csv> [--dry-run]   add/update contacts from the workbook
     python newsletter/nl.py contacts export <file.xlsx>     download the live list (incl. website sign-ups)
@@ -214,7 +215,8 @@ def render(issue, lang, cfg):
     name = cfg['name'][lang]
     camp = issue.get('campaign') or f"brief-{issue['date'][:7]}"
     d = date.fromisoformat(issue['date'])
-    when = f"{MONTHS[lang][d.month - 1]} {d.year}"
+    day = '1er' if lang == 'fr' and d.day == 1 else str(d.day)
+    when = f"{day} {MONTHS[lang][d.month - 1]} {d.year}"
     number = f"{L['issue']} {int(issue['number']):02d}"
     link = f'color:{INK};text-decoration:underline;'
     T = []  # plain-text version, built alongside
@@ -395,7 +397,8 @@ body{{margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%
     return doc, '\n'.join(T).strip() + '\n'
 
 
-def load_issue(ref):
+def load_issue(ref, when=None):
+    """Issue file by number (01), name or path. Its date is the send day: --date, else today."""
     path = Path(ref)
     if not path.exists():
         path = HERE / 'issues' / (ref if ref.endswith('.json') else ref + '.json')
@@ -403,6 +406,7 @@ def load_issue(ref):
         sys.exit(f'Issue file not found: {ref}')
     issue = json.loads(path.read_text(encoding='utf-8'))
     issue['_id'] = path.stem
+    issue['date'] = (date.fromisoformat(when) if when else date.today()).isoformat()
     return issue
 
 
@@ -480,7 +484,7 @@ def need_ids(cfg):
 # ---------------------------------------------------------------- commands: issues
 def cmd_render(a):
     cfg = load_config()
-    issue = load_issue(a.issue)
+    issue = load_issue(a.issue, a.date)
     out, made = build(issue, cfg)
     for lang in out:
         print(f"{lang}: {OUT / (issue['_id'] + '.' + lang + '.html')}  ({len(out[lang][0]) // 1024} KB)")
@@ -490,7 +494,7 @@ def cmd_render(a):
 
 def cmd_test(a):
     cfg = load_config()
-    issue = load_issue(a.issue)
+    issue = load_issue(a.issue, a.date)
     out, _ = build(issue, cfg)
     for lang in (a.lang.split(',') if a.lang else out):
         doc, text = out[lang]
@@ -505,7 +509,7 @@ def cmd_test(a):
 def cmd_draft(a):
     cfg = load_config()
     ids = need_ids(cfg)
-    issue = load_issue(a.issue)
+    issue = load_issue(a.issue, a.date)
     record = OUT / f"{issue['_id']}.broadcasts.json"
     if record.exists() and not a.force:
         sys.exit(f'Drafts already exist for this issue ({record.name}). Edit them in Resend, or pass --force to create new ones.')
@@ -531,7 +535,7 @@ def cmd_draft(a):
         status, res = resend('POST', '/broadcasts', {
             'segment_id': ids['segment_id'], 'topic_id': topic, 'from': cfg['from'], 'reply_to': cfg['reply_to'],
             'subject': e['subject'], 'html': doc, 'text': text,
-            'name': f"{cfg['name'][lang]} {int(issue['number']):02d} ({lang.upper()}, {issue['date'][:7]})"})
+            'name': f"{cfg['name'][lang]} {int(issue['number']):02d} ({lang.upper()}, {issue['date']})"})
         if status >= 300:
             sys.exit(f'{lang}: Resend refused the broadcast ({status}): {res}')
         created[lang] = res.get('id')
@@ -794,10 +798,11 @@ def main():
         stream.reconfigure(encoding='utf-8', errors='replace')
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest='cmd', required=True)
-    s = sub.add_parser('render'); s.add_argument('issue'); s.set_defaults(fn=cmd_render)
-    s = sub.add_parser('test'); s.add_argument('issue'); s.add_argument('--to', required=True)
+    when = dict(help='send date shown in the masthead (YYYY-MM-DD); default today')
+    s = sub.add_parser('render'); s.add_argument('issue'); s.add_argument('--date', **when); s.set_defaults(fn=cmd_render)
+    s = sub.add_parser('test'); s.add_argument('issue'); s.add_argument('--date', **when); s.add_argument('--to', required=True)
     s.add_argument('--name', default='', help='first name to show in the greeting'); s.add_argument('--lang', help='en, fr or en,fr'); s.set_defaults(fn=cmd_test)
-    s = sub.add_parser('draft'); s.add_argument('issue'); s.add_argument('--force', action='store_true')
+    s = sub.add_parser('draft'); s.add_argument('issue'); s.add_argument('--date', **when); s.add_argument('--force', action='store_true')
     s.add_argument('--skip-image-check', action='store_true'); s.set_defaults(fn=cmd_draft)
     s = sub.add_parser('setup'); s.add_argument('--segment', default='Heirstone Newsletter'); s.set_defaults(fn=cmd_setup)
     c = sub.add_parser('contacts').add_subparsers(dest='sub', required=True)
