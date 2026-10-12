@@ -1851,4 +1851,5 @@ textarea.form-input {
 
 /* CJK typesetting: never start a line with ー, 。, 、 etc.; balance short headlines */
 html:is([lang=ja],[lang=zh-Hans]) { line-break: strict; }
-html:is([lang=ja],[lang=zh-Hans]) :is(h1, h2, h3) { text-wrap: balance; }
+html:is([lang=ja],[lang=zh-Hans],[lang=ko]) :is(h1, h2, h3) { text-wrap: balance; }
+html[lang=ko] { word-break: keep-all; overflow-wrap: break-word; }  /* Korean breaks between words, not inside them */

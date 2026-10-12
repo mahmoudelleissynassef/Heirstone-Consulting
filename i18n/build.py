@@ -27,7 +27,7 @@ import extract as ex
 ROOT = ex.ROOT
 SITE = "https://www.heirstoneconsulting.com"
 
-ORDER = ["en", "ar", "zh", "ja", "es", "fr", "it", "pt", "el", "de", "fi", "da", "ro", "sw", "ru", "ky", "kk", "tr"]
+ORDER = ["en", "ar", "zh", "ja", "ko", "id", "ms", "es", "fr", "it", "pt", "el", "de", "fi", "da", "ro", "sw", "ru", "ky", "kk", "tr"]
 CJK_FONTS = "family=Noto+Serif+{v}:wght@500;600;700&family=Noto+Sans+{v}:wght@300;400;500;600;700"
 CYR_FONTS = "family=Noto+Serif:wght@500;600;700&family=Noto+Sans:wght@300;400;500;600;700"
 L = {
@@ -39,6 +39,10 @@ L = {
                serif="'Playfair Display', 'Noto Serif SC', serif", sans="'Libre Franklin', 'Noto Sans SC', sans-serif"),
     "ja": dict(name="日本語", html="ja", og="ja_JP", fonts=CJK_FONTS.format(v="JP"),
                serif="'Playfair Display', 'Noto Serif JP', serif", sans="'Libre Franklin', 'Noto Sans JP', sans-serif"),
+    "ko": dict(name="한국어", html="ko", og="ko_KR", fonts=CJK_FONTS.format(v="KR"),
+               serif="'Playfair Display', 'Noto Serif KR', serif", sans="'Libre Franklin', 'Noto Sans KR', sans-serif"),
+    "id": dict(name="Bahasa Indonesia", html="id", og="id_ID"),
+    "ms": dict(name="Bahasa Melayu", html="ms", og="ms_MY"),
     "es": dict(name="Español", html="es", og="es_ES"),
     "fr": dict(name="Français", html="fr", og="fr_FR"),
     "it": dict(name="Italiano", html="it", og="it_IT"),
