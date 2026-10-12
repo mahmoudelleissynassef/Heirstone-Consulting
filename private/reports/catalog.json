@@ -62,6 +62,27 @@
    }
   }
  },
+ "africa-flexible-workspace": {
+  "series": "africa",
+  "sector": "Flexible Workspace",
+  "title": "Renting the brand",
+  "editions": {
+   "en": {
+    "file": "africa-flexible-workspace.pdf",
+    "pages": 27,
+    "download_name": "Heirstone Consulting Research - Flexible Workspace - Renting the brand.pdf",
+    "sector": "Flexible Workspace",
+    "title": "Renting the brand"
+   },
+   "fr": {
+    "file": "africa-flexible-workspace.fr.pdf",
+    "pages": 27,
+    "download_name": "Heirstone Consulting Research - Espaces de travail flexibles - La marque à louer.pdf",
+    "sector": "Espaces de travail flexibles",
+    "title": "La marque à louer"
+   }
+  }
+ },
  "africa-retail-real-estate": {
   "series": "africa",
   "sector": "Retail Real Estate in Africa",
