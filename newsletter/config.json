@@ -1,0 +1,11 @@
+{
+  "name": { "en": "The Heirstone Brief", "fr": "La Lettre Heirstone" },
+  "from": "Heirstone Consulting Research <research@heirstoneconsulting.com>",
+  "reply_to": "info@heirstoneconsulting.com",
+  "site": "https://www.heirstoneconsulting.com",
+  "postal_address": "",
+  "resend": {
+    "segment_id": "",
+    "topics": { "en": "", "fr": "" }
+  }
+}

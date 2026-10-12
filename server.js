@@ -75,16 +75,15 @@ function esc(s) {
   return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 }
 
-function resendSend(payload) {
+// Any Resend API call. RESEND_API_URL overrides the host (local tests point it at a mock).
+const RESEND_API = new URL(process.env.RESEND_API_URL || 'https://api.resend.com');
+function resendApi(method, apiPath, payload) {
   return new Promise((resolve, reject) => {
-    const body = JSON.stringify(payload);
-    const req = https.request({
-      hostname: 'api.resend.com', path: '/emails', method: 'POST', timeout: 10000,
-      headers: {
-        'Authorization': 'Bearer ' + process.env.RESEND_API_KEY,
-        'Content-Type': 'application/json',
-        'Content-Length': Buffer.byteLength(body),
-      },
+    const body = payload === undefined ? '' : JSON.stringify(payload);
+    const headers = { 'Authorization': 'Bearer ' + process.env.RESEND_API_KEY, 'User-Agent': 'heirstone-website' };
+    if (body) { headers['Content-Type'] = 'application/json'; headers['Content-Length'] = Buffer.byteLength(body); }
+    const req = (RESEND_API.protocol === 'http:' ? http : https).request({
+      hostname: RESEND_API.hostname, port: RESEND_API.port || undefined, path: apiPath, method, timeout: 10000, headers,
     }, r => {
       let out = '';
       r.on('data', d => { out += d; });
@@ -92,9 +91,10 @@ function resendSend(payload) {
     });
     req.on('timeout', () => req.destroy(new Error('Resend timed out')));
     req.on('error', reject);
-    req.end(body);
+    req.end(body || undefined);
   });
 }
+const resendSend = (payload) => resendApi('POST', '/emails', payload);
 
 function handleContact(req, res) {
   const json = (status, obj) => send(res, status, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' }, JSON.stringify(obj));
@@ -151,9 +151,10 @@ function handleContact(req, res) {
 
 // ------------------------------------------------------------------ research reports (email-gated)
 // POST /api/reports/request  emails the visitor a personal, signed, expiring download link
-//                            (so the report only reaches a real inbox), records the lead and
-//                            notifies CONTACT_TO.
-// GET  /api/reports/download?t=…  streams the PDF from private/reports (never served statically).
+//                            (so the report only reaches a real inbox), records the lead, adds the
+//                            visitor to the newsletter list and notifies CONTACT_TO.
+// GET  /api/reports/download?t=…  streams the PDF from private/reports (never served statically) and
+//                            tells CONTACT_TO the first time each person downloads each edition.
 // GET  /api/reports/leads.csv?k=…  owner export; the link with its key is in every lead notification.
 // Leads are appended to $LEADS_DIR/report-leads.jsonl (mount a Railway volume there to keep them
 // across deploys) and also written to the server log as REPORT_LEAD lines.
@@ -193,6 +194,124 @@ function saveLead(rec) {
   catch (e) { console.error('Lead not written to disk:', e.message); }
 }
 
+// ------------------------------------------------------------------ newsletter list (Resend contacts)
+// The report form's consent box reads "I agree to receive this report and occasional Heirstone research
+// by email", so every requester joins the newsletter list: a Resend contact in the newsletter segment,
+// opted in to the English or French topic to match the edition they chose. Existing contacts keep their
+// preferences, and anyone who has unsubscribed is never re-added. IDs come from newsletter/config.json
+// (env NEWSLETTER_SEGMENT_ID / NEWSLETTER_TOPIC_EN / NEWSLETTER_TOPIC_FR override); no segment = step off.
+let NEWSLETTER = {};
+try { NEWSLETTER = JSON.parse(fs.readFileSync(path.join(ROOT, 'newsletter', 'config.json'), 'utf8')); }
+catch (e) { console.error('Newsletter config missing:', e.message); }
+const nlIds = NEWSLETTER.resend || {};
+const NL_SEGMENT = process.env.NEWSLETTER_SEGMENT_ID || nlIds.segment_id || '';
+const NL_TOPICS = {
+  en: process.env.NEWSLETTER_TOPIC_EN || (nlIds.topics || {}).en || '',
+  fr: process.env.NEWSLETTER_TOPIC_FR || (nlIds.topics || {}).fr || '',
+};
+const nlName = (l) => ((NEWSLETTER.name || {})[l] || (NEWSLETTER.name || {}).en || 'the Heirstone newsletter');
+
+async function subscribeToNewsletter({ email, name, org, l, siteLang, slug, ts }) {
+  if (!NL_SEGMENT || !process.env.RESEND_API_KEY) return { status: 'off' };
+  const who = encodeURIComponent(email);
+  const clean = (o) => Object.fromEntries(Object.entries(o).filter(([, v]) => v !== '' && v != null));
+  const latest = { last_report: slug, last_report_at: ts };
+  try {
+    const found = await resendApi('GET', `/contacts/${who}`);
+    if (found.status === 200) {
+      const c = JSON.parse(found.body || '{}');
+      if (c.unsubscribed) return { status: 'unsubscribed' };
+      const upd = await resendApi('PATCH', `/contacts/${who}`, { properties: latest });
+      if (upd.status >= 300) console.error('Newsletter: contact update failed', upd.status, upd.body.slice(0, 200));
+      const seg = await resendApi('POST', `/contacts/${who}/segments/${NL_SEGMENT}`);
+      if (seg.status >= 300) console.error('Newsletter: add to segment returned', seg.status, seg.body.slice(0, 200));
+      return { status: 'existing' };
+    }
+    if (found.status !== 404) return { status: 'error', detail: `lookup returned ${found.status}` };
+
+    const [first, ...rest] = name.split(/\s+/);
+    const contact = {
+      email, first_name: first || '', last_name: rest.join(' '), unsubscribed: false,
+      segments: [{ id: NL_SEGMENT }],
+      topics: ['en', 'fr'].filter((k) => NL_TOPICS[k]).map((k) => ({ id: NL_TOPICS[k], subscription: k === l ? 'opt_in' : 'opt_out' })),
+      properties: clean({ organisation: org, language: l, site_language: siteLang, source: 'report-request', first_report: slug, signed_up_at: ts, ...latest }),
+    };
+    let made = await resendApi('POST', '/contacts', contact);
+    if (made.status >= 400 && made.status < 500 && /propert/i.test(made.body)) {
+      // A property key isn't set up in Resend: keep the subscriber, drop the extra fields
+      console.error('Newsletter: properties rejected, adding the contact without them:', made.body.slice(0, 200));
+      delete contact.properties;
+      made = await resendApi('POST', '/contacts', contact);
+    }
+    if (made.status >= 200 && made.status < 300) return { status: 'added' };
+    return { status: 'error', detail: `create returned ${made.status} ${made.body.slice(0, 160)}` };
+  } catch (e) {
+    return { status: 'error', detail: e.message };
+  }
+}
+
+// ------------------------------------------------------------------ owner notifications
+// Times are shown in NOTIFY_TZ (default Cairo). NOTIFY_DOWNLOADS=off turns the download alerts off.
+const NOTIFY_TZ = process.env.NOTIFY_TZ || 'Africa/Cairo';
+const NOTIFY_DOWNLOADS = !/^(0|off|false|no)$/i.test(process.env.NOTIFY_DOWNLOADS || '');
+function when(ms) {
+  try {
+    const p = Object.fromEntries(new Intl.DateTimeFormat('en-GB', {
+      timeZone: NOTIFY_TZ, weekday: 'long', day: 'numeric', month: 'long', year: 'numeric',
+      hour: '2-digit', minute: '2-digit', hourCycle: 'h23', timeZoneName: 'shortOffset',
+    }).formatToParts(new Date(ms)).map((x) => [x.type, x.value]));
+    const city = NOTIFY_TZ.split('/').pop().replace(/_/g, ' ');
+    return `${p.weekday} ${p.day} ${p.month} ${p.year}, ${p.hour}:${p.minute} ${city} time (${p.timeZoneName})`;
+  } catch (e) {
+    return new Date(ms).toISOString().replace('T', ' ').slice(0, 16) + ' UTC';
+  }
+}
+function langName(code) {
+  try { return new Intl.DisplayNames(['en'], { type: 'language' }).of(code) || code; } catch (e) { return code; }
+}
+const NL_STATUS = {
+  added: (l) => `Added to the newsletter list (${langName(l)} edition)`,
+  existing: () => 'Already on the newsletter list',
+  unsubscribed: () => 'Unsubscribed earlier, so not re-added',
+  off: () => 'Not added: the newsletter list is not set up yet',
+  error: (l, d) => `Not added (${d}). Add them by hand in Resend`,
+};
+
+function notifyOwner({ subject, heading, rows, note, replyTo }) {
+  const html = '<div style="font-family:Arial,sans-serif;font-size:14px;color:#1b2430">'
+    + `<h2 style="font-size:18px;margin:0 0 16px">${esc(heading)}</h2>`
+    + '<table cellpadding="6" style="border-collapse:collapse">'
+    + rows.map(([k, v]) => `<tr><td style="color:#6b7480;vertical-align:top;white-space:nowrap">${k}</td><td>${esc(v)}</td></tr>`).join('')
+    + '</table>' + (note ? `<p style="margin-top:18px;color:#6b7480">${note.html}</p>` : '') + '</div>';
+  const text = rows.map(([k, v]) => `${k}: ${v}`).join('\n') + (note ? `\n\n${note.text}` : '');
+  return resendSend({ from: CONTACT_FROM, to: CONTACT_TO, reply_to: replyTo, subject, html, text })
+    .then((r) => { if (r.status >= 300) console.error('Owner notification failed', r.status, r.body.slice(0, 200)); })
+    .catch((e) => console.error('Owner notification failed', e.message));
+}
+
+// Corporate mail filters (Mimecast, Proofpoint, Defender…) often open links seconds after delivery.
+// Opens that quick are logged but don't trigger an alert, so the alert reflects a person clicking.
+const SCAN_WINDOW_MS = 20 * 1000;
+const alerted = new Map();
+function notifyDownload(tok, r, el, ua) {
+  const now = Date.now();
+  const requested = tok.x - LINK_DAYS * 864e5;
+  const scan = now - requested < SCAN_WINDOW_MS || BOTS.test(ua || '');
+  saveLead({ ts: new Date(now).toISOString(), event: 'download', email: tok.e, report: tok.r, edition: el, ...(scan ? { likely_scan: true } : {}) });
+  const key = `${tok.e}|${tok.r}|${el}`;
+  if (scan || !NOTIFY_DOWNLOADS || alerted.has(key)) return;
+  if (alerted.size > 5000) alerted.clear();
+  alerted.set(key, now);
+  const title = `${r.sector}: ${r.title}`;
+  notifyOwner({
+    subject: `Report downloaded: ${r.sector} (${langName(el)}) — ${tok.n || tok.e}`,
+    heading: 'Report downloaded',
+    rows: [['Name', tok.n || '—'], ['Email', tok.e], ['Report', title], ['Language', `${langName(el)} edition`],
+      ['Downloaded', when(now)], ['Link sent', when(requested)]],
+    replyTo: tok.e,
+  });
+}
+
 function readJsonBody(req, res, json, done) {
   let raw = '', tooBig = false;
   req.on('data', chunk => {
@@ -214,17 +333,20 @@ const MAIL_TEXT = {
     other: 'This report is also available in French:', otherLink: 'Download the French edition (PDF)',
     discuss: 'If you would like to discuss the findings, simply reply to this email.',
     why: 'You received this email because this address was entered to request a Heirstone report. To stop receiving Heirstone research, reply with "unsubscribe".',
+    whyNl: (n) => `You received this email because this address was entered to request a Heirstone report. As agreed on the form, we will also send you ${n}, our research newsletter, about once a month. Every issue has a one-click unsubscribe link, or reply "unsubscribe" at any time.`,
     subject: 'Your Heirstone report' },
   fr: { dear: 'Bonjour', ready: 'Merci de votre intérêt. Votre exemplaire de notre rapport est prêt :', button: 'Télécharger le rapport (PDF)',
     valid: (d) => `Ce lien personnel est valable ${d} jours. Si le bouton ne fonctionne pas, copiez cette adresse dans votre navigateur :`,
     other: 'Ce rapport est également disponible en anglais :', otherLink: 'Télécharger l’édition anglaise (PDF)',
     discuss: 'Pour échanger sur les conclusions, il vous suffit de répondre à cet e-mail.',
     why: 'Vous recevez cet e-mail car cette adresse a été saisie pour demander un rapport Heirstone. Pour ne plus recevoir nos publications, répondez « désinscription ».',
+    whyNl: (n) => `Vous recevez cet e-mail car cette adresse a été saisie pour demander un rapport Heirstone. Comme convenu dans le formulaire, nous vous enverrons aussi ${n}, notre lettre de recherche, environ une fois par mois. Chaque numéro comporte un lien de désinscription en un clic ; vous pouvez aussi répondre « désinscription » à tout moment.`,
     subject: 'Votre rapport Heirstone' },
 };
 
 function reportEmail(r, name, link, l, otherLink) {
   const t = MAIL_TEXT[l] || MAIL_TEXT.en;
+  const why = NL_SEGMENT ? t.whyNl(nlName(l)) : t.why;
   const ed = edition(r, l);
   const sep = l === 'fr' ? ' : ' : ': ';  // French puts a space before the colon
   const title = `${ed.sector || r.sector}${sep}${ed.title || r.title}`;
@@ -242,11 +364,11 @@ function reportEmail(r, name, link, l, otherLink) {
     + `<p style="font-size:15px;line-height:1.6;margin:0 0 6px">${esc(t.discuss)}</p>`
     + '<p style="font-size:15px;line-height:1.6;margin:0">Heirstone Consulting<br><span style="color:#6E7F92">Dubai &middot; Cairo &middot; <a href="https://www.heirstoneconsulting.com" style="color:#5D6E82">heirstoneconsulting.com</a></span></p>'
     + '</div></div>'
-    + '<p style="max-width:560px;margin:14px auto 0;font-size:11px;line-height:1.5;color:#97A6B6;text-align:center">' + esc(t.why) + '</p>'
+    + '<p style="max-width:560px;margin:14px auto 0;font-size:11px;line-height:1.5;color:#97A6B6;text-align:center">' + esc(why) + '</p>'
     + '</div>';
   const text = `${t.dear} ${name.split(/\s+/)[0]},\n\n${t.ready}\n${title}\n\n${t.button}: ${link}\n${t.valid(LINK_DAYS)}\n`
     + (otherLink ? `\n${t.other} ${otherLink}\n` : '')
-    + `\n${t.discuss}\n\nHeirstone Consulting\nDubai · Cairo · heirstoneconsulting.com\n\n${t.why}`;
+    + `\n${t.discuss}\n\nHeirstone Consulting\nDubai · Cairo · heirstoneconsulting.com\n\n${why}`;
   return { title, html, text, subject: `${t.subject}${sep}${title}` };
 }
 
@@ -266,7 +388,7 @@ function handleReportRequest(req, res) {
 
     const l = editionLang(r, field('edition', 5));
     const exp = Date.now() + LINK_DAYS * 864e5;
-    const linkFor = (ll) => `${PUBLIC_ORIGIN}/api/reports/download?t=${makeToken({ r: slug, e: email, l: ll, x: exp })}`;
+    const linkFor = (ll) => `${PUBLIC_ORIGIN}/api/reports/download?t=${makeToken({ r: slug, e: email, n: name.slice(0, 80), l: ll, x: exp })}`;
     const link = linkFor(l);
     const other = r.editions && Object.keys(r.editions).find((k) => k !== l);
     const mail = reportEmail(r, name, link, l, other ? linkFor(other) : '');
@@ -281,18 +403,27 @@ function handleReportRequest(req, res) {
       return json(502, { ok: false, error: 'send_failed' });
     }
 
-    saveLead({ ts: new Date().toISOString(), event: 'request', name, email, org, report: slug, edition: l, lang, page });
-    const rows = [['Name', name], ['Email', email], ['Organisation', org || '—'], ['Report', mail.title], ['Edition', l === 'fr' ? 'French' : 'English'], ['Page', page || '—'], ['Site language', lang || 'en']];
-    const exportLink = `${PUBLIC_ORIGIN}/api/reports/leads.csv?k=${exportKey()}`;
-    resendSend({
-      from: CONTACT_FROM, to: CONTACT_TO, reply_to: email,
-      subject: `Report request: ${r.sector} — ${name}${org ? ' (' + org + ')' : ''}`,
-      html: '<div style="font-family:Arial,sans-serif;font-size:14px;color:#1b2430"><h2 style="font-size:18px;margin:0 0 16px">New report request</h2>'
-        + '<table cellpadding="6" style="border-collapse:collapse">' + rows.map(([k, v]) => `<tr><td style="color:#6b7480">${k}</td><td>${esc(v)}</td></tr>`).join('') + '</table>'
-        + `<p style="margin-top:18px;color:#6b7480">The report was emailed to the visitor. <a href="${exportLink}">Download all report leads (CSV)</a> &mdash; keep this link private.</p></div>`,
-      text: rows.map(([k, v]) => `${k}: ${v}`).join('\n') + `\n\nAll report leads (CSV, keep private): ${exportLink}`,
-    }).catch((e) => console.error('Lead notification failed', e.message));
+    const now = Date.now(), ts = new Date(now).toISOString();
+    saveLead({ ts, event: 'request', name, email, org, report: slug, edition: l, lang, page });
     json(200, { ok: true });
+
+    // After replying: add them to the newsletter list, then tell the owner (with the list outcome)
+    const nl = await subscribeToNewsletter({ email, name, org, l, siteLang: lang || 'en', slug, ts });
+    console.log(`NEWSLETTER ${nl.status} ${email}${nl.detail ? ' ' + nl.detail : ''}`);
+    const exportLink = `${PUBLIC_ORIGIN}/api/reports/leads.csv?k=${exportKey()}`;
+    const site = (lang || 'en').slice(0, 2);
+    const sent = 'The report link was emailed to the visitor' + (NOTIFY_DOWNLOADS ? '; you will get a second email when they download it.' : '.');
+    notifyOwner({
+      subject: `Report request: ${r.sector} (${langName(l)}) — ${name}${org ? ' (' + org + ')' : ''}`,
+      heading: 'New report request',
+      rows: [['Name', name], ['Email', email], ['Organisation', org || '—'], ['Report', `${r.sector}: ${r.title}`], ['Language', `${langName(l)} edition`],
+        ['Requested', when(now)], ['Newsletter', NL_STATUS[nl.status](l, nl.detail)], ['Page', page || '—'], ['Site language', `${langName(site)} (${site})`]],
+      note: {
+        html: `${sent} <a href="${exportLink}">Download all report leads (CSV)</a> &mdash; keep this link private.`,
+        text: `${sent}\nAll report leads (CSV, keep private): ${exportLink}`,
+      },
+      replyTo: email,
+    });
   });
 }
 
@@ -321,7 +452,7 @@ function handleReportDownload(req, res, qs) {
       'Cache-Control': 'private, no-store', 'X-Robots-Tag': 'noindex',
     });
     if (req.method === 'HEAD') return res.end();
-    if (!req.headers.range) saveLead({ ts: new Date().toISOString(), event: 'download', email: tok.e, report: tok.r, edition: editionLang(r, tok.l || 'en') });
+    if (!req.headers.range) notifyDownload(tok, r, editionLang(r, tok.l || 'en'), req.headers['user-agent']);
     fs.createReadStream(file).pipe(res);
   });
 }
@@ -334,9 +465,9 @@ function handleLeadsExport(req, res, qs) {
   }
   let lines = [];
   try { lines = fs.readFileSync(LEADS_FILE, 'utf8').split('\n').filter(Boolean).map((l) => { try { return JSON.parse(l); } catch (e) { return null; } }).filter(Boolean); } catch (e) {}
-  const cols = ['ts', 'event', 'name', 'email', 'org', 'report', 'edition', 'lang', 'page'];
+  const cols = ['ts', 'event', 'name', 'email', 'org', 'report', 'edition', 'lang', 'page', 'likely_scan'];
   const cell = (v) => `"${String(v == null ? '' : v).replace(/"/g, '""')}"`;
-  const csv = '﻿' + ['time,event,name,email,organisation,report,edition,site language,page'].concat(lines.map((o) => cols.map((c) => cell(o[c])).join(','))).join('\r\n');
+  const csv = '﻿' + ['time,event,name,email,organisation,report,edition,site language,page,mail-filter scan'].concat(lines.map((o) => cols.map((c) => cell(o[c])).join(','))).join('\r\n');
   send(res, 200, { 'Content-Type': 'text/csv; charset=utf-8', 'Content-Disposition': 'attachment; filename="heirstone-report-leads.csv"', 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex' }, csv);
 }
 
@@ -358,8 +489,8 @@ const server = http.createServer((req, res) => {
   const qs = req.url.includes('?') ? req.url.slice(req.url.indexOf('?')) : '';
   try { urlPath = decodeURIComponent(urlPath); } catch (e) { return send(res, 400, {}, 'Bad request'); }
 
-  // Gated PDFs and collected leads are never served as static files
-  if (/^\/+(private|data)(\/|$)/i.test(urlPath)) return send(res, 404, { 'Content-Type': 'text/plain; charset=utf-8' }, 'Not found');
+  // Gated PDFs, collected leads and newsletter tooling are never served as static files
+  if (/^\/+(private|data|newsletter)(\/|$)/i.test(urlPath)) return send(res, 404, { 'Content-Type': 'text/plain; charset=utf-8' }, 'Not found');
 
   // Canonicalise to clean URLs: redirect *.html and /index to extensionless paths
   if (/\.html$/i.test(urlPath)) {
@@ -400,7 +531,7 @@ const server = http.createServer((req, res) => {
     return send(res, 403, {}, 'Forbidden');
   }
   const rel = path.relative(ROOT, filePath).split(path.sep)[0].toLowerCase();
-  if (rel === 'private' || rel === 'data') return send(res, 404, {}, 'Not found');
+  if (rel === 'private' || rel === 'data' || rel === 'newsletter') return send(res, 404, {}, 'Not found');
   if (!path.extname(filePath)) filePath += '.html';
 
   fs.readFile(filePath, (err, data) => {
