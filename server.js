@@ -269,6 +269,14 @@ function when(ms) {
 function langName(code) {
   try { return new Intl.DisplayNames(['en'], { type: 'language' }).of(code) || code; } catch (e) { return code; }
 }
+// Where a lead came from, from the campaign tags the report form passes along with the page path
+function cameFrom(page) {
+  const q = new URLSearchParams(String(page).split('?')[1] || '');
+  const src = q.get('utm_source');
+  if (!src) return 'No campaign tag (search, direct visit or a shared link)';
+  if (src === 'newsletter') return `Newsletter: ${q.get('utm_campaign') || 'issue unknown'}`;
+  return [src, q.get('utm_medium'), q.get('utm_campaign')].filter(Boolean).join(' / ');
+}
 const NL_STATUS = {
   added: (l) => `Added to the newsletter list (${langName(l)} edition)`,
   existing: () => 'Already on the newsletter list',
@@ -417,7 +425,7 @@ function handleReportRequest(req, res) {
       subject: `Report request: ${r.sector} (${langName(l)}) — ${name}${org ? ' (' + org + ')' : ''}`,
       heading: 'New report request',
       rows: [['Name', name], ['Email', email], ['Organisation', org || '—'], ['Report', `${r.sector}: ${r.title}`], ['Language', `${langName(l)} edition`],
-        ['Requested', when(now)], ['Newsletter', NL_STATUS[nl.status](l, nl.detail)], ['Page', page || '—'], ['Site language', `${langName(site)} (${site})`]],
+        ['Requested', when(now)], ['Newsletter', NL_STATUS[nl.status](l, nl.detail)], ['Came from', cameFrom(page)], ['Page', page.split('?')[0] || '—'], ['Site language', `${langName(site)} (${site})`]],
       note: {
         html: `${sent} <a href="${exportLink}">Download all report leads (CSV)</a> &mdash; keep this link private.`,
         text: `${sent}\nAll report leads (CSV, keep private): ${exportLink}`,

@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Messages live in the page (hidden) so each language edition carries its own translation
   const msg = (k) => (dlg.querySelector(`.rg-msg[data-msg="${k}"]`) || {}).innerHTML || '';
   const EMAIL_RE = /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]{2,}$/;
+  // Campaign tags (newsletter, LinkedIn…) travel with the request so the lead alert shows where it came from
+  const tags = [...new URLSearchParams(location.search)].filter(([k]) => /^utm_(source|medium|campaign|content)$/.test(k));
+  const utm = tags.length ? '?' + new URLSearchParams(tags).toString() : '';
   const picker = dlg.querySelector('.rg-edition');
   let current = null;
 
@@ -74,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
           name: d.name, email: (d.email || '').trim(), org: d.org || '', consent: true, _honey: d._honey || '',
-          report: current, edition: d.edition || 'en', lang: document.documentElement.lang || 'en', page: location.pathname,
+          report: current, edition: d.edition || 'en', lang: document.documentElement.lang || 'en', page: location.pathname + utm,
         }),
       });
       const out = await res.json().catch(() => ({}));

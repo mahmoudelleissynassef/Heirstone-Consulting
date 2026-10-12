@@ -8,3 +8,5 @@ Heirstone Consulting branding kit.zip
 
 # Report leads collected at runtime (never commit)
 data/
+newsletter/out/
+__pycache__/

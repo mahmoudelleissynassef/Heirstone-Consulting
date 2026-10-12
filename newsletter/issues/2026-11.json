@@ -1,0 +1,105 @@
+{
+  "number": 1,
+  "date": "2026-11-03",
+  "campaign": "brief-01-hotels",
+  "editions": {
+    "en": {
+      "subject": "Africa's hotel pipeline is a record. Openings have halved.",
+      "preheader": "Why signed rooms don't open, and the US$388bn of local savings that could fund them.",
+      "intro": [
+        "Welcome to the first issue of **The Heirstone Brief**. Each month we take one finding from our research that changes how a project should be planned, and point you to the evidence behind it. Every report is free and fully referenced, and the Africa Series is published in English and French.",
+        "This month: why Africa's record hotel pipeline opens fewer rooms each year than it did in 2017, and where the local capital that could change that already sits."
+      ],
+      "signoff": { "name": "Mahmoud Elleissy Nassef", "role": "Founder, Heirstone Consulting" },
+      "lead": {
+        "report": "africa-hotel-development",
+        "dek": "Africa's hotel chains have never signed more rooms, yet they now open fewer than half as many each year as they did in 2017. We matched W Hospitality Group's pipeline surveys against what actually opened in 43 African countries: the cost of capital explains the gap better than demand. The report sets out the Heirstone Opening Test for telling a hotel that will open from one that will not.",
+        "stats": [
+          { "value": "123,846", "label": "rooms in Africa's chain hotel pipeline in early 2026, a record", "page": "2" },
+          { "value": "3,458", "label": "chain rooms opened in 2023, down from 8,053 in 2017", "page": "3" },
+          { "value": "38%", "label": "of 986 hotels scheduled for 2014–2023 opened on time", "page": "3" }
+        ],
+        "cta": "Get the report (free PDF)"
+      },
+      "brief": [
+        {
+          "title": "The interest bill decides what opens",
+          "text": "In our illustration, a new key at the 2019 pipeline average of US$308,700 needs US$186–205 of RevPAR a night just to pay interest at 22–24%. Southern Sun, South Africa's largest hotel group, earned about US$56.",
+          "report": "africa-hotel-development", "page": "3"
+        },
+        {
+          "title": "The money is already here",
+          "text": "Pension, social security and insurance funds in 13 African markets hold about US$388bn. Nigerian pension funds hold 1.0% of assets in REITs and other collective funds against a limit of 20–25%. On our calculation, the unused headroom in Nigeria, Kenya and Ghana is about US$10.8bn, five times what those funds hold.",
+          "report": "africa-real-estate-capital", "page": "2"
+        },
+        {
+          "title": "Borrow in the currency the asset earns",
+          "text": "A dollar loan drawn in December 2015 has grown 7.7 times in Ethiopian birr. In CFA francs it is 0.95 times. The Heirstone Dollar Debt Test sets four questions to answer before signing a dollar facility.",
+          "report": "africa-real-estate-capital", "page": "4"
+        }
+      ],
+      "more": ["africa-flexible-workspace", "africa-regional-headquarters", "africa-diaspora-buyers", "africa-retail-real-estate"],
+      "note": {
+        "title": "How we write these reports",
+        "text": [
+          "Every figure in our reports is referenced to its source. Where we combine published data into a new measure, we label it Heirstone analysis and show the calculation. If you spot something we should correct, reply to this email: we read every reply."
+        ]
+      },
+      "closing": {
+        "title": "Planning a project in one of these markets?",
+        "text": "We advise governments, sovereign and institutional investors, lenders and developers on what to build, buy or convert, where, and what it is worth. Reply to this email to speak with a senior partner.",
+        "cta": "Talk to us",
+        "url": "/pages/contact"
+      }
+    },
+    "fr": {
+      "subject": "Hôtels en Afrique : record de projets, ouvertures divisées par deux",
+      "preheader": "Pourquoi les chambres signées n'ouvrent pas, et les 388 Md US$ d'épargne locale qui pourraient les financer.",
+      "intro": [
+        "Bienvenue dans le premier numéro de **La Lettre Heirstone**. Chaque mois, nous retenons un résultat de nos recherches qui change la manière de préparer un projet, et nous vous renvoyons aux données qui le fondent. Tous nos rapports sont gratuits et entièrement sourcés, et la Série Afrique paraît en français et en anglais.",
+        "Ce mois-ci : pourquoi le portefeuille record de projets hôteliers en Afrique ouvre chaque année moins de chambres qu'en 2017, et où se trouve déjà le capital local qui pourrait changer la donne."
+      ],
+      "signoff": { "name": "Mahmoud Elleissy Nassef", "role": "Fondateur, Heirstone Consulting" },
+      "lead": {
+        "report": "africa-hotel-development",
+        "dek": "Le portefeuille de projets des chaînes hôtelières en Afrique n'a jamais été aussi garni, alors que le nombre de chambres ouvertes chaque année a reculé de plus de moitié entre 2017 et 2023. Nous avons confronté les enquêtes de W Hospitality Group à ce qui a réellement ouvert dans 43 pays africains : le coût du capital explique l'écart mieux que la demande. Le rapport propose le Test Heirstone d'ouverture pour distinguer l'hôtel qui ouvrira de celui qui n'ouvrira pas.",
+        "stats": [
+          { "value": "123 846", "label": "chambres dans le portefeuille de projets des chaînes début 2026, un record" },
+          { "value": "3 458", "label": "chambres ouvertes par les chaînes en 2023, contre 8 053 en 2017" },
+          { "value": "38 %", "label": "des 986 hôtels prévus entre 2014 et 2023 ont ouvert l'année prévue" }
+        ],
+        "cta": "Recevoir le rapport (PDF gratuit)"
+      },
+      "brief": [
+        {
+          "title": "Les intérêts décident de ce qui ouvre",
+          "text": "Dans notre illustration, une chambre au prix moyen du portefeuille de 2019, soit 308 700 US$, exigerait un RevPAR de 186 à 205 US$ par nuit pour couvrir les seuls intérêts à 22 à 24 %, plus de trois fois les 56 US$ de Southern Sun.",
+          "report": "africa-hotel-development"
+        },
+        {
+          "title": "L'argent est déjà là",
+          "text": "Les fonds de pension, de sécurité sociale et d'assurance de treize marchés africains détiennent environ 388 Md US$. Les fonds de pension nigérians ne placent que 1,0 % de leurs actifs en REIT et autres fonds collectifs, contre un plafond de 20 à 25 %. Selon nos calculs, la marge inutilisée au Nigeria, au Kenya et au Ghana atteint environ 10,8 Md US$, cinq fois ce qu'ils détiennent.",
+          "report": "africa-real-estate-capital"
+        },
+        {
+          "title": "Empruntez dans la monnaie de vos revenus",
+          "text": "Un prêt en dollars contracté en décembre 2015 représente aujourd'hui 7,7 fois son montant initial en birr éthiopiens, contre 0,95 fois en francs CFA. Le Test Heirstone de la dette en dollars pose les questions auxquelles répondre avant de signer une facilité en dollars.",
+          "report": "africa-real-estate-capital"
+        }
+      ],
+      "more": ["africa-flexible-workspace", "africa-regional-headquarters", "africa-diaspora-buyers", "africa-retail-real-estate"],
+      "note": {
+        "title": "Comment nous rédigeons ces rapports",
+        "text": [
+          "Chaque chiffre de nos rapports est référencé. Lorsque nous combinons des données publiées pour créer une nouvelle mesure, nous l'indiquons par la mention « analyse Heirstone » et nous montrons le calcul. Si vous relevez une erreur, répondez à cet e-mail : nous lisons toutes les réponses."
+        ]
+      },
+      "closing": {
+        "title": "Un projet sur l'un de ces marchés ?",
+        "text": "Nous conseillons États, investisseurs souverains et institutionnels, prêteurs et promoteurs sur ce qu'il faut construire, acheter ou reconvertir, où, et ce que cela vaut. Répondez à cet e-mail pour échanger directement avec un associé senior.",
+        "cta": "Nous contacter",
+        "url": "/fr/pages/contact"
+      }
+    }
+  }
+}
