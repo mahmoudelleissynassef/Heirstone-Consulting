@@ -116,8 +116,9 @@ The time zone is `NOTIFY_TZ` (default `Africa/Cairo`; use `Asia/Dubai` for Dubai
 ## Limits worth knowing
 
 - **Plan:** the Resend account (shared by all six ventures, one per sending domain) allows 3 segments in total and
-  1,000 contacts. Heirstone's newsletter has its own segment; the other ventures have 1 segment left between them
-  (plus an empty "General" one). More needs a paid marketing tier or a separate Resend team per venture.
+  1,000 contacts. Heirstone's newsletter has its own segment, which is the only one in use (the empty "General" segment
+  was deleted on 2026-10-13), so the other ventures have 2 left between them. More needs a paid marketing tier or a
+  separate Resend team per venture.
 - **Shared account:** "unsubscribed" in Resend is account-wide. Someone who unsubscribes from another venture's
   broadcasts would also stop receiving Heirstone's. If the ventures' lists grow, give each one its own Resend team.
 - **Switching edition:** the topics are private, so readers see only their own edition on the preferences page. To
