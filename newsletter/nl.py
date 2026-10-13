@@ -51,8 +51,9 @@ MONTHS = {
 LABELS = {
     'en': {
         'tagline': 'Research on real estate, tourism and national vision across Africa, the Middle East and the Mediterranean',
+        'research': 'Research',
         'issue': 'No.', 'dear': 'Dear', 'reader': 'reader',
-        'lead': 'This month’s report', 'brief': 'In brief', 'more': 'More from Heirstone Research', 'read': 'Read the summary',
+        'lead': 'Featured report', 'brief': 'In brief', 'more': 'More from Heirstone Research', 'read': 'Read the summary',
         'source': 'Source', 'page': 'p.', 'series': {'africa': 'Africa Series', None: 'Middle East & Mediterranean'},
         'cover': 'Cover of the report',
         'links': [('Reports', '/pages/reports'), ('Insights', '/pages/insights'), ('Contact', '/pages/contact')],
@@ -64,8 +65,9 @@ LABELS = {
     },
     'fr': {
         'tagline': 'Recherche en immobilier, tourisme et vision nationale en Afrique, au Moyen-Orient et en Méditerranée',
+        'research': 'Recherche',
         'issue': 'N°', 'dear': 'Bonjour', 'reader': 'à toutes et à tous',
-        'lead': 'Le rapport du mois', 'brief': 'En bref', 'more': 'Également chez Heirstone Research', 'read': 'Lire la présentation',
+        'lead': 'Rapport à la une', 'brief': 'En bref', 'more': 'Également chez Heirstone Research', 'read': 'Lire la présentation',
         'source': 'Source', 'page': 'p.', 'series': {'africa': 'Série Afrique', None: 'Moyen-Orient et Méditerranée'},
         'cover': 'Couverture du rapport',
         'links': [('Rapports', '/fr/pages/reports'), ('Analyses', '/fr/pages/insights'), ('Contact', '/fr/pages/contact')],
@@ -225,9 +227,10 @@ def render(issue, lang, cfg):
     # Masthead
     mast = (
         '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
-        f'<td width="44" valign="middle" style="width:44px;"><a href="{esc(track(site + ("/fr/" if lang == "fr" else "/"), site, camp, "masthead"))}">'
-        f'<img src="{site}/Media/email/heirstone-mark.png" width="44" height="44" alt="Heirstone Consulting" border="0" style="display:block;width:44px;height:44px;border:0;"></a></td>'
-        f'<td valign="middle" class="sans" style="padding-left:14px;font-family:{SANS};font-size:11px;line-height:16px;letter-spacing:3px;color:{TINT};text-transform:uppercase;">Heirstone Consulting<br>Research</td>'
+        # The reversed horizontal lockup from the brand guidelines (same header as the report emails)
+        f'<td valign="middle"><a href="{esc(track(site + ("/fr/" if lang == "fr" else "/"), site, camp, "masthead"))}">'
+        f'<img src="{site}/Media/email/heirstone-lockup-reversed.png" width="208" height="38" alt="Heirstone Consulting" border="0" style="display:block;width:208px;height:auto;border:0;"></a></td>'
+        f'<td align="right" valign="middle" class="sans" style="font-family:{SANS};font-size:10px;line-height:14px;letter-spacing:3px;color:{TINT};text-transform:uppercase;">{esc(L["research"])}</td>'
         '</tr></table>'
         f'<h1 class="serif h1" style="margin:30px 0 10px 0;font-family:{SERIF};font-size:40px;line-height:46px;font-weight:400;color:#FFFFFF;">{esc(name)}</h1>'
         + p(f'{esc(number)} &nbsp;·&nbsp; {esc(when)}', 11, 16, TINT, '0 0 12px 0', SANS, 'letter-spacing:2px;text-transform:uppercase;')

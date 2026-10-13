@@ -356,48 +356,130 @@ function readJsonBody(req, res, json, done) {
 }
 
 const MAIL_TEXT = {
-  en: { dear: 'Dear', ready: 'Thank you for your interest. Your copy of our report is ready:', button: 'Download the report (PDF)',
+  en: { dear: 'Dear', ready: 'Thank you for your interest. Your copy of our report is ready.', button: 'Download the report (PDF)',
+    pre: (d) => `Your personal download link, valid for ${d} days.`,
+    meta: (p) => `${p ? p + ' pages · ' : ''}PDF · English edition`,
+    series: { africa: 'Africa Series', other: 'Middle East & Mediterranean' }, research: 'Research', cover: 'Cover of the report',
     valid: (d) => `This personal link is valid for ${d} days. If the button does not work, copy this address into your browser:`,
     other: 'This report is also available in French:', otherLink: 'Download the French edition (PDF)',
     discuss: 'If you would like to discuss the findings, simply reply to this email.',
+    offices: 'Dubai · Cairo',
     why: 'You received this email because this address was entered to request a Heirstone report. To stop receiving Heirstone research, reply with "unsubscribe".',
     whyNl: (n) => `You received this email because this address was entered to request a Heirstone report. As agreed on the form, we will also send you ${n}, our research newsletter on new reports and findings. Every issue has a one-click unsubscribe link, or reply "unsubscribe" at any time.`,
     subject: 'Your Heirstone report' },
-  fr: { dear: 'Bonjour', ready: 'Merci de votre intérêt. Votre exemplaire de notre rapport est prêt :', button: 'Télécharger le rapport (PDF)',
+  fr: { dear: 'Bonjour', ready: 'Merci de votre intérêt. Votre exemplaire de notre rapport est prêt.', button: 'Télécharger le rapport (PDF)',
+    pre: (d) => `Votre lien de téléchargement personnel, valable ${d} jours.`,
+    meta: (p) => `${p ? p + ' pages · ' : ''}PDF · édition française`,
+    series: { africa: 'Série Afrique', other: 'Moyen-Orient et Méditerranée' }, research: 'Recherche', cover: 'Couverture du rapport',
     valid: (d) => `Ce lien personnel est valable ${d} jours. Si le bouton ne fonctionne pas, copiez cette adresse dans votre navigateur :`,
     other: 'Ce rapport est également disponible en anglais :', otherLink: 'Télécharger l’édition anglaise (PDF)',
     discuss: 'Pour échanger sur les conclusions, il vous suffit de répondre à cet e-mail.',
+    offices: 'Dubaï · Le Caire',
     why: 'Vous recevez cet e-mail car cette adresse a été saisie pour demander un rapport Heirstone. Pour ne plus recevoir nos publications, répondez « désinscription ».',
     whyNl: (n) => `Vous recevez cet e-mail car cette adresse a été saisie pour demander un rapport Heirstone. Comme convenu dans le formulaire, nous vous enverrons aussi ${n}, notre lettre de recherche sur nos nouveaux rapports et résultats. Chaque numéro comporte un lien de désinscription en un clic ; vous pouvez aussi répondre « désinscription » à tout moment.`,
     subject: 'Votre rapport Heirstone' },
 };
 
-function reportEmail(r, name, link, l, otherLink) {
+// Brand system for reader emails (Heirstone brand guidelines v1.0, same as the newsletter): Ink Navy, Paper, Slate
+// and Mist; Playfair Display for display and Libre Franklin for text, with Georgia/Arial fallbacks. The layout is
+// tables so Outlook renders it, and the .sx/.ss classes make Outlook fall back to Georgia/Arial rather than Times.
+const BRAND = {
+  ink: '#0E1B2A', paper: '#F6F4EF', card: '#FCFBF8', line: '#E4DED2', slate: '#5D6E82', tint: '#8FA0B2',
+  text: '#263340', text2: '#3C4956', light: '#6E7F92',
+  serif: "'Playfair Display',Georgia,'Times New Roman',serif", sans: "'Libre Franklin',Arial,Helvetica,sans-serif",
+};
+const mailP = (html, size, line, color, margin, serif, extra = '') =>
+  `<p class="${serif ? 'sx' : 'ss'}" style="margin:${margin};font-family:${serif ? BRAND.serif : BRAND.sans};font-size:${size}px;line-height:${line}px;color:${color};${extra}">${html}</p>`;
+const mailRow = (inner, pad, bg) =>
+  `<tr><td class="px"${bg ? ` bgcolor="${bg}"` : ''} style="${bg ? `background-color:${bg};` : ''}padding:${pad};">${inner}</td></tr>`;
+
+function brandedEmail({ lang, title, preheader, rows }) {
+  const B = BRAND;
+  return `<!DOCTYPE html>
+<html lang="${lang}" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="x-apple-disable-message-reformatting"><meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+<meta name="color-scheme" content="light"><meta name="supported-color-schemes" content="light">
+<title>${esc(title)}</title>
+<!--[if !mso]><!--><link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600&amp;family=Playfair+Display:wght@400;500&amp;display=swap" rel="stylesheet"><!--<![endif]-->
+<!--[if mso]><noscript><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml></noscript>
+<style>.sx{font-family:Georgia,serif !important;} .ss{font-family:Arial,sans-serif !important;}</style><![endif]-->
+<style>:root{color-scheme:light;supported-color-schemes:light;} body{margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
+@media only screen and (max-width:620px){ .px{padding-left:22px !important;padding-right:22px !important;} .stack{display:block !important;width:100% !important;max-width:100% !important;} .card{padding:20px !important;} }</style>
+</head>
+<body style="margin:0;padding:0;background-color:${B.paper};">
+<div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:${B.paper};opacity:0;">${esc(preheader)}${'&#847;&zwnj;&nbsp;'.repeat(50)}</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${B.paper}" style="background-color:${B.paper};"><tr><td align="center" style="padding:24px 8px 24px 8px;">
+<!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;background-color:${B.card};border:1px solid ${B.line};">
+${rows.join('\n')}
+</table>
+<!--[if mso]></td></tr></table><![endif]-->
+</td></tr></table>
+</body>
+</html>`;
+}
+
+// Header row shared by reader-facing emails: the reversed horizontal lockup on Ink Navy
+function brandHeader(home, label) {
+  const B = BRAND;
+  return mailRow('<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
+    + `<td valign="middle"><a href="${home}"><img src="${PUBLIC_ORIGIN}/Media/email/heirstone-lockup-reversed.png" width="208" height="38" alt="Heirstone Consulting" border="0" style="display:block;width:208px;height:auto;border:0;"></a></td>`
+    + `<td align="right" valign="middle" class="ss" style="font-family:${B.sans};font-size:10px;line-height:14px;letter-spacing:3px;color:${B.tint};text-transform:uppercase;">${esc(label)}</td>`
+    + '</tr></table>', '26px 40px 26px 40px', B.ink);
+}
+
+function reportEmail(slug, r, name, link, l, otherLink) {
+  const B = BRAND;
   const t = MAIL_TEXT[l] || MAIL_TEXT.en;
   const why = NL_SEGMENT ? t.whyNl(nlName(l)) : t.why;
   const ed = edition(r, l);
-  const sep = l === 'fr' ? ' : ' : ': ';  // French puts a space before the colon
-  const title = `${ed.sector || r.sector}${sep}${ed.title || r.title}`;
-  const first = esc(name.split(/\s+/)[0]);
-  const html = '<div style="background:#F6F4EF;padding:32px 0;font-family:Arial,Helvetica,sans-serif;color:#263340">'
-    + '<div style="max-width:560px;margin:0 auto;background:#FCFBF8;border:1px solid #E4DED2">'
-    + '<div style="background:#0E1B2A;padding:22px 32px;color:#fff;font-size:13px;letter-spacing:4px">HEIRSTONE CONSULTING RESEARCH</div>'
-    + '<div style="padding:32px">'
-    + `<p style="font-size:15px;line-height:1.6;margin:0 0 16px">${t.dear} ${first},</p>`
-    + `<p style="font-size:15px;line-height:1.6;margin:0 0 8px">${esc(t.ready)}</p>`
-    + `<p style="font-family:Georgia,serif;font-size:22px;line-height:1.3;color:#0E1B2A;margin:16px 0 24px">${esc(title)}</p>`
-    + `<p style="margin:0 0 26px"><a href="${link}" style="display:inline-block;background:#0E1B2A;color:#fff;text-decoration:none;padding:14px 26px;font-size:14px;font-weight:bold">${esc(t.button)}</a></p>`
-    + `<p style="font-size:13px;line-height:1.6;color:#6E7F92;margin:0 0 20px">${esc(t.valid(LINK_DAYS))}<br><span style="word-break:break-all">${link}</span></p>`
-    + (otherLink ? `<p style="font-size:14px;line-height:1.6;margin:0 0 22px">${esc(t.other)} <a href="${otherLink}" style="color:#0E1B2A;font-weight:bold">${esc(t.otherLink)}</a></p>` : '')
-    + `<p style="font-size:15px;line-height:1.6;margin:0 0 6px">${esc(t.discuss)}</p>`
-    + '<p style="font-size:15px;line-height:1.6;margin:0">Heirstone Consulting<br><span style="color:#6E7F92">Dubai &middot; Cairo &middot; <a href="https://www.heirstoneconsulting.com" style="color:#5D6E82">heirstoneconsulting.com</a></span></p>'
-    + '</div></div>'
-    + '<p style="max-width:560px;margin:14px auto 0;font-size:11px;line-height:1.5;color:#97A6B6;text-align:center">' + esc(why) + '</p>'
-    + '</div>';
-  const text = `${t.dear} ${name.split(/\s+/)[0]},\n\n${t.ready}\n${title}\n\n${t.button}: ${link}\n${t.valid(LINK_DAYS)}\n`
+  const sep = l === 'fr' ? ' : ' : ': ';  // French puts a space before the colon
+  const sector = ed.sector || r.sector, short = ed.title || r.title;
+  const title = `${sector}${sep}${short}`;
+  const first = name.split(/\s+/)[0];
+  const home = `${PUBLIC_ORIGIN}${l === 'fr' ? '/fr/' : '/'}`;
+  const coverFile = `${slug}${l === 'fr' ? '.fr' : ''}.jpg`;
+  const cover = fs.existsSync(path.join(ROOT, 'Media', 'email', 'covers', coverFile)) ? `${PUBLIC_ORIGIN}/Media/email/covers/${coverFile}` : '';
+  const kicker = `${t.series[r.series === 'africa' ? 'africa' : 'other']} · ${sector}`;
+
+  const button = `<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="${B.ink}" style="background-color:${B.ink};padding:13px 24px;">`
+    + `<a href="${link}" class="ss" style="font-family:${B.sans};font-size:14px;line-height:18px;font-weight:600;color:#FFFFFF;text-decoration:none;display:inline-block;">${esc(t.button)}</a></td></tr></table>`;
+  const details = mailP(esc(kicker), 11, 17, B.slate, '0 0 10px 0', false, 'letter-spacing:2px;text-transform:uppercase;font-weight:600;')
+    + `<h1 class="sx" style="margin:0 0 10px 0;font-family:${B.serif};font-size:26px;line-height:32px;font-weight:400;color:${B.ink};">${esc(short)}</h1>`
+    + mailP(esc(t.meta(ed.pages)), 13, 19, B.light, '0 0 20px 0')
+    + button;
+  // Cover beside the details in a 600px window and above them on phones; real table columns for Outlook
+  const card = !cover ? details
+    : '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td valign="top" style="font-size:0;line-height:0;">'
+      + '<!--[if mso]><table role="presentation" width="468" cellpadding="0" cellspacing="0" border="0"><tr><td width="132" valign="top"><![endif]-->'
+      + '<div class="stack" style="display:inline-block;width:100%;max-width:132px;vertical-align:top;"><div style="padding:0 0 18px 0;">'
+      + `<a href="${link}"><img src="${cover}" width="112" height="159" alt="${esc(t.cover)} ${esc(short)}" border="0" style="display:block;width:112px;height:auto;border:1px solid ${B.line};"></a></div></div>`
+      + '<!--[if mso]></td><td width="336" valign="top"><![endif]-->'
+      + `<div class="stack" style="display:inline-block;width:100%;max-width:336px;vertical-align:top;">${details}</div>`
+      + '<!--[if mso]></td></tr></table><![endif]--></td></tr></table>';
+
+  const rows = [
+    brandHeader(home, t.research),
+    mailRow(mailP(`${esc(t.dear)} ${esc(first)},`, 16, 26, B.text, '0 0 14px 0') + mailP(esc(t.ready), 16, 26, B.text, '0'), '34px 40px 22px 40px'),
+    mailRow(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="card" bgcolor="${B.paper}" style="background-color:${B.paper};border:1px solid ${B.line};padding:24px;">${card}</td></tr></table>`, '0 40px 0 40px'),
+    mailRow(mailP(esc(t.valid(LINK_DAYS)), 13, 20, B.light, '0 0 4px 0')
+      + mailP(`<a href="${link}" style="color:${B.slate};text-decoration:underline;word-break:break-all;">${link}</a>`, 12, 18, B.slate, '0', false, 'word-break:break-all;'), '22px 40px 0 40px'),
+    otherLink && mailRow(mailP(`${esc(t.other)} <a href="${otherLink}" style="color:${B.ink};font-weight:600;text-decoration:underline;">${esc(t.otherLink)}</a>`, 14, 22, B.text2, '0'), '18px 40px 0 40px'),
+    mailRow(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top:1px solid ${B.line};font-size:0;line-height:0;height:1px;">&nbsp;</td></tr></table>`, '28px 40px 0 40px'),
+    mailRow(mailP(esc(t.discuss), 15, 24, B.text, '0 0 18px 0')
+      + mailP('Heirstone Consulting Research', 17, 22, B.ink, '0 0 2px 0', true)
+      + mailP(`${esc(t.offices)} &nbsp;·&nbsp; <a href="${home}" style="color:${B.slate};text-decoration:none;">heirstoneconsulting.com</a>`, 13, 20, B.light, '0'), '24px 40px 30px 40px'),
+    mailRow((NEWSLETTER.postal_address ? mailP(esc(NEWSLETTER.postal_address), 11, 17, B.light, '0 0 8px 0') : '')
+      + mailP(esc(why), 11, 17, B.light, '0'), '20px 40px 24px 40px', B.paper),
+  ].filter(Boolean);
+
+  const text = `${t.dear} ${first},\n\n${t.ready}\n\n${title}\n${t.meta(ed.pages)}\n\n${t.button}${sep}${link}\n${t.valid(LINK_DAYS)}\n`
     + (otherLink ? `\n${t.other} ${otherLink}\n` : '')
-    + `\n${t.discuss}\n\nHeirstone Consulting\nDubai · Cairo · heirstoneconsulting.com\n\n${why}`;
-  return { title, html, text, subject: `${t.subject}${sep}${title}` };
+    + `\n${t.discuss}\n\nHeirstone Consulting Research\n${t.offices} · heirstoneconsulting.com\n`
+    + (NEWSLETTER.postal_address ? `${NEWSLETTER.postal_address}\n` : '') + `\n${why}`;
+  return { title, html: brandedEmail({ lang: l, title, preheader: t.pre(LINK_DAYS), rows }), text, subject: `${t.subject}${sep}${title}` };
 }
 
 function handleReportRequest(req, res) {
@@ -419,7 +501,7 @@ function handleReportRequest(req, res) {
     const linkFor = (ll) => `${PUBLIC_ORIGIN}/api/reports/download?t=${makeToken({ r: slug, e: email, n: name.slice(0, 80), l: ll, x: exp })}`;
     const link = linkFor(l);
     const other = r.editions && Object.keys(r.editions).find((k) => k !== l);
-    const mail = reportEmail(r, name, link, l, other ? linkFor(other) : '');
+    const mail = reportEmail(slug, r, name, link, l, other ? linkFor(other) : '');
     try {
       const sent = await resendSend({ from: REPORT_FROM, to: [email], reply_to: CONTACT_TO[0], subject: mail.subject, html: mail.html, text: mail.text });
       if (sent.status < 200 || sent.status >= 300) {
@@ -456,11 +538,20 @@ function handleReportRequest(req, res) {
 }
 
 function reportLinkPage(res, status) {
-  const body = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Link expired | Heirstone Consulting</title></head>'
-    + '<body style="margin:0;font-family:Arial,sans-serif;background:#F6F4EF;color:#263340"><div style="max-width:520px;margin:12vh auto;padding:40px;background:#FCFBF8;border:1px solid #E4DED2">'
-    + '<p style="letter-spacing:4px;font-size:12px;color:#5D6E82">HEIRSTONE CONSULTING RESEARCH</p><h1 style="font-family:Georgia,serif;font-weight:normal;color:#0E1B2A">This download link has expired</h1>'
-    + `<p style="line-height:1.7">Personal report links are valid for ${LINK_DAYS} days. Request a new one and we will email it to you straight away.</p>`
-    + '<p><a href="/pages/reports" style="display:inline-block;background:#0E1B2A;color:#fff;text-decoration:none;padding:12px 22px">Go to Reports</a></p></div></body></html>';
+  // Same identity as the report emails: the reversed lockup (brand guidelines markup) on Ink Navy, Playfair + Franklin
+  const B = BRAND;
+  const mark = '<svg viewBox="0 0 100 100" width="44" height="44" aria-hidden="true"><rect x="20" y="20" width="60" height="60" fill="none" stroke="#8FA0B2" stroke-width="3"/><rect x="20" y="20" width="60" height="60" fill="none" stroke="#8FA0B2" stroke-width="3" transform="rotate(45 50 50)"/></svg>';
+  const body = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>Link expired | Heirstone Consulting</title>'
+    + '<link rel="icon" href="/favicon.svg"><link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet"></head>'
+    + `<body style="margin:0;font-family:${B.sans};background:${B.paper};color:${B.text}"><div style="max-width:560px;margin:10vh auto;padding:0 16px">`
+    + `<div style="background:${B.ink};padding:24px 32px"><a href="/" style="display:inline-flex;align-items:center;gap:16px;text-decoration:none">${mark}`
+    + `<span style="line-height:1"><span style="display:block;font-family:${B.serif};font-size:21px;letter-spacing:.22em;color:${B.paper};font-weight:500">HEIRSTONE</span>`
+    + `<span style="display:block;font-size:9px;letter-spacing:.42em;color:${B.tint};margin-top:6px">CONSULTING</span></span></a></div>`
+    + `<div style="background:${B.card};border:1px solid ${B.line};border-top:0;padding:36px 32px 40px">`
+    + `<p style="margin:0 0 12px;font-size:11px;letter-spacing:.28em;font-weight:600;color:${B.slate}">HEIRSTONE CONSULTING RESEARCH</p>`
+    + `<h1 style="margin:0 0 16px;font-family:${B.serif};font-size:30px;line-height:1.2;font-weight:400;color:${B.ink}">This download link has expired</h1>`
+    + `<p style="margin:0 0 28px;font-size:16px;line-height:1.7;font-weight:300">Personal report links are valid for ${LINK_DAYS} days. Request a new one and we will email it to you straight away.</p>`
+    + `<a href="/pages/reports" style="display:inline-block;background:${B.ink};color:#fff;text-decoration:none;padding:13px 24px;font-size:14px;font-weight:600">Go to Reports</a></div></div></body></html>`;
   send(res, status, { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex' }, body);
 }
 
