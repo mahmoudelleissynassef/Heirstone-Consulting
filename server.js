@@ -53,6 +53,26 @@ function send(res, status, headers, body) {
   res.end(body);
 }
 
+// ------------------------------------------------------------------ visitor analytics
+// Cloudflare Web Analytics: cookie-free, aggregate page-view counts (query strings are stripped).
+// The beacon token is public by design (it ships to every visitor's browser), so it lives in code.
+// The tag is injected into HTML responses on the production host only, so local previews and the
+// *.up.railway.app address never count. Set CF_BEACON_TOKEN=off on Railway to switch it off.
+// If a Content-Security-Policy is ever added, allow script-src https://static.cloudflareinsights.com
+// and connect-src https://cloudflareinsights.com.
+const CF_BEACON_TOKEN = process.env.CF_BEACON_TOKEN || 'ef7c48673a924b22be3d74683aeca15f';
+const CF_BEACON_TAG = `<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='${JSON.stringify({ token: CF_BEACON_TOKEN, spa: false })}'></script>`;
+const ANALYTICS_HOST = /^(www\.)?heirstoneconsulting\.com$/i;
+
+function withAnalytics(req, html) {
+  if (CF_BEACON_TOKEN === 'off') return html;
+  const host = String(req.headers.host || '').replace(/:\d+$/, '');
+  if (!ANALYTICS_HOST.test(host)) return html;
+  const page = html.toString('utf8');
+  const at = page.lastIndexOf('</body>');
+  return at === -1 ? page + CF_BEACON_TAG : page.slice(0, at) + CF_BEACON_TAG + '\n' + page.slice(at);
+}
+
 // ------------------------------------------------------------------ contact form -> Resend
 // POST /api/contact sends the enquiry through Resend (https://resend.com).
 // Settings: RESEND_API_KEY (required), CONTACT_TO (comma list), CONTACT_FROM (verified domain).
@@ -548,10 +568,10 @@ const server = http.createServer((req, res) => {
       fs.readFile(notFound, (err2, data2) => {
         if (err2) {
           fs.readFile(path.join(ROOT, '404.html'), (err3, data3) => {
-            send(res, 404, { 'Content-Type': 'text/html; charset=utf-8' }, err3 ? '<h1>404 - Page Not Found</h1>' : data3);
+            send(res, 404, { 'Content-Type': 'text/html; charset=utf-8' }, err3 ? '<h1>404 - Page Not Found</h1>' : withAnalytics(req, data3));
           });
         } else {
-          send(res, 404, { 'Content-Type': 'text/html; charset=utf-8' }, data2);
+          send(res, 404, { 'Content-Type': 'text/html; charset=utf-8' }, withAnalytics(req, data2));
         }
       });
       return;
@@ -559,7 +579,7 @@ const server = http.createServer((req, res) => {
     const ext = path.extname(filePath);
     const headers = { 'Content-Type': mimeTypes[ext] || 'application/octet-stream' };
     if (ext === '.html') headers['Vary'] = 'Accept-Language, Cookie';
-    send(res, 200, headers, data);
+    send(res, 200, headers, ext === '.html' ? withAnalytics(req, data) : data);
   });
 });
 
