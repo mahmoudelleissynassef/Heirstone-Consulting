@@ -421,11 +421,21 @@ ${rows.join('\n')}
 </html>`;
 }
 
-// Header row shared by reader-facing emails: the reversed horizontal lockup on Ink Navy
-function brandHeader(home, label) {
+// The lockup travels inside the report email as an inline (cid:) attachment, so Outlook and other
+// clients that block remote images still show it. Falls back to the hosted file if it can't be read.
+const LOGO_CID = 'heirstone-lockup';
+let LOGO_B64 = '';
+try { LOGO_B64 = fs.readFileSync(path.join(ROOT, 'Media', 'email', 'heirstone-lockup-reversed.png')).toString('base64'); }
+catch (e) { console.error('Email logo missing:', e.message); }
+const logoAttachment = () => (LOGO_B64
+  ? [{ content: LOGO_B64, filename: 'heirstone-consulting.png', content_type: 'image/png', content_id: LOGO_CID }] : undefined);  // undefined = no attachments field at all
+
+// Header row shared by reader-facing emails: the reversed horizontal lockup on Ink Navy.
+// Alt text is styled light so the header still reads "Heirstone Consulting" if images are off.
+function brandHeader(home, label, logoSrc = `${PUBLIC_ORIGIN}/Media/email/heirstone-lockup-reversed.png`) {
   const B = BRAND;
   return mailRow('<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
-    + `<td valign="middle"><a href="${home}"><img src="${PUBLIC_ORIGIN}/Media/email/heirstone-lockup-reversed.png" width="208" height="38" alt="Heirstone Consulting" border="0" style="display:block;width:208px;height:auto;border:0;"></a></td>`
+    + `<td valign="middle"><a href="${home}" style="color:#FFFFFF;text-decoration:none;"><img src="${logoSrc}" width="208" height="38" alt="Heirstone Consulting" border="0" style="display:block;width:208px;height:auto;border:0;color:#FFFFFF;font-family:${B.serif};font-size:18px;line-height:22px;letter-spacing:2px;"></a></td>`
     + `<td align="right" valign="middle" class="ss" style="font-family:${B.sans};font-size:10px;line-height:14px;letter-spacing:3px;color:${B.tint};text-transform:uppercase;">${esc(label)}</td>`
     + '</tr></table>', '26px 40px 26px 40px', B.ink);
 }
@@ -461,7 +471,7 @@ function reportEmail(slug, r, name, link, l, otherLink) {
       + '<!--[if mso]></td></tr></table><![endif]--></td></tr></table>';
 
   const rows = [
-    brandHeader(home, t.research),
+    brandHeader(home, t.research, LOGO_B64 ? `cid:${LOGO_CID}` : undefined),
     mailRow(mailP(`${esc(t.dear)} ${esc(first)},`, 16, 26, B.text, '0 0 14px 0') + mailP(esc(t.ready), 16, 26, B.text, '0'), '34px 40px 22px 40px'),
     mailRow(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="card" bgcolor="${B.paper}" style="background-color:${B.paper};border:1px solid ${B.line};padding:24px;">${card}</td></tr></table>`, '0 40px 0 40px'),
     mailRow(mailP(esc(t.valid(LINK_DAYS)), 13, 20, B.light, '0 0 4px 0')
@@ -503,7 +513,7 @@ function handleReportRequest(req, res) {
     const other = r.editions && Object.keys(r.editions).find((k) => k !== l);
     const mail = reportEmail(slug, r, name, link, l, other ? linkFor(other) : '');
     try {
-      const sent = await resendSend({ from: REPORT_FROM, to: [email], reply_to: CONTACT_TO[0], subject: mail.subject, html: mail.html, text: mail.text });
+      const sent = await resendSend({ from: REPORT_FROM, to: [email], reply_to: CONTACT_TO[0], subject: mail.subject, html: mail.html, text: mail.text, attachments: logoAttachment() });
       if (sent.status < 200 || sent.status >= 300) {
         console.error('Report email failed', sent.status, sent.body.slice(0, 300));
         return json(502, { ok: false, error: 'send_failed' });
