@@ -1853,3 +1853,11 @@ textarea.form-input {
 html:is([lang=ja],[lang=zh-Hans]) { line-break: strict; }
 html:is([lang=ja],[lang=zh-Hans],[lang=ko]) :is(h1, h2, h3) { text-wrap: balance; }
 html[lang=ko] { word-break: keep-all; overflow-wrap: break-word; }  /* Korean breaks between words, not inside them */
+
+/* Contact: what happens after an enquiry */
+.contact-steps { margin-top: 56px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.12); }
+.contact-steps h3 { font-size: 17px; font-weight: 600; color: #ffffff; margin-bottom: 20px; }
+.contact-steps ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.contact-steps li { font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.72); }
+.contact-steps strong { display: block; margin-bottom: 6px; font-weight: 600; color: #ffffff; }
+@media (max-width: 760px) { .contact-steps ol { grid-template-columns: 1fr; gap: 20px; } }

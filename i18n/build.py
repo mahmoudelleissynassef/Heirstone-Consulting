@@ -336,10 +336,18 @@ def finish_head(soup, rel, lang, tr, src):
             continue
         objs = data.get("@graph", [data]) if isinstance(data, dict) else data
         for o in objs if isinstance(objs, list) else [objs]:
-            if isinstance(o, dict) and o.get("@type") in ("WebSite", "WebPage", "Article", "BlogPosting", "FAQPage", "Report", "CollectionPage"):
+            if not isinstance(o, dict):
+                continue
+            types = set(o["@type"] if isinstance(o.get("@type"), list) else [o.get("@type")])
+            if types & {"WebSite", "WebPage", "Article", "BlogPosting", "FAQPage", "Report", "CollectionPage"}:
                 o["inLanguage"] = L[lang]["html"]
-            if isinstance(o, dict) and isinstance(o.get("url"), str):
+            # the company keeps one URL; pages and breadcrumb steps point at this language's edition
+            if isinstance(o.get("url"), str) and not types & {"Organization", "ProfessionalService"}:
                 o["url"] = rewrite(o["url"], "/", lang)
+            if "BreadcrumbList" in types:
+                for step in o.get("itemListElement", []):
+                    if isinstance(step, dict) and isinstance(step.get("item"), str):
+                        step["item"] = rewrite(step["item"], "/", lang)
         script.string = "\n" + json.dumps(data, ensure_ascii=False, indent=2) + "\n  "
 
 
