@@ -54,7 +54,7 @@ L = {
     "nl": dict(name="Nederlands", html="nl", og="nl_NL"),
     "fi": dict(name="Suomi", html="fi", og="fi_FI"),
     "da": dict(name="Dansk", html="da", og="da_DK"),
-    "no": dict(name="Norsk", html="nb", og="nb_NO"),  # Bokmål; folder /no/, hreflang nb
+    "no": dict(name="Norsk", html="no", og="nb_NO"),  # Bokmål; folder /no/, lang + hreflang "no" (search engines detect "no")
     "ro": dict(name="Română", html="ro", og="ro_RO"),
     "pl": dict(name="Polski", html="pl", og="pl_PL"),
     "sk": dict(name="Slovenčina", html="sk", og="sk_SK"),
@@ -274,6 +274,13 @@ def rewrite_links(soup, rel, lang):
         base = base.rsplit("/", 1)[0] + "/"
     for el in soup.find_all(True):
         if el.find_parent(attrs={"data-i18n-skip": True}) or el.has_attr("data-i18n-skip"):
+            # Untranslated block (language switcher, French-only button): page links stay as written,
+            # but a relative file link must still resolve from the language folder, or it 404s there
+            for a in ("href", "src"):
+                u = el.get(a)
+                if u and not u.startswith(("/", "#", "mailto:", "tel:", "javascript:", "data:", "http")) \
+                        and not is_page_path(urlparse(urljoin("https://x" + base, u)).path or "/"):
+                    el[a] = rewrite(u, base, lang)
             continue
         for a in ("href", "src", "action", "poster"):
             if el.has_attr(a):

@@ -496,6 +496,34 @@
    }
   }
  },
+ "airports-terminals": {
+  "series": "general",
+  "sector": "Airports and Terminals",
+  "title": "The busiest hour",
+  "editions": {
+   "en": {
+    "file": "airports-terminals.pdf",
+    "pages": 31,
+    "download_name": "Heirstone Consulting Research - Airports and Terminals - The busiest hour.pdf",
+    "sector": "Airports and Terminals",
+    "title": "The busiest hour"
+   },
+   "fr": {
+    "file": "airports-terminals.fr.pdf",
+    "pages": 31,
+    "download_name": "Heirstone Consulting Research - Aéroports et aérogares - L'heure de pointe.pdf",
+    "sector": "Aéroports et aérogares",
+    "title": "L’heure de pointe"
+   },
+   "ru": {
+    "file": "airports-terminals.ru.pdf",
+    "pages": 31,
+    "download_name": "Heirstone Consulting Research - Аэропорты и аэровокзалы - Час пик.pdf",
+    "sector": "Аэропорты и аэровокзалы",
+    "title": "Час пик"
+   }
+  }
+ },
  "kyrgyzstan-resort-economies": {
   "series": "central-asia",
   "sector": "Resort Economies in Kyrgyzstan",

@@ -27,41 +27,87 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Heirstone Consulting",
-  "url": "https://www.heirstoneconsulting.com/ar/",
-  "description": "Heirstone Consulting دار استشارات استراتيجية متخصصة تصوغ استراتيجيات راسخة تجاريًا ومستنيرة بأفضل الممارسات العالمية في مجالات العقارات والسياحة والتنمية الوطنية، في منطقة الشرق الأوسط وشمال أفريقيا وأفريقيا وآسيا الوسطى.",
-  "serviceType": [
-    "الاستشارات العقارية",
-    "التطوير السياحي",
-    "استراتيجية الرؤية الوطنية",
-    "استراتيجية العلامة التجارية للوجهات"
-  ],
-  "areaServed": [
-    "الشرق الأوسط",
-    "دول مجلس التعاون الخليجي",
-    "شمال أفريقيا",
-    "أفريقيا جنوب الصحراء الكبرى",
-    "آسيا الوسطى"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "info@heirstoneconsulting.com",
-    "contactType": "general"
-  }
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://www.heirstoneconsulting.com/#organization",
+      "name": "Heirstone Consulting",
+      "legalName": "Heirstone Consulting L.L.C-FZ",
+      "url": "https://www.heirstoneconsulting.com/ar/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.heirstoneconsulting.com/favicon.svg"
+      },
+      "image": "https://www.heirstoneconsulting.com/og-image.jpg",
+      "description": "Heirstone Consulting دار استشارات استراتيجية متخصصة تصوغ استراتيجيات راسخة تجاريًا ومستنيرة بأفضل الممارسات العالمية في مجالات العقارات والسياحة والتنمية الوطنية، في منطقة الشرق الأوسط وشمال أفريقيا وأفريقيا وآسيا الوسطى.",
+      "email": "info@heirstoneconsulting.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Meydan Grandstand, 6th Floor, Meydan Road, Nad Al Sheba",
+        "addressLocality": "Dubai",
+        "addressCountry": "AE"
+      },
+      "location": [
+        {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Meydan Grandstand, 6th Floor, Meydan Road, Nad Al Sheba",
+            "addressLocality": "Dubai",
+            "addressCountry": "AE"
+          }
+        },
+        {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Cairo",
+            "addressCountry": "EG"
+          }
+        }
+      ],
+      "areaServed": [
+        "الشرق الأوسط",
+        "دول مجلس التعاون الخليجي",
+        "شمال أفريقيا",
+        "أفريقيا جنوب الصحراء الكبرى",
+        "آسيا الوسطى"
+      ],
+      "knowsAbout": [
+        "الاستشارات العقارية",
+        "التطوير السياحي",
+        "استراتيجية الرؤية الوطنية",
+        "استراتيجية العلامة التجارية للوجهات",
+        "المشاريع الخاصة",
+        "التحول الرقمي"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/heirstoneconsulting"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@heirstoneconsulting.com",
+        "contactType": "general"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.heirstoneconsulting.com/#website",
+      "name": "Heirstone Consulting",
+      "url": "https://www.heirstoneconsulting.com/ar/",
+      "description": "استشارات استراتيجية في العقارات والسياحة والتنمية الوطنية في منطقة الشرق الأوسط وشمال أفريقيا وأفريقيا وآسيا الوسطى.",
+      "publisher": {
+        "@id": "https://www.heirstoneconsulting.com/#organization"
+      },
+      "inLanguage": "ar"
+    }
+  ]
 }
   </script>
 <!-- Structured Data: WebSite -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Heirstone Consulting",
-  "url": "https://www.heirstoneconsulting.com/ar/",
-  "description": "استشارات استراتيجية في العقارات والسياحة والتنمية الوطنية في منطقة الشرق الأوسط وشمال أفريقيا وأفريقيا وآسيا الوسطى.",
-  "inLanguage": "ar"
-}
-  </script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -86,7 +132,7 @@
 <link href="https://www.heirstoneconsulting.com/nl/" hreflang="nl" rel="alternate"/>
 <link href="https://www.heirstoneconsulting.com/fi/" hreflang="fi" rel="alternate"/>
 <link href="https://www.heirstoneconsulting.com/da/" hreflang="da" rel="alternate"/>
-<link href="https://www.heirstoneconsulting.com/no/" hreflang="nb" rel="alternate"/>
+<link href="https://www.heirstoneconsulting.com/no/" hreflang="no" rel="alternate"/>
 <link href="https://www.heirstoneconsulting.com/ro/" hreflang="ro" rel="alternate"/>
 <link href="https://www.heirstoneconsulting.com/pl/" hreflang="pl" rel="alternate"/>
 <link href="https://www.heirstoneconsulting.com/sk/" hreflang="sk" rel="alternate"/>
@@ -125,7 +171,7 @@
 <li><a href="/ar/pages/experience">خبراتنا</a></li><li><a href="/ar/pages/reports">التقارير</a></li><li><a href="/ar/pages/insights">رؤى وتحليلات</a></li><li><a href="/ar/pages/about">من نحن</a></li>
 <li><a href="/ar/pages/services">خدماتنا</a></li>
 <li><a class="navbar-cta" href="/ar/pages/contact">اتصل بنا</a></li>
-<!-- i18n:switch --><li class="dropdown lang-switch" data-i18n-skip=""><button aria-haspopup="true" aria-label="اللغة" class="lang-btn" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg><span>AR</span></button><div class="dropdown-menu lang-menu"><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a aria-current="true" data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="nb" lang="nb">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div></li><!-- /i18n:switch -->
+<!-- i18n:switch --><li class="dropdown lang-switch" data-i18n-skip=""><button aria-haspopup="true" aria-label="اللغة" class="lang-btn" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg><span>AR</span></button><div class="dropdown-menu lang-menu"><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a aria-current="true" data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div></li><!-- /i18n:switch -->
 </ul>
 <button aria-controls="mobileNav" aria-expanded="false" aria-label="فتح القائمة" class="hamburger" id="hamburger">
 <span></span><span></span><span></span>
@@ -145,7 +191,7 @@
 <a href="/ar/pages/about">من نحن</a>
 <a href="/ar/pages/services">خدماتنا</a>
 <a href="/ar/pages/contact">اتصل بنا</a>
-<!-- i18n:mswitch --><div aria-label="اللغة" class="mobile-lang" data-i18n-skip=""><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a aria-current="true" data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="nb" lang="nb">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div><!-- /i18n:mswitch -->
+<!-- i18n:mswitch --><div aria-label="اللغة" class="mobile-lang" data-i18n-skip=""><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a aria-current="true" data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div><!-- /i18n:mswitch -->
 </div>
 <main id="main">
 <!-- HERO -->
@@ -443,7 +489,7 @@
 <p>مجالات خبرتنا الخمسة، ومنهجية عملنا، ومختارات من خبرات فريقنا في الشرق الأوسط وأفريقيا وآسيا الوسطى. التنزيل مجاني، ودون الحاجة إلى تعبئة أي نموذج.</p>
 <div class="profile-actions">
 <a class="btn-primary" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">تنزيل النسخة الإنجليزية</a>
-<a class="btn-outline" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
+<a class="btn-outline" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
 </div>
 <p class="profile-meta">PDF · 21 صفحة · نحو 8 ميغابايت</p>
 </div>

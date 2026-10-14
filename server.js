@@ -23,6 +23,7 @@ const mimeTypes = {
   '.xml': 'application/xml; charset=utf-8',
   '.txt': 'text/plain; charset=utf-8',
   '.pdf': 'application/pdf',
+  '.mp4': 'video/mp4',
 };
 
 // Translated editions live under /<code>/. English is the root.
@@ -75,6 +76,79 @@ function withAnalytics(req, html) {
   const at = page.lastIndexOf('</body>');
   return at === -1 ? page + CF_BEACON_TAG : page.slice(0, at) + CF_BEACON_TAG + '\n' + page.slice(at);
 }
+
+// ------------------------------------------------------------------ speed: compression, caching, minified assets
+// Text responses are compressed (Brotli, else gzip) when the browser accepts it. CSS and JS are served
+// from min/ (built by tools/minify.js) while a copy matches its source, else from the readable source.
+// Pages link them as style.css?v=<hash of the source>, so browsers can keep them for a year and still
+// fetch the new file as soon as a deploy changes it.
+const zlib = require('zlib');
+const COMPRESSIBLE = new Set(['.html', '.css', '.js', '.json', '.svg', '.xml', '.txt', '.ico']);
+const ASSETS = new Map(); // '/css/style.css' -> { body, br, gz, v, mtime }
+const BROTLI_FAST = { params: { [zlib.constants.BROTLI_PARAM_QUALITY]: 5 } };
+const STATIC_CACHE = { '.webp': 604800, '.jpg': 604800, '.jpeg': 604800, '.png': 604800, '.gif': 604800, '.svg': 604800,
+  '.ico': 604800, '.woff': 2592000, '.woff2': 2592000, '.mp4': 604800, '.pdf': 86400, '.xml': 3600, '.txt': 3600 };
+
+function asset(route) {
+  const m = route.match(/^\/(css|js)\/([\w.-]+\.(?:css|js))$/);
+  if (!m || !route.endsWith('.' + m[1])) return null;
+  const src = path.join(ROOT, m[1], m[2]);
+  let st;
+  try { st = fs.statSync(src); } catch (e) { return null; }
+  const cached = ASSETS.get(route);
+  if (cached && cached.mtime === st.mtimeMs) return cached;
+  const text = fs.readFileSync(src, 'utf8');
+  const v = require('crypto').createHash('sha1').update(text.replace(/\r\n/g, '\n')).digest('hex').slice(0, 12); // same hash on Windows checkouts
+  let body = text;
+  try {
+    const min = fs.readFileSync(path.join(ROOT, 'min', m[1], m[2]), 'utf8');
+    if (min.startsWith(`/*! src:${v} */`)) body = min;
+  } catch (e) {}
+  const buf = Buffer.from(body);
+  const a = { body: buf, v, mtime: st.mtimeMs, min: body !== text,
+    br: zlib.brotliCompressSync(buf, { params: { [zlib.constants.BROTLI_PARAM_QUALITY]: 11 } }), gz: zlib.gzipSync(buf, { level: 9 }) };
+  ASSETS.set(route, a);
+  return a;
+}
+for (const dir of ['css', 'js']) {
+  try { fs.readdirSync(path.join(ROOT, dir)).forEach((f) => asset(`/${dir}/${f}`)); } catch (e) {}
+}
+
+// href="../css/style.css" -> href="../css/style.css?v=0d9eac52978d"
+function versionAssets(html) {
+  return html.replace(/(["'])((?:\.\.\/)*\/?)(css|js)\/([\w.-]+\.(?:css|js))(?=["'])/g, (m, q, pre, dir, name) => {
+    const a = asset(`/${dir}/${name}`);
+    return a ? `${q}${pre}${dir}/${name}?v=${a.v}` : m;
+  });
+}
+
+function acceptedEncoding(req) {
+  const ok = {};
+  String(req.headers['accept-encoding'] || '').split(',').forEach((part) => {
+    const [name, ...params] = part.trim().toLowerCase().split(';');
+    const q = params.map((x) => x.trim()).find((x) => x.startsWith('q='));
+    if (!q || parseFloat(q.slice(2)) > 0) ok[name] = true;
+  });
+  return ok.br ? 'br' : ok.gzip ? 'gzip' : null;
+}
+
+// Send a text body compressed when it is worth it (always sets Content-Length)
+function sendText(req, res, status, headers, body) {
+  const buf = Buffer.isBuffer(body) ? body : Buffer.from(String(body));
+  headers['Vary'] = headers['Vary'] ? headers['Vary'] + ', Accept-Encoding' : 'Accept-Encoding';
+  const enc = buf.length >= 1024 ? acceptedEncoding(req) : null;
+  const finish = (out, used) => {
+    if (used) headers['Content-Encoding'] = used;
+    headers['Content-Length'] = out.length;
+    send(res, status, headers, out);
+  };
+  if (!enc) return finish(buf);
+  const cb = (err, out) => (err ? finish(buf) : finish(out, enc));
+  if (enc === 'br') zlib.brotliCompress(buf, BROTLI_FAST, cb); else zlib.gzip(buf, { level: 6 }, cb);
+}
+
+// The page as served: analytics beacon (production only) and versioned CSS/JS links
+const renderPage = (req, html) => versionAssets(withAnalytics(req, html).toString('utf8'));
 
 // ------------------------------------------------------------------ contact form -> Resend
 // POST /api/contact sends the enquiry through Resend (https://resend.com).
@@ -457,7 +531,7 @@ function brandHeader(home, label, logoSrc = `${PUBLIC_ORIGIN}/Media/email/heirst
     + '</tr></table>', '26px 40px 26px 40px', B.ink);
 }
 
-function reportEmail(slug, r, name, link, l, otherLink, otherLang) {
+function reportEmail(slug, r, name, link, l, others = []) {
   const B = BRAND;
   const t = MAIL_TEXT[l] || MAIL_TEXT.en;
   const why = NL_SEGMENT ? t.whyNl(nlName(l)) : t.why;
@@ -470,7 +544,8 @@ function reportEmail(slug, r, name, link, l, otherLink, otherLang) {
   const coverFile = `${slug}${l === 'en' ? '' : '.' + l}.jpg`;
   const cover = fs.existsSync(path.join(ROOT, 'Media', 'email', 'covers', coverFile)) ? `${PUBLIC_ORIGIN}/Media/email/covers/${coverFile}` : '';
   const kicker = `${t.series[r.series] || t.series.other} · ${sector}`;
-  const [otherText, otherCta] = (otherLink && t.otherEd[otherLang]) || ['', ''];
+  // One line per other edition (a report can have English, French and Russian)
+  const otherEds = others.filter((o) => o.link && t.otherEd[o.lang]).map((o) => ({ link: o.link, text: t.otherEd[o.lang][0], cta: t.otherEd[o.lang][1] }));
 
   const button = `<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="${B.ink}" style="background-color:${B.ink};padding:13px 24px;">`
     + `<a href="${link}" class="ss" style="font-family:${B.sans};font-size:14px;line-height:18px;font-weight:600;color:#FFFFFF;text-decoration:none;display:inline-block;">${esc(t.button)}</a></td></tr></table>`;
@@ -494,7 +569,7 @@ function reportEmail(slug, r, name, link, l, otherLink, otherLang) {
     mailRow(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="card" bgcolor="${B.paper}" style="background-color:${B.paper};border:1px solid ${B.line};padding:24px;">${card}</td></tr></table>`, '0 40px 0 40px'),
     mailRow(mailP(esc(t.valid(LINK_DAYS)), 13, 20, B.light, '0 0 4px 0')
       + mailP(`<a href="${link}" style="color:${B.slate};text-decoration:underline;word-break:break-all;">${link}</a>`, 12, 18, B.slate, '0', false, 'word-break:break-all;'), '22px 40px 0 40px'),
-    otherText && mailRow(mailP(`${esc(otherText)} <a href="${otherLink}" style="color:${B.ink};font-weight:600;text-decoration:underline;">${esc(otherCta)}</a>`, 14, 22, B.text2, '0'), '18px 40px 0 40px'),
+    ...otherEds.map((o, i) => mailRow(mailP(`${esc(o.text)} <a href="${o.link}" style="color:${B.ink};font-weight:600;text-decoration:underline;">${esc(o.cta)}</a>`, 14, 22, B.text2, '0'), `${i ? 8 : 18}px 40px 0 40px`)),
     mailRow(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top:1px solid ${B.line};font-size:0;line-height:0;height:1px;">&nbsp;</td></tr></table>`, '28px 40px 0 40px'),
     mailRow(mailP(esc(t.discuss), 15, 24, B.text, '0 0 18px 0')
       + mailP('Heirstone Consulting Research', 17, 22, B.ink, '0 0 2px 0', true)
@@ -504,7 +579,7 @@ function reportEmail(slug, r, name, link, l, otherLink, otherLang) {
   ].filter(Boolean);
 
   const text = `${t.dear} ${first},\n\n${t.ready}\n\n${title}\n${t.meta(ed.pages)}\n\n${t.button}${sep}${link}\n${t.valid(LINK_DAYS)}\n`
-    + (otherText ? `\n${otherText} ${otherLink}\n` : '')
+    + otherEds.map((o) => `\n${o.text} ${o.link}\n`).join('')
     + `\n${t.discuss}\n\nHeirstone Consulting Research\n${t.offices} · heirstoneconsulting.com\n`
     + (NEWSLETTER.postal_address ? `${NEWSLETTER.postal_address}\n` : '') + `\n${why}`;
   return { title, html: brandedEmail({ lang: l, title, preheader: t.pre(LINK_DAYS), rows }), text, subject: `${t.subject}${sep}${title}` };
@@ -528,8 +603,8 @@ function handleReportRequest(req, res) {
     const exp = Date.now() + LINK_DAYS * 864e5;
     const linkFor = (ll) => `${PUBLIC_ORIGIN}/api/reports/download?t=${makeToken({ r: slug, e: email, n: name.slice(0, 80), l: ll, x: exp })}`;
     const link = linkFor(l);
-    const other = r.editions && Object.keys(r.editions).find((k) => k !== l);
-    const mail = reportEmail(slug, r, name, link, l, other ? linkFor(other) : '', other);
+    const others = Object.keys(r.editions || {}).filter((k) => k !== l).map((k) => ({ lang: k, link: linkFor(k) }));
+    const mail = reportEmail(slug, r, name, link, l, others);
     try {
       const sent = await resendSend({ from: REPORT_FROM, to: [email], reply_to: CONTACT_TO[0], subject: mail.subject, html: mail.html, text: mail.text, attachments: logoAttachment() });
       if (sent.status < 200 || sent.status >= 300) {
@@ -623,8 +698,13 @@ function handleLeadsExport(req, res, qs) {
 }
 
 const server = http.createServer((req, res) => {
-  // Redirect non-www to www
+  // HSTS on the production domain (https only from now on), plus two standard hardening headers
   const host = req.headers.host || '';
+  if (ANALYTICS_HOST.test(host.replace(/:\d+$/, ''))) res.setHeader('Strict-Transport-Security', 'max-age=31536000');
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+
+  // Redirect non-www to www
   if (host && !host.startsWith('www.') && !host.startsWith('localhost') && !host.startsWith('127.')) {
     return send(res, 301, { 'Location': 'https://www.' + host + req.url });
   }
@@ -675,6 +755,21 @@ const server = http.createServer((req, res) => {
     }
   }
 
+  // CSS and JS: minified, precompressed, cached for a year when the link carries the current ?v=
+  const a = (req.method === 'GET' || req.method === 'HEAD') && asset(urlPath);
+  if (a) {
+    const fresh = new URLSearchParams(query).get('v') === a.v;
+    const tag = `"${a.v}${a.min ? '-m' : ''}"`;
+    const headers = { 'Content-Type': mimeTypes[path.extname(urlPath)], 'Cache-Control': fresh ? 'public, max-age=31536000, immutable' : 'public, max-age=3600',
+      'ETag': tag, 'Vary': 'Accept-Encoding' };
+    if (req.headers['if-none-match'] === tag) return send(res, 304, headers);
+    const enc = acceptedEncoding(req);
+    const body = enc === 'br' ? a.br : enc === 'gzip' ? a.gz : a.body;
+    if (enc) headers['Content-Encoding'] = enc;
+    headers['Content-Length'] = body.length;
+    return send(res, 200, headers, body);
+  }
+
   // Map the URL to a file
   if (urlPath.endsWith('/')) urlPath += 'index.html';
   let filePath = path.normalize(path.join(ROOT, urlPath));
@@ -691,10 +786,10 @@ const server = http.createServer((req, res) => {
       fs.readFile(notFound, (err2, data2) => {
         if (err2) {
           fs.readFile(path.join(ROOT, '404.html'), (err3, data3) => {
-            send(res, 404, { 'Content-Type': 'text/html; charset=utf-8' }, err3 ? '<h1>404 - Page Not Found</h1>' : withAnalytics(req, data3));
+            sendText(req, res, 404, { 'Content-Type': 'text/html; charset=utf-8' }, err3 ? '<h1>404 - Page Not Found</h1>' : renderPage(req, data3));
           });
         } else {
-          send(res, 404, { 'Content-Type': 'text/html; charset=utf-8' }, withAnalytics(req, data2));
+          sendText(req, res, 404, { 'Content-Type': 'text/html; charset=utf-8' }, renderPage(req, data2));
         }
       });
       return;
@@ -702,7 +797,11 @@ const server = http.createServer((req, res) => {
     const ext = path.extname(filePath);
     const headers = { 'Content-Type': mimeTypes[ext] || 'application/octet-stream' };
     if (ext === '.html') headers['Vary'] = 'Accept-Language, Cookie';
-    send(res, 200, headers, ext === '.html' ? withAnalytics(req, data) : data);
+    if (STATIC_CACHE[ext]) headers['Cache-Control'] = `public, max-age=${STATIC_CACHE[ext]}`;
+    if (ext === '.html') return sendText(req, res, 200, headers, renderPage(req, data));
+    if (COMPRESSIBLE.has(ext)) return sendText(req, res, 200, headers, data);
+    headers['Content-Length'] = data.length;
+    send(res, 200, headers, data);
   });
 });
 

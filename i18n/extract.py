@@ -21,8 +21,9 @@ SKIP = {"script", "style", "noscript", "svg", "template", "code", "pre"}
 ATTRS = ("alt", "title", "aria-label", "placeholder", "aria-roledescription")
 META_TEXT = {"description", "twitter:title", "twitter:description", "og:title", "og:description",
              "og:image:alt", "twitter:image:alt", "og:site_name"}
+# Postal addresses stay as written in every language (search engines match them to the map)
 LD_KEYS = {"name", "description", "text", "headline", "alternateName", "slogan", "jobTitle",
-           "addressLocality", "addressCountry", "areaServed", "knowsAbout", "serviceType", "about", "caption", "abstract"}
+           "areaServed", "knowsAbout", "serviceType", "about", "caption", "abstract"}
 
 # strings the site's JavaScript writes into the page
 JS_STRINGS = [

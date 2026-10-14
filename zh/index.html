@@ -27,41 +27,87 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Heirstone Consulting",
-  "url": "https://www.heirstoneconsulting.com/zh/",
-  "description": "Heirstone Consulting 是一家专业战略咨询机构，为中东和北非、非洲及中亚地区的房地产、旅游和国家发展制定立足商业现实、具备全球视野的战略。",
-  "serviceType": [
-    "房地产战略",
-    "旅游发展",
-    "国家愿景战略",
-    "目的地品牌战略"
-  ],
-  "areaServed": [
-    "中东",
-    "海湾国家",
-    "北非",
-    "撒哈拉以南非洲",
-    "中亚"
-  ],
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "info@heirstoneconsulting.com",
-    "contactType": "general"
-  }
+  "@graph": [
+    {
+      "@type": [
+        "Organization",
+        "ProfessionalService"
+      ],
+      "@id": "https://www.heirstoneconsulting.com/#organization",
+      "name": "Heirstone Consulting",
+      "legalName": "Heirstone Consulting L.L.C-FZ",
+      "url": "https://www.heirstoneconsulting.com/zh/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.heirstoneconsulting.com/favicon.svg"
+      },
+      "image": "https://www.heirstoneconsulting.com/og-image.jpg",
+      "description": "Heirstone Consulting 是一家专业战略咨询机构，为中东和北非、非洲及中亚地区的房地产、旅游和国家发展制定立足商业现实、具备全球视野的战略。",
+      "email": "info@heirstoneconsulting.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Meydan Grandstand, 6th Floor, Meydan Road, Nad Al Sheba",
+        "addressLocality": "Dubai",
+        "addressCountry": "AE"
+      },
+      "location": [
+        {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Meydan Grandstand, 6th Floor, Meydan Road, Nad Al Sheba",
+            "addressLocality": "Dubai",
+            "addressCountry": "AE"
+          }
+        },
+        {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Cairo",
+            "addressCountry": "EG"
+          }
+        }
+      ],
+      "areaServed": [
+        "中东",
+        "海湾国家",
+        "北非",
+        "撒哈拉以南非洲",
+        "中亚"
+      ],
+      "knowsAbout": [
+        "房地产战略",
+        "旅游发展",
+        "国家愿景战略",
+        "目的地品牌战略",
+        "特别项目",
+        "数字化转型"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/company/heirstoneconsulting"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@heirstoneconsulting.com",
+        "contactType": "general"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.heirstoneconsulting.com/#website",
+      "name": "Heirstone Consulting",
+      "url": "https://www.heirstoneconsulting.com/zh/",
+      "description": "为中东和北非、非洲及中亚地区的房地产、旅游和国家发展提供战略咨询。",
+      "publisher": {
+        "@id": "https://www.heirstoneconsulting.com/#organization"
+      },
+      "inLanguage": "zh-Hans"
+    }
+  ]
 }
   </script>
 <!-- Structured Data: WebSite -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Heirstone Consulting",
-  "url": "https://www.heirstoneconsulting.com/zh/",
-  "description": "为中东和北非、非洲及中亚地区的房地产、旅游和国家发展提供战略咨询。",
-  "inLanguage": "zh-Hans"
-}
-  </script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
@@ -86,7 +132,7 @@
 <link href="https://www.heirstoneconsulting.com/nl/" hreflang="nl" rel="alternate"/>
 <link href="https://www.heirstoneconsulting.com/fi/" hreflang="fi" rel="alternate"/>
 <link href="https://www.heirstoneconsulting.com/da/" hreflang="da" rel="alternate"/>
-<link href="https://www.heirstoneconsulting.com/no/" hreflang="nb" rel="alternate"/>
+<link href="https://www.heirstoneconsulting.com/no/" hreflang="no" rel="alternate"/>
 <link href="https://www.heirstoneconsulting.com/ro/" hreflang="ro" rel="alternate"/>
 <link href="https://www.heirstoneconsulting.com/pl/" hreflang="pl" rel="alternate"/>
 <link href="https://www.heirstoneconsulting.com/sk/" hreflang="sk" rel="alternate"/>
@@ -125,7 +171,7 @@
 <li><a href="/zh/pages/experience">项目经验</a></li><li><a href="/zh/pages/reports">研究报告</a></li><li><a href="/zh/pages/insights">洞见</a></li><li><a href="/zh/pages/about">关于我们</a></li>
 <li><a href="/zh/pages/services">服务</a></li>
 <li><a class="navbar-cta" href="/zh/pages/contact">联系我们</a></li>
-<!-- i18n:switch --><li class="dropdown lang-switch" data-i18n-skip=""><button aria-haspopup="true" aria-label="语言" class="lang-btn" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg><span>ZH</span></button><div class="dropdown-menu lang-menu"><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a aria-current="true" data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="nb" lang="nb">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div></li><!-- /i18n:switch -->
+<!-- i18n:switch --><li class="dropdown lang-switch" data-i18n-skip=""><button aria-haspopup="true" aria-label="语言" class="lang-btn" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg><span>ZH</span></button><div class="dropdown-menu lang-menu"><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a aria-current="true" data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div></li><!-- /i18n:switch -->
 </ul>
 <button aria-controls="mobileNav" aria-expanded="false" aria-label="打开菜单" class="hamburger" id="hamburger">
 <span></span><span></span><span></span>
@@ -145,7 +191,7 @@
 <a href="/zh/pages/about">关于我们</a>
 <a href="/zh/pages/services">服务</a>
 <a href="/zh/pages/contact">联系我们</a>
-<!-- i18n:mswitch --><div aria-label="语言" class="mobile-lang" data-i18n-skip=""><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a aria-current="true" data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="nb" lang="nb">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div><!-- /i18n:mswitch -->
+<!-- i18n:mswitch --><div aria-label="语言" class="mobile-lang" data-i18n-skip=""><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a aria-current="true" data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div><!-- /i18n:mswitch -->
 </div>
 <main id="main">
 <!-- HERO -->
@@ -443,7 +489,7 @@
 <p>我们的五大业务领域、工作方式，以及团队在中东、非洲和中亚的部分项目经验。免费下载，无需填写表单。</p>
 <div class="profile-actions">
 <a class="btn-primary" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">下载英文版</a>
-<a class="btn-outline" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
+<a class="btn-outline" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
 </div>
 <p class="profile-meta">PDF · 21 页 · 约 8 MB</p>
 </div>
