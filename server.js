@@ -150,6 +150,43 @@ function sendText(req, res, status, headers, body) {
 // The page as served: analytics beacon (production only) and versioned CSS/JS links
 const renderPage = (req, html) => versionAssets(withAnalytics(req, html).toString('utf8'));
 
+// ------------------------------------------------------------------ addresses from the earlier site
+// The first version of the site used /services/<long-name>. Google still requests those (Search Console
+// lists them as 404s), so each one is sent permanently to today's page; any other /services address goes to
+// the same-named page if there is one, else to the Services overview.
+const LEGACY_SERVICES = {
+  'competitive-benchmarking': 'competitive-benchmarking',
+  'public-private-partnership-strategy': 'ppp-strategy',
+  'global-benchmarking-of-national-transformation-programs': 'global-benchmarking',
+  'global-benchmarking-of-tourism-models': 'global-benchmarking',
+  'national-visions-and-strategic-frameworks': 'national-vision',
+  'cross-border-expansion-advisory': 'cross-border-expansion',
+  'innovation-ecosystem-strategy': 'innovation-ecosystem',
+  'market-research-and-opportunity-identification': 'market-research',
+  'cultural-heritage-and-eco-tourism-development-strategy': 'tourism-development',
+  'branded-residences-strategy-advisory': 'branded-residences',
+  'tourism-market-research-and-demand-forecasting': 'tourism-market-research',
+  'tourism-policy-and-investment-strategy-advisory': 'policy-framework',
+  'large-scale-asset-monetization-strategy': 'asset-monetization',
+  'monitoring-and-adjustment-frameworks': 'monitoring-frameworks',
+  'highest-and-best-use-analysis': 'highest-and-best-use',
+  'flagship-project-and-anchor-asset-strategy': 'special-projects',
+  'visitor-economy-strategy': 'visitor-economy',
+  'destination-brand-development-advisory': 'destination-brand',
+  'development-strategy-and-phasing': 'development-strategy',
+  'destination-strategy-and-positioning': 'destination-strategy',
+  'sports-culture-and-mega-event-strategy-advisory': 'sports-culture',
+  'commercial-feasibility-studies': 'commercial-feasibility',
+  'investor-outreach-strategy-and-phased-engagement-planning': 'investor-outreach',
+  'investment-attraction-strategy': 'investment-attraction',
+};
+function legacyTarget(route) {
+  const m = route.match(/^\/services(?:\/([\w-]+))?\/?$/);
+  if (!m) return null;
+  const slug = m[1] && (LEGACY_SERVICES[m[1]] || (fs.existsSync(path.join(ROOT, 'pages', m[1] + '.html')) ? m[1] : null));
+  return '/pages/' + (slug || 'services');
+}
+
 // ------------------------------------------------------------------ contact form -> Resend
 // POST /api/contact sends the enquiry through Resend (https://resend.com).
 // Settings: RESEND_API_KEY (required), CONTACT_TO (comma list), CONTACT_FROM (verified domain).
@@ -711,6 +748,8 @@ const server = http.createServer((req, res) => {
 
   const route = req.url.split('?')[0];
   const query = req.url.includes('?') ? req.url.slice(req.url.indexOf('?') + 1) : '';
+  const legacy = legacyTarget(route);
+  if (legacy) return send(res, 301, { 'Location': legacy, 'Cache-Control': 'public, max-age=86400' });
   if (route === '/api/contact') return handleContact(req, res);
   if (route === '/api/reports/request') return handleReportRequest(req, res);
   if (route === '/api/reports/download') return handleReportDownload(req, res, query);
