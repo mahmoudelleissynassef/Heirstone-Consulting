@@ -31,7 +31,10 @@ const LANGS = ['ar', 'zh', 'ja', 'ko', 'id', 'ms', 'es', 'fr', 'it', 'pt', 'el',
 // Browser codes that map onto one of our folders: legacy Indonesian, Norwegian Bokmål and Nynorsk
 const LANG_ALIAS = { in: 'id', nb: 'no', nn: 'no' };
 const SUPPORTED = new Set(['en', ...LANGS]);
-const BOTS = /bot|crawl|spider|slurp|facebookexternalhit|embedly|preview|lighthouse|headless/i;
+// Crawlers and AI fetchers always get the page they asked for (no language redirect). The second line catches
+// AI agents whose user agent has no "bot" in it, such as Perplexity-User, Claude-User and MistralAI-User.
+const BOTS = new RegExp(['bot|crawl|spider|slurp|facebookexternalhit|embedly|preview|lighthouse|headless',
+  'perplexity|openai|chatgpt|anthropic|claude|google-|mistral|cohere|ai2|youbot|duckassist|meta-external|semrush|ahrefs'].join('|'), 'i');
 
 function cookie(req, name) {
   const m = (req.headers.cookie || '').match(new RegExp('(?:^|;\s*)' + name + '=([^;]+)'));
