@@ -27,7 +27,8 @@ import extract as ex
 ROOT = ex.ROOT
 SITE = "https://www.heirstoneconsulting.com"
 
-ORDER = ["en", "ar", "zh", "ja", "ko", "id", "ms", "es", "fr", "it", "pt", "el", "de", "fi", "da", "ro", "sw", "ru", "ky", "kk", "tr"]
+ORDER = ["en", "ar", "zh", "ja", "ko", "id", "ms", "es", "fr", "it", "pt", "el", "de", "nl", "fi", "da", "no", "ro", "pl", "sk", "hr",
+         "sw", "ru", "ky", "kk", "tr"]
 CJK_FONTS = "family=Noto+Serif+{v}:wght@500;600;700&family=Noto+Sans+{v}:wght@300;400;500;600;700"
 CYR_FONTS = "family=Noto+Serif:wght@500;600;700&family=Noto+Sans:wght@300;400;500;600;700"
 L = {
@@ -50,9 +51,14 @@ L = {
     "el": dict(name="Ελληνικά", html="el", og="el_GR", fonts=CYR_FONTS,
                serif="'Noto Serif', serif", sans="'Noto Sans', sans-serif"),
     "de": dict(name="Deutsch", html="de", og="de_DE"),
+    "nl": dict(name="Nederlands", html="nl", og="nl_NL"),
     "fi": dict(name="Suomi", html="fi", og="fi_FI"),
     "da": dict(name="Dansk", html="da", og="da_DK"),
+    "no": dict(name="Norsk", html="nb", og="nb_NO"),  # Bokmål; folder /no/, hreflang nb
     "ro": dict(name="Română", html="ro", og="ro_RO"),
+    "pl": dict(name="Polski", html="pl", og="pl_PL"),
+    "sk": dict(name="Slovenčina", html="sk", og="sk_SK"),
+    "hr": dict(name="Hrvatski", html="hr", og="hr_HR"),
     "sw": dict(name="Kiswahili", html="sw", og="sw_TZ"),
     "ru": dict(name="Русский", html="ru", og="ru_RU", fonts=CYR_FONTS,
                serif="'Noto Serif', serif", sans="'Noto Sans', sans-serif"),

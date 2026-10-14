@@ -25,7 +25,9 @@ const mimeTypes = {
 };
 
 // Translated editions live under /<code>/. English is the root.
-const LANGS = ['ar', 'zh', 'ja', 'ko', 'id', 'ms', 'es', 'fr', 'it', 'pt', 'el', 'de', 'fi', 'da', 'ro', 'sw', 'ru', 'ky', 'kk', 'tr'];
+const LANGS = ['ar', 'zh', 'ja', 'ko', 'id', 'ms', 'es', 'fr', 'it', 'pt', 'el', 'de', 'nl', 'fi', 'da', 'no', 'ro', 'pl', 'sk', 'hr', 'sw', 'ru', 'ky', 'kk', 'tr'];
+// Browser codes that map onto one of our folders: legacy Indonesian, Norwegian Bokmål and Nynorsk
+const LANG_ALIAS = { in: 'id', nb: 'no', nn: 'no' };
 const SUPPORTED = new Set(['en', ...LANGS]);
 const BOTS = /bot|crawl|spider|slurp|facebookexternalhit|embedly|preview|lighthouse|headless/i;
 
@@ -41,7 +43,7 @@ function preferredLanguage(header) {
     const [tag, ...params] = part.trim().split(';');
     const q = params.map(p => p.trim()).find(p => p.startsWith('q='));
     const base = tag.trim().toLowerCase().split('-')[0];
-    return { base: base === 'in' ? 'id' : base, q: q ? parseFloat(q.slice(2)) || 0 : 1, i }; // 'in' = legacy code for Indonesian
+    return { base: LANG_ALIAS[base] || base, q: q ? parseFloat(q.slice(2)) || 0 : 1, i };
   }).filter(t => t.base && t.q > 0)
     .sort((a, b) => b.q - a.q || a.i - b.i);
   const hit = tags.find(t => SUPPORTED.has(t.base));

@@ -360,7 +360,7 @@
 
 /* Languages with very long compound words: a slightly smaller mobile title */
 @media (max-width: 480px) {
-  html:is([lang=de],[lang=fi],[lang=da],[lang=ru],[lang=ky],[lang=kk],[lang=tr]) .ph h1 { font-size: clamp(28px, 8.2vw, 36px); }
+  html:is([lang=de],[lang=nl],[lang=fi],[lang=da],[lang=nb],[lang=ru],[lang=ky],[lang=kk],[lang=tr]) .ph h1 { font-size: clamp(28px, 8.2vw, 36px); }
 }
 
 /* =================================================================
