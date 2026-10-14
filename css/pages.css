@@ -535,3 +535,44 @@ button.rp-get { cursor: pointer; border: 0; font: inherit; font-weight: 600; }
   .rp-cards { gap: 16px; }
 }
 .rp-sec h2, .rp-sec h3, .rp-card-body h2 { overflow-wrap: break-word; hyphens: auto; }
+
+/* Reports hub: geography tabs filter the series, tick boxes narrow by geography and sector */
+.rp-jump[aria-current="true"] { background: #fff; color: var(--dark-navy); }
+.rp-filter-sec { background: var(--bg-light); padding: 56px 48px 0; scroll-margin-top: 84px; }
+.rp-filter-sec + .rp-hub, .rp-hub.is-first { padding-top: 56px; }
+.rp-card[hidden], .rp-hub[hidden] { display: none !important; }
+.rp-filter { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) auto; gap: 28px 40px; align-items: start; padding: 26px 28px; background: var(--bg-white); border: 1px solid var(--border); }
+.rp-fgroup { border: 0; padding: 0; margin: 0; min-width: 0; }
+.rp-fgroup legend { padding: 0; margin-bottom: 12px; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--text-light); }
+.rp-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.rp-chip { position: relative; display: inline-flex; cursor: pointer; }
+.rp-chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.rp-chip span { display: inline-flex; align-items: center; gap: 8px; padding: 8px 13px; border: 1px solid var(--border); border-radius: 999px; background: var(--bg-white); font-size: 13.5px; line-height: 1.3; color: var(--text-secondary); transition: border-color .2s, background .2s, color .2s; }
+.rp-chip span::before { content: ''; flex: none; width: 12px; height: 12px; border: 1.5px solid var(--mist); border-radius: 3px; transition: background .2s, border-color .2s; }
+.rp-chip:hover span { border-color: var(--brand); }
+.rp-chip input:checked + span { border-color: var(--dark-navy); background: var(--dark-navy); color: #fff; }
+.rp-chip input:checked + span::before { border-color: #fff; background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2l2.3 2.3 4.7-5' fill='none' stroke='%230E1B2A' stroke-width='1.8'/%3E%3C/svg%3E") center / 10px no-repeat; }
+.rp-chip input:focus-visible + span { outline: 2px solid var(--brand); outline-offset: 2px; }
+.rp-fbar { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; min-width: 140px; }
+.rp-count { margin: 0; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--text-light); text-align: end; }
+.rp-count strong { display: block; font-family: var(--f-serif); font-size: 38px; font-weight: 500; line-height: 1.1; letter-spacing: 0; color: var(--dark-navy); }
+.rp-clear { padding: 0; border: 0; background: none; font: inherit; font-size: 13.5px; font-weight: 600; color: var(--brand); text-decoration: underline; cursor: pointer; }
+.rp-clear:hover { color: var(--dark-navy); }
+.rp-empty { margin-top: 28px; font-size: 16px; line-height: 1.7; color: var(--text-secondary); }
+@media (max-width: 960px) {
+  .rp-filter { grid-template-columns: 1fr; gap: 22px; }
+  .rp-fbar { flex-direction: row; align-items: center; justify-content: space-between; min-width: 0; }
+  .rp-count { text-align: start; }
+  .rp-count strong { display: inline; margin-inline-start: 8px; font-size: 26px; }
+}
+@media (max-width: 860px) { .rp-filter-sec { padding: 40px 24px 0; } .rp-filter-sec + .rp-hub, .rp-hub.is-first { padding-top: 40px; } }
+@media (max-width: 600px) {
+  .rp-filter-sec { padding: 28px 16px 0; }
+  .rp-filter { padding: 18px 16px; }
+  .rp-chip span { padding: 7px 11px; font-size: 13px; }
+}
+.rp-ftoggle { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 12px; padding: 10px 16px; border: 1px solid var(--dark-navy); background: var(--bg-white); color: var(--dark-navy); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
+.rp-ftoggle[hidden] { display: none; }
+.rp-ftoggle::after { content: ''; width: 7px; height: 7px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-2px) rotate(45deg); transition: transform .2s; }
+.rp-ftoggle[aria-expanded="true"]::after { transform: translateY(2px) rotate(225deg); }
+.rp-filter.is-collapsed .rp-fgroup { display: none; }

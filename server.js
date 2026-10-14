@@ -22,6 +22,7 @@ const mimeTypes = {
   '.woff2': 'font/woff2',
   '.xml': 'application/xml; charset=utf-8',
   '.txt': 'text/plain; charset=utf-8',
+  '.pdf': 'application/pdf',
 };
 
 // Translated editions live under /<code>/. English is the root.
@@ -255,7 +256,7 @@ async function subscribeToNewsletter({ email, name, org, l, siteLang, slug, ts }
     const contact = {
       email, first_name: first || '', last_name: rest.join(' '), unsubscribed: false,
       segments: [{ id: NL_SEGMENT }],
-      topics: ['en', 'fr'].filter((k) => NL_TOPICS[k]).map((k) => ({ id: NL_TOPICS[k], subscription: k === l ? 'opt_in' : 'opt_out' })),
+      topics: ['en', 'fr'].filter((k) => NL_TOPICS[k]).map((k) => ({ id: NL_TOPICS[k], subscription: k === (NL_TOPICS[l] ? l : 'en') ? 'opt_in' : 'opt_out' })),  // Russian has no topic of its own: English
       properties: clean({ organisation: org, language: l, site_language: siteLang, source: 'report-request', first_report: slug, signed_up_at: ts, ...latest }),
     };
     let made = await resendApi('POST', '/contacts', contact);
@@ -361,9 +362,10 @@ const MAIL_TEXT = {
   en: { dear: 'Dear', ready: 'Thank you for your interest. Your copy of our report is ready.', button: 'Download the report (PDF)',
     pre: (d) => `Your personal download link, valid for ${d} days.`,
     meta: (p) => `${p ? p + ' pages · ' : ''}PDF · English edition`,
-    series: { africa: 'Africa Series', other: 'Middle East & Mediterranean' }, research: 'Research', cover: 'Cover of the report',
+    series: { africa: 'Africa Series', 'central-asia': 'Central Asia', other: 'Middle East & Mediterranean' }, research: 'Research', cover: 'Cover of the report',
     valid: (d) => `This personal link is valid for ${d} days. If the button does not work, copy this address into your browser:`,
-    other: 'This report is also available in French:', otherLink: 'Download the French edition (PDF)',
+    otherEd: { fr: ['This report is also available in French:', 'Download the French edition (PDF)'],
+      ru: ['This report is also available in Russian:', 'Download the Russian edition (PDF)'] },
     discuss: 'If you would like to discuss the findings, simply reply to this email.',
     offices: 'Dubai · Cairo',
     why: 'You received this email because this address was entered to request a Heirstone report. To stop receiving Heirstone research, reply with "unsubscribe".',
@@ -372,14 +374,27 @@ const MAIL_TEXT = {
   fr: { dear: 'Bonjour', ready: 'Merci de votre intérêt. Votre exemplaire de notre rapport est prêt.', button: 'Télécharger le rapport (PDF)',
     pre: (d) => `Votre lien de téléchargement personnel, valable ${d} jours.`,
     meta: (p) => `${p ? p + ' pages · ' : ''}PDF · édition française`,
-    series: { africa: 'Série Afrique', other: 'Moyen-Orient et Méditerranée' }, research: 'Recherche', cover: 'Couverture du rapport',
+    series: { africa: 'Série Afrique', 'central-asia': 'Asie centrale', other: 'Moyen-Orient et Méditerranée' }, research: 'Recherche', cover: 'Couverture du rapport',
     valid: (d) => `Ce lien personnel est valable ${d} jours. Si le bouton ne fonctionne pas, copiez cette adresse dans votre navigateur :`,
-    other: 'Ce rapport est également disponible en anglais :', otherLink: 'Télécharger l’édition anglaise (PDF)',
+    otherEd: { en: ['Ce rapport est également disponible en anglais :', 'Télécharger l’édition anglaise (PDF)'],
+      ru: ['Ce rapport est également disponible en russe :', 'Télécharger l’édition russe (PDF)'] },
     discuss: 'Pour échanger sur les conclusions, il vous suffit de répondre à cet e-mail.',
     offices: 'Dubaï · Le Caire',
     why: 'Vous recevez cet e-mail car cette adresse a été saisie pour demander un rapport Heirstone. Pour ne plus recevoir nos publications, répondez « désinscription ».',
     whyNl: (n) => `Vous recevez cet e-mail car cette adresse a été saisie pour demander un rapport Heirstone. Comme convenu dans le formulaire, nous vous enverrons aussi ${n}, notre lettre de recherche sur nos nouveaux rapports et résultats. Chaque numéro comporte un lien de désinscription en un clic ; vous pouvez aussi répondre « désinscription » à tout moment.`,
     subject: 'Votre rapport Heirstone' },
+  ru: { dear: 'Добрый день,', ready: 'Благодарим за интерес. Ваш экземпляр нашего отчёта готов.', button: 'Скачать отчёт (PDF)',
+    pre: (d) => `Ваша персональная ссылка для скачивания действует ${d} дней.`,
+    meta: (p) => `${p ? p + ' стр. · ' : ''}PDF · русская версия`,
+    series: { africa: 'Серия «Африка»', 'central-asia': 'Центральная Азия', other: 'Ближний Восток и Средиземноморье' }, research: 'Исследования', cover: 'Обложка отчёта',
+    valid: (d) => `Эта персональная ссылка действует ${d} дней. Если кнопка не работает, скопируйте этот адрес в браузер:`,
+    otherEd: { en: ['Этот отчёт также доступен на английском языке:', 'Скачать английскую версию (PDF)'],
+      fr: ['Этот отчёт также доступен на французском языке:', 'Скачать французскую версию (PDF)'] },
+    discuss: 'Если вы хотите обсудить выводы отчёта, просто ответьте на это письмо.',
+    offices: 'Дубай · Каир',
+    why: 'Вы получили это письмо, потому что этот адрес был указан при запросе отчёта Heirstone. Чтобы больше не получать исследования Heirstone, ответьте словом «отписаться».',
+    whyNl: (n) => `Вы получили это письмо, потому что этот адрес был указан при запросе отчёта Heirstone. Как указано в форме, мы также будем присылать вам ${n}, нашу рассылку о новых отчётах и выводах. В каждом выпуске есть ссылка для отписки в один клик; вы также можете в любой момент ответить «отписаться».`,
+    subject: 'Ваш отчёт Heirstone' },
 };
 
 // Brand system for reader emails (Heirstone brand guidelines v1.0, same as the newsletter): Ink Navy, Paper, Slate
@@ -442,7 +457,7 @@ function brandHeader(home, label, logoSrc = `${PUBLIC_ORIGIN}/Media/email/heirst
     + '</tr></table>', '26px 40px 26px 40px', B.ink);
 }
 
-function reportEmail(slug, r, name, link, l, otherLink) {
+function reportEmail(slug, r, name, link, l, otherLink, otherLang) {
   const B = BRAND;
   const t = MAIL_TEXT[l] || MAIL_TEXT.en;
   const why = NL_SEGMENT ? t.whyNl(nlName(l)) : t.why;
@@ -451,10 +466,11 @@ function reportEmail(slug, r, name, link, l, otherLink) {
   const sector = ed.sector || r.sector, short = ed.title || r.title;
   const title = `${sector}${sep}${short}`;
   const first = name.split(/\s+/)[0];
-  const home = `${PUBLIC_ORIGIN}${l === 'fr' ? '/fr/' : '/'}`;
-  const coverFile = `${slug}${l === 'fr' ? '.fr' : ''}.jpg`;
+  const home = `${PUBLIC_ORIGIN}${l === 'en' ? '/' : `/${l}/`}`;
+  const coverFile = `${slug}${l === 'en' ? '' : '.' + l}.jpg`;
   const cover = fs.existsSync(path.join(ROOT, 'Media', 'email', 'covers', coverFile)) ? `${PUBLIC_ORIGIN}/Media/email/covers/${coverFile}` : '';
-  const kicker = `${t.series[r.series === 'africa' ? 'africa' : 'other']} · ${sector}`;
+  const kicker = `${t.series[r.series] || t.series.other} · ${sector}`;
+  const [otherText, otherCta] = (otherLink && t.otherEd[otherLang]) || ['', ''];
 
   const button = `<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="${B.ink}" style="background-color:${B.ink};padding:13px 24px;">`
     + `<a href="${link}" class="ss" style="font-family:${B.sans};font-size:14px;line-height:18px;font-weight:600;color:#FFFFFF;text-decoration:none;display:inline-block;">${esc(t.button)}</a></td></tr></table>`;
@@ -478,7 +494,7 @@ function reportEmail(slug, r, name, link, l, otherLink) {
     mailRow(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="card" bgcolor="${B.paper}" style="background-color:${B.paper};border:1px solid ${B.line};padding:24px;">${card}</td></tr></table>`, '0 40px 0 40px'),
     mailRow(mailP(esc(t.valid(LINK_DAYS)), 13, 20, B.light, '0 0 4px 0')
       + mailP(`<a href="${link}" style="color:${B.slate};text-decoration:underline;word-break:break-all;">${link}</a>`, 12, 18, B.slate, '0', false, 'word-break:break-all;'), '22px 40px 0 40px'),
-    otherLink && mailRow(mailP(`${esc(t.other)} <a href="${otherLink}" style="color:${B.ink};font-weight:600;text-decoration:underline;">${esc(t.otherLink)}</a>`, 14, 22, B.text2, '0'), '18px 40px 0 40px'),
+    otherText && mailRow(mailP(`${esc(otherText)} <a href="${otherLink}" style="color:${B.ink};font-weight:600;text-decoration:underline;">${esc(otherCta)}</a>`, 14, 22, B.text2, '0'), '18px 40px 0 40px'),
     mailRow(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-top:1px solid ${B.line};font-size:0;line-height:0;height:1px;">&nbsp;</td></tr></table>`, '28px 40px 0 40px'),
     mailRow(mailP(esc(t.discuss), 15, 24, B.text, '0 0 18px 0')
       + mailP('Heirstone Consulting Research', 17, 22, B.ink, '0 0 2px 0', true)
@@ -488,7 +504,7 @@ function reportEmail(slug, r, name, link, l, otherLink) {
   ].filter(Boolean);
 
   const text = `${t.dear} ${first},\n\n${t.ready}\n\n${title}\n${t.meta(ed.pages)}\n\n${t.button}${sep}${link}\n${t.valid(LINK_DAYS)}\n`
-    + (otherLink ? `\n${t.other} ${otherLink}\n` : '')
+    + (otherText ? `\n${otherText} ${otherLink}\n` : '')
     + `\n${t.discuss}\n\nHeirstone Consulting Research\n${t.offices} · heirstoneconsulting.com\n`
     + (NEWSLETTER.postal_address ? `${NEWSLETTER.postal_address}\n` : '') + `\n${why}`;
   return { title, html: brandedEmail({ lang: l, title, preheader: t.pre(LINK_DAYS), rows }), text, subject: `${t.subject}${sep}${title}` };
@@ -513,7 +529,7 @@ function handleReportRequest(req, res) {
     const linkFor = (ll) => `${PUBLIC_ORIGIN}/api/reports/download?t=${makeToken({ r: slug, e: email, n: name.slice(0, 80), l: ll, x: exp })}`;
     const link = linkFor(l);
     const other = r.editions && Object.keys(r.editions).find((k) => k !== l);
-    const mail = reportEmail(slug, r, name, link, l, other ? linkFor(other) : '');
+    const mail = reportEmail(slug, r, name, link, l, other ? linkFor(other) : '', other);
     try {
       const sent = await resendSend({ from: REPORT_FROM, to: [email], reply_to: CONTACT_TO[0], subject: mail.subject, html: mail.html, text: mail.text, attachments: logoAttachment() });
       if (sent.status < 200 || sent.status >= 300) {
@@ -577,9 +593,13 @@ function handleReportDownload(req, res, qs) {
   fs.stat(file, (err, st) => {
     if (err) { console.error('Report file missing', file); return reportLinkPage(res, 404); }
     const name = ed.download_name || path.basename(ed.file);
+    // Plain-ASCII fallback for old clients; a name in another script (Russian) falls back to the file name
+    const ascii = /[^\x00-\x7f]/.test(name.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’‘]/g, "'"))
+      ? `Heirstone Consulting Research - ${path.basename(ed.file)}`
+      : name.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[’‘]/g, "'");
     res.writeHead(200, {
       'Content-Type': 'application/pdf', 'Content-Length': st.size,
-      'Content-Disposition': `attachment; filename="${name.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^\x20-\x7e]/g, '').replace(/"/g, '')}"; filename*=UTF-8''${encodeURIComponent(name)}`,
+      'Content-Disposition': `attachment; filename="${ascii.replace(/[^\x20-\x7e]/g, '').replace(/"/g, '')}"; filename*=UTF-8''${encodeURIComponent(name)}`,
       'Cache-Control': 'private, no-store', 'X-Robots-Tag': 'noindex',
     });
     if (req.method === 'HEAD') return res.end();

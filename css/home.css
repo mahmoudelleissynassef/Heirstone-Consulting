@@ -516,3 +516,16 @@
 .hero-content h1 { overflow-wrap: break-word; }
 @media (max-width: 600px) { .hero-content h1 { hyphens: auto; } }   /* hyphenate only where width is tight */
 html:is([lang=kk],[lang=ky],[lang=ru],[lang=de],[lang=nl],[lang=fi],[lang=nb]) .hero-content h1 { font-size: clamp(32px, 4.4vw, 60px); }
+
+/* Company profile: free download under About */
+.profile-strip { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: 48px; align-items: center; max-width: 1100px; margin: 64px auto 0; padding: 36px; background: var(--bg-white); border: 1px solid var(--border); border-radius: 8px; }
+.profile-cover { display: block; }
+.profile-cover img { display: block; width: 100%; height: auto; border-radius: 4px; box-shadow: 0 24px 48px -24px rgba(14,27,42,.45); transition: transform .4s; }
+.profile-cover:hover img { transform: translateY(-2px); }
+.profile-text h3 { margin: 8px 0 12px; font-family: var(--f-serif); font-size: 28px; font-weight: 500; line-height: 1.2; color: var(--dark-navy); }
+.profile-text p { font-size: 15.5px; line-height: 1.75; color: var(--text-secondary); }
+.profile-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.btn-outline { display: inline-block; padding: 12px 26px; border: 1px solid var(--brand); border-radius: 4px; font-size: 15px; font-weight: 600; letter-spacing: .02em; color: var(--dark-navy); transition: background .2s, color .2s, transform .2s; }
+.btn-outline:hover { background: var(--dark-navy); border-color: var(--dark-navy); color: #fff; transform: translateY(-1px); }
+.profile-text .profile-meta { margin-top: 14px; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--text-light); }
+@media (max-width: 860px) { .profile-strip { grid-template-columns: 1fr; gap: 26px; margin-top: 48px; padding: 22px; } }

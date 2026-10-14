@@ -43,7 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (picker) {
       picker.hidden = eds.length < 2;
       const pref = (document.documentElement.lang || 'en').slice(0, 2);
-      const pick = eds.includes(pref) ? pref : 'en';
+      // Russian editions also suit readers of the Kyrgyz and Kazakh pages
+      const pick = eds.includes(pref) ? pref : (['ky', 'kk'].includes(pref) && eds.includes('ru') ? 'ru' : 'en');
       picker.querySelectorAll('input[name="edition"]').forEach((i) => { i.checked = i.value === pick; i.closest('label').hidden = !eds.includes(i.value); });
     }
     form.hidden = false;
@@ -99,4 +100,86 @@ document.addEventListener('DOMContentLoaded', () => {
   const want = new URLSearchParams(location.search).get('report');
   const trigger = want && document.querySelector(`.rp-get[data-report="${CSS.escape(want)}"]`);
   if (trigger) open(trigger);
+});
+
+/* ============================================
+   REPORTS HUB — geography tabs and tick-box filters
+   A tab shows one series (or all); tick boxes narrow by geography and by sector
+   (any ticked value within a group, every group must match). #africa,
+   #middle-east and #central-asia open the hub on that series.
+   ============================================ */
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('reportFilter');
+  if (!form) return;
+  const tabs = [...document.querySelectorAll('[data-geo-tab]')];
+  const sections = [...document.querySelectorAll('[data-series-section]')];
+  const cards = [...document.querySelectorAll('.rp-card[data-series]')];
+  const countEl = form.querySelector('.rp-count-n');
+  const clearBtn = form.querySelector('.rp-clear');
+  const empty = document.querySelector('.rp-empty');
+  const filterSec = document.querySelector('.rp-filter-sec');
+  let series = 'all';
+
+  const ticked = (name) => [...form.querySelectorAll(`input[name="${name}"]:checked`)].map((i) => i.value);
+  const matches = (card, attr, wanted) => !wanted.length || card.dataset[attr].split(' ').some((v) => wanted.includes(v));
+  const apply = () => {
+    const geo = ticked('geo'), sector = ticked('sector');
+    let shown = 0;
+    cards.forEach((c) => {
+      const ok = (series === 'all' || c.dataset.series === series) && matches(c, 'geo', geo) && matches(c, 'sector', sector);
+      c.hidden = !ok;
+      if (ok) shown += 1;
+    });
+    let first = true;
+    sections.forEach((s) => {
+      s.hidden = !s.querySelector('.rp-card[data-series]:not([hidden])');
+      s.classList.toggle('is-first', !s.hidden && first);
+      if (!s.hidden) first = false;
+    });
+    countEl.textContent = shown;
+    clearBtn.hidden = !geo.length && !sector.length;
+    empty.hidden = shown > 0;
+    tabs.forEach((t) => (t.dataset.geoTab === series ? t.setAttribute('aria-current', 'true') : t.removeAttribute('aria-current')));
+  };
+  const choose = (s) => {
+    series = tabs.some((t) => t.dataset.geoTab === s) ? s : 'all';
+    apply();
+  };
+
+  tabs.forEach((t) => t.addEventListener('click', (e) => {
+    e.preventDefault();
+    choose(t.dataset.geoTab);
+    history.replaceState(null, '', series === 'all' ? location.pathname + location.search : `#${series}`);
+    if (filterSec) filterSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }));
+  // Phones: the tick boxes fold behind a toggle (labelled with the section's translated aria-label);
+  // the count stays visible
+  const mq = window.matchMedia('(max-width: 600px)');
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'rp-ftoggle';
+  toggle.setAttribute('aria-controls', 'reportFilter');
+  toggle.setAttribute('aria-expanded', 'false');
+  const toggleLabel = () => {
+    const n = ticked('geo').length + ticked('sector').length;
+    const base = (filterSec && filterSec.getAttribute('aria-label')) || 'Filter';
+    toggle.textContent = n ? `${base} (${n})` : base;
+  };
+  const fold = () => {
+    toggle.hidden = !mq.matches;
+    form.classList.toggle('is-collapsed', mq.matches && toggle.getAttribute('aria-expanded') !== 'true');
+  };
+  toggle.addEventListener('click', () => {
+    toggle.setAttribute('aria-expanded', toggle.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+    fold();
+  });
+  if (filterSec) filterSec.querySelector('.rp-inner').prepend(toggle);
+  if (mq.addEventListener) mq.addEventListener('change', fold);
+  toggleLabel();
+  fold();
+
+  form.addEventListener('change', () => { apply(); toggleLabel(); });
+  clearBtn.addEventListener('click', () => { form.reset(); apply(); toggleLabel(); });
+  window.addEventListener('hashchange', () => choose(location.hash.slice(1)));
+  choose(location.hash.slice(1));
 });

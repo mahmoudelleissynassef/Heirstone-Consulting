@@ -495,5 +495,47 @@
     "title": "Planning for day two"
    }
   }
+ },
+ "kyrgyzstan-resort-economies": {
+  "series": "central-asia",
+  "sector": "Resort Economies in Kyrgyzstan",
+  "title": "Fifty-two weekends",
+  "editions": {
+   "en": {
+    "file": "kyrgyzstan-resort-economies.pdf",
+    "pages": 28,
+    "download_name": "Heirstone Consulting Research - Resort Economies in Kyrgyzstan - Fifty-two weekends.pdf",
+    "sector": "Resort Economies in Kyrgyzstan",
+    "title": "Fifty-two weekends"
+   },
+   "ru": {
+    "file": "kyrgyzstan-resort-economies.ru.pdf",
+    "pages": 28,
+    "download_name": "Heirstone Consulting Research - Курортная экономика Кыргызстана - Выходные круглый год.pdf",
+    "sector": "Курортная экономика Кыргызстана",
+    "title": "Выходные круглый год"
+   }
+  }
+ },
+ "uzbekistan-new-cities": {
+  "series": "central-asia",
+  "sector": "New Cities in Uzbekistan",
+  "title": "The daytime city",
+  "editions": {
+   "en": {
+    "file": "uzbekistan-new-cities.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - New Cities in Uzbekistan - The daytime city.pdf",
+    "sector": "New Cities in Uzbekistan",
+    "title": "The daytime city"
+   },
+   "ru": {
+    "file": "uzbekistan-new-cities.ru.pdf",
+    "pages": 29,
+    "download_name": "Heirstone Consulting Research - Новые города Узбекистана - Дневной город.pdf",
+    "sector": "Новые города Узбекистана",
+    "title": "Дневной город"
+   }
+  }
  }
 }
