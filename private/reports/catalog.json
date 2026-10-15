@@ -566,6 +566,34 @@
    }
   }
  },
+ "airport-cities": {
+  "series": "general",
+  "sector": "Airport Cities",
+  "title": "The runway dividend",
+  "editions": {
+   "en": {
+    "file": "airport-cities.pdf",
+    "pages": 31,
+    "sector": "Airport Cities",
+    "title": "The runway dividend",
+    "download_name": "Heirstone Consulting Research - Airport Cities - The runway dividend.pdf"
+   },
+   "fr": {
+    "file": "airport-cities.fr.pdf",
+    "pages": 31,
+    "sector": "Villes aéroportuaires",
+    "title": "Le dividende de la piste",
+    "download_name": "Heirstone Consulting Research - Villes aéroportuaires - Le dividende de la piste.pdf"
+   },
+   "ar": {
+    "file": "airport-cities.ar.pdf",
+    "pages": 31,
+    "sector": "مدن المطارات",
+    "title": "عائد المدرج",
+    "download_name": "Heirstone Consulting Research - مدن المطارات - عائد المدرج.pdf"
+   }
+  }
+ },
  "kyrgyzstan-resort-economies": {
   "series": "central-asia",
   "sector": "Resort Economies in Kyrgyzstan",

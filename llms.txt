@@ -81,6 +81,7 @@ Free PDFs, sent by email from each report page. Each page carries the key findin
 - [Cruise and Ferry Terminals: Guaranteed Passage](https://www.heirstoneconsulting.com/pages/report-cruise-ferry-terminals): Cruise and ferry terminals as real estate and infrastructure, and a test of when a sea gate earns its land in Egypt, Saudi Arabia and the Gulf. (English)
 - [Event Venues and Legacy: Planning for day two](https://www.heirstoneconsulting.com/pages/report-event-venues-legacy): What became of 30 Olympic, Expo and World Cup sites after the crowds left, and what the Gulf and Egypt can settle now for the venues they are building next. (English)
 - [Airports and Terminals: The busiest hour](https://www.heirstoneconsulting.com/pages/report-airports-terminals): How airports work, how to compare them fairly across regions and what makes a good one, with a view from the Mediterranean, Africa and Central Asia. (English, French, Russian)
+- [Airport Cities: The runway dividend](https://www.heirstoneconsulting.com/pages/report-airport-cities): Which land around a new airport gains value, for which uses and how fast, and who captures it: evidence from the Gulf, Egypt, Africa and Central Asia. (English, French, ar)
 
 ### Central Asia
 
@@ -97,7 +98,7 @@ Free PDFs, sent by email from each report page. Each page carries the key findin
 
 - [About Heirstone Consulting](https://www.heirstoneconsulting.com/pages/about): Learn about Heirstone Consulting's team, methodology, and approach to delivering strategy for real estate developers, tourism authorities, and governments globally.
 - [Selected Team Experience](https://www.heirstoneconsulting.com/pages/experience): Representative mandates delivered by the Heirstone team across sovereign, institutional and private-sector clients — from the Pyramids of Giza masterplan to national tourism programmes, giga-project strategy and frontier-market feasibility.
-- [Research Reports](https://www.heirstoneconsulting.com/pages/reports): Free Heirstone research on real estate, infrastructure and tourism in Africa, the Middle East and Central Asia: 31 reports from Egypt and Nigeria to Uzbekistan.
+- [Research Reports](https://www.heirstoneconsulting.com/pages/reports): Free Heirstone research on real estate, infrastructure and tourism in Africa, the Middle East and Central Asia: 32 reports from Egypt and Nigeria to Uzbekistan.
 - [Insights](https://www.heirstoneconsulting.com/pages/insights): Practical insight from Heirstone Consulting on real estate strategy, tourism development and national vision strategy across MENA, Africa and Central Asia.
 - [Contact Us](https://www.heirstoneconsulting.com/pages/contact): Get in touch with Heirstone Consulting for real estate strategy, tourism development, or national vision advisory services. Based globally, serving emerging markets.
 

@@ -479,7 +479,8 @@ const MAIL_TEXT = {
     series: { africa: 'Africa Series', 'central-asia': 'Central Asia', other: 'Middle East & Mediterranean' }, research: 'Research', cover: 'Cover of the report',
     valid: (d) => `This personal link is valid for ${d} days. If the button does not work, copy this address into your browser:`,
     otherEd: { fr: ['This report is also available in French:', 'Download the French edition (PDF)'],
-      ru: ['This report is also available in Russian:', 'Download the Russian edition (PDF)'] },
+      ru: ['This report is also available in Russian:', 'Download the Russian edition (PDF)'],
+      ar: ['This report is also available in Arabic:', 'Download the Arabic edition (PDF)'] },
     discuss: 'If you would like to discuss the findings, simply reply to this email.',
     offices: 'Dubai · Cairo',
     why: 'You received this email because this address was entered to request a Heirstone report. To stop receiving Heirstone research, reply with "unsubscribe".',
@@ -491,7 +492,8 @@ const MAIL_TEXT = {
     series: { africa: 'Série Afrique', 'central-asia': 'Asie centrale', other: 'Moyen-Orient et Méditerranée' }, research: 'Recherche', cover: 'Couverture du rapport',
     valid: (d) => `Ce lien personnel est valable ${d} jours. Si le bouton ne fonctionne pas, copiez cette adresse dans votre navigateur :`,
     otherEd: { en: ['Ce rapport est également disponible en anglais :', 'Télécharger l’édition anglaise (PDF)'],
-      ru: ['Ce rapport est également disponible en russe :', 'Télécharger l’édition russe (PDF)'] },
+      ru: ['Ce rapport est également disponible en russe :', 'Télécharger l’édition russe (PDF)'],
+      ar: ['Ce rapport est également disponible en arabe :', 'Télécharger l’édition arabe (PDF)'] },
     discuss: 'Pour échanger sur les conclusions, il vous suffit de répondre à cet e-mail.',
     offices: 'Dubaï · Le Caire',
     why: 'Vous recevez cet e-mail car cette adresse a été saisie pour demander un rapport Heirstone. Pour ne plus recevoir nos publications, répondez « désinscription ».',
@@ -503,12 +505,27 @@ const MAIL_TEXT = {
     series: { africa: 'Серия «Африка»', 'central-asia': 'Центральная Азия', other: 'Ближний Восток и Средиземноморье' }, research: 'Исследования', cover: 'Обложка отчёта',
     valid: (d) => `Эта персональная ссылка действует ${d} дней. Если кнопка не работает, скопируйте этот адрес в браузер:`,
     otherEd: { en: ['Этот отчёт также доступен на английском языке:', 'Скачать английскую версию (PDF)'],
-      fr: ['Этот отчёт также доступен на французском языке:', 'Скачать французскую версию (PDF)'] },
+      fr: ['Этот отчёт также доступен на французском языке:', 'Скачать французскую версию (PDF)'],
+      ar: ['Этот отчёт также доступен на арабском языке:', 'Скачать арабскую версию (PDF)'] },
     discuss: 'Если вы хотите обсудить выводы отчёта, просто ответьте на это письмо.',
     offices: 'Дубай · Каир',
     why: 'Вы получили это письмо, потому что этот адрес был указан при запросе отчёта Heirstone. Чтобы больше не получать исследования Heirstone, ответьте словом «отписаться».',
     whyNl: (n) => `Вы получили это письмо, потому что этот адрес был указан при запросе отчёта Heirstone. Как указано в форме, мы также будем присылать вам ${n}, нашу рассылку о новых отчётах и выводах. В каждом выпуске есть ссылка для отписки в один клик; вы также можете в любой момент ответить «отписаться».`,
     subject: 'Ваш отчёт Heirstone' },
+  // Arabic: right-to-left layout, Arabic fonts and no letter-spacing are applied in brandedEmail/reportEmail
+  ar: { dear: 'مرحباً', comma: '،', ready: 'شكراً لاهتمامك. نسختك من تقريرنا جاهزة.', button: 'تنزيل التقرير (PDF)',
+    pre: (d) => `رابط التنزيل الخاص بك، صالح لمدة ${d} يوماً.`,
+    meta: (p) => `${p ? p + ' صفحة · ' : ''}PDF · النسخة العربية`,
+    series: { africa: 'سلسلة أفريقيا', 'central-asia': 'آسيا الوسطى', other: 'الشرق الأوسط والبحر المتوسط' }, research: 'أبحاث', cover: 'غلاف التقرير',
+    valid: (d) => `هذا الرابط الشخصي صالح لمدة ${d} يوماً. إذا لم يعمل الزر، انسخ هذا العنوان في متصفحك:`,
+    otherEd: { en: ['هذا التقرير متاح أيضاً باللغة الإنجليزية:', 'تنزيل النسخة الإنجليزية (PDF)'],
+      fr: ['هذا التقرير متاح أيضاً باللغة الفرنسية:', 'تنزيل النسخة الفرنسية (PDF)'],
+      ru: ['هذا التقرير متاح أيضاً باللغة الروسية:', 'تنزيل النسخة الروسية (PDF)'] },
+    discuss: 'إذا رغبت في مناقشة النتائج، يكفي أن ترد على هذه الرسالة.',
+    offices: 'دبي · القاهرة',
+    why: 'تلقيت هذه الرسالة لأن هذا العنوان أُدخل لطلب تقرير من Heirstone. لإيقاف تلقي أبحاث Heirstone، رُدّ بكلمة «إلغاء الاشتراك».',
+    whyNl: (n) => `تلقيت هذه الرسالة لأن هذا العنوان أُدخل لطلب تقرير من Heirstone. وكما وافقت في النموذج، سنرسل إليك أيضاً ${n}، نشرتنا البحثية عن التقارير والنتائج الجديدة. يتضمن كل عدد رابطاً لإلغاء الاشتراك بنقرة واحدة، ويمكنك أيضاً الرد بكلمة «إلغاء الاشتراك» في أي وقت.`,
+    subject: 'تقريرك من Heirstone' },
 };
 
 // Brand system for reader emails (Heirstone brand guidelines v1.0, same as the newsletter): Ink Navy, Paper, Slate
@@ -524,10 +541,12 @@ const mailP = (html, size, line, color, margin, serif, extra = '') =>
 const mailRow = (inner, pad, bg) =>
   `<tr><td class="px"${bg ? ` bgcolor="${bg}"` : ''} style="${bg ? `background-color:${bg};` : ''}padding:${pad};">${inner}</td></tr>`;
 
+const ARABIC_FONTS = "Tahoma,'Segoe UI',Arial,sans-serif";
 function brandedEmail({ lang, title, preheader, rows }) {
   const B = BRAND;
-  return `<!DOCTYPE html>
-<html lang="${lang}" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+  const rtl = lang === 'ar';
+  const html = `<!DOCTYPE html>
+<html lang="${lang}"${rtl ? ' dir="rtl"' : ''} xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="x-apple-disable-message-reformatting"><meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
@@ -543,13 +562,15 @@ function brandedEmail({ lang, title, preheader, rows }) {
 <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;font-size:1px;line-height:1px;color:${B.paper};opacity:0;">${esc(preheader)}${'&#847;&zwnj;&nbsp;'.repeat(50)}</div>
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${B.paper}" style="background-color:${B.paper};"><tr><td align="center" style="padding:24px 8px 24px 8px;">
 <!--[if mso]><table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;background-color:${B.card};border:1px solid ${B.line};">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"${rtl ? ' dir="rtl"' : ''} style="max-width:600px;background-color:${B.card};border:1px solid ${B.line};${rtl ? 'direction:rtl;text-align:right;' : ''}">
 ${rows.join('\n')}
 </table>
 <!--[if mso]></td></tr></table><![endif]-->
 </td></tr></table>
 </body>
 </html>`;
+  // Playfair Display and Libre Franklin have no Arabic letters
+  return rtl ? html.split(B.serif).join(ARABIC_FONTS).split(B.sans).join(ARABIC_FONTS) : html;
 }
 
 // The lockup travels inside the report email as an inline (cid:) attachment, so Outlook and other
@@ -567,7 +588,10 @@ function brandHeader(home, label, logoSrc = `${PUBLIC_ORIGIN}/Media/email/heirst
   const B = BRAND;
   return mailRow('<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>'
     + `<td valign="middle"><a href="${home}" style="color:#FFFFFF;text-decoration:none;"><img src="${logoSrc}" width="208" height="38" alt="Heirstone Consulting" border="0" style="display:block;width:208px;height:auto;border:0;color:#FFFFFF;font-family:${B.serif};font-size:18px;line-height:22px;letter-spacing:2px;"></a></td>`
-    + `<td align="right" valign="middle" class="ss" style="font-family:${B.sans};font-size:10px;line-height:14px;letter-spacing:3px;color:${B.tint};text-transform:uppercase;">${esc(label)}</td>`
+    // An Arabic label sits on the far (left) side of a right-to-left header, without letter-spacing, which breaks Arabic joining
+    + (/[\u0600-\u06FF]/.test(label)
+      ? `<td align="left" valign="middle" class="ss" style="font-family:${B.sans};font-size:12px;line-height:16px;color:${B.tint};">${esc(label)}</td>`
+      : `<td align="right" valign="middle" class="ss" style="font-family:${B.sans};font-size:10px;line-height:14px;letter-spacing:3px;color:${B.tint};text-transform:uppercase;">${esc(label)}</td>`)
     + '</tr></table>', '26px 40px 26px 40px', B.ink);
 }
 
@@ -589,7 +613,7 @@ function reportEmail(slug, r, name, link, l, others = []) {
 
   const button = `<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td bgcolor="${B.ink}" style="background-color:${B.ink};padding:13px 24px;">`
     + `<a href="${link}" class="ss" style="font-family:${B.sans};font-size:14px;line-height:18px;font-weight:600;color:#FFFFFF;text-decoration:none;display:inline-block;">${esc(t.button)}</a></td></tr></table>`;
-  const details = mailP(esc(kicker), 11, 17, B.slate, '0 0 10px 0', false, 'letter-spacing:2px;text-transform:uppercase;font-weight:600;')
+  const details = mailP(esc(kicker), 11, 17, B.slate, '0 0 10px 0', false, l === 'ar' ? 'font-weight:600;' : 'letter-spacing:2px;text-transform:uppercase;font-weight:600;')
     + `<h1 class="sx" style="margin:0 0 10px 0;font-family:${B.serif};font-size:26px;line-height:32px;font-weight:400;color:${B.ink};">${esc(short)}</h1>`
     + mailP(esc(t.meta(ed.pages)), 13, 19, B.light, '0 0 20px 0')
     + button;
@@ -605,7 +629,7 @@ function reportEmail(slug, r, name, link, l, others = []) {
 
   const rows = [
     brandHeader(home, t.research, LOGO_B64 ? `cid:${LOGO_CID}` : undefined),
-    mailRow(mailP(`${esc(t.dear)} ${esc(first)},`, 16, 26, B.text, '0 0 14px 0') + mailP(esc(t.ready), 16, 26, B.text, '0'), '34px 40px 22px 40px'),
+    mailRow(mailP(`${esc(t.dear)} ${esc(first)}${t.comma || ','}`, 16, 26, B.text, '0 0 14px 0') + mailP(esc(t.ready), 16, 26, B.text, '0'), '34px 40px 22px 40px'),
     mailRow(`<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td class="card" bgcolor="${B.paper}" style="background-color:${B.paper};border:1px solid ${B.line};padding:24px;">${card}</td></tr></table>`, '0 40px 0 40px'),
     mailRow(mailP(esc(t.valid(LINK_DAYS)), 13, 20, B.light, '0 0 4px 0')
       + mailP(`<a href="${link}" style="color:${B.slate};text-decoration:underline;word-break:break-all;">${link}</a>`, 12, 18, B.slate, '0', false, 'word-break:break-all;'), '22px 40px 0 40px'),
@@ -618,7 +642,7 @@ function reportEmail(slug, r, name, link, l, others = []) {
       + mailP(esc(why), 11, 17, B.light, '0'), '20px 40px 24px 40px', B.paper),
   ].filter(Boolean);
 
-  const text = `${t.dear} ${first},\n\n${t.ready}\n\n${title}\n${t.meta(ed.pages)}\n\n${t.button}${sep}${link}\n${t.valid(LINK_DAYS)}\n`
+  const text = `${t.dear} ${first}${t.comma || ','}\n\n${t.ready}\n\n${title}\n${t.meta(ed.pages)}\n\n${t.button}${sep}${link}\n${t.valid(LINK_DAYS)}\n`
     + otherEds.map((o) => `\n${o.text} ${o.link}\n`).join('')
     + `\n${t.discuss}\n\nHeirstone Consulting Research\n${t.offices} · heirstoneconsulting.com\n`
     + (NEWSLETTER.postal_address ? `${NEWSLETTER.postal_address}\n` : '') + `\n${why}`;

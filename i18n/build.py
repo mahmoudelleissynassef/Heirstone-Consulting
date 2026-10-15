@@ -24,6 +24,20 @@ from bs4 import BeautifulSoup, NavigableString
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import extract as ex
 
+
+def write_file(path, text, tries=6):
+    """Write a built page; retry briefly when Windows reports a transient lock (background git or antivirus scans)."""
+    import time
+    for i in range(tries):
+        try:
+            with open(path, "w", encoding="utf-8", newline="") as f:
+                f.write(text)
+            return
+        except OSError:
+            if i == tries - 1:
+                raise
+            time.sleep(0.5 * (i + 1))
+
 ROOT = ex.ROOT
 SITE = "https://www.heirstoneconsulting.com"
 
@@ -208,6 +222,42 @@ def translate_soup(soup, tr, errors, where):
         walk_body(soup.body, tr, errors, where)
 
 
+# ------------------------------------------------------------------ figures without words
+# A figure such as "0.16%", "123,846" or "6.2-6.7" has no words, so it is not a translation segment; the build
+# writes it in each language's own notation instead: (decimal mark, thousands separator, space before %).
+# Languages not listed (ar, zh, ja, ko, ms, sw) write numbers as English does on this site.
+NUM_STYLE = {
+    "fr": (",", "\u202f", "\u202f"), "de": (",", ".", "\u00a0"), "es": (",", ".", "\u00a0"), "it": (",", ".", ""),
+    "pt": (",", "\u00a0", ""), "el": (",", ".", ""), "nl": (",", ".", ""), "da": (",", ".", "\u00a0"),
+    "fi": (",", "\u00a0", "\u00a0"), "no": (",", "\u00a0", ""), "ro": (",", ".", ""), "pl": (",", "\u00a0", ""),
+    "sk": (",", "\u00a0", "\u00a0"), "hr": (",", ".", "\u00a0"), "ru": (",", "\u00a0", ""), "ky": (",", "\u00a0", ""),
+    "kk": (",", "\u00a0", ""), "tr": (",", ".", ""), "id": (",", ".", ""),
+}
+LANG_NOW = "en"  # set per language by main()
+
+
+def localize_figure(text, lang):
+    style = NUM_STYLE.get(lang)
+    if not style or not re.search(r"\d", text):
+        return text
+    dec, th, pct = style
+
+    def num(m):
+        whole, _, frac = m.group(0).partition(".")
+        groups = whole.split(",")
+        if len(groups) > 1 and not (lang == "es" and len(whole.replace(",", "")) == 4):  # Spanish: 1200, 12.000
+            whole = th.join(groups)
+        else:
+            whole = "".join(groups)
+        return whole + (dec + frac if frac else "")
+    out = re.sub(r"\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+\.\d+", num, text)
+    if lang == "tr":
+        out = re.sub(r"(\d[\d.,]*)%", r"%\1", out)  # Turkish writes the sign first: %47,1
+    elif pct:
+        out = re.sub(r"(?<=\d)%", pct + "%", out)
+    return out
+
+
 def walk_body(el, tr, errors, where):
     for child in list(el.children):
         if isinstance(child, (ex.Comment, ex.Doctype)):
@@ -219,6 +269,10 @@ def walk_body(el, tr, errors, where):
                 lead = raw[: len(raw) - len(raw.lstrip())]
                 trail = raw[len(raw.rstrip()):]
                 child.replace_with(NavigableString(lead + T(tr, t, where, errors) + trail))
+            elif t and LANG_NOW != "en":
+                local = localize_figure(raw, LANG_NOW)
+                if local != raw:
+                    child.replace_with(NavigableString(local))
             continue
         if child.name in ex.SKIP or child.has_attr("data-i18n-skip"):
             continue
@@ -407,13 +461,15 @@ def main(check=False):
                     written += 1
                 continue
             soup = BeautifulSoup(html, "html.parser")
+            global LANG_NOW
+            LANG_NOW = lang
             translate_soup(soup, tr, errors, rel)
             rewrite_links(soup, rel, lang)
             finish_head(soup, rel, lang, tr, src)
             if not check:
                 dst = out_path(lang, rel)
                 os.makedirs(os.path.dirname(dst), exist_ok=True)
-                open(dst, "w", encoding="utf-8", newline="").write(str(soup))
+                write_file(dst, str(soup))
                 written += 1
         if errors:
             all_errors[lang] = errors
