@@ -398,6 +398,48 @@
    }
   }
  },
+ "africa-construction-costs": {
+  "series": "africa",
+  "sector": "Construction Costs and Building Technology",
+  "title": "Nine cities, one square metre",
+  "editions": {
+   "en": {
+    "file": "africa-construction-costs.pdf",
+    "pages": 30,
+    "download_name": "Heirstone Consulting Research - Construction Costs and Building Technology - Nine cities, one square metre.pdf",
+    "sector": "Construction Costs and Building Technology",
+    "title": "Nine cities, one square metre"
+   },
+   "fr": {
+    "file": "africa-construction-costs.fr.pdf",
+    "pages": 30,
+    "download_name": "Heirstone Consulting Research - Coûts de construction et technologies du bâtiment - Neuf villes, un mètre carré.pdf",
+    "sector": "Coûts de construction et technologies du bâtiment",
+    "title": "Neuf villes, un mètre carré"
+   }
+  }
+ },
+ "africa-contractors-materials": {
+  "series": "africa",
+  "sector": "Contractors and Building Materials",
+  "title": "Who pours the concrete",
+  "editions": {
+   "en": {
+    "file": "africa-contractors-materials.pdf",
+    "pages": 28,
+    "download_name": "Heirstone Consulting Research - Contractors and Building Materials - Who pours the concrete.pdf",
+    "sector": "Contractors and Building Materials",
+    "title": "Who pours the concrete"
+   },
+   "fr": {
+    "file": "africa-contractors-materials.fr.pdf",
+    "pages": 28,
+    "download_name": "Heirstone Consulting Research - Entreprises de construction et matériaux - Qui coule le béton.pdf",
+    "sector": "Entreprises de construction et matériaux",
+    "title": "Qui coule le béton"
+   }
+  }
+ },
  "branded-residences": {
   "series": "general",
   "sector": "Branded Residences",
