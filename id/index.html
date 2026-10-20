@@ -113,6 +113,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="/css/style.css" rel="stylesheet"/>
 <link href="/css/home.css" rel="stylesheet"/>
+<link href="/css/v2.css" rel="stylesheet"/>
 <link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link as="image" href="/Media/hero-1.webp" rel="preload"/>
 <!-- i18n:alternates -->
@@ -150,487 +151,297 @@
 <!-- NAVBAR -->
 <nav class="navbar">
 <a class="navbar-brand" href="/id/">
-<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-<rect height="34" stroke="#8FA0B2" stroke-width="2" width="34" x="13" y="13"></rect>
-<rect height="34" stroke="#8FA0B2" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect>
-</svg>
+<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect height="34" stroke="#8FA0B2" stroke-width="2" width="34" x="13" y="13"></rect><rect height="34" stroke="#8FA0B2" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect></svg>
 <span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
 </a>
 <ul class="navbar-nav">
-<li><a href="/id/">Beranda</a></li>
-<li class="dropdown">
-<a href="/id/pages/services">Kapabilitas Kami</a>
+<li class="dropdown"><a href="/id/pages/services">Kapabilitas</a>
 <div class="dropdown-menu">
 <a href="/id/pages/real-estate-strategy">Strategi Properti</a>
 <a href="/id/pages/tourism-development">Pengembangan Pariwisata</a>
 <a href="/id/pages/national-vision-strategy">Strategi Visi Nasional</a>
 <a href="/id/pages/special-projects">Proyek Khusus</a>
 <a href="/id/pages/digital-transformation">Transformasi Digital</a>
+<a class="dd-all" href="/id/pages/services">Semua kapabilitas</a>
 </div>
 </li>
-<li><a href="/id/pages/experience">Pengalaman</a></li><li><a href="/id/pages/reports">Laporan</a></li><li><a href="/id/pages/insights">Wawasan</a></li><li><a href="/id/pages/about">Tentang Kami</a></li>
-<li><a href="/id/pages/services">Layanan</a></li>
-<li><a class="navbar-cta" href="/id/pages/contact">Kontak</a></li>
+<li><a href="/id/pages/reports">Riset</a></li>
+<li><a href="/id/pages/experience">Pengalaman</a></li>
+<li><a href="/id/pages/about">Tentang Kami</a></li>
+<li class="nav-cta"><a class="navbar-cta" href="/id/pages/contact">Kontak</a></li>
 <!-- i18n:switch --><li class="dropdown lang-switch" data-i18n-skip=""><button aria-haspopup="true" aria-label="Bahasa" class="lang-btn" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg><span>ID</span></button><div class="dropdown-menu lang-menu"><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a aria-current="true" data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div></li><!-- /i18n:switch -->
 </ul>
 <button aria-controls="mobileNav" aria-expanded="false" aria-label="Buka menu" class="hamburger" id="hamburger">
 <span></span><span></span><span></span>
 </button>
 </nav>
-<!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav">
-<a href="/id/">Beranda</a>
-<a href="/id/pages/real-estate-strategy">Strategi Properti</a>
-<a href="/id/pages/tourism-development">Pengembangan Pariwisata</a>
-<a href="/id/pages/national-vision-strategy">Strategi Visi Nasional</a>
-<a href="/id/pages/special-projects">Proyek Khusus</a>
-<a href="/id/pages/digital-transformation">Transformasi Digital</a>
+<a href="/id/pages/services">Kapabilitas</a>
+<a class="mn-sub" href="/id/pages/real-estate-strategy">Strategi Properti</a>
+<a class="mn-sub" href="/id/pages/tourism-development">Pengembangan Pariwisata</a>
+<a class="mn-sub" href="/id/pages/national-vision-strategy">Strategi Visi Nasional</a>
+<a class="mn-sub" href="/id/pages/special-projects">Proyek Khusus</a>
+<a class="mn-sub" href="/id/pages/digital-transformation">Transformasi Digital</a>
+<a href="/id/pages/reports">Riset</a>
 <a href="/id/pages/experience">Pengalaman</a>
-<a href="/id/pages/reports">Laporan</a>
-<a href="/id/pages/insights">Wawasan</a>
 <a href="/id/pages/about">Tentang Kami</a>
-<a href="/id/pages/services">Layanan</a>
+<a href="/id/pages/insights">Wawasan</a>
 <a href="/id/pages/contact">Kontak</a>
 <!-- i18n:mswitch --><div aria-label="Bahasa" class="mobile-lang" data-i18n-skip=""><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a aria-current="true" data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div><!-- /i18n:mswitch -->
 </div>
-<main id="main">
-<!-- HERO -->
-<section class="hero">
-<div aria-hidden="true" class="hero-slides">
-<div class="hero-slide active" style="background-image:url('/Media/hero-1.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-2.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-3.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-4.webp')"></div>
-</div>
-<div aria-hidden="true" class="hero-overlay"></div>
-<div class="hero-content">
-<p class="hero-kicker">Konsultan &amp; Penasihat Strategis — Dubai · Kairo</p>
-<h1>Firma penasihat spesialis untuk pasar yang ambisius namun minim transparansi.</h1>
-<p>Heirstone menasihati negara, modal institusional, dan pengembang ketika kerangka konsultansi konvensional tidak lagi berlaku — menerjemahkan visi nasional menjadi strategi yang layak secara komersial dan dapat dijalankan di MENA, Afrika, dan Asia Tengah.</p>
-<div class="hero-actions">
-<a class="btn-primary" href="#services">Jelajahi Keahlian Kami</a>
-<a class="btn-secondary" href="/id/pages/contact">Hubungi Kami</a>
-</div>
-</div>
-<div aria-hidden="true" class="hero-ticker">
-<div class="tick-track"><span class="tick-item">Penggunaan Tertinggi &amp; Terbaik</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Studi Kelayakan</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Benchmarking Global</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Riset Pasar</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Strategi Destinasi</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Visi Nasional</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Strategi KPBU</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Strategi Bandara &amp; Pelabuhan</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Hunian Bermerek</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Menarik Investasi</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Perizinan Digital</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Risiko Politik</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Penggunaan Tertinggi &amp; Terbaik</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Studi Kelayakan</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Benchmarking Global</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Riset Pasar</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Strategi Destinasi</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Visi Nasional</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Strategi KPBU</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Strategi Bandara &amp; Pelabuhan</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Hunian Bermerek</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Menarik Investasi</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Perizinan Digital</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Risiko Politik</span><span aria-hidden="true" class="tick-dot"></span></div>
-</div>
-</section>
-<!-- FACTS BAR -->
-<section aria-label="Sekilas tentang firma" class="facts-bar">
-<div class="facts-inner">
-<div class="fact">
-<span class="fact-label">Kantor</span>
-<span class="fact-value">Dubai · Kairo</span>
-</div>
-<div class="fact">
-<span class="fact-label">Rekam Jejak</span>
-<span class="fact-value">Latar belakang firma konsultan papan atas</span>
-</div>
-<div class="fact">
-<span class="fact-label">Profil Penugasan</span>
-<span class="fact-value">Negara &amp; institusional</span>
-</div>
-<div class="fact">
-<span class="fact-label">Cakupan</span>
-<span class="fact-value">GCC · MENA · Afrika · Asia Tengah</span>
-</div>
-</div>
-</section>
-<!-- SELECTED ENGAGEMENTS (carousel) -->
-<section aria-label="Pengalaman tim terpilih" aria-roledescription="korsel" class="eng" id="engagements">
-<div class="eng-head">
+<header class="hero" id="main">
+<div aria-label="Cakrawala Nairobi" class="hero-img" role="img"></div>
+<div class="hero-body">
 <div>
-<p class="eyebrow eyebrow-light">Pengalaman tim terpilih</p>
-<h2>Penugasan untuk modal negara, institusional, dan swasta.</h2>
-</div>
-<div class="eng-controls">
-<span class="eng-count"><b class="eng-cur">01</b> / 07</span>
-<button aria-label="Penugasan sebelumnya" class="eng-btn eng-prev" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
-<button aria-label="Penugasan berikutnya" class="eng-btn eng-next" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
-</div>
-</div>
-<div class="eng-track" tabindex="0">
-<article aria-label="1 dari 7" aria-roledescription="salindia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Kawasan kota bersejarah yang ikonis di tepi air" height="480" loading="eager" src="/Media/exp-giza.webp" width="800"/>
-<span class="eng-num">01</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Otoritas Negara — Mesir</p>
-<h3>Rencana Induk Kawasan Piramida Giza</h3>
-<p class="eng-desc">Penilaian pasar dan strategi pengembangan untuk sebuah pengembangan fungsi campuran (mixed-use) ikonis yang bersebelahan dengan salah satu situs warisan budaya yang paling banyak dikunjungi di dunia — proyeksi permintaan menurut pasar asal, tujuan kunjungan, dan musim, yang diterjemahkan ke dalam peruntukan lahan, penentuan ukuran komponen, dan pentahapan.</p>
-<p class="eng-outcome"><span>Hasil</span>Landasan bagi pemosisian pengembangan, strategi komersial, dan perencanaan infrastruktur pengunjung jangka panjang di tingkat nasional.</p>
-</div>
-</article>
-<article aria-label="2 dari 7" aria-roledescription="salindia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Suasana jalanan di sebuah kota di Afrika Sub-Sahara" height="480" loading="eager" src="/Media/exp-tourism.webp" width="800"/>
-<span class="eng-num">02</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Pemerintah Nasional — Afrika Sub-Sahara</p>
-<h3>Program Pengembangan Pariwisata Nasional</h3>
-<p class="eng-desc">Strategi pariwisata menyeluruh di berbagai klaster destinasi — proyeksi permintaan, pemosisian destinasi, kerangka pengembangan produk, dan strategi menarik investasi.</p>
-<p class="eng-outcome"><span>Hasil</span>Ditetapkan sebagai kerangka pengembangan pariwisata nasional, yang mendukung penyelarasan kebijakan dan mobilisasi investasi sektor swasta.</p>
-</div>
-</article>
-<article aria-label="3 dari 7" aria-roledescription="salindia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Pengembangan menara kaca kontemporer" height="480" loading="lazy" src="/Media/exp-giga.webp" width="800"/>
-<span class="eng-num">03</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Pengembang yang Didukung Negara — Arab Saudi</p>
-<h3>Strategi &amp; Konsultansi Giga-Proyek</h3>
-<p class="eng-desc">Strategi hunian, pemosisian hunian bermerek (branded residence), dan analisis penggunaan tertinggi dan terbaik untuk pengembangan berskala besar yang didukung pemerintah dalam lingkungan giga-proyek.</p>
-<p class="eng-outcome"><span>Hasil</span>Menjadi dasar pemosisian pengembangan dan strategi produk yang selaras dengan tujuan investasi negara.</p>
-</div>
-</article>
-<article aria-label="4 dari 7" aria-roledescription="salindia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Menara modern berfungsi campuran di cakrawala pesisir" height="480" loading="lazy" src="/Media/exp-northcoast.webp" width="800"/>
-<span class="eng-num">04</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Investor Institusional — Mesir</p>
-<h3>Konsultansi Investasi Kairo &amp; Pesisir Utara</h3>
-<p class="eng-desc">Riset pasar multiaset dan konsultansi investasi bagi investor institusional dari Asia Tengah — hunian, perkantoran, ritel, dan perhotelan di Kairo Raya serta Pesisir Utara / Ras El Hekma.</p>
-<p class="eng-outcome"><span>Hasil</span>Kerangka investasi terstruktur yang memungkinkan penempatan modal lintas negara ke salah satu pasar fungsi campuran dan pesisir dengan pertumbuhan tercepat di kawasan ini.</p>
-</div>
-</article>
-<article aria-label="5 dari 7" aria-roledescription="salindia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Menara perkantoran di kawasan pusat bisnis" height="480" loading="lazy" src="/Media/exp-office.webp" width="800"/>
-<span class="eng-num">05</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Platform Institusional / Konsultansi — Mesir</p>
-<h3>Platform Intelijen Pasar Perkantoran Kairo</h3>
-<p class="eng-desc">Merancang dan membangun platform data properti yang mencakup pasar perkantoran Kairo Raya — data sewa, tingkat okupansi, tolok ukur harga, dan indikator pasar.</p>
-<p class="eng-outcome"><span>Hasil</span>Landasan bagi intelijen pasar dan konsultansi berstandar institusional, yang mendukung keputusan investasi dan pelaporan pasar triwulanan.</p>
-</div>
-</article>
-<article aria-label="6 dari 7" aria-roledescription="salindia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Pemandangan udara infrastruktur baru di sebuah pasar frontier" height="480" loading="lazy" src="/Media/exp-frontier.webp" width="800"/>
-<span class="eng-num">06</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Pengembang — Afrika Sub-Sahara</p>
-<h3>Studi Kelayakan &amp; HBU di Pasar Frontier</h3>
-<p class="eng-desc">Analisis penggunaan tertinggi dan terbaik serta studi kelayakan untuk pengembangan fungsi campuran berskala besar di lingkungan perkotaan yang minim data — bertumpu pada riset primer.</p>
-<p class="eng-outcome"><span>Hasil</span>Merumuskan ulang program pengembangan serta mendukung penstrukturan modal dan kelayakan investasi dalam kondisi pasar frontier.</p>
-</div>
-</article>
-<article aria-label="7 dari 7" aria-roledescription="salindia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Pemandangan udara kawasan kota bersejarah yang sedang menjalani regenerasi" height="480" loading="lazy" src="/Media/exp-heritage.webp" width="800"/>
-<span class="eng-num">07</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Pemerintah &amp; Institusi — MENA</p>
-<h3>Strategi Warisan Budaya &amp; Regenerasi Perkotaan</h3>
-<p class="eng-desc">Strategi alih fungsi situs warisan budaya dan regenerasi perkotaan — memadukan fungsi pariwisata, ritel, dan budaya ke dalam kerangka pengembangan yang layak secara komersial.</p>
-<p class="eng-outcome"><span>Hasil</span>Menyeimbangkan pelestarian budaya dengan penciptaan pendapatan dan aktivasi perkotaan jangka panjang.</p>
-</div>
-</article>
-</div>
-<div class="eng-foot">
-<div aria-hidden="true" class="eng-progress"><span></span></div>
-<a class="eng-all" href="/id/pages/experience">Lihat semua penugasan <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</section>
-<!-- PRACTICES (explorer: tabs on desktop, accordion on mobile) -->
-<section class="px-section" id="services">
-<div class="px-head">
-<p class="eyebrow">Apa yang kami lakukan</p>
-<h2>Lima bidang keahlian. <em>Satu standar.</em></h2>
-<p class="px-intro">Setiap penugasan dipimpin partner, berbasis bukti, dan dirancang bagi pengambil keputusan yang bertanggung jawab kepada dewan direksi, kementerian, dan pemilik modal.</p>
-</div>
-<div aria-label="Bidang keahlian" class="px" role="tablist">
-<div class="px-item is-active">
-<button aria-controls="px-panel-0" aria-expanded="true" aria-selected="true" class="px-tab" id="px-tab-0" role="tab" type="button">
-<span class="px-n">01</span>
-<span class="px-text"><span class="px-name">Strategi Properti</span><span class="px-tag">Dari sebidang lahan hingga portofolio.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-0" class="px-panel" id="px-panel-0" role="tabpanel">
-<div class="px-media"><img alt="Pemandangan udara pengembangan rencana induk properti berfungsi campuran" height="384" loading="lazy" src="/Media/cap-realestate.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Membuka nilai dari lahan, aset, dan portofolio melalui intelijen pasar, pemodelan keuangan, dan strategi pengembangan.</p>
-<p class="px-sublabel">7 kapabilitas</p>
-<div class="px-chips"><a class="px-chip" href="/id/pages/highest-and-best-use">Analisis Penggunaan Tertinggi dan Terbaik (HBU)</a><a class="px-chip" href="/id/pages/development-strategy">Strategi Pengembangan &amp; Pentahapan</a><a class="px-chip" href="/id/pages/market-research">Riset Pasar &amp; Identifikasi Peluang</a><a class="px-chip" href="/id/pages/commercial-feasibility">Studi Kelayakan Komersial</a><a class="px-chip" href="/id/pages/investment-attraction">Menarik dan Menstrukturkan Investasi</a><a class="px-chip" href="/id/pages/competitive-benchmarking">Benchmarking Kompetitif</a><a class="px-chip" href="/id/pages/branded-residences">Konsultansi Strategi Hunian Bermerek</a></div>
-<a class="px-cta" href="/id/pages/real-estate-strategy">Jelajahi bidang keahlian ini <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<p class="eyebrow">Konsultansi strategi · Dubai dan Kairo</p>
+<h1>Strategi berbasis bukti untuk properti, pariwisata, dan pembangunan nasional.</h1>
+<p class="hero-lead">Kami menasihati pemerintah, investor negara dan institusional, serta pengembang di Timur Tengah, Afrika, dan Asia Tengah. Setiap penugasan dipimpin oleh penasihat senior dan dibangun di atas riset primer.</p>
+<div class="hero-cta">
+<a class="btn btn--light" href="/id/pages/contact">Diskusikan penugasan <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="link link--light" href="/id/pages/reports">Baca riset kami <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </div>
+<a class="latest" href="/id/pages/report-airport-cities">
+<img alt="Sampul laporan Heirstone “Dividen landasan pacu”" height="116" src="/Media/reports/airport-cities.webp" width="82"/>
+<div class="latest-text">
+<p class="latest-label">Laporan terbaru</p>
+<p class="latest-title">Kota Bandara: Dividen landasan pacu</p>
+<p class="latest-stat"><span class="rp-n">11 banding 1</span> nilai penjualan apartemen inden dibandingkan penjualan kembali di Dubai South pada 2025: AED 10,23 miliar berbanding AED 0,91 miliar</p>
 </div>
-<div class="px-item">
-<button aria-controls="px-panel-1" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-1" role="tab" type="button">
-<span class="px-n">02</span>
-<span class="px-text"><span class="px-name">Pariwisata &amp; Destinasi</span><span class="px-tag">Destinasi yang mampu bersaing secara global.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-1" class="px-panel" id="px-panel-1" role="tabpanel">
-<div class="px-media"><img alt="Destinasi wisata tepi pantai dengan resor dan marina" height="384" loading="lazy" src="/Media/cap-tourism.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Strategi destinasi yang kompetitif dan layak investasi — proyeksi permintaan, pengembangan produk, dan pemosisian dalam kerangka ekonomi pengunjung (visitor economy) yang koheren.</p>
-<p class="px-sublabel">4 kapabilitas</p>
-<div class="px-chips"><a class="px-chip" href="/id/pages/destination-strategy">Strategi dan Pemosisian Destinasi</a><a class="px-chip" href="/id/pages/tourism-market-research">Riset Pasar Pariwisata dan Proyeksi Permintaan</a><a class="px-chip" href="/id/pages/visitor-economy">Strategi Ekonomi Pengunjung</a><a class="px-chip" href="/id/pages/airport-port-strategy">Strategi Komersial Bandara, Pelabuhan &amp; Gerbang Masuk</a></div>
-<a class="px-cta" href="/id/pages/tourism-development">Jelajahi bidang keahlian ini <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</a>
 </div>
+</header>
+<main>
+<section aria-labelledby="shelfTitle" class="shelf">
+<div class="wrap">
+<div class="shelf-head">
+<h2 id="shelfTitle">32 laporan independen tentang pasar tempat kami memberikan konsultansi, gratis untuk dibaca.</h2>
+<a class="link" href="/id/pages/reports">Telusuri semua riset <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-2" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-2" role="tab" type="button">
-<span class="px-n">03</span>
-<span class="px-text"><span class="px-name">Visi Nasional &amp; Strategi Sektor</span><span class="px-tag">Visi yang siap dijalankan.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-2" class="px-panel" id="px-panel-2" role="tabpanel">
-<div class="px-media"><img alt="Cakrawala ibu kota negara yang modern saat fajar" height="384" loading="lazy" src="/Media/cap-national.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Menerjemahkan ambisi nasional menjadi program yang terstruktur dan dapat ditindaklanjuti — menyelaraskan kebijakan, investasi, dan mekanisme pelaksanaan.</p>
-<p class="px-sublabel">7 kapabilitas</p>
-<div class="px-chips"><a class="px-chip" href="/id/pages/national-vision">Visi Nasional &amp; Kerangka Strategis</a><a class="px-chip" href="/id/pages/sector-transformation">Konsultansi Transformasi Sektor</a><a class="px-chip" href="/id/pages/ppp-strategy">Strategi Kerja Sama Pemerintah dan Badan Usaha (KPBU)</a><a class="px-chip" href="/id/pages/policy-framework">Konsultansi Kerangka Kebijakan &amp; Kelembagaan</a><a class="px-chip" href="/id/pages/global-benchmarking">Benchmarking Global Program Transformasi Nasional</a><a class="px-chip" href="/id/pages/monitoring-frameworks">Kerangka Pemantauan &amp; Penyesuaian</a><a class="px-chip" href="/id/pages/political-risk-assessment">Penilaian Risiko Politik &amp; Iklim Investasi</a></div>
-<a class="px-cta" href="/id/pages/national-vision-strategy">Jelajahi bidang keahlian ini <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-3" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-3" role="tab" type="button">
-<span class="px-n">04</span>
-<span class="px-text"><span class="px-name">Proyek Khusus &amp; Konsultansi Strategis</span><span class="px-tag">Penugasan khusus, cakupan kompleks.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-3" class="px-panel" id="px-panel-3" role="tabpanel">
-<div class="px-media"><img alt="Megaproyek ikonis berskala besar di bawah langit yang dramatis" height="384" loading="lazy" src="/Media/cap-special.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Dari monetisasi aset negara hingga ekspansi lintas negara dan strategi ajang akbar — ketika pendekatan konvensional tidak lagi memadai.</p>
-<p class="px-sublabel">6 kapabilitas</p>
-<div class="px-chips"><a class="px-chip" href="/id/pages/asset-monetization">Strategi Monetisasi Aset Berskala Besar</a><a class="px-chip" href="/id/pages/destination-brand">Konsultansi Pengembangan Merek Destinasi</a><a class="px-chip" href="/id/pages/investor-outreach">Perencanaan Penjangkauan &amp; Keterlibatan Investor</a><a class="px-chip" href="/id/pages/cross-border-expansion">Konsultansi Ekspansi Lintas Negara</a><a class="px-chip" href="/id/pages/innovation-ecosystem">Strategi Ekosistem Inovasi</a><a class="px-chip" href="/id/pages/sports-culture">Strategi Olahraga, Budaya &amp; Ajang Akbar</a></div>
-<a class="px-cta" href="/id/pages/special-projects">Jelajahi bidang keahlian ini <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-4" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-4" role="tab" type="button">
-<span class="px-n">05</span>
-<span class="px-text"><span class="px-name">Transformasi Digital</span><span class="px-tag">Layanan yang terdigitalisasi dari hulu ke hilir.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-4" class="px-panel" id="px-panel-4" role="tabpanel">
-<div class="px-media"><img alt="Pusat operasi digital pemerintah dengan dasbor perencanaan kota dan perizinan" height="384" loading="lazy" src="/Media/cap-digital.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Mendigitalisasi layanan pemerintah yang menjadi tumpuan sektor properti dan konstruksi — perizinan, pendaftaran tanah, izin usaha, dan data aset — agar modal bergerak secepat keputusan diambil.</p>
-<p class="px-sublabel">4 kapabilitas</p>
-<div class="px-chips"><a class="px-chip" href="/id/pages/digital-permitting">Perizinan Digital &amp; Izin Konstruksi</a><a class="px-chip" href="/id/pages/land-registry-digitization">Digitalisasi Pendaftaran Tanah &amp; Transaksi Properti</a><a class="px-chip" href="/id/pages/digital-service-design">Desain Layanan Digital &amp; Pengalaman Warga</a><a class="px-chip" href="/id/pages/bim-digital-twins">BIM, Kembaran Digital &amp; Standar Informasi Aset</a></div>
-<a class="px-cta" href="/id/pages/digital-transformation">Jelajahi bidang keahlian ini <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
+<div class="shelf-row">
+<a class="cover" href="/id/pages/report-airport-cities"><div class="cover-img"><img alt="Sampul laporan Heirstone “Dividen landasan pacu”" height="1273" loading="lazy" src="/Media/reports/airport-cities.webp" width="900"/></div><p class="cover-tag">Kota Bandara</p><p class="cover-title">Dividen landasan pacu</p></a>
+<a class="cover" href="/id/pages/report-africa-construction-costs"><div class="cover-img"><img alt="Sampul laporan Heirstone “Sembilan kota, satu meter persegi”" height="1273" loading="lazy" src="/Media/reports/africa-construction-costs.webp" width="900"/></div><p class="cover-tag">Biaya Konstruksi dan Teknologi Bangunan</p><p class="cover-title">Sembilan kota, satu meter persegi</p></a>
+<a class="cover" href="/id/pages/report-airports-terminals"><div class="cover-img"><img alt="Sampul laporan Heirstone “Jam tersibuk”" height="1273" loading="lazy" src="/Media/reports/airports-terminals.webp" width="900"/></div><p class="cover-tag">Bandara dan Terminal</p><p class="cover-title">Jam tersibuk</p></a>
+<a class="cover" href="/id/pages/report-uzbekistan-new-cities"><div class="cover-img"><img alt="Sampul laporan Heirstone “Kota siang hari”" height="1273" loading="lazy" src="/Media/reports/uzbekistan-new-cities.webp" width="900"/></div><p class="cover-tag">Kota Baru di Uzbekistan</p><p class="cover-title">Kota siang hari</p></a>
+<a class="cover" href="/id/pages/report-africa-real-estate-capital"><div class="cover-img"><img alt="Sampul laporan Heirstone “Dananya sudah ada di sini”" height="1273" loading="lazy" src="/Media/reports/africa-real-estate-capital.webp" width="900"/></div><p class="cover-tag">Modal Properti di Afrika</p><p class="cover-title">Dananya sudah ada di sini</p></a>
+<a class="cover" href="/id/pages/report-branded-residences"><div class="cover-img"><img alt="Sampul laporan Heirstone “Siapa yang menikmati premi”" height="1273" loading="lazy" src="/Media/reports/branded-residences.webp" width="900"/></div><p class="cover-tag">Hunian Bermerek</p><p class="cover-title">Siapa yang menikmati premi</p></a>
 </div>
 </div>
 </section>
-<!-- ENGAGEMENT MODEL (timeline) -->
-<section class="tl-section">
-<div class="tl-head">
+<section aria-labelledby="prTitle" class="principles">
+<div class="wrap">
 <p class="eyebrow">Cara kami bekerja</p>
-<h2>Model penugasan empat tahap.</h2>
-<p>Tanpa kerangka siap pakai. Setiap penugasan dirancang sesuai konteks, tujuan, dan kendala — serta dipimpin langsung oleh partner senior.</p>
+<h2 class="h2" id="prTitle">Empat hal yang membentuk setiap penugasan.</h2>
+<div class="p-grid">
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+<h3>Riset primer terlebih dahulu</h3>
+<p>Jika data minim, kami mengumpulkannya sendiri: survei, wawancara, kunjungan lapangan, dan catatan transaksi, sebelum model apa pun dibangun.</p>
 </div>
-<div class="tl-wrap">
-<span aria-hidden="true" class="tl-line"><span class="tl-fill"></span></span>
-<ol class="tl">
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">01</span>
-<h3>Memahami</h3>
-<p>Diagnosis intensif. Kami mendalami konteks klien, lingkungan pasar, dan tujuan strategisnya — serta mempertanyakan kerangka acuan bila memang perlu dipertanyakan.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">02</span>
-<h3>Menganalisis</h3>
-<p>Analisis kuantitatif dan kualitatif yang ketat — riset pasar, pemodelan keuangan, benchmarking, dan pemetaan pemangku kepentingan — untuk menghasilkan wawasan berbasis bukti.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">03</span>
-<h3>Menyusun Strategi</h3>
-<p>Analisis menjadi strategi. Rekomendasi bertahap, inisiatif yang diprioritaskan, dan pandangan jernih atas risiko, urutan pelaksanaan, serta implikasi permodalan.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">04</span>
-<h3>Mewujudkan</h3>
-<p>Keluaran yang dirancang bagi pengambil keputusan — ringkas, siap disajikan kepada dewan, dan disusun untuk dipresentasikan di tingkat negara, kementerian, dan komite investasi.</p>
-</li>
-</ol>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>
+<h3>Penasihat senior dari awal hingga akhir</h3>
+<p>Orang-orang yang menyusun lingkup penugasan tetap terlibat di dalamnya, dari lokakarya pertama hingga presentasi di hadapan dewan direksi.</p>
+</div>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 3v18M5 7h14M5 7l-3 7h6l-3-7zM19 7l-3 7h6l-3-7zM8 21h8"></path></svg>
+<h3>Nasihat independen</h3>
+<p>Kami tidak memiliki benturan kepentingan, sehingga rekomendasi kami mengikuti bukti dan tujuan klien.</p>
+</div>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
+<h3>Kedalaman regional</h3>
+<p>Kantor di Dubai dan Kairo, dengan cakupan kerja di Kawasan Teluk, Afrika Utara, Afrika Sub-Sahara, dan Asia Tengah.</p>
+</div>
+</div>
 </div>
 </section>
-<!-- ABOUT SECTION -->
-<section class="about-section">
-<div class="about-inner">
-<div class="about-image">
-<img alt="Pemandangan udara kawasan kota yang sedang berkembang dengan menara dan infrastruktur baru" height="801" loading="lazy" src="/Media/about.webp" width="1400"/>
+<section aria-labelledby="pracTitle" class="practices">
+<div class="wrap pr-grid">
+<div class="pr-intro">
+<p class="eyebrow">Kapabilitas</p>
+<h2 class="h2" id="pracTitle">Lima bidang keahlian.</h2>
+<p class="lead">Masing-masing memadukan riset pasar, analisis keuangan, dan strategi untuk satu jenis keputusan, sehingga nasihat kami tetap kokoh di hadapan dewan direksi, kementerian, atau komite investasi.</p>
+<a class="link" href="/id/pages/services">Semua kapabilitas <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-<div class="about-text">
-<h2>Tentang Heirstone Consulting &amp; Strategic Advisory</h2>
-<p>Heirstone adalah firma konsultan strategi spesialis untuk pasar frontier dan pasar dengan pertumbuhan tinggi — lingkungan tempat data terbatas, keputusan berisiko tinggi, dan kerangka konsultansi konvensional tidak lagi berlaku.</p>
-<p>Dengan kantor di Dubai dan Kairo, firma ini memadukan rekam jejak konsultansi papan atas (Tier-1) dengan pengetahuan regional yang mendalam. Kami bekerja di titik temu antara ambisi bisnis dan realitas kelembagaan, dengan cakupan kerja mulai dari pemosisian aset tunggal hingga program transformasi nasional.</p>
-<a class="btn-primary" href="/id/pages/about" style="margin-top:8px;">Pelajari Lebih Lanjut tentang Kami</a>
+<div class="pr-cards">
+<a class="pr-card" href="/id/pages/real-estate-strategy">
+<h3>Strategi Properti</h3>
+<p>Apa yang dibangun, di mana, dan dengan urutan apa: penggunaan tertinggi dan terbaik, studi kelayakan, strategi pengembangan, dan penstrukturan investasi.</p>
+<span class="pr-foot"><span class="pr-count">7 kapabilitas</span><span class="link">Jelajahi <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/id/pages/tourism-development">
+<h3>Pengembangan Pariwisata</h3>
+<p>Proyeksi permintaan, pemosisian destinasi, dan rencana ekonomi pengunjung yang dapat ditindaklanjuti oleh investor dan pemerintah.</p>
+<span class="pr-foot"><span class="pr-count">4 kapabilitas</span><span class="link">Jelajahi <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/id/pages/national-vision-strategy">
+<h3>Strategi Visi Nasional</h3>
+<p>Ambisi nasional yang diwujudkan menjadi program, kemitraan, dan kebijakan, lengkap dengan lembaga dan pendanaan untuk melaksanakannya.</p>
+<span class="pr-foot"><span class="pr-count">7 kapabilitas</span><span class="link">Jelajahi <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/id/pages/special-projects">
+<h3>Proyek Khusus</h3>
+<p>Penugasan yang melampaui satu aset: monetisasi aset, ekspansi lintas negara, penjangkauan investor, dan ajang berskala besar.</p>
+<span class="pr-foot"><span class="pr-count">6 kapabilitas</span><span class="link">Jelajahi <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/id/pages/digital-transformation">
+<h3>Transformasi Digital</h3>
+<p>Layanan perizinan, pendaftaran tanah, dan izin usaha yang memungkinkan proyek properti dan konstruksi bergerak secepat keputusan diambil.</p>
+<span class="pr-foot"><span class="pr-count">4 kapabilitas</span><span class="link">Jelajahi <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card pr-card--ink" href="/id/pages/contact">
+<h3>Belum yakin pertanyaan Anda termasuk bidang mana?</h3>
+<p>Ceritakan keputusan yang Anda hadapi. Kami akan menjelaskan bagaimana kami akan mendekatinya, dan apakah kami firma yang tepat untuk itu.</p>
+<span class="pr-foot"><span class="pr-count">Dubai · Kairo</span><span class="link link--light">Kontak <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
 </div>
 </div>
-<div class="profile-strip">
-<a class="profile-cover" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf"><img alt="Sampul profil perusahaan Heirstone Consulting" height="405" loading="lazy" src="/Media/docs/company-profile-cover.webp" width="720"/></a>
-<div class="profile-text">
+</section>
+<section aria-labelledby="exTitle" class="experience">
+<div class="wrap">
+<div class="ex-head">
+<div>
+<p class="eyebrow">Pengalaman tim terpilih</p>
+<h2 class="h2" id="exTitle">Pekerjaan untuk pemerintah, investor, dan pengembang.</h2>
+<p class="lead">Penugasan yang dijalankan oleh anggota tim Heirstone. Nama klien dirahasiakan atas permintaan mereka.</p>
+</div>
+<div class="ex-ctrl">
+<button aria-label="Sebelumnya" data-dir="-1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
+<button aria-label="Berikutnya" data-dir="1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+<div class="ex-track" id="exTrack">
+<article class="ex-card">
+<p class="ex-client">Otoritas negara · Mesir</p>
+<h3>Rencana induk kawasan Piramida Giza</h3>
+<p class="ex-label">Penugasan</p>
+<p>Penilaian pasar dan strategi pengembangan untuk sebuah pengembangan fungsi campuran di samping salah satu situs warisan budaya yang paling banyak dikunjungi di dunia, mulai dari permintaan menurut pasar asal dan musim hingga tata guna lahan, penentuan skala, dan pentahapan.</p>
+<div class="ex-out"><p class="ex-label">Hasil</p><p>Landasan bagi pemosisian proyek, strategi komersial, dan perencanaan infrastruktur pengunjung jangka panjang.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Pemerintah nasional · Afrika Sub-Sahara</p>
+<h3>Program pengembangan pariwisata nasional</h3>
+<p class="ex-label">Penugasan</p>
+<p>Strategi pariwisata di beberapa klaster destinasi: proyeksi permintaan, pemosisian, pengembangan produk, dan menarik investasi.</p>
+<div class="ex-out"><p class="ex-label">Hasil</p><p>Diadopsi sebagai kerangka pengembangan pariwisata nasional, yang memandu kebijakan dan investasi swasta.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Pengembang yang didukung negara · Arab Saudi</p>
+<h3>Strategi giga-proyek</h3>
+<p class="ex-label">Penugasan</p>
+<p>Strategi hunian, pemosisian hunian bermerek, dan analisis penggunaan tertinggi dan terbaik untuk pengembangan besar yang didukung pemerintah.</p>
+<div class="ex-out"><p class="ex-label">Hasil</p><p>Pemosisian pengembangan dan strategi produk yang selaras dengan tujuan investor negara.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Investor institusional · Mesir</p>
+<h3>Konsultansi investasi Kairo dan Pesisir Utara</h3>
+<p class="ex-label">Penugasan</p>
+<p>Riset pasar dan nasihat investasi bagi investor institusional dari Asia Tengah untuk sektor hunian, perkantoran, ritel, dan perhotelan di Kairo Raya dan Ras El Hekma.</p>
+<div class="ex-out"><p class="ex-label">Hasil</p><p>Kerangka investasi untuk menempatkan modal lintas negara di salah satu pasar pesisir dengan pertumbuhan tercepat di kawasan ini.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Platform konsultansi · Mesir</p>
+<h3>Intelijen pasar perkantoran Kairo</h3>
+<p class="ex-label">Penugasan</p>
+<p>Merancang dan membangun platform data untuk pasar perkantoran Kairo Raya: sewa, okupansi, tolok ukur harga, dan indikator pasar.</p>
+<div class="ex-out"><p class="ex-label">Hasil</p><p>Intelijen pasar berstandar institusional yang menopang keputusan investasi dan pelaporan triwulanan.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Pengembang · Afrika Sub-Sahara</p>
+<h3>Studi kelayakan di tengah keterbatasan data</h3>
+<p class="ex-label">Penugasan</p>
+<p>Analisis penggunaan tertinggi dan terbaik serta studi kelayakan untuk pengembangan fungsi campuran berskala besar di kota-kota yang minim data, berdasarkan riset primer.</p>
+<div class="ex-out"><p class="ex-label">Hasil</p><p>Merumuskan ulang program pengembangan dan mendukung penstrukturan modal dalam kondisi pasar frontier.</p></div>
+</article>
+</div>
+<p class="ex-more"><a class="link" href="/id/pages/experience">Semua pengalaman terpilih <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></p>
+</div>
+</section>
+<section aria-labelledby="rsTitle" class="research">
+<div class="wrap">
+<div class="rs-head">
+<div>
+<p class="eyebrow">Riset</p>
+<h2 class="h2" id="rsTitle">Kami memublikasikan apa yang kami pelajari.</h2>
+</div>
+<p class="lead">Laporan gratis tentang properti, infrastruktur, dan pariwisata, masing-masing dengan tolok ukurnya sendiri dan setiap angka disertai rujukan. Tersedia dalam bahasa Inggris, Prancis, Rusia, dan Arab.</p>
+</div>
+<div class="rs-grid">
+<a class="rs-card" href="/id/pages/report-airport-cities">
+<div class="rs-art"><img alt="Sampul laporan Heirstone “Dividen landasan pacu”" height="1273" loading="lazy" src="/Media/reports/airport-cities.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Kota Bandara</p>
+<h3 class="rs-title">Dividen landasan pacu</h3>
+<p class="rs-stat"><span class="rp-n">11 banding 1</span> nilai penjualan apartemen inden dibandingkan penjualan kembali di Dubai South pada 2025: AED 10,23 miliar berbanding AED 0,91 miliar</p>
+</div>
+</a>
+<a class="rs-card" href="/id/pages/report-africa-construction-costs">
+<div class="rs-art"><img alt="Sampul laporan Heirstone “Sembilan kota, satu meter persegi”" height="1273" loading="lazy" src="/Media/reports/africa-construction-costs.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Biaya Konstruksi dan Teknologi Bangunan</p>
+<h3 class="rs-title">Sembilan kota, satu meter persegi</h3>
+<p class="rs-stat"><span class="rp-n">2,9x</span> harga blok hunian bertingkat versi AECOM di Lagos dibandingkan Nairobi dalam panduan 2024/25-nya: US$2.330 berbanding US$796 per m²</p>
+</div>
+</a>
+<a class="rs-card" href="/id/pages/report-africa-hotel-development">
+<div class="rs-art"><img alt="Sampul laporan Heirstone “Hotel di atas kertas”" height="1273" loading="lazy" src="/Media/reports/africa-hotel-development.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Pengembangan Hotel di Afrika</p>
+<h3 class="rs-title">Hotel di atas kertas</h3>
+<p class="rs-stat"><span class="rp-n">123.846</span> kamar di 675 hotel dalam daftar proyek (pipeline) jaringan hotel di Afrika pada awal 2026, rekor tertinggi dan 19% lebih banyak daripada setahun sebelumnya</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<section aria-labelledby="pfTitle" class="profile">
+<div class="wrap">
+<div class="pf-card">
+<img alt="Sampul profil perusahaan Heirstone Consulting" height="405" loading="lazy" src="/Media/docs/company-profile-cover.webp" width="720"/>
+<div>
 <p class="eyebrow">Profil perusahaan</p>
-<h3>Heirstone dalam 21 halaman</h3>
-<p>Lima bidang keahlian kami, cara kami bekerja, dan pengalaman tim terpilih di Timur Tengah, Afrika, dan Asia Tengah. Gratis untuk diunduh, tanpa perlu mengisi formulir.</p>
-<div class="profile-actions">
-<a class="btn-primary" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">Unduh dalam bahasa Inggris</a>
-<a class="btn-outline" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
+<h2 class="h2" id="pfTitle">Heirstone dalam 21 halaman</h2>
+<p class="lead">Lima bidang keahlian kami, cara kami bekerja, dan pengalaman tim terpilih di Timur Tengah, Afrika, dan Asia Tengah. Gratis untuk diunduh, tanpa perlu mengisi formulir.</p>
+<div class="pf-actions">
+<a class="btn" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">Unduh dalam bahasa Inggris</a>
+<a class="btn btn--ghost" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
 </div>
-<p class="profile-meta">PDF · 21 halaman · sekitar 8 MB</p>
+<p class="pf-meta">PDF · 21 halaman · sekitar 8 MB</p>
 </div>
-</div>
-</section>
-<!-- WHO WE ADVISE + WHERE WE ARE DIFFERENT -->
-<section class="band">
-<div class="band-inner">
-<div class="band-col">
-<p class="eyebrow eyebrow-light">Untuk siapa kami bekerja</p>
-<h2>Menasihati pihak yang mengalokasikan lahan, kebijakan, dan modal.</h2>
-<ul class="who">
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<path d="M3 21h18M4 21V8l8-5 8 5v13M8 21v-8h8v8M12 3v2"></path>
-</svg><div><h3>Pemerintah &amp; Otoritas Publik</h3><p>Kementerian, badan pariwisata, dan otoritas perencanaan nasional yang merancang dan melaksanakan strategi pembangunan nasional yang transformatif.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="9"></circle><path d="M12 7v10M8.5 9.5c0-1.1 1.4-2 3.5-2s3.5.9 3.5 2-1 1.8-3.5 2.3-3.5 1.2-3.5 2.2 1.4 2 3.5 2 3.5-.9 3.5-2"></path>
-</svg><div><h3>Investor Negara &amp; Institusional</h3><p>Dana kekayaan negara, dana pensiun, dan modal institusional yang membutuhkan intelijen pasar dan strategi investasi yang independen.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<path d="M2 21h20M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M10 7h4M10 11h4M10 15h4"></path>
-</svg><div><h3>Pengembang Properti</h3><p>Pengembang dari segala skala yang membutuhkan analisis penggunaan tertinggi dan terbaik, strategi pengembangan, dan studi kelayakan komersial untuk aset dan rencana induk.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="10"></circle><path d="M12 2v20M2 12h20M4.9 5.5c4.3 3 9.9 3 14.2 0M4.9 18.5c4.3-3 9.9-3 14.2 0"></path>
-</svg><div><h3>Perusahaan Multinasional</h3><p>Korporasi internasional yang masuk atau berekspansi di MENA — masuk pasar, pemilihan lokasi, dan benchmarking kompetitif.</p></div></li>
-</ul>
-</div>
-<div class="band-col">
-<p class="eyebrow eyebrow-light">Apa yang membedakan Heirstone</p>
-<h2>Dirancang untuk pasar tempat kerangka baku tak lagi berlaku.</h2>
-<ol class="why2">
-<li class="why2-item"><span class="why2-n">01</span><div><h3>Dipimpin Partner, Gesit sejak Awal</h3><p>Partner senior terlibat aktif dalam setiap penugasan — membawa keahlian perencanaan strategis selama puluhan tahun dan bergerak secepat laju transaksi.</p></div></li>
-<li class="why2-item"><span class="why2-n">02</span><div><h3>Keahlian Pasar Frontier</h3><p>Dirancang untuk pasar yang minim transparansi dan minim data — tempat pertimbangan komersial dan intelijen lapangan menjadi penentu.</p></div></li>
-<li class="why2-item"><span class="why2-n">03</span><div><h3>Konsultansi bagi Negara &amp; Pemerintah</h3><p>Pengalaman langsung dalam penugasan untuk negara, kementerian, dan program transformasi nasional.</p></div></li>
-<li class="why2-item"><span class="why2-n">04</span><div><h3>Nasihat yang Berpijak pada Realitas Komersial</h3><p>Nasihat yang tidak hanya kokoh secara analitis, tetapi juga layak secara komersial, memperhitungkan modal, dan berbasis informasi pasar.</p></div></li>
-<li class="why2-item"><span class="why2-n">05</span><div><h3>Independen &amp; Bebas Benturan Kepentingan</h3><p>Sebagai firma konsultan independen, nasihat kami mengutamakan klien serta berpijak pada fakta dan dinamika pasar yang nyata.</p></div></li>
-<li class="why2-item"><span class="why2-n">06</span><div><h3>Perspektif Berwawasan Global</h3><p>Konsultansi investasi lintas negara yang dibentuk oleh pengalaman konsultansi langsung di berbagai pasar global.</p></div></li>
-</ol>
-</div>
-</div>
-</section>
-<!-- CONTACT -->
-<section class="contact-section">
-<div class="section-inner-narrow">
-<h2 class="section-title">Hubungi Kami</h2>
-<p class="section-lead">Wujudkan visi Anda menjadi strategi yang meyakinkan. Hubungi kami untuk mendiskusikan penugasan Anda dengan partner senior.</p>
-<div class="contact-inner">
-<div class="contact-info">
-<h3>Informasi Kontak</h3>
-<div class="contact-item">
-<svg aria-hidden="true" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-</svg>
-<span>Dubai, UEA · Kairo, Mesir</span>
-</div>
-<div class="contact-item">
-<svg aria-hidden="true" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-<a class="contact-link" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
-</div>
-</div>
-<form class="contact-form" novalidate="">
-<div class="form-field">
-<label for="cf-name">Nama</label>
-<input autocomplete="name" class="form-input" id="cf-name" name="name" required="" type="text"/>
-</div>
-<div class="form-field">
-<label for="cf-email">Surel</label>
-<input autocomplete="email" class="form-input" id="cf-email" name="email" required="" type="email"/>
-</div>
-<div class="form-field">
-<label for="cf-subject">Perihal</label>
-<input class="form-input" id="cf-subject" name="_subject" type="text"/>
-</div>
-<div class="form-field">
-<label for="cf-message">Pesan</label>
-<textarea class="form-input" id="cf-message" name="message" required="" rows="4"></textarea>
-</div>
-<input aria-hidden="true" autocomplete="off" class="honeypot" name="_honey" tabindex="-1" type="text"/>
-<button class="btn-primary btn-submit" type="submit">Kirim Pesan</button>
-<p aria-live="polite" class="form-status" role="status"></p>
-</form>
 </div>
 </div>
 </section>
 </main>
-<!-- FOOTER -->
+<section aria-labelledby="clTitle" class="closing">
+<div class="cl-inner">
+<h2 class="h2" id="clTitle">Ada keputusan yang harus diambil di pasar-pasar ini?</h2>
+<div>
+<p>Beri tahu kami apa yang sedang Anda putuskan dan tenggat waktunya. Penasihat senior akan membalas dalam satu hari kerja.</p>
+<div class="cl-actions">
+<a class="btn btn--light" href="/id/pages/contact">Hubungi kami <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="link link--light" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
+</div>
+</div>
+</div>
+</section>
 <footer class="footer">
-<div style="max-width:1200px;margin:0 auto;">
-<div class="footer-grid">
-<div class="footer-brand">
-<h3>Heirstone Consulting &amp;<br/>Strategic Advisory</h3>
-<p>Firma konsultan strategi spesialis untuk pasar frontier dan pasar dengan pertumbuhan tinggi di MENA, Afrika, dan Asia Tengah.</p>
-<div class="footer-social">
-<a aria-label="Heirstone Consulting di LinkedIn" href="https://www.linkedin.com/company/heirstoneconsulting" rel="noopener" target="_blank">
-<svg aria-hidden="true" fill="currentColor" height="16" viewbox="0 0 24 24" width="16">
-<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle>
-</svg>
+<div class="ft-wrap">
+<div class="ft-grid">
+<div>
+<a aria-label="Heirstone Consulting" class="ft-brand" href="/id/">
+<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect height="34" stroke="#5D6E82" stroke-width="2" width="34" x="13" y="13"></rect><rect height="34" stroke="#5D6E82" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect></svg>
+<span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
 </a>
+<p class="ft-about">Konsultansi strategi untuk properti, pariwisata, dan pembangunan nasional di Timur Tengah, Afrika, dan Asia Tengah.</p>
 </div>
+<div class="ft-col"><h4>Bidang keahlian</h4><a href="/id/pages/real-estate-strategy">Strategi Properti</a><a href="/id/pages/tourism-development">Pengembangan Pariwisata</a><a href="/id/pages/national-vision-strategy">Strategi Visi Nasional</a><a href="/id/pages/special-projects">Proyek Khusus</a><a href="/id/pages/digital-transformation">Transformasi Digital</a></div>
+<div class="ft-col"><h4>Firma</h4><a href="/id/pages/about">Tentang Kami</a><a href="/id/pages/experience">Pengalaman</a><a href="/id/pages/reports">Riset</a><a href="/id/pages/insights">Wawasan</a><a href="/id/pages/services">Layanan</a><a href="/id/pages/contact">Kontak</a></div>
+<div class="ft-col"><h4>Kantor</h4><span>Dubai, Uni Emirat Arab</span><span>Kairo, Mesir</span><a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a><a data-i18n-skip="" href="https://www.linkedin.com/company/heirstoneconsulting" rel="noopener" target="_blank">LinkedIn</a></div>
 </div>
-<div class="footer-col">
-<h4>Kapabilitas Kami</h4>
-<ul>
-<li><a href="/id/pages/real-estate-strategy">Strategi Properti</a></li>
-<li><a href="/id/pages/tourism-development">Pengembangan Pariwisata</a></li>
-<li><a href="/id/pages/national-vision-strategy">Strategi Visi Nasional</a></li>
-<li><a href="/id/pages/special-projects">Proyek Khusus</a></li><li><a href="/id/pages/digital-transformation">Transformasi Digital</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Perusahaan</h4>
-<ul>
-<li><a href="/id/pages/about">Tentang Kami</a></li>
-<li><a href="/id/pages/services">Layanan</a></li>
-<li><a href="/id/pages/experience">Pengalaman</a></li><li><a href="/id/pages/reports">Laporan</a></li><li><a href="/id/pages/insights">Wawasan</a></li>
-<li><a href="/id/pages/contact">Kontak</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Info Kontak</h4>
-<div class="footer-contact-item">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-</svg>
-<span>Dubai, UEA · Kairo, Mesir</span>
-</div>
-<div class="footer-contact-item">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-<a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
-</div>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026 Heirstone Consulting &amp; Strategic Advisory. Hak cipta dilindungi undang-undang.</p>
-</div>
+<div class="ft-base"><span data-i18n-skip="">© 2026 Heirstone Consulting L.L.C-FZ</span><span>Tersedia dalam 26 bahasa</span></div>
 </div>
 </footer>
 <script>window.HS_I18N={"Sending…": "Mengirim…", "Message Sent": "Pesan Terkirim", "Thank you — your message has been sent. We typically respond within one business day.": "Terima kasih — pesan Anda telah terkirim. Kami biasanya merespons dalam satu hari kerja.", "Something went wrong and your message was not sent. Please email us directly at <a href=\"mailto:info@heirstoneconsulting.com\">info@heirstoneconsulting.com</a>.": "Terjadi kesalahan dan pesan Anda tidak terkirim. Silakan kirim surel langsung kepada kami di <a href=\"mailto:info@heirstoneconsulting.com\">info@heirstoneconsulting.com</a>.", "Open menu": "Buka menu", "Close menu": "Tutup menu", "Language": "Bahasa"};</script><script src="/js/main.js"></script>
-<script src="/js/home.js"></script>
 </body>
 </html>

@@ -113,6 +113,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="/css/style.css" rel="stylesheet"/>
 <link href="/css/home.css" rel="stylesheet"/>
+<link href="/css/v2.css" rel="stylesheet"/>
 <link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link as="image" href="/Media/hero-1.webp" rel="preload"/>
 <!-- i18n:alternates -->
@@ -150,487 +151,297 @@
 <!-- NAVBAR -->
 <nav class="navbar">
 <a class="navbar-brand" href="/ko/">
-<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-<rect height="34" stroke="#8FA0B2" stroke-width="2" width="34" x="13" y="13"></rect>
-<rect height="34" stroke="#8FA0B2" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect>
-</svg>
+<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect height="34" stroke="#8FA0B2" stroke-width="2" width="34" x="13" y="13"></rect><rect height="34" stroke="#8FA0B2" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect></svg>
 <span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
 </a>
 <ul class="navbar-nav">
-<li><a href="/ko/">홈</a></li>
-<li class="dropdown">
-<a href="/ko/pages/services">업무 분야</a>
+<li class="dropdown"><a href="/ko/pages/services">업무 분야</a>
 <div class="dropdown-menu">
 <a href="/ko/pages/real-estate-strategy">부동산 전략</a>
 <a href="/ko/pages/tourism-development">관광 개발</a>
 <a href="/ko/pages/national-vision-strategy">국가 비전 전략</a>
 <a href="/ko/pages/special-projects">특별 프로젝트</a>
 <a href="/ko/pages/digital-transformation">디지털 전환</a>
+<a class="dd-all" href="/ko/pages/services">전체 업무 분야</a>
 </div>
 </li>
-<li><a href="/ko/pages/experience">수행 경험</a></li><li><a href="/ko/pages/reports">보고서</a></li><li><a href="/ko/pages/insights">인사이트</a></li><li><a href="/ko/pages/about">회사 소개</a></li>
-<li><a href="/ko/pages/services">서비스</a></li>
-<li><a class="navbar-cta" href="/ko/pages/contact">문의</a></li>
+<li><a href="/ko/pages/reports">리서치</a></li>
+<li><a href="/ko/pages/experience">수행 경험</a></li>
+<li><a href="/ko/pages/about">회사 소개</a></li>
+<li class="nav-cta"><a class="navbar-cta" href="/ko/pages/contact">문의</a></li>
 <!-- i18n:switch --><li class="dropdown lang-switch" data-i18n-skip=""><button aria-haspopup="true" aria-label="언어" class="lang-btn" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg><span>KO</span></button><div class="dropdown-menu lang-menu"><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a aria-current="true" data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div></li><!-- /i18n:switch -->
 </ul>
 <button aria-controls="mobileNav" aria-expanded="false" aria-label="메뉴 열기" class="hamburger" id="hamburger">
 <span></span><span></span><span></span>
 </button>
 </nav>
-<!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav">
-<a href="/ko/">홈</a>
-<a href="/ko/pages/real-estate-strategy">부동산 전략</a>
-<a href="/ko/pages/tourism-development">관광 개발</a>
-<a href="/ko/pages/national-vision-strategy">국가 비전 전략</a>
-<a href="/ko/pages/special-projects">특별 프로젝트</a>
-<a href="/ko/pages/digital-transformation">디지털 전환</a>
+<a href="/ko/pages/services">업무 분야</a>
+<a class="mn-sub" href="/ko/pages/real-estate-strategy">부동산 전략</a>
+<a class="mn-sub" href="/ko/pages/tourism-development">관광 개발</a>
+<a class="mn-sub" href="/ko/pages/national-vision-strategy">국가 비전 전략</a>
+<a class="mn-sub" href="/ko/pages/special-projects">특별 프로젝트</a>
+<a class="mn-sub" href="/ko/pages/digital-transformation">디지털 전환</a>
+<a href="/ko/pages/reports">리서치</a>
 <a href="/ko/pages/experience">수행 경험</a>
-<a href="/ko/pages/reports">보고서</a>
-<a href="/ko/pages/insights">인사이트</a>
 <a href="/ko/pages/about">회사 소개</a>
-<a href="/ko/pages/services">서비스</a>
+<a href="/ko/pages/insights">인사이트</a>
 <a href="/ko/pages/contact">문의</a>
 <!-- i18n:mswitch --><div aria-label="언어" class="mobile-lang" data-i18n-skip=""><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a aria-current="true" data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div><!-- /i18n:mswitch -->
 </div>
-<main id="main">
-<!-- HERO -->
-<section class="hero">
-<div aria-hidden="true" class="hero-slides">
-<div class="hero-slide active" style="background-image:url('/Media/hero-1.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-2.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-3.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-4.webp')"></div>
-</div>
-<div aria-hidden="true" class="hero-overlay"></div>
-<div class="hero-content">
-<p class="hero-kicker">컨설팅 및 전략 자문 — 두바이 · 카이로</p>
-<h1>정보는 불투명하고 목표는 원대한 시장을 위한 전문 자문사.</h1>
-<p>Heirstone은 기존 컨설팅 프레임워크가 통하지 않는 곳에서 정부, 기관 자본, 디벨로퍼에게 자문하며, 중동·북아프리카(MENA), 아프리카, 중앙아시아 전역에서 국가 비전을 상업적으로 타당하고 실행 가능한 전략으로 전환합니다.</p>
-<div class="hero-actions">
-<a class="btn-primary" href="#services">전문 분야 살펴보기</a>
-<a class="btn-secondary" href="/ko/pages/contact">문의하기</a>
-</div>
-</div>
-<div aria-hidden="true" class="hero-ticker">
-<div class="tick-track"><span class="tick-item">최유효이용(HBU)</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">타당성 조사</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">글로벌 벤치마킹</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">시장 조사</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">관광목적지 전략</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">국가 비전</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">PPP 전략</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">공항·항만 전략</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">브랜드 레지던스</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">투자 유치</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">디지털 인허가</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">정치 리스크</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">최유효이용(HBU)</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">타당성 조사</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">글로벌 벤치마킹</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">시장 조사</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">관광목적지 전략</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">국가 비전</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">PPP 전략</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">공항·항만 전략</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">브랜드 레지던스</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">투자 유치</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">디지털 인허가</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">정치 리스크</span><span aria-hidden="true" class="tick-dot"></span></div>
-</div>
-</section>
-<!-- FACTS BAR -->
-<section aria-label="회사 개요" class="facts-bar">
-<div class="facts-inner">
-<div class="fact">
-<span class="fact-label">사무소</span>
-<span class="fact-value">두바이 · 카이로</span>
-</div>
-<div class="fact">
-<span class="fact-label">경력</span>
-<span class="fact-value">최상위 자문사 출신</span>
-</div>
-<div class="fact">
-<span class="fact-label">고객 유형</span>
-<span class="fact-value">정부 및 기관</span>
-</div>
-<div class="fact">
-<span class="fact-label">활동 지역</span>
-<span class="fact-value">GCC · MENA · 아프리카 · 중앙아시아</span>
-</div>
-</div>
-</section>
-<!-- SELECTED ENGAGEMENTS (carousel) -->
-<section aria-label="팀 주요 수행 경험" aria-roledescription="캐러셀" class="eng" id="engagements">
-<div class="eng-head">
+<header class="hero" id="main">
+<div aria-label="나이로비 스카이라인" class="hero-img" role="img"></div>
+<div class="hero-body">
 <div>
-<p class="eyebrow eyebrow-light">팀 주요 수행 경험</p>
-<h2>정부, 기관, 민간 자본을 아우르는 프로젝트 수행 경험.</h2>
-</div>
-<div class="eng-controls">
-<span class="eng-count"><b class="eng-cur">01</b> / 07</span>
-<button aria-label="이전 프로젝트" class="eng-btn eng-prev" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
-<button aria-label="다음 프로젝트" class="eng-btn eng-next" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
-</div>
-</div>
-<div class="eng-track" tabindex="0">
-<article aria-label="7개 중 1번째" aria-roledescription="슬라이드" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="수변에 자리한 랜드마크 역사 도심 지구" height="480" loading="eager" src="/Media/exp-giza.webp" width="800"/>
-<span class="eng-num">01</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">정부 기관 — 이집트</p>
-<h3>기자 피라미드 마스터플랜</h3>
-<p class="eng-desc">세계에서 방문객이 가장 많은 문화유산 중 한 곳에 인접한 랜드마크 복합용도 개발 사업의 시장 평가 및 개발 전략 — 송출 시장, 방문 목적, 계절성별 수요 전망을 토지 이용, 구성 요소별 규모 산정, 단계별 계획으로 구체화.</p>
-<p class="eng-outcome"><span>성과</span>국가 차원의 개발 포지셔닝, 상업 전략, 장기 방문객 인프라 계획의 기반 마련.</p>
-</div>
-</article>
-<article aria-label="7개 중 2번째" aria-roledescription="슬라이드" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="사하라 이남 아프리카 도시의 거리 풍경" height="480" loading="eager" src="/Media/exp-tourism.webp" width="800"/>
-<span class="eng-num">02</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">중앙정부 — 사하라 이남 아프리카</p>
-<h3>국가 관광 개발 프로그램</h3>
-<p class="eng-desc">여러 관광목적지 클러스터를 아우르는 전 과정 관광 전략 — 수요 예측, 관광목적지 포지셔닝, 상품 개발 프레임워크, 투자 유치 전략.</p>
-<p class="eng-outcome"><span>성과</span>국가 관광 개발 프레임워크로 채택되어 정책 정합성 확보와 민간 투자 유치를 뒷받침.</p>
-</div>
-</article>
-<article aria-label="7개 중 3번째" aria-roledescription="슬라이드" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="현대적인 유리 외관의 타워 개발 단지" height="480" loading="lazy" src="/Media/exp-giga.webp" width="800"/>
-<span class="eng-num">03</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">정부 출자 디벨로퍼 — 사우디아라비아</p>
-<h3>기가 프로젝트 전략 및 자문</h3>
-<p class="eng-desc">기가 프로젝트 내 대규모 정부 주도 개발 사업의 주거 전략, 브랜드 레지던스 포지셔닝 및 최유효이용 분석.</p>
-<p class="eng-outcome"><span>성과</span>국가 투자 목표에 부합하는 개발 포지셔닝 및 상품 전략 수립에 기여.</p>
-</div>
-</article>
-<article aria-label="7개 중 4번째" aria-roledescription="슬라이드" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="해안 스카이라인을 이루는 현대식 복합용도 타워" height="480" loading="lazy" src="/Media/exp-northcoast.webp" width="800"/>
-<span class="eng-num">04</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">기관투자자 — 이집트</p>
-<h3>카이로·북부 해안 투자 자문</h3>
-<p class="eng-desc">중앙아시아 기관투자자를 위한 복수 자산 시장 조사 및 투자 자문 — 카이로 광역권과 북부 해안/라스엘헤크마의 주거, 오피스, 리테일, 호텔·숙박 부문.</p>
-<p class="eng-outcome"><span>성과</span>역내에서 가장 빠르게 성장하는 복합용도·해안 시장 중 한 곳에 해외 자본을 투입할 수 있도록 투자 프레임워크를 구조화.</p>
-</div>
-</article>
-<article aria-label="7개 중 5번째" aria-roledescription="슬라이드" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="중심업무지구(CBD)의 오피스 타워" height="480" loading="lazy" src="/Media/exp-office.webp" width="800"/>
-<span class="eng-num">05</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">기관 / 자문 플랫폼 — 이집트</p>
-<h3>카이로 오피스 시장 정보 플랫폼</h3>
-<p class="eng-desc">카이로 광역권 오피스 시장을 다루는 부동산 데이터 플랫폼 설계 및 구축 — 임대 데이터, 입주율, 가격 벤치마크, 시장 지표.</p>
-<p class="eng-outcome"><span>성과</span>기관투자자 수준의 시장 정보 및 자문 기반을 마련해 투자 의사결정과 분기별 시장 보고를 지원.</p>
-</div>
-</article>
-<article aria-label="7개 중 6번째" aria-roledescription="슬라이드" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="프런티어 시장에 새로 들어선 인프라의 항공 사진" height="480" loading="lazy" src="/Media/exp-frontier.webp" width="800"/>
-<span class="eng-num">06</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">디벨로퍼 — 사하라 이남 아프리카</p>
-<h3>프런티어 시장 타당성 조사 및 최유효이용 분석(HBU)</h3>
-<p class="eng-desc">데이터가 부족한 도시 환경에서 추진되는 대규모 복합용도 개발 사업의 최유효이용 분석 및 타당성 조사 — 1차 조사 기반.</p>
-<p class="eng-outcome"><span>성과</span>프런티어 시장 여건에서 개발 프로그램을 재구성하고 자본 구조화와 투자 타당성 확보를 지원.</p>
-</div>
-</article>
-<article aria-label="7개 중 7번째" aria-roledescription="슬라이드" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="재생 사업이 진행 중인 역사 도심 지구의 항공 사진" height="480" loading="lazy" src="/Media/exp-heritage.webp" width="800"/>
-<span class="eng-num">07</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">정부 및 공공기관 — 중동·북아프리카</p>
-<h3>역사유산 및 도시재생 전략</h3>
-<p class="eng-desc">문화유산 부지 용도 전환 및 도시재생 전략 — 관광, 리테일, 문화 용도를 상업적으로 타당한 개발 프레임워크로 통합.</p>
-<p class="eng-outcome"><span>성과</span>문화유산 보존과 수익 창출, 장기적인 도시 활성화 사이의 균형 확보.</p>
-</div>
-</article>
-</div>
-<div class="eng-foot">
-<div aria-hidden="true" class="eng-progress"><span></span></div>
-<a class="eng-all" href="/ko/pages/experience">전체 프로젝트 보기 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</section>
-<!-- PRACTICES (explorer: tabs on desktop, accordion on mobile) -->
-<section class="px-section" id="services">
-<div class="px-head">
-<p class="eyebrow">업무 분야</p>
-<h2>다섯 개의 전문 분야. <em>하나의 기준.</em></h2>
-<p class="px-intro">모든 프로젝트는 파트너가 주도하고 근거에 기반하며, 이사회, 정부 부처, 자본에 책임을 지는 의사결정자를 위해 설계됩니다.</p>
-</div>
-<div aria-label="전문 분야" class="px" role="tablist">
-<div class="px-item is-active">
-<button aria-controls="px-panel-0" aria-expanded="true" aria-selected="true" class="px-tab" id="px-tab-0" role="tab" type="button">
-<span class="px-n">01</span>
-<span class="px-text"><span class="px-name">부동산 전략</span><span class="px-tag">필지에서 포트폴리오까지.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-0" class="px-panel" id="px-panel-0" role="tabpanel">
-<div class="px-media"><img alt="복합용도 부동산 마스터플랜 개발 단지의 항공 사진" height="384" loading="lazy" src="/Media/cap-realestate.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">시장 정보, 재무 모델링, 개발 전략을 통해 토지, 자산, 포트폴리오의 가치를 끌어냅니다.</p>
-<p class="px-sublabel">7개 서비스</p>
-<div class="px-chips"><a class="px-chip" href="/ko/pages/highest-and-best-use">최유효이용 분석(HBU)</a><a class="px-chip" href="/ko/pages/development-strategy">개발 전략 및 단계별 계획</a><a class="px-chip" href="/ko/pages/market-research">시장 조사 및 사업 기회 발굴</a><a class="px-chip" href="/ko/pages/commercial-feasibility">사업 타당성 조사</a><a class="px-chip" href="/ko/pages/investment-attraction">투자 유치 및 구조화</a><a class="px-chip" href="/ko/pages/competitive-benchmarking">경쟁 벤치마킹</a><a class="px-chip" href="/ko/pages/branded-residences">브랜드 레지던스 전략 자문</a></div>
-<a class="px-cta" href="/ko/pages/real-estate-strategy">분야 자세히 보기 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<p class="eyebrow">전략 자문 · 두바이와 카이로</p>
+<h1>근거에 기반한 부동산·관광·국가 개발 전략.</h1>
+<p class="hero-lead">중동, 아프리카, 중앙아시아 전역에서 정부, 국부펀드 및 기관투자자, 디벨로퍼에게 자문합니다. 모든 프로젝트는 시니어 어드바이저가 이끌며 1차 조사를 바탕으로 수행합니다.</p>
+<div class="hero-cta">
+<a class="btn btn--light" href="/ko/pages/contact">프로젝트 상담하기 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="link link--light" href="/ko/pages/reports">리서치 읽기 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </div>
+<a class="latest" href="/ko/pages/report-airport-cities">
+<img alt="Heirstone 보고서 『활주로 배당』 표지" height="116" src="/Media/reports/airport-cities.webp" width="82"/>
+<div class="latest-text">
+<p class="latest-label">최신 보고서</p>
+<p class="latest-title">공항도시: 활주로 배당</p>
+<p class="latest-stat"><span class="rp-n">11대 1</span> 2025년 두바이 사우스 아파트 판매액 기준 선분양 대 재판매 비율: 102억 3,000만 디르함 대 9억 1,000만 디르함</p>
 </div>
-<div class="px-item">
-<button aria-controls="px-panel-1" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-1" role="tab" type="button">
-<span class="px-n">02</span>
-<span class="px-text"><span class="px-name">관광·목적지 개발</span><span class="px-tag">세계와 경쟁하는 관광목적지.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-1" class="px-panel" id="px-panel-1" role="tabpanel">
-<div class="px-media"><img alt="리조트와 마리나를 갖춘 해변 관광지" height="384" loading="lazy" src="/Media/cap-tourism.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">경쟁력 있고 투자 가치가 있는 관광목적지 전략 — 수요 예측, 상품 개발, 포지셔닝을 일관된 방문객 경제 프레임워크로 통합합니다.</p>
-<p class="px-sublabel">4개 서비스</p>
-<div class="px-chips"><a class="px-chip" href="/ko/pages/destination-strategy">관광목적지 전략 및 포지셔닝</a><a class="px-chip" href="/ko/pages/tourism-market-research">관광 시장 조사 및 수요 예측</a><a class="px-chip" href="/ko/pages/visitor-economy">방문객 경제 전략</a><a class="px-chip" href="/ko/pages/airport-port-strategy">공항·항만·관문 상업 전략</a></div>
-<a class="px-cta" href="/ko/pages/tourism-development">분야 자세히 보기 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</a>
 </div>
+</header>
+<main>
+<section aria-labelledby="shelfTitle" class="shelf">
+<div class="wrap">
+<div class="shelf-head">
+<h2 id="shelfTitle">자문 대상 시장을 다룬 독립 보고서 32편을 무료로 읽을 수 있습니다.</h2>
+<a class="link" href="/ko/pages/reports">전체 리서치 보기 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-2" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-2" role="tab" type="button">
-<span class="px-n">03</span>
-<span class="px-text"><span class="px-name">국가 비전 및 산업 전략</span><span class="px-tag">실행 가능한 비전.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-2" class="px-panel" id="px-panel-2" role="tabpanel">
-<div class="px-media"><img alt="새벽녘 현대적인 수도의 스카이라인" height="384" loading="lazy" src="/Media/cap-national.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">국가의 포부를 체계적이고 실행 가능한 프로그램으로 구체화하고, 정책, 투자, 실행 메커니즘을 정렬합니다.</p>
-<p class="px-sublabel">7개 서비스</p>
-<div class="px-chips"><a class="px-chip" href="/ko/pages/national-vision">국가 비전 및 전략 프레임워크</a><a class="px-chip" href="/ko/pages/sector-transformation">산업 전환 자문</a><a class="px-chip" href="/ko/pages/ppp-strategy">민관협력사업(PPP) 전략</a><a class="px-chip" href="/ko/pages/policy-framework">정책 및 제도 프레임워크 자문</a><a class="px-chip" href="/ko/pages/global-benchmarking">국가 전환 프로그램 글로벌 벤치마킹</a><a class="px-chip" href="/ko/pages/monitoring-frameworks">모니터링 및 조정 체계</a><a class="px-chip" href="/ko/pages/political-risk-assessment">정치 리스크 및 투자 환경 평가</a></div>
-<a class="px-cta" href="/ko/pages/national-vision-strategy">분야 자세히 보기 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-3" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-3" role="tab" type="button">
-<span class="px-n">04</span>
-<span class="px-text"><span class="px-name">특별 프로젝트 및 전략 자문</span><span class="px-tag">맞춤형 과제, 복합적인 범위.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-3" class="px-panel" id="px-panel-3" role="tabpanel">
-<div class="px-media"><img alt="극적인 하늘 아래 우뚝 선 상징적 대형 랜드마크 메가프로젝트" height="384" loading="lazy" src="/Media/cap-special.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">국유 자산 수익화부터 해외 진출, 메가 이벤트 전략까지 — 기존 접근 방식으로는 충분하지 않은 과제를 다룹니다.</p>
-<p class="px-sublabel">6개 서비스</p>
-<div class="px-chips"><a class="px-chip" href="/ko/pages/asset-monetization">대규모 자산 수익화 전략</a><a class="px-chip" href="/ko/pages/destination-brand">관광목적지 브랜드 개발 자문</a><a class="px-chip" href="/ko/pages/investor-outreach">투자자 아웃리치 및 관계 구축 계획</a><a class="px-chip" href="/ko/pages/cross-border-expansion">해외 진출 자문</a><a class="px-chip" href="/ko/pages/innovation-ecosystem">혁신 생태계 전략</a><a class="px-chip" href="/ko/pages/sports-culture">스포츠·문화·메가 이벤트 전략</a></div>
-<a class="px-cta" href="/ko/pages/special-projects">분야 자세히 보기 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-4" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-4" role="tab" type="button">
-<span class="px-n">05</span>
-<span class="px-text"><span class="px-name">디지털 전환</span><span class="px-tag">처음부터 끝까지 디지털로 연결된 서비스.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-4" class="px-panel" id="px-panel-4" role="tabpanel">
-<div class="px-media"><img alt="도시계획 및 인허가 대시보드를 갖춘 정부 디지털 운영 센터" height="384" loading="lazy" src="/Media/cap-digital.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">부동산과 건설이 의존하는 정부 서비스(인허가, 토지 등기, 면허, 자산 데이터)를 디지털화하여 자본이 의사결정의 속도로 움직이도록 합니다.</p>
-<p class="px-sublabel">4개 서비스</p>
-<div class="px-chips"><a class="px-chip" href="/ko/pages/digital-permitting">디지털 인허가 및 건축 허가</a><a class="px-chip" href="/ko/pages/land-registry-digitization">토지 등기 및 부동산 거래 디지털화</a><a class="px-chip" href="/ko/pages/digital-service-design">디지털 공공서비스 디자인 및 시민 경험</a><a class="px-chip" href="/ko/pages/bim-digital-twins">BIM, 디지털 트윈 및 자산 정보 표준</a></div>
-<a class="px-cta" href="/ko/pages/digital-transformation">분야 자세히 보기 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
+<div class="shelf-row">
+<a class="cover" href="/ko/pages/report-airport-cities"><div class="cover-img"><img alt="Heirstone 보고서 『활주로 배당』 표지" height="1273" loading="lazy" src="/Media/reports/airport-cities.webp" width="900"/></div><p class="cover-tag">공항도시</p><p class="cover-title">활주로 배당</p></a>
+<a class="cover" href="/ko/pages/report-africa-construction-costs"><div class="cover-img"><img alt="Heirstone 보고서 『9개 도시, 1제곱미터』 표지" height="1273" loading="lazy" src="/Media/reports/africa-construction-costs.webp" width="900"/></div><p class="cover-tag">건설 비용과 건축 기술</p><p class="cover-title">9개 도시, 1제곱미터</p></a>
+<a class="cover" href="/ko/pages/report-airports-terminals"><div class="cover-img"><img alt="Heirstone 보고서 『가장 붐비는 한 시간』 표지" height="1273" loading="lazy" src="/Media/reports/airports-terminals.webp" width="900"/></div><p class="cover-tag">공항·터미널</p><p class="cover-title">가장 붐비는 한 시간</p></a>
+<a class="cover" href="/ko/pages/report-uzbekistan-new-cities"><div class="cover-img"><img alt="Heirstone 보고서 『낮의 도시』 표지" height="1273" loading="lazy" src="/Media/reports/uzbekistan-new-cities.webp" width="900"/></div><p class="cover-tag">우즈베키스탄 신도시</p><p class="cover-title">낮의 도시</p></a>
+<a class="cover" href="/ko/pages/report-africa-real-estate-capital"><div class="cover-img"><img alt="Heirstone 보고서 『돈은 이미 여기에 있다』 표지" height="1273" loading="lazy" src="/Media/reports/africa-real-estate-capital.webp" width="900"/></div><p class="cover-tag">아프리카 부동산 자본</p><p class="cover-title">돈은 이미 여기에 있다</p></a>
+<a class="cover" href="/ko/pages/report-branded-residences"><div class="cover-img"><img alt="Heirstone 보고서 『프리미엄은 누구의 몫인가』 표지" height="1273" loading="lazy" src="/Media/reports/branded-residences.webp" width="900"/></div><p class="cover-tag">브랜드 레지던스</p><p class="cover-title">프리미엄은 누구의 몫인가</p></a>
 </div>
 </div>
 </section>
-<!-- ENGAGEMENT MODEL (timeline) -->
-<section class="tl-section">
-<div class="tl-head">
+<section aria-labelledby="prTitle" class="principles">
+<div class="wrap">
 <p class="eyebrow">업무 방식</p>
-<h2>4단계 수행 모델.</h2>
-<p>기성 프레임워크는 쓰지 않습니다. 모든 프로젝트는 맥락, 목표, 제약 조건에 맞춰 설계되며, 시니어 파트너가 직접 이끕니다.</p>
+<h2 class="h2" id="prTitle">모든 프로젝트의 바탕이 되는 네 가지.</h2>
+<div class="p-grid">
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+<h3>1차 조사 우선</h3>
+<p>데이터가 부족한 곳에서는 모델을 구축하기 전에 설문조사, 인터뷰, 현장 방문, 거래 기록을 통해 직접 데이터를 수집합니다.</p>
 </div>
-<div class="tl-wrap">
-<span aria-hidden="true" class="tl-line"><span class="tl-fill"></span></span>
-<ol class="tl">
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">01</span>
-<h3>이해</h3>
-<p>집중 진단. 고객의 상황, 시장 환경, 전략 목표를 깊이 파악하고, 필요하다면 의뢰 내용 자체에도 문제를 제기합니다.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">02</span>
-<h3>분석</h3>
-<p>시장 조사, 재무 모델링, 벤치마킹, 이해관계자 분석 등 엄밀한 정량·정성 분석을 통해 근거에 기반한 인사이트를 도출합니다.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">03</span>
-<h3>전략 수립</h3>
-<p>분석을 전략으로 전환합니다. 단계별 제언, 우선순위가 정해진 과제, 그리고 리스크, 추진 순서, 자본 측면의 영향에 대한 냉철한 판단을 제시합니다.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">04</span>
-<h3>실행</h3>
-<p>의사결정자를 위한 산출물 — 간결하고 이사회 보고 수준이며, 정부 최고위급, 장관급, 투자위원회 차원에서 발표할 수 있도록 작성합니다.</p>
-</li>
-</ol>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>
+<h3>시니어 어드바이저의 전 과정 참여</h3>
+<p>프로젝트의 범위를 정한 인력이 첫 워크숍부터 이사회 보고까지 끝까지 참여합니다.</p>
+</div>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 3v18M5 7h14M5 7l-3 7h6l-3-7zM19 7l-3 7h6l-3-7zM8 21h8"></path></svg>
+<h3>독립적인 자문</h3>
+<p>이해상충이 없기 때문에 Heirstone의 권고는 근거와 고객의 목표를 따릅니다.</p>
+</div>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
+<h3>깊이 있는 지역 이해</h3>
+<p>두바이와 카이로에 사무소를 두고 걸프 지역, 북아프리카, 사하라 이남 아프리카, 중앙아시아 전역에서 활동합니다.</p>
+</div>
+</div>
 </div>
 </section>
-<!-- ABOUT SECTION -->
-<section class="about-section">
-<div class="about-inner">
-<div class="about-image">
-<img alt="새 타워와 인프라가 들어서고 있는 개발 중인 도시 지구의 항공 사진" height="801" loading="lazy" src="/Media/about.webp" width="1400"/>
+<section aria-labelledby="pracTitle" class="practices">
+<div class="wrap pr-grid">
+<div class="pr-intro">
+<p class="eyebrow">업무 분야</p>
+<h2 class="h2" id="pracTitle">다섯 개의 전문 분야.</h2>
+<p class="lead">각 분야는 한 유형의 의사결정에 시장 조사, 재무 분석, 전략을 결합해, 이사회나 정부 부처, 투자위원회 앞에서도 설득력을 잃지 않는 자문을 제공합니다.</p>
+<a class="link" href="/ko/pages/services">전체 업무 분야 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-<div class="about-text">
-<h2>Heirstone Consulting &amp; Strategic Advisory 소개</h2>
-<p>Heirstone은 프런티어 및 고성장 시장을 위한 전문 전략 자문사입니다. 데이터는 제한적이고, 의사결정의 무게는 크며, 기존 컨설팅 프레임워크가 통하지 않는 환경입니다.</p>
-<p>두바이와 카이로에 사무소를 둔 Heirstone은 최상위 자문사 출신의 경력과 깊이 있는 지역 이해를 겸비하고 있습니다. 비즈니스의 포부와 제도적 현실이 만나는 지점에서 일하며, 업무 범위는 단일 자산의 포지셔닝부터 국가 전환 프로그램까지 아우릅니다.</p>
-<a class="btn-primary" href="/ko/pages/about" style="margin-top:8px;">회사 소개 더 보기</a>
+<div class="pr-cards">
+<a class="pr-card" href="/ko/pages/real-estate-strategy">
+<h3>부동산 전략</h3>
+<p>무엇을, 어디에, 어떤 순서로 지을 것인가: 최유효이용, 타당성 조사, 개발 전략, 투자 구조화.</p>
+<span class="pr-foot"><span class="pr-count">7개 서비스</span><span class="link">자세히 보기 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/ko/pages/tourism-development">
+<h3>관광 개발</h3>
+<p>투자자와 정부가 실행에 옮길 수 있는 수요 예측, 관광목적지 포지셔닝, 방문객 경제 계획.</p>
+<span class="pr-foot"><span class="pr-count">4개 서비스</span><span class="link">자세히 보기 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/ko/pages/national-vision-strategy">
+<h3>국가 비전 전략</h3>
+<p>국가의 포부를 프로그램, 파트너십, 정책으로 구체화하고, 이를 실현할 기관과 재원을 갖춥니다.</p>
+<span class="pr-foot"><span class="pr-count">7개 서비스</span><span class="link">자세히 보기 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/ko/pages/special-projects">
+<h3>특별 프로젝트</h3>
+<p>단일 자산을 넘어서는 과제: 자산 수익화, 해외 진출, 투자자 아웃리치, 대형 이벤트.</p>
+<span class="pr-foot"><span class="pr-count">6개 서비스</span><span class="link">자세히 보기 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/ko/pages/digital-transformation">
+<h3>디지털 전환</h3>
+<p>부동산·건설 프로젝트가 의사결정의 속도로 진행되도록 하는 인허가, 토지 등기, 면허 서비스.</p>
+<span class="pr-foot"><span class="pr-count">4개 서비스</span><span class="link">자세히 보기 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card pr-card--ink" href="/ko/pages/contact">
+<h3>질문이 어느 분야에 해당하는지 잘 모르시겠습니까?</h3>
+<p>직면한 의사결정을 알려 주십시오. 저희가 어떻게 접근할지, 그리고 저희가 적합한 회사인지 말씀드리겠습니다.</p>
+<span class="pr-foot"><span class="pr-count">두바이 · 카이로</span><span class="link link--light">문의 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
 </div>
 </div>
-<div class="profile-strip">
-<a class="profile-cover" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf"><img alt="Heirstone Consulting 회사 소개서 표지" height="405" loading="lazy" src="/Media/docs/company-profile-cover.webp" width="720"/></a>
-<div class="profile-text">
+</section>
+<section aria-labelledby="exTitle" class="experience">
+<div class="wrap">
+<div class="ex-head">
+<div>
+<p class="eyebrow">팀 주요 수행 경험</p>
+<h2 class="h2" id="exTitle">정부, 투자자, 디벨로퍼를 위한 수행 경험.</h2>
+<p class="lead">Heirstone 팀 구성원이 수행한 프로젝트입니다. 고객의 요청에 따라 고객명은 공개하지 않습니다.</p>
+</div>
+<div class="ex-ctrl">
+<button aria-label="이전" data-dir="-1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
+<button aria-label="다음" data-dir="1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+<div class="ex-track" id="exTrack">
+<article class="ex-card">
+<p class="ex-client">정부 기관 · 이집트</p>
+<h3>기자 피라미드 마스터플랜</h3>
+<p class="ex-label">수행 내용</p>
+<p>세계에서 방문객이 가장 많은 문화유산 중 한 곳에 인접한 복합용도 개발 사업의 시장 평가 및 개발 전략. 송출 시장별·계절별 수요부터 토지 이용, 규모 산정, 단계별 계획까지 포괄.</p>
+<div class="ex-out"><p class="ex-label">성과</p><p>프로젝트 포지셔닝, 상업 전략, 장기 방문객 인프라 계획의 기반 마련.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">중앙정부 · 사하라 이남 아프리카</p>
+<h3>국가 관광 개발 프로그램</h3>
+<p class="ex-label">수행 내용</p>
+<p>여러 관광목적지 클러스터를 아우르는 관광 전략: 수요 예측, 포지셔닝, 상품 개발, 투자 유치.</p>
+<div class="ex-out"><p class="ex-label">성과</p><p>국가 관광 개발 프레임워크로 채택되어 정책과 민간 투자의 지침으로 활용.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">정부 출자 디벨로퍼 · 사우디아라비아</p>
+<h3>기가 프로젝트 전략</h3>
+<p class="ex-label">수행 내용</p>
+<p>정부 주도 대규모 개발 사업의 주거 전략, 브랜드 레지던스 포지셔닝 및 최유효이용 분석.</p>
+<div class="ex-out"><p class="ex-label">성과</p><p>국가 투자 주체의 목표에 부합하는 개발 포지셔닝 및 상품 전략.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">기관투자자 · 이집트</p>
+<h3>카이로·북부 해안 투자 자문</h3>
+<p class="ex-label">수행 내용</p>
+<p>중앙아시아 기관투자자를 위한 카이로 광역권과 라스엘헤크마의 주거, 오피스, 리테일, 호텔·숙박 부문 시장 조사 및 투자 자문.</p>
+<div class="ex-out"><p class="ex-label">성과</p><p>역내에서 가장 빠르게 성장하는 해안 시장 중 한 곳에 해외 자본을 투입하기 위한 투자 프레임워크.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">자문 플랫폼 · 이집트</p>
+<h3>카이로 오피스 시장 정보</h3>
+<p class="ex-label">수행 내용</p>
+<p>카이로 광역권 오피스 시장을 위한 데이터 플랫폼 설계 및 구축: 임대, 입주율, 가격 벤치마크, 시장 지표.</p>
+<div class="ex-out"><p class="ex-label">성과</p><p>투자 의사결정과 분기별 보고를 뒷받침하는 기관투자자 수준의 시장 정보.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">디벨로퍼 · 사하라 이남 아프리카</p>
+<h3>데이터가 부족한 환경의 타당성 조사</h3>
+<p class="ex-label">수행 내용</p>
+<p>1차 조사를 바탕으로 한, 데이터가 부족한 도시의 대규모 복합용도 개발 사업에 대한 최유효이용 분석 및 타당성 조사.</p>
+<div class="ex-out"><p class="ex-label">성과</p><p>프런티어 시장 여건에서 개발 프로그램을 재구성하고 자본 구조화를 지원.</p></div>
+</article>
+</div>
+<p class="ex-more"><a class="link" href="/ko/pages/experience">주요 수행 경험 전체 보기 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></p>
+</div>
+</section>
+<section aria-labelledby="rsTitle" class="research">
+<div class="wrap">
+<div class="rs-head">
+<div>
+<p class="eyebrow">리서치</p>
+<h2 class="h2" id="rsTitle">연구를 통해 얻은 지식을 공개합니다.</h2>
+</div>
+<p class="lead">부동산, 인프라, 관광에 관한 무료 보고서로, 보고서마다 고유한 벤치마크를 담고 모든 수치의 출처를 밝혔습니다. 영어, 프랑스어, 러시아어, 아랍어판으로 제공합니다.</p>
+</div>
+<div class="rs-grid">
+<a class="rs-card" href="/ko/pages/report-airport-cities">
+<div class="rs-art"><img alt="Heirstone 보고서 『활주로 배당』 표지" height="1273" loading="lazy" src="/Media/reports/airport-cities.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">공항도시</p>
+<h3 class="rs-title">활주로 배당</h3>
+<p class="rs-stat"><span class="rp-n">11대 1</span> 2025년 두바이 사우스 아파트 판매액 기준 선분양 대 재판매 비율: 102억 3,000만 디르함 대 9억 1,000만 디르함</p>
+</div>
+</a>
+<a class="rs-card" href="/ko/pages/report-africa-construction-costs">
+<div class="rs-art"><img alt="Heirstone 보고서 『9개 도시, 1제곱미터』 표지" height="1273" loading="lazy" src="/Media/reports/africa-construction-costs.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">건설 비용과 건축 기술</p>
+<h3 class="rs-title">9개 도시, 1제곱미터</h3>
+<p class="rs-stat"><span class="rp-n">2.9배</span> AECOM 2024/25 가이드 기준 라고스 다층 주거동 건축비의 나이로비 대비 배율: m²당 2,330달러 대 796달러</p>
+</div>
+</a>
+<a class="rs-card" href="/ko/pages/report-africa-hotel-development">
+<div class="rs-art"><img alt="Heirstone 보고서 『서류상의 호텔』 표지" height="1273" loading="lazy" src="/Media/reports/africa-hotel-development.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">아프리카 호텔 개발</p>
+<h3 class="rs-title">서류상의 호텔</h3>
+<p class="rs-stat"><span class="rp-n">123,846</span> 2026년 초 아프리카 호텔 체인 개발 파이프라인에 포함된 호텔 675곳의 객실 수. 사상 최대이자 전년 대비 19% 증가한 규모입니다</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<section aria-labelledby="pfTitle" class="profile">
+<div class="wrap">
+<div class="pf-card">
+<img alt="Heirstone Consulting 회사 소개서 표지" height="405" loading="lazy" src="/Media/docs/company-profile-cover.webp" width="720"/>
+<div>
 <p class="eyebrow">회사 소개서</p>
-<h3>21쪽으로 보는 Heirstone</h3>
-<p>Heirstone의 다섯 개 전문 분야와 업무 방식, 중동·아프리카·중앙아시아 전역의 팀 주요 수행 경험을 담았습니다. 별도의 양식 작성 없이 무료로 내려받을 수 있습니다.</p>
-<div class="profile-actions">
-<a class="btn-primary" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">영어판 내려받기</a>
-<a class="btn-outline" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
+<h2 class="h2" id="pfTitle">21쪽으로 보는 Heirstone</h2>
+<p class="lead">Heirstone의 다섯 개 전문 분야와 업무 방식, 중동·아프리카·중앙아시아 전역의 팀 주요 수행 경험을 담았습니다. 별도의 양식 작성 없이 무료로 내려받을 수 있습니다.</p>
+<div class="pf-actions">
+<a class="btn" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">영어판 내려받기</a>
+<a class="btn btn--ghost" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
 </div>
-<p class="profile-meta">PDF · 21쪽 · 약 8MB</p>
+<p class="pf-meta">PDF · 21쪽 · 약 8MB</p>
 </div>
-</div>
-</section>
-<!-- WHO WE ADVISE + WHERE WE ARE DIFFERENT -->
-<section class="band">
-<div class="band-inner">
-<div class="band-col">
-<p class="eyebrow eyebrow-light">주요 고객</p>
-<h2>토지, 정책, 자본을 배분하는 이들에게 자문합니다.</h2>
-<ul class="who">
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<path d="M3 21h18M4 21V8l8-5 8 5v13M8 21v-8h8v8M12 3v2"></path>
-</svg><div><h3>정부 및 공공기관</h3><p>혁신적인 국가 개발 전략을 수립하고 실행하는 중앙 부처, 관광청, 도시계획 당국.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="9"></circle><path d="M12 7v10M8.5 9.5c0-1.1 1.4-2 3.5-2s3.5.9 3.5 2-1 1.8-3.5 2.3-3.5 1.2-3.5 2.2 1.4 2 3.5 2 3.5-.9 3.5-2"></path>
-</svg><div><h3>국부펀드 및 기관투자자</h3><p>독립적인 시장 정보와 투자 전략이 필요한 국부펀드, 연기금, 기관 자본.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<path d="M2 21h20M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M10 7h4M10 11h4M10 15h4"></path>
-</svg><div><h3>부동산 디벨로퍼</h3><p>자산과 마스터플랜에 대한 최유효이용 분석, 개발 전략, 사업 타당성 검토가 필요한 모든 규모의 디벨로퍼.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="10"></circle><path d="M12 2v20M2 12h20M4.9 5.5c4.3 3 9.9 3 14.2 0M4.9 18.5c4.3-3 9.9-3 14.2 0"></path>
-</svg><div><h3>다국적 기업</h3><p>중동·북아프리카(MENA)에 진출하거나 사업을 확장하는 글로벌 기업 — 시장 진입, 입지 선정, 경쟁 벤치마킹.</p></div></li>
-</ul>
-</div>
-<div class="band-col">
-<p class="eyebrow eyebrow-light">Heirstone의 차별점</p>
-<h2>기존 프레임워크가 통하지 않는 시장을 위해 설계했습니다.</h2>
-<ol class="why2">
-<li class="why2-item"><span class="why2-n">01</span><div><h3>파트너 주도, 민첩한 조직</h3><p>시니어 파트너가 모든 프로젝트에 직접 참여해 수십 년간 축적한 전략 기획 전문성을 투입하고, 거래 속도에 맞춰 움직입니다.</p></div></li>
-<li class="why2-item"><span class="why2-n">02</span><div><h3>프런티어 시장 전문성</h3><p>정보가 불투명하고 데이터가 부족한 시장, 즉 상업적 판단력과 현장 정보가 결정적인 시장에 맞춰 설계되었습니다.</p></div></li>
-<li class="why2-item"><span class="why2-n">03</span><div><h3>정부 및 국가기관 자문</h3><p>정부·국가 차원의 프로젝트, 정부 부처, 국가 전환 프로그램 전반에 걸쳐 직접 수행한 경험을 갖추고 있습니다.</p></div></li>
-<li class="why2-item"><span class="why2-n">04</span><div><h3>상업성에 기반한 자문</h3><p>분석적으로 탄탄할 뿐 아니라 상업적으로 실현 가능하고, 자본 여건을 고려하며, 시장 현실을 반영한 자문을 제공합니다.</p></div></li>
-<li class="why2-item"><span class="why2-n">05</span><div><h3>독립성과 이해상충 배제</h3><p>독립 자문사로서 Heirstone은 고객을 최우선에 두고, 사실과 실제 시장 동향에 근거해 자문합니다.</p></div></li>
-<li class="why2-item"><span class="why2-n">06</span><div><h3>글로벌 관점</h3><p>세계 여러 시장에서 쌓은 직접적인 컨설팅 경험을 바탕으로 해외 투자 자문을 제공합니다.</p></div></li>
-</ol>
-</div>
-</div>
-</section>
-<!-- CONTACT -->
-<section class="contact-section">
-<div class="section-inner-narrow">
-<h2 class="section-title">문의하기</h2>
-<p class="section-lead">비전을 설득력 있는 전략으로 전환하십시오. 시니어 파트너와 프로젝트를 논의하시려면 연락해 주십시오.</p>
-<div class="contact-inner">
-<div class="contact-info">
-<h3>연락처</h3>
-<div class="contact-item">
-<svg aria-hidden="true" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-</svg>
-<span>아랍에미리트 두바이 · 이집트 카이로</span>
-</div>
-<div class="contact-item">
-<svg aria-hidden="true" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-<a class="contact-link" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
-</div>
-</div>
-<form class="contact-form" novalidate="">
-<div class="form-field">
-<label for="cf-name">이름</label>
-<input autocomplete="name" class="form-input" id="cf-name" name="name" required="" type="text"/>
-</div>
-<div class="form-field">
-<label for="cf-email">이메일</label>
-<input autocomplete="email" class="form-input" id="cf-email" name="email" required="" type="email"/>
-</div>
-<div class="form-field">
-<label for="cf-subject">제목</label>
-<input class="form-input" id="cf-subject" name="_subject" type="text"/>
-</div>
-<div class="form-field">
-<label for="cf-message">문의 내용</label>
-<textarea class="form-input" id="cf-message" name="message" required="" rows="4"></textarea>
-</div>
-<input aria-hidden="true" autocomplete="off" class="honeypot" name="_honey" tabindex="-1" type="text"/>
-<button class="btn-primary btn-submit" type="submit">문의 보내기</button>
-<p aria-live="polite" class="form-status" role="status"></p>
-</form>
 </div>
 </div>
 </section>
 </main>
-<!-- FOOTER -->
+<section aria-labelledby="clTitle" class="closing">
+<div class="cl-inner">
+<h2 class="h2" id="clTitle">이들 시장에서 내려야 할 결정이 있으십니까?</h2>
+<div>
+<p>무엇을, 언제까지 결정해야 하는지 알려 주십시오. 시니어 어드바이저가 영업일 기준 1일 이내에 답변드립니다.</p>
+<div class="cl-actions">
+<a class="btn btn--light" href="/ko/pages/contact">문의하기 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="link link--light" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
+</div>
+</div>
+</div>
+</section>
 <footer class="footer">
-<div style="max-width:1200px;margin:0 auto;">
-<div class="footer-grid">
-<div class="footer-brand">
-<h3>Heirstone Consulting &amp;<br/>Strategic Advisory</h3>
-<p>중동·북아프리카(MENA), 아프리카, 중앙아시아의 프런티어 및 고성장 시장을 위한 전문 전략 자문사.</p>
-<div class="footer-social">
-<a aria-label="LinkedIn의 Heirstone Consulting" href="https://www.linkedin.com/company/heirstoneconsulting" rel="noopener" target="_blank">
-<svg aria-hidden="true" fill="currentColor" height="16" viewbox="0 0 24 24" width="16">
-<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle>
-</svg>
+<div class="ft-wrap">
+<div class="ft-grid">
+<div>
+<a aria-label="Heirstone Consulting" class="ft-brand" href="/ko/">
+<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect height="34" stroke="#5D6E82" stroke-width="2" width="34" x="13" y="13"></rect><rect height="34" stroke="#5D6E82" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect></svg>
+<span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
 </a>
+<p class="ft-about">중동, 아프리카, 중앙아시아 전역의 부동산·관광·국가 개발 전략 자문.</p>
 </div>
+<div class="ft-col"><h4>전문 분야</h4><a href="/ko/pages/real-estate-strategy">부동산 전략</a><a href="/ko/pages/tourism-development">관광 개발</a><a href="/ko/pages/national-vision-strategy">국가 비전 전략</a><a href="/ko/pages/special-projects">특별 프로젝트</a><a href="/ko/pages/digital-transformation">디지털 전환</a></div>
+<div class="ft-col"><h4>회사</h4><a href="/ko/pages/about">회사 소개</a><a href="/ko/pages/experience">수행 경험</a><a href="/ko/pages/reports">리서치</a><a href="/ko/pages/insights">인사이트</a><a href="/ko/pages/services">서비스</a><a href="/ko/pages/contact">문의</a></div>
+<div class="ft-col"><h4>사무소</h4><span>아랍에미리트 두바이</span><span>이집트 카이로</span><a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a><a data-i18n-skip="" href="https://www.linkedin.com/company/heirstoneconsulting" rel="noopener" target="_blank">LinkedIn</a></div>
 </div>
-<div class="footer-col">
-<h4>업무 분야</h4>
-<ul>
-<li><a href="/ko/pages/real-estate-strategy">부동산 전략</a></li>
-<li><a href="/ko/pages/tourism-development">관광 개발</a></li>
-<li><a href="/ko/pages/national-vision-strategy">국가 비전 전략</a></li>
-<li><a href="/ko/pages/special-projects">특별 프로젝트</a></li><li><a href="/ko/pages/digital-transformation">디지털 전환</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>회사</h4>
-<ul>
-<li><a href="/ko/pages/about">회사 소개</a></li>
-<li><a href="/ko/pages/services">서비스</a></li>
-<li><a href="/ko/pages/experience">수행 경험</a></li><li><a href="/ko/pages/reports">보고서</a></li><li><a href="/ko/pages/insights">인사이트</a></li>
-<li><a href="/ko/pages/contact">문의</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>연락처</h4>
-<div class="footer-contact-item">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-</svg>
-<span>아랍에미리트 두바이 · 이집트 카이로</span>
-</div>
-<div class="footer-contact-item">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-<a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
-</div>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026 Heirstone Consulting &amp; Strategic Advisory. 모든 권리 보유.</p>
-</div>
+<div class="ft-base"><span data-i18n-skip="">© 2026 Heirstone Consulting L.L.C-FZ</span><span>26개 언어로 제공</span></div>
 </div>
 </footer>
 <script>window.HS_I18N={"Sending…": "보내는 중…", "Message Sent": "메시지가 전송되었습니다", "Thank you — your message has been sent. We typically respond within one business day.": "감사합니다. 메시지가 전송되었습니다. 보통 영업일 기준 1일 이내에 답변드립니다.", "Something went wrong and your message was not sent. Please email us directly at <a href=\"mailto:info@heirstoneconsulting.com\">info@heirstoneconsulting.com</a>.": "문제가 발생해 메시지가 전송되지 않았습니다. <a href=\"mailto:info@heirstoneconsulting.com\">info@heirstoneconsulting.com</a>으로 직접 이메일을 보내 주세요.", "Open menu": "메뉴 열기", "Close menu": "메뉴 닫기", "Language": "언어"};</script><script src="/js/main.js"></script>
-<script src="/js/home.js"></script>
 </body>
 </html>

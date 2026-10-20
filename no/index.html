@@ -113,6 +113,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="/css/style.css" rel="stylesheet"/>
 <link href="/css/home.css" rel="stylesheet"/>
+<link href="/css/v2.css" rel="stylesheet"/>
 <link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link as="image" href="/Media/hero-1.webp" rel="preload"/>
 <!-- i18n:alternates -->
@@ -150,487 +151,297 @@
 <!-- NAVBAR -->
 <nav class="navbar">
 <a class="navbar-brand" href="/no/">
-<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-<rect height="34" stroke="#8FA0B2" stroke-width="2" width="34" x="13" y="13"></rect>
-<rect height="34" stroke="#8FA0B2" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect>
-</svg>
+<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect height="34" stroke="#8FA0B2" stroke-width="2" width="34" x="13" y="13"></rect><rect height="34" stroke="#8FA0B2" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect></svg>
 <span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
 </a>
 <ul class="navbar-nav">
-<li><a href="/no/">Hjem</a></li>
-<li class="dropdown">
-<a href="/no/pages/services">Vår kompetanse</a>
+<li class="dropdown"><a href="/no/pages/services">Kompetanse</a>
 <div class="dropdown-menu">
 <a href="/no/pages/real-estate-strategy">Eiendomsstrategi</a>
 <a href="/no/pages/tourism-development">Reiselivsutvikling</a>
 <a href="/no/pages/national-vision-strategy">Nasjonal visjonsstrategi</a>
 <a href="/no/pages/special-projects">Spesialprosjekter</a>
 <a href="/no/pages/digital-transformation">Digital transformasjon</a>
+<a class="dd-all" href="/no/pages/services">Alle tjenester</a>
 </div>
 </li>
-<li><a href="/no/pages/experience">Erfaring</a></li><li><a href="/no/pages/reports">Rapporter</a></li><li><a href="/no/pages/insights">Innsikt</a></li><li><a href="/no/pages/about">Om oss</a></li>
-<li><a href="/no/pages/services">Tjenester</a></li>
-<li><a class="navbar-cta" href="/no/pages/contact">Kontakt</a></li>
+<li><a href="/no/pages/reports">Analyser</a></li>
+<li><a href="/no/pages/experience">Erfaring</a></li>
+<li><a href="/no/pages/about">Om oss</a></li>
+<li class="nav-cta"><a class="navbar-cta" href="/no/pages/contact">Kontakt</a></li>
 <!-- i18n:switch --><li class="dropdown lang-switch" data-i18n-skip=""><button aria-haspopup="true" aria-label="Språk" class="lang-btn" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg><span>NO</span></button><div class="dropdown-menu lang-menu"><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a aria-current="true" data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div></li><!-- /i18n:switch -->
 </ul>
 <button aria-controls="mobileNav" aria-expanded="false" aria-label="Åpne meny" class="hamburger" id="hamburger">
 <span></span><span></span><span></span>
 </button>
 </nav>
-<!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav">
-<a href="/no/">Hjem</a>
-<a href="/no/pages/real-estate-strategy">Eiendomsstrategi</a>
-<a href="/no/pages/tourism-development">Reiselivsutvikling</a>
-<a href="/no/pages/national-vision-strategy">Nasjonal visjonsstrategi</a>
-<a href="/no/pages/special-projects">Spesialprosjekter</a>
-<a href="/no/pages/digital-transformation">Digital transformasjon</a>
+<a href="/no/pages/services">Kompetanse</a>
+<a class="mn-sub" href="/no/pages/real-estate-strategy">Eiendomsstrategi</a>
+<a class="mn-sub" href="/no/pages/tourism-development">Reiselivsutvikling</a>
+<a class="mn-sub" href="/no/pages/national-vision-strategy">Nasjonal visjonsstrategi</a>
+<a class="mn-sub" href="/no/pages/special-projects">Spesialprosjekter</a>
+<a class="mn-sub" href="/no/pages/digital-transformation">Digital transformasjon</a>
+<a href="/no/pages/reports">Analyser</a>
 <a href="/no/pages/experience">Erfaring</a>
-<a href="/no/pages/reports">Rapporter</a>
-<a href="/no/pages/insights">Innsikt</a>
 <a href="/no/pages/about">Om oss</a>
-<a href="/no/pages/services">Tjenester</a>
+<a href="/no/pages/insights">Innsikt</a>
 <a href="/no/pages/contact">Kontakt</a>
 <!-- i18n:mswitch --><div aria-label="Språk" class="mobile-lang" data-i18n-skip=""><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a aria-current="true" data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div><!-- /i18n:mswitch -->
 </div>
-<main id="main">
-<!-- HERO -->
-<section class="hero">
-<div aria-hidden="true" class="hero-slides">
-<div class="hero-slide active" style="background-image:url('/Media/hero-1.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-2.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-3.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-4.webp')"></div>
-</div>
-<div aria-hidden="true" class="hero-overlay"></div>
-<div class="hero-content">
-<p class="hero-kicker">Konsulenttjenester og strategisk rådgivning — Dubai · Kairo</p>
-<h1>Spesialisert rådgivning for lite transparente, ambisiøse markeder.</h1>
-<p>Heirstone gir råd til statlige aktører, institusjonell kapital og utviklere der konvensjonelle rådgivningsrammeverk kommer til kort — og omsetter nasjonal visjon til kommersielt levedyktig, gjennomførbar strategi i MENA, Afrika og Sentral-Asia.</p>
-<div class="hero-actions">
-<a class="btn-primary" href="#services">Utforsk vår kompetanse</a>
-<a class="btn-secondary" href="/no/pages/contact">Ta kontakt</a>
-</div>
-</div>
-<div aria-hidden="true" class="hero-ticker">
-<div class="tick-track"><span class="tick-item">Høyeste og beste utnyttelse</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Mulighetsstudier</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Internasjonal benchmarking</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Markedsanalyse</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Destinasjonsstrategi</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Nasjonal visjon</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">OPS-strategi</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Flyplass- og havnestrategi</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Merkevareboliger</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Tiltrekning av investeringer</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Digital byggesaksbehandling</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Politisk risiko</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Høyeste og beste utnyttelse</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Mulighetsstudier</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Internasjonal benchmarking</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Markedsanalyse</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Destinasjonsstrategi</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Nasjonal visjon</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">OPS-strategi</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Flyplass- og havnestrategi</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Merkevareboliger</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Tiltrekning av investeringer</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Digital byggesaksbehandling</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Politisk risiko</span><span aria-hidden="true" class="tick-dot"></span></div>
-</div>
-</section>
-<!-- FACTS BAR -->
-<section aria-label="Om selskapet" class="facts-bar">
-<div class="facts-inner">
-<div class="fact">
-<span class="fact-label">Kontorer</span>
-<span class="fact-value">Dubai · Kairo</span>
-</div>
-<div class="fact">
-<span class="fact-label">Bakgrunn</span>
-<span class="fact-value">Fra ledende internasjonale rådgivningshus</span>
-</div>
-<div class="fact">
-<span class="fact-label">Oppdragsprofil</span>
-<span class="fact-value">Statlige og institusjonelle</span>
-</div>
-<div class="fact">
-<span class="fact-label">Geografisk dekning</span>
-<span class="fact-value">GCC · MENA · Afrika · Sentral-Asia</span>
-</div>
-</div>
-</section>
-<!-- SELECTED ENGAGEMENTS (carousel) -->
-<section aria-label="Utvalgt erfaring fra teamet" aria-roledescription="karusell" class="eng" id="engagements">
-<div class="eng-head">
+<header class="hero" id="main">
+<div aria-label="Silhuetten av Nairobi" class="hero-img" role="img"></div>
+<div class="hero-body">
 <div>
-<p class="eyebrow eyebrow-light">Utvalgt erfaring fra teamet</p>
-<h2>Oppdrag for statlig, institusjonell og privat kapital.</h2>
-</div>
-<div class="eng-controls">
-<span class="eng-count"><b class="eng-cur">01</b> / 07</span>
-<button aria-label="Forrige oppdrag" class="eng-btn eng-prev" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
-<button aria-label="Neste oppdrag" class="eng-btn eng-next" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
-</div>
-</div>
-<div class="eng-track" tabindex="0">
-<article aria-label="1 av 7" aria-roledescription="lysbilde" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Historisk bydel med kjente landemerker ved vannet" height="480" loading="eager" src="/Media/exp-giza.webp" width="800"/>
-<span class="eng-num">01</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Statlig myndighet — Egypt</p>
-<h3>Masterplan for pyramidene i Giza</h3>
-<p class="eng-desc">Markedsvurdering og utviklingsstrategi for et landemerkeprosjekt med kombinerte formål ved siden av et av verdens mest besøkte kulturarvsteder — etterspørselsprognoser etter opprinnelsesmarked, reiseformål og sesong, omsatt i arealbruk, dimensjonering av komponenter og faseinndeling.</p>
-<p class="eng-outcome"><span>Resultat</span>Grunnlag for prosjektets posisjonering, kommersiell strategi og langsiktig planlegging av besøksinfrastruktur på nasjonalt nivå.</p>
-</div>
-</article>
-<article aria-label="2 av 7" aria-roledescription="lysbilde" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Gateliv i en by i Afrika sør for Sahara" height="480" loading="eager" src="/Media/exp-tourism.webp" width="800"/>
-<span class="eng-num">02</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Nasjonal regjering — Afrika sør for Sahara</p>
-<h3>Nasjonalt program for reiselivsutvikling</h3>
-<p class="eng-desc">Helhetlig reiselivsstrategi for flere destinasjonsklynger — etterspørselsprognoser, destinasjonsposisjonering, rammeverk for produktutvikling og strategi for å tiltrekke investeringer.</p>
-<p class="eng-outcome"><span>Resultat</span>Etablert som det nasjonale rammeverket for reiselivsutvikling, til støtte for politisk samordning og mobilisering av private investeringer.</p>
-</div>
-</article>
-<article aria-label="3 av 7" aria-roledescription="lysbilde" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Moderne høyhusprosjekt i glass" height="480" loading="lazy" src="/Media/exp-giga.webp" width="800"/>
-<span class="eng-num">03</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Statsstøttet utvikler — Saudi-Arabia</p>
-<h3>Strategi og rådgivning for gigaprosjekt</h3>
-<p class="eng-desc">Boligstrategi, posisjonering av merkevareboliger og høyeste og beste utnyttelse for statsstøttede utviklingsprosjekter i stor skala innenfor gigaprosjekter.</p>
-<p class="eng-outcome"><span>Resultat</span>Ga grunnlag for prosjektets posisjonering og produktstrategi i tråd med statens investeringsmål.</p>
-</div>
-</article>
-<article aria-label="4 av 7" aria-roledescription="lysbilde" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Moderne høyhus med kombinerte formål i silhuetten av en kystby" height="480" loading="lazy" src="/Media/exp-northcoast.webp" width="800"/>
-<span class="eng-num">04</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Institusjonell investor — Egypt</p>
-<h3>Investeringsrådgivning for Kairo og nordkysten</h3>
-<p class="eng-desc">Markedsanalyse på tvers av eiendomsklasser og investeringsrådgivning for en institusjonell investor fra Sentral-Asia — bolig, kontor, handel og hotell i Stor-Kairo og på nordkysten / Ras El Hekma.</p>
-<p class="eng-outcome"><span>Resultat</span>Et strukturert investeringsrammeverk som muliggjør grenseoverskridende kapitalplassering i et av regionens raskest voksende markeder for kombinerte formål og kysteiendom.</p>
-</div>
-</article>
-<article aria-label="5 av 7" aria-roledescription="lysbilde" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Kontortårn i et sentralt forretningsdistrikt" height="480" loading="lazy" src="/Media/exp-office.webp" width="800"/>
-<span class="eng-num">05</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Institusjonell aktør / rådgivningsplattform — Egypt</p>
-<h3>Analyseplattform for kontormarkedet i Kairo</h3>
-<p class="eng-desc">Utformet og bygget en eiendomsdataplattform for kontormarkedet i Stor-Kairo — utleiedata, utleiegrad, referansepriser og markedsindikatorer.</p>
-<p class="eng-outcome"><span>Resultat</span>Grunnlag for markedsinnsikt og rådgivning på institusjonelt nivå, til støtte for investeringsbeslutninger og kvartalsvis markedsrapportering.</p>
-</div>
-</article>
-<article aria-label="6 av 7" aria-roledescription="lysbilde" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Flyfoto av ny infrastruktur i et frontmarked" height="480" loading="lazy" src="/Media/exp-frontier.webp" width="800"/>
-<span class="eng-num">06</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Utvikler — Afrika sør for Sahara</p>
-<h3>Mulighetsstudie og HBU i frontmarkeder</h3>
-<p class="eng-desc">Analyse av høyeste og beste utnyttelse og mulighetsstudier for store prosjekter med kombinerte formål i urbane miljøer med lite data — basert på primærundersøkelser.</p>
-<p class="eng-outcome"><span>Resultat</span>Omformet utviklingsprogrammene og støttet kapitalstrukturering og investeringsmessig levedyktighet under frontmarkedsforhold.</p>
-</div>
-</article>
-<article aria-label="7 av 7" aria-roledescription="lysbilde" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Flyfoto av en historisk bydel under fornyelse" height="480" loading="lazy" src="/Media/exp-heritage.webp" width="800"/>
-<span class="eng-num">07</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Offentlig og institusjonell — MENA</p>
-<h3>Strategi for kulturarv og byfornyelse</h3>
-<p class="eng-desc">Strategi for ny bruk av kulturarvsteder og byfornyelse — reiseliv, handel og kulturformål integrert i kommersielt levedyktige utviklingsrammeverk.</p>
-<p class="eng-outcome"><span>Resultat</span>Balanserte bevaring av kulturarven mot inntektsskaping og langsiktig aktivering av byrommet.</p>
-</div>
-</article>
-</div>
-<div class="eng-foot">
-<div aria-hidden="true" class="eng-progress"><span></span></div>
-<a class="eng-all" href="/no/pages/experience">Se alle oppdrag <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</section>
-<!-- PRACTICES (explorer: tabs on desktop, accordion on mobile) -->
-<section class="px-section" id="services">
-<div class="px-head">
-<p class="eyebrow">Hva vi gjør</p>
-<h2>Fem fagområder. <em>Én standard.</em></h2>
-<p class="px-intro">Alle oppdrag er partnerledet, faktabasert og bygget for beslutningstakere som står til ansvar overfor styrer, departementer og kapital.</p>
-</div>
-<div aria-label="Fagområder" class="px" role="tablist">
-<div class="px-item is-active">
-<button aria-controls="px-panel-0" aria-expanded="true" aria-selected="true" class="px-tab" id="px-tab-0" role="tab" type="button">
-<span class="px-n">01</span>
-<span class="px-text"><span class="px-name">Eiendomsstrategi</span><span class="px-tag">Fra tomt til portefølje.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-0" class="px-panel" id="px-panel-0" role="tabpanel">
-<div class="px-media"><img alt="Flyfoto av et eiendomsprosjekt med kombinerte formål etter en masterplan" height="384" loading="lazy" src="/Media/cap-realestate.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Vi frigjør verdier i tomter, eiendeler og porteføljer gjennom markedsinnsikt, finansiell modellering og utviklingsstrategi.</p>
-<p class="px-sublabel">7 tjenester</p>
-<div class="px-chips"><a class="px-chip" href="/no/pages/highest-and-best-use">Analyse av høyeste og beste utnyttelse</a><a class="px-chip" href="/no/pages/development-strategy">Utviklingsstrategi og faseinndeling</a><a class="px-chip" href="/no/pages/market-research">Markedsanalyse og identifisering av muligheter</a><a class="px-chip" href="/no/pages/commercial-feasibility">Kommersielle mulighetsstudier</a><a class="px-chip" href="/no/pages/investment-attraction">Tiltrekning og strukturering av investeringer</a><a class="px-chip" href="/no/pages/competitive-benchmarking">Benchmarking mot konkurrenter</a><a class="px-chip" href="/no/pages/branded-residences">Strategisk rådgivning om merkevareboliger</a></div>
-<a class="px-cta" href="/no/pages/real-estate-strategy">Utforsk fagområdet <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<p class="eyebrow">Strategirådgivning · Dubai og Kairo</p>
+<h1>Faktabasert strategi for eiendom, reiseliv og nasjonal utvikling.</h1>
+<p class="hero-lead">Vi gir råd til myndigheter, statlige og institusjonelle investorer og utviklere i Midtøsten, Afrika og Sentral-Asia. Hvert oppdrag ledes av seniorrådgivere og bygger på primærundersøkelser.</p>
+<div class="hero-cta">
+<a class="btn btn--light" href="/no/pages/contact">Drøft et oppdrag <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="link link--light" href="/no/pages/reports">Les analysene våre <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </div>
+<a class="latest" href="/no/pages/report-airport-cities">
+<img alt="Forsiden av Heirstone-rapporten «Rullebanens utbytte»" height="116" src="/Media/reports/airport-cities.webp" width="82"/>
+<div class="latest-text">
+<p class="latest-label">Nyeste rapport</p>
+<p class="latest-title">Flyplassbyer: Rullebanens utbytte</p>
+<p class="latest-stat"><span class="rp-n">11 mot 1</span> salg av leiligheter på tegning mot videresalg målt i verdi i Dubai South i 2025: 10,23 mrd. AED mot 0,91 mrd. AED</p>
 </div>
-<div class="px-item">
-<button aria-controls="px-panel-1" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-1" role="tab" type="button">
-<span class="px-n">02</span>
-<span class="px-text"><span class="px-name">Reiseliv og destinasjoner</span><span class="px-tag">Destinasjoner som konkurrerer globalt.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-1" class="px-panel" id="px-panel-1" role="tabpanel">
-<div class="px-media"><img alt="Reiselivsdestinasjon ved stranden med feriesteder og marina" height="384" loading="lazy" src="/Media/cap-tourism.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Konkurransedyktige, investerbare destinasjonsstrategier — etterspørselsprognoser, produktutvikling og posisjonering i helhetlige rammeverk for besøksøkonomien.</p>
-<p class="px-sublabel">4 tjenester</p>
-<div class="px-chips"><a class="px-chip" href="/no/pages/destination-strategy">Destinasjonsstrategi og posisjonering</a><a class="px-chip" href="/no/pages/tourism-market-research">Markedsanalyse og etterspørselsprognoser for reiseliv</a><a class="px-chip" href="/no/pages/visitor-economy">Strategi for besøksøkonomien</a><a class="px-chip" href="/no/pages/airport-port-strategy">Kommersiell strategi for flyplasser, havner og innfallsporter</a></div>
-<a class="px-cta" href="/no/pages/tourism-development">Utforsk fagområdet <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</a>
 </div>
+</header>
+<main>
+<section aria-labelledby="shelfTitle" class="shelf">
+<div class="wrap">
+<div class="shelf-head">
+<h2 id="shelfTitle">32 uavhengige rapporter om markedene der vi gir råd, gratis å lese.</h2>
+<a class="link" href="/no/pages/reports">Se alle analyser <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-2" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-2" role="tab" type="button">
-<span class="px-n">03</span>
-<span class="px-text"><span class="px-name">Nasjonal visjon og sektorstrategi</span><span class="px-tag">Visjon omsatt i handling.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-2" class="px-panel" id="px-panel-2" role="tabpanel">
-<div class="px-media"><img alt="Silhuetten av en moderne hovedstad ved daggry" height="384" loading="lazy" src="/Media/cap-national.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Vi omsetter nasjonale ambisjoner til strukturerte, gjennomførbare programmer — og samordner politikk, investeringer og gjennomføringsmekanismer.</p>
-<p class="px-sublabel">7 tjenester</p>
-<div class="px-chips"><a class="px-chip" href="/no/pages/national-vision">Nasjonal visjon og strategiske rammeverk</a><a class="px-chip" href="/no/pages/sector-transformation">Rådgivning om sektortransformasjon</a><a class="px-chip" href="/no/pages/ppp-strategy">Strategi for offentlig-privat samarbeid (OPS)</a><a class="px-chip" href="/no/pages/policy-framework">Rådgivning om politikk og institusjonelle rammeverk</a><a class="px-chip" href="/no/pages/global-benchmarking">Internasjonal benchmarking av nasjonale transformasjonsprogrammer</a><a class="px-chip" href="/no/pages/monitoring-frameworks">Rammeverk for oppfølging og justering</a><a class="px-chip" href="/no/pages/political-risk-assessment">Vurdering av politisk risiko og investeringsklima</a></div>
-<a class="px-cta" href="/no/pages/national-vision-strategy">Utforsk fagområdet <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-3" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-3" role="tab" type="button">
-<span class="px-n">04</span>
-<span class="px-text"><span class="px-name">Spesialprosjekter og strategisk rådgivning</span><span class="px-tag">Skreddersydde oppdrag med komplekst omfang.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-3" class="px-panel" id="px-panel-3" role="tabpanel">
-<div class="px-media"><img alt="Ikonisk storskala megaprosjekt under en dramatisk himmel" height="384" loading="lazy" src="/Media/cap-special.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Fra verdirealisering av statlige eiendeler til internasjonal ekspansjon og strategi for megaarrangementer — der konvensjonelle tilnærminger ikke strekker til.</p>
-<p class="px-sublabel">6 tjenester</p>
-<div class="px-chips"><a class="px-chip" href="/no/pages/asset-monetization">Strategi for storskala verdirealisering av eiendeler</a><a class="px-chip" href="/no/pages/destination-brand">Rådgivning om utvikling av destinasjonsmerkevarer</a><a class="px-chip" href="/no/pages/investor-outreach">Investorkontakt og planlegging av investordialog</a><a class="px-chip" href="/no/pages/cross-border-expansion">Rådgivning om internasjonal ekspansjon</a><a class="px-chip" href="/no/pages/innovation-ecosystem">Strategi for innovasjonsøkosystemer</a><a class="px-chip" href="/no/pages/sports-culture">Strategi for idrett, kultur og megaarrangementer</a></div>
-<a class="px-cta" href="/no/pages/special-projects">Utforsk fagområdet <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-4" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-4" role="tab" type="button">
-<span class="px-n">05</span>
-<span class="px-text"><span class="px-name">Digital transformasjon</span><span class="px-tag">Tjenester digitalisert fra start til slutt.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-4" class="px-panel" id="px-panel-4" role="tabpanel">
-<div class="px-media"><img alt="Offentlig digitalt driftssenter med dashbord for byplanlegging og byggesaker" height="384" loading="lazy" src="/Media/cap-digital.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Vi digitaliserer de offentlige tjenestene som eiendoms- og byggenæringen er avhengig av — byggesaksbehandling, eiendomsregister, lisenser og forvaltningsdata — slik at kapitalen beveger seg i beslutningens tempo.</p>
-<p class="px-sublabel">4 tjenester</p>
-<div class="px-chips"><a class="px-chip" href="/no/pages/digital-permitting">Digitale tillatelser og byggesaksbehandling</a><a class="px-chip" href="/no/pages/land-registry-digitization">Digitalisering av eiendomsregister og eiendomstransaksjoner</a><a class="px-chip" href="/no/pages/digital-service-design">Digital tjenestedesign og innbyggeropplevelse</a><a class="px-chip" href="/no/pages/bim-digital-twins">BIM, digitale tvillinger og standarder for forvaltningsinformasjon</a></div>
-<a class="px-cta" href="/no/pages/digital-transformation">Utforsk fagområdet <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
+<div class="shelf-row">
+<a class="cover" href="/no/pages/report-airport-cities"><div class="cover-img"><img alt="Forsiden av Heirstone-rapporten «Rullebanens utbytte»" height="1273" loading="lazy" src="/Media/reports/airport-cities.webp" width="900"/></div><p class="cover-tag">Flyplassbyer</p><p class="cover-title">Rullebanens utbytte</p></a>
+<a class="cover" href="/no/pages/report-africa-construction-costs"><div class="cover-img"><img alt="Forsiden av Heirstone-rapporten «Ni byer, én kvadratmeter»" height="1273" loading="lazy" src="/Media/reports/africa-construction-costs.webp" width="900"/></div><p class="cover-tag">Byggekostnader og byggeteknologi</p><p class="cover-title">Ni byer, én kvadratmeter</p></a>
+<a class="cover" href="/no/pages/report-airports-terminals"><div class="cover-img"><img alt="Forsiden av Heirstone-rapporten «Den travleste timen»" height="1273" loading="lazy" src="/Media/reports/airports-terminals.webp" width="900"/></div><p class="cover-tag">Flyplasser og terminaler</p><p class="cover-title">Den travleste timen</p></a>
+<a class="cover" href="/no/pages/report-uzbekistan-new-cities"><div class="cover-img"><img alt="Forsiden av Heirstone-rapporten «Byen på dagtid»" height="1273" loading="lazy" src="/Media/reports/uzbekistan-new-cities.webp" width="900"/></div><p class="cover-tag">Nye byer i Usbekistan</p><p class="cover-title">Byen på dagtid</p></a>
+<a class="cover" href="/no/pages/report-africa-real-estate-capital"><div class="cover-img"><img alt="Forsiden av Heirstone-rapporten «Pengene er allerede her»" height="1273" loading="lazy" src="/Media/reports/africa-real-estate-capital.webp" width="900"/></div><p class="cover-tag">Eiendomskapital i Afrika</p><p class="cover-title">Pengene er allerede her</p></a>
+<a class="cover" href="/no/pages/report-branded-residences"><div class="cover-img"><img alt="Forsiden av Heirstone-rapporten «Hvem sitter igjen med merprisen»" height="1273" loading="lazy" src="/Media/reports/branded-residences.webp" width="900"/></div><p class="cover-tag">Merkevareboliger</p><p class="cover-title">Hvem sitter igjen med merprisen</p></a>
 </div>
 </div>
 </section>
-<!-- ENGAGEMENT MODEL (timeline) -->
-<section class="tl-section">
-<div class="tl-head">
+<section aria-labelledby="prTitle" class="principles">
+<div class="wrap">
 <p class="eyebrow">Slik jobber vi</p>
-<h2>En oppdragsmodell i fire trinn.</h2>
-<p>Ingen standardrammeverk. Hvert oppdrag tilpasses kontekst, mål og begrensninger — og ledes i front av seniorpartnere.</p>
+<h2 class="h2" id="prTitle">Fire ting som preger hvert oppdrag.</h2>
+<div class="p-grid">
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+<h3>Primærundersøkelser først</h3>
+<p>Der det finnes lite data, samler vi det inn: spørreundersøkelser, intervjuer, befaringer og transaksjonsdata, før noen modell bygges.</p>
 </div>
-<div class="tl-wrap">
-<span aria-hidden="true" class="tl-line"><span class="tl-fill"></span></span>
-<ol class="tl">
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">01</span>
-<h3>Forstå</h3>
-<p>Grundig diagnose. Vi setter oss inn i kundens situasjon, markedsforhold og strategiske mål — og utfordrer oppdragsbeskrivelsen der den bør utfordres.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">02</span>
-<h3>Analysere</h3>
-<p>Grundig kvantitativ og kvalitativ analyse — markedsanalyse, finansiell modellering, benchmarking og interessentkartlegging — for å skape faktabasert innsikt.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">03</span>
-<h3>Utforme strategi</h3>
-<p>Analyse blir strategi. Trinnvise anbefalinger, prioriterte tiltak og et nøkternt blikk på risiko, rekkefølge og kapitalmessige konsekvenser.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">04</span>
-<h3>Levere</h3>
-<p>Leveranser utformet for beslutningstakere — konsise, klare for styret og laget for å presenteres på statlig nivå, departementsnivå og for investeringskomiteer.</p>
-</li>
-</ol>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>
+<h3>Seniorrådgivere gjennom hele oppdraget</h3>
+<p>De som avgrenser et oppdrag, følger det fra første workshop til presentasjonen for styret.</p>
+</div>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 3v18M5 7h14M5 7l-3 7h6l-3-7zM19 7l-3 7h6l-3-7zM8 21h8"></path></svg>
+<h3>Uavhengig rådgivning</h3>
+<p>Vi har ingen interessekonflikter, så anbefalingene våre følger fakta og kundens mål.</p>
+</div>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
+<h3>Regional forankring</h3>
+<p>Kontorer i Dubai og Kairo, og oppdrag i Gulfen, Nord-Afrika, Afrika sør for Sahara og Sentral-Asia.</p>
+</div>
+</div>
 </div>
 </section>
-<!-- ABOUT SECTION -->
-<section class="about-section">
-<div class="about-inner">
-<div class="about-image">
-<img alt="Flyfoto av en bydel i utvikling med nye høyhus og ny infrastruktur" height="801" loading="lazy" src="/Media/about.webp" width="1400"/>
+<section aria-labelledby="pracTitle" class="practices">
+<div class="wrap pr-grid">
+<div class="pr-intro">
+<p class="eyebrow">Kompetanse</p>
+<h2 class="h2" id="pracTitle">Fem fagområder.</h2>
+<p class="lead">Hvert fagområde samler markedsanalyse, finansiell analyse og strategi om én type beslutning, slik at rådene står seg overfor et styre, et departement eller en investeringskomité.</p>
+<a class="link" href="/no/pages/services">Alle tjenester <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-<div class="about-text">
-<h2>Om Heirstone Consulting &amp; Strategic Advisory</h2>
-<p>Heirstone er et spesialisert strategirådgivningsselskap for frontmarkeder og markeder i sterk vekst — der dataene er begrensede, det står mye på spill i beslutningene, og konvensjonelle rådgivningsrammeverk kommer til kort.</p>
-<p>Med kontorer i Dubai og Kairo kombinerer selskapet bakgrunn fra ledende internasjonale rådgivningshus med inngående regional kunnskap. Vi arbeider i skjæringspunktet mellom forretningsambisjoner og institusjonelle realiteter, og oppdragene våre spenner fra posisjonering av enkelteiendommer til nasjonale transformasjonsprogrammer.</p>
-<a class="btn-primary" href="/no/pages/about" style="margin-top:8px;">Les mer om oss</a>
+<div class="pr-cards">
+<a class="pr-card" href="/no/pages/real-estate-strategy">
+<h3>Eiendomsstrategi</h3>
+<p>Hva som skal bygges, hvor og i hvilken rekkefølge: høyeste og beste utnyttelse, mulighetsstudier, utviklingsstrategi og investeringsstrukturering.</p>
+<span class="pr-foot"><span class="pr-count">7 tjenester</span><span class="link">Utforsk <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/no/pages/tourism-development">
+<h3>Reiselivsutvikling</h3>
+<p>Etterspørselsprognoser, destinasjonsposisjonering og planer for besøksøkonomien som investorer og myndigheter kan handle ut fra.</p>
+<span class="pr-foot"><span class="pr-count">4 tjenester</span><span class="link">Utforsk <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/no/pages/national-vision-strategy">
+<h3>Nasjonal visjonsstrategi</h3>
+<p>Nasjonale ambisjoner omsatt til programmer, partnerskap og politikk, med institusjonene og finansieringen som skal til for å gjennomføre dem.</p>
+<span class="pr-foot"><span class="pr-count">7 tjenester</span><span class="link">Utforsk <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/no/pages/special-projects">
+<h3>Spesialprosjekter</h3>
+<p>Oppdrag som går utover én enkelt eiendel: verdirealisering av eiendeler, internasjonal ekspansjon, investorkontakt og store arrangementer.</p>
+<span class="pr-foot"><span class="pr-count">6 tjenester</span><span class="link">Utforsk <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/no/pages/digital-transformation">
+<h3>Digital transformasjon</h3>
+<p>Tjenester for byggesaksbehandling, eiendomsregister og lisenser som lar eiendoms- og byggeprosjekter bevege seg i beslutningens tempo.</p>
+<span class="pr-foot"><span class="pr-count">4 tjenester</span><span class="link">Utforsk <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card pr-card--ink" href="/no/pages/contact">
+<h3>Usikker på hvor spørsmålet ditt hører hjemme?</h3>
+<p>Fortell oss hvilken beslutning du står overfor. Vi forteller deg hvordan vi ville gått fram, og om vi er det rette selskapet for den.</p>
+<span class="pr-foot"><span class="pr-count">Dubai · Kairo</span><span class="link link--light">Kontakt <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
 </div>
 </div>
-<div class="profile-strip">
-<a class="profile-cover" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf"><img alt="Forsiden av selskapsprofilen til Heirstone Consulting" height="405" loading="lazy" src="/Media/docs/company-profile-cover.webp" width="720"/></a>
-<div class="profile-text">
+</section>
+<section aria-labelledby="exTitle" class="experience">
+<div class="wrap">
+<div class="ex-head">
+<div>
+<p class="eyebrow">Utvalgt erfaring fra teamet</p>
+<h2 class="h2" id="exTitle">Oppdrag for myndigheter, investorer og utviklere.</h2>
+<p class="lead">Oppdrag utført av medlemmer av Heirstone-teamet. Kundenes navn er utelatt etter deres ønske.</p>
+</div>
+<div class="ex-ctrl">
+<button aria-label="Forrige" data-dir="-1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
+<button aria-label="Neste" data-dir="1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+<div class="ex-track" id="exTrack">
+<article class="ex-card">
+<p class="ex-client">Statlig myndighet · Egypt</p>
+<h3>Masterplan for pyramidene i Giza</h3>
+<p class="ex-label">Oppdrag</p>
+<p>Markedsvurdering og utviklingsstrategi for et prosjekt med kombinerte formål ved siden av et av verdens mest besøkte kulturarvsteder, fra etterspørsel etter opprinnelsesmarked og sesong til arealbruk, dimensjonering og faseinndeling.</p>
+<div class="ex-out"><p class="ex-label">Resultat</p><p>Grunnlaget for prosjektets posisjonering, kommersielle strategi og langsiktige planlegging av besøksinfrastruktur.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Nasjonal regjering · Afrika sør for Sahara</p>
+<h3>Nasjonalt program for reiselivsutvikling</h3>
+<p class="ex-label">Oppdrag</p>
+<p>Reiselivsstrategi for flere destinasjonsklynger: etterspørselsprognoser, posisjonering, produktutvikling og tiltrekning av investeringer.</p>
+<div class="ex-out"><p class="ex-label">Resultat</p><p>Vedtatt som det nasjonale rammeverket for reiselivsutvikling, med føringer for politikk og private investeringer.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Statsstøttet utvikler · Saudi-Arabia</p>
+<h3>Strategi for gigaprosjekter</h3>
+<p class="ex-label">Oppdrag</p>
+<p>Boligstrategi, posisjonering av merkevareboliger og høyeste og beste utnyttelse for store statsstøttede utviklingsprosjekter.</p>
+<div class="ex-out"><p class="ex-label">Resultat</p><p>Prosjektposisjonering og produktstrategi i tråd med den statlige investorens mål.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Institusjonell investor · Egypt</p>
+<h3>Investeringsrådgivning for Kairo og nordkysten</h3>
+<p class="ex-label">Oppdrag</p>
+<p>Markedsanalyse og investeringsrådgivning for en institusjonell investor fra Sentral-Asia innen bolig, kontor, handel og hotell i Stor-Kairo og Ras El Hekma.</p>
+<div class="ex-out"><p class="ex-label">Resultat</p><p>Et investeringsrammeverk for plassering av grenseoverskridende kapital i et av regionens raskest voksende kystmarkeder.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Rådgivningsplattform · Egypt</p>
+<h3>Markedsinnsikt for kontormarkedet i Kairo</h3>
+<p class="ex-label">Oppdrag</p>
+<p>Utformet og bygget en dataplattform for kontormarkedet i Stor-Kairo: utleie, utleiegrad, referansepriser og markedsindikatorer.</p>
+<div class="ex-out"><p class="ex-label">Resultat</p><p>Markedsinnsikt på institusjonelt nivå som grunnlag for investeringsbeslutninger og kvartalsrapportering.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Utvikler · Afrika sør for Sahara</p>
+<h3>Mulighetsstudier der det finnes lite data</h3>
+<p class="ex-label">Oppdrag</p>
+<p>Høyeste og beste utnyttelse og mulighetsstudier for store prosjekter med kombinerte formål i byer med lite data, basert på primærundersøkelser.</p>
+<div class="ex-out"><p class="ex-label">Resultat</p><p>Omformet utviklingsprogrammene og støttet kapitalstruktureringen under frontmarkedsforhold.</p></div>
+</article>
+</div>
+<p class="ex-more"><a class="link" href="/no/pages/experience">All utvalgt erfaring <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></p>
+</div>
+</section>
+<section aria-labelledby="rsTitle" class="research">
+<div class="wrap">
+<div class="rs-head">
+<div>
+<p class="eyebrow">Analyser</p>
+<h2 class="h2" id="rsTitle">Vi publiserer det vi lærer.</h2>
+</div>
+<p class="lead">Gratis rapporter om eiendom, infrastruktur og reiseliv, hver med sin egen målestokk og kildehenvisning for hvert tall. Utgaver på engelsk, fransk, russisk og arabisk.</p>
+</div>
+<div class="rs-grid">
+<a class="rs-card" href="/no/pages/report-airport-cities">
+<div class="rs-art"><img alt="Forsiden av Heirstone-rapporten «Rullebanens utbytte»" height="1273" loading="lazy" src="/Media/reports/airport-cities.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Flyplassbyer</p>
+<h3 class="rs-title">Rullebanens utbytte</h3>
+<p class="rs-stat"><span class="rp-n">11 mot 1</span> salg av leiligheter på tegning mot videresalg målt i verdi i Dubai South i 2025: 10,23 mrd. AED mot 0,91 mrd. AED</p>
+</div>
+</a>
+<a class="rs-card" href="/no/pages/report-africa-construction-costs">
+<div class="rs-art"><img alt="Forsiden av Heirstone-rapporten «Ni byer, én kvadratmeter»" height="1273" loading="lazy" src="/Media/reports/africa-construction-costs.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Byggekostnader og byggeteknologi</p>
+<h3 class="rs-title">Ni byer, én kvadratmeter</h3>
+<p class="rs-stat"><span class="rp-n">2,9x</span> AECOMs pris for en boligblokk i flere etasjer i Lagos mot Nairobi i guiden for 2024/25: 2 330 USD mot 796 USD per m²</p>
+</div>
+</a>
+<a class="rs-card" href="/no/pages/report-africa-hotel-development">
+<div class="rs-art"><img alt="Forsiden av Heirstone-rapporten «Hoteller på papiret»" height="1273" loading="lazy" src="/Media/reports/africa-hotel-development.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Hotellutvikling i Afrika</p>
+<h3 class="rs-title">Hoteller på papiret</h3>
+<p class="rs-stat"><span class="rp-n">123 846</span> hotellrom i 675 hoteller i kjedenes afrikanske prosjektportefølje tidlig i 2026, en rekord og 19% mer enn året før</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<section aria-labelledby="pfTitle" class="profile">
+<div class="wrap">
+<div class="pf-card">
+<img alt="Forsiden av selskapsprofilen til Heirstone Consulting" height="405" loading="lazy" src="/Media/docs/company-profile-cover.webp" width="720"/>
+<div>
 <p class="eyebrow">Selskapsprofil</p>
-<h3>Heirstone på 21 sider</h3>
-<p>Våre fem fagområder, hvordan vi jobber og utvalgt erfaring fra teamet i Midtøsten, Afrika og Sentral-Asia. Gratis å laste ned, uten skjema å fylle ut.</p>
-<div class="profile-actions">
-<a class="btn-primary" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">Last ned på engelsk</a>
-<a class="btn-outline" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
+<h2 class="h2" id="pfTitle">Heirstone på 21 sider</h2>
+<p class="lead">Våre fem fagområder, hvordan vi jobber og utvalgt erfaring fra teamet i Midtøsten, Afrika og Sentral-Asia. Gratis å laste ned, uten skjema å fylle ut.</p>
+<div class="pf-actions">
+<a class="btn" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">Last ned på engelsk</a>
+<a class="btn btn--ghost" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
 </div>
-<p class="profile-meta">PDF · 21 sider · ca. 8 MB</p>
+<p class="pf-meta">PDF · 21 sider · ca. 8 MB</p>
 </div>
-</div>
-</section>
-<!-- WHO WE ADVISE + WHERE WE ARE DIFFERENT -->
-<section class="band">
-<div class="band-inner">
-<div class="band-col">
-<p class="eyebrow eyebrow-light">Hvem vi jobber for</p>
-<h2>Vi gir råd til dem som rår over arealer, politikk og kapital.</h2>
-<ul class="who">
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<path d="M3 21h18M4 21V8l8-5 8 5v13M8 21v-8h8v8M12 3v2"></path>
-</svg><div><h3>Myndigheter og offentlige etater</h3><p>Departementer, reiselivsmyndigheter og planmyndigheter som utformer og gjennomfører transformative strategier for nasjonal utvikling.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="9"></circle><path d="M12 7v10M8.5 9.5c0-1.1 1.4-2 3.5-2s3.5.9 3.5 2-1 1.8-3.5 2.3-3.5 1.2-3.5 2.2 1.4 2 3.5 2 3.5-.9 3.5-2"></path>
-</svg><div><h3>Statlige og institusjonelle investorer</h3><p>Statlige investeringsfond, pensjonsfond og institusjonell kapital som trenger uavhengig markedsinnsikt og investeringsstrategi.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<path d="M2 21h20M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M10 7h4M10 11h4M10 15h4"></path>
-</svg><div><h3>Eiendomsutviklere</h3><p>Utviklere av alle størrelser som trenger analyser av høyeste og beste utnyttelse, utviklingsstrategi og kommersielle mulighetsstudier for eiendeler og masterplaner.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="10"></circle><path d="M12 2v20M2 12h20M4.9 5.5c4.3 3 9.9 3 14.2 0M4.9 18.5c4.3-3 9.9-3 14.2 0"></path>
-</svg><div><h3>Multinasjonale selskaper</h3><p>Internasjonale selskaper som etablerer seg eller ekspanderer i MENA — markedsinngang, lokaliseringsvalg og benchmarking mot konkurrenter.</p></div></li>
-</ul>
-</div>
-<div class="band-col">
-<p class="eyebrow eyebrow-light">Slik skiller Heirstone seg ut</p>
-<h2>Bygget for markeder der standardmodellene svikter.</h2>
-<ol class="why2">
-<li class="why2-item"><span class="why2-n">01</span><div><h3>Partnerledet og smidig fra grunnen av</h3><p>Seniorpartnere er aktivt involvert i hvert oppdrag — med flere tiårs erfaring fra strategisk planlegging, og i det tempoet en transaksjon krever.</p></div></li>
-<li class="why2-item"><span class="why2-n">02</span><div><h3>Ekspertise på frontmarkeder</h3><p>Bygget for lite transparente markeder med lite data — der kommersiell dømmekraft og lokal innsikt fra feltet er avgjørende.</p></div></li>
-<li class="why2-item"><span class="why2-n">03</span><div><h3>Rådgivning for stater og myndigheter</h3><p>Direkte erfaring fra statlige oppdrag, departementer og nasjonale transformasjonsprogrammer.</p></div></li>
-<li class="why2-item"><span class="why2-n">04</span><div><h3>Kommersielt forankret rådgivning</h3><p>Råd som ikke bare er analytisk solide, men også kommersielt levedyktige, kapitalbevisste og markedsinformerte.</p></div></li>
-<li class="why2-item"><span class="why2-n">05</span><div><h3>Uavhengig og uten interessekonflikter</h3><p>Som uavhengig rådgiver setter vi kunden først, og rådene våre bygger på fakta og reell markedsdynamikk.</p></div></li>
-<li class="why2-item"><span class="why2-n">06</span><div><h3>Globalt informert perspektiv</h3><p>Rådgivning om grenseoverskridende investeringer, formet av direkte rådgivningserfaring fra markeder verden over.</p></div></li>
-</ol>
-</div>
-</div>
-</section>
-<!-- CONTACT -->
-<section class="contact-section">
-<div class="section-inner-narrow">
-<h2 class="section-title">Ta kontakt</h2>
-<p class="section-lead">Gjør visjonen om til en overbevisende strategi. Ta kontakt for å drøfte oppdraget med en seniorpartner.</p>
-<div class="contact-inner">
-<div class="contact-info">
-<h3>Kontaktinformasjon</h3>
-<div class="contact-item">
-<svg aria-hidden="true" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-</svg>
-<span>Dubai, UAE · Kairo, Egypt</span>
-</div>
-<div class="contact-item">
-<svg aria-hidden="true" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-<a class="contact-link" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
-</div>
-</div>
-<form class="contact-form" novalidate="">
-<div class="form-field">
-<label for="cf-name">Navn</label>
-<input autocomplete="name" class="form-input" id="cf-name" name="name" required="" type="text"/>
-</div>
-<div class="form-field">
-<label for="cf-email">E-post</label>
-<input autocomplete="email" class="form-input" id="cf-email" name="email" required="" type="email"/>
-</div>
-<div class="form-field">
-<label for="cf-subject">Emne</label>
-<input class="form-input" id="cf-subject" name="_subject" type="text"/>
-</div>
-<div class="form-field">
-<label for="cf-message">Melding</label>
-<textarea class="form-input" id="cf-message" name="message" required="" rows="4"></textarea>
-</div>
-<input aria-hidden="true" autocomplete="off" class="honeypot" name="_honey" tabindex="-1" type="text"/>
-<button class="btn-primary btn-submit" type="submit">Send melding</button>
-<p aria-live="polite" class="form-status" role="status"></p>
-</form>
 </div>
 </div>
 </section>
 </main>
-<!-- FOOTER -->
+<section aria-labelledby="clTitle" class="closing">
+<div class="cl-inner">
+<h2 class="h2" id="clTitle">Står du overfor en beslutning i disse markedene?</h2>
+<div>
+<p>Fortell oss hva du skal bestemme, og innen når. En seniorrådgiver svarer innen én virkedag.</p>
+<div class="cl-actions">
+<a class="btn btn--light" href="/no/pages/contact">Kontakt oss <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="link link--light" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
+</div>
+</div>
+</div>
+</section>
 <footer class="footer">
-<div style="max-width:1200px;margin:0 auto;">
-<div class="footer-grid">
-<div class="footer-brand">
-<h3>Heirstone Consulting &amp;<br/>Strategic Advisory</h3>
-<p>Spesialisert strategirådgivning for frontmarkeder og vekstmarkeder i MENA, Afrika og Sentral-Asia.</p>
-<div class="footer-social">
-<a aria-label="Heirstone Consulting på LinkedIn" href="https://www.linkedin.com/company/heirstoneconsulting" rel="noopener" target="_blank">
-<svg aria-hidden="true" fill="currentColor" height="16" viewbox="0 0 24 24" width="16">
-<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle>
-</svg>
+<div class="ft-wrap">
+<div class="ft-grid">
+<div>
+<a aria-label="Heirstone Consulting" class="ft-brand" href="/no/">
+<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect height="34" stroke="#5D6E82" stroke-width="2" width="34" x="13" y="13"></rect><rect height="34" stroke="#5D6E82" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect></svg>
+<span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
 </a>
+<p class="ft-about">Strategirådgivning for eiendom, reiseliv og nasjonal utvikling i Midtøsten, Afrika og Sentral-Asia.</p>
 </div>
+<div class="ft-col"><h4>Fagområder</h4><a href="/no/pages/real-estate-strategy">Eiendomsstrategi</a><a href="/no/pages/tourism-development">Reiselivsutvikling</a><a href="/no/pages/national-vision-strategy">Nasjonal visjonsstrategi</a><a href="/no/pages/special-projects">Spesialprosjekter</a><a href="/no/pages/digital-transformation">Digital transformasjon</a></div>
+<div class="ft-col"><h4>Selskapet</h4><a href="/no/pages/about">Om oss</a><a href="/no/pages/experience">Erfaring</a><a href="/no/pages/reports">Analyser</a><a href="/no/pages/insights">Innsikt</a><a href="/no/pages/services">Tjenester</a><a href="/no/pages/contact">Kontakt</a></div>
+<div class="ft-col"><h4>Kontorer</h4><span>Dubai, De forente arabiske emirater</span><span>Kairo, Egypt</span><a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a><a data-i18n-skip="" href="https://www.linkedin.com/company/heirstoneconsulting" rel="noopener" target="_blank">LinkedIn</a></div>
 </div>
-<div class="footer-col">
-<h4>Vår kompetanse</h4>
-<ul>
-<li><a href="/no/pages/real-estate-strategy">Eiendomsstrategi</a></li>
-<li><a href="/no/pages/tourism-development">Reiselivsutvikling</a></li>
-<li><a href="/no/pages/national-vision-strategy">Nasjonal visjonsstrategi</a></li>
-<li><a href="/no/pages/special-projects">Spesialprosjekter</a></li><li><a href="/no/pages/digital-transformation">Digital transformasjon</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Selskapet</h4>
-<ul>
-<li><a href="/no/pages/about">Om oss</a></li>
-<li><a href="/no/pages/services">Tjenester</a></li>
-<li><a href="/no/pages/experience">Erfaring</a></li><li><a href="/no/pages/reports">Rapporter</a></li><li><a href="/no/pages/insights">Innsikt</a></li>
-<li><a href="/no/pages/contact">Kontakt</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Kontaktinfo</h4>
-<div class="footer-contact-item">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-</svg>
-<span>Dubai, UAE · Kairo, Egypt</span>
-</div>
-<div class="footer-contact-item">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-<a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
-</div>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026 Heirstone Consulting &amp; Strategic Advisory. Alle rettigheter forbeholdt.</p>
-</div>
+<div class="ft-base"><span data-i18n-skip="">© 2026 Heirstone Consulting L.L.C-FZ</span><span>Tilgjengelig på 26 språk</span></div>
 </div>
 </footer>
 <script>window.HS_I18N={"Sending…": "Sender…", "Message Sent": "Melding sendt", "Thank you — your message has been sent. We typically respond within one business day.": "Takk — meldingen din er sendt. Vi svarer vanligvis innen én virkedag.", "Something went wrong and your message was not sent. Please email us directly at <a href=\"mailto:info@heirstoneconsulting.com\">info@heirstoneconsulting.com</a>.": "Noe gikk galt, og meldingen din ble ikke sendt. Send oss en e-post direkte til <a href=\"mailto:info@heirstoneconsulting.com\">info@heirstoneconsulting.com</a>.", "Open menu": "Åpne meny", "Close menu": "Lukk meny", "Language": "Språk"};</script><script src="/js/main.js"></script>
-<script src="/js/home.js"></script>
 </body>
 </html>

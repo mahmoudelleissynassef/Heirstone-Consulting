@@ -113,6 +113,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="/css/style.css" rel="stylesheet"/>
 <link href="/css/home.css" rel="stylesheet"/>
+<link href="/css/v2.css" rel="stylesheet"/>
 <link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link as="image" href="/Media/hero-1.webp" rel="preload"/>
 <!-- i18n:alternates -->
@@ -150,487 +151,297 @@
 <!-- NAVBAR -->
 <nav class="navbar">
 <a class="navbar-brand" href="/fi/">
-<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-<rect height="34" stroke="#8FA0B2" stroke-width="2" width="34" x="13" y="13"></rect>
-<rect height="34" stroke="#8FA0B2" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect>
-</svg>
+<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect height="34" stroke="#8FA0B2" stroke-width="2" width="34" x="13" y="13"></rect><rect height="34" stroke="#8FA0B2" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect></svg>
 <span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
 </a>
 <ul class="navbar-nav">
-<li><a href="/fi/">Etusivu</a></li>
-<li class="dropdown">
-<a href="/fi/pages/services">Osaamisemme</a>
+<li class="dropdown"><a href="/fi/pages/services">Osaaminen</a>
 <div class="dropdown-menu">
 <a href="/fi/pages/real-estate-strategy">Kiinteistöstrategia</a>
 <a href="/fi/pages/tourism-development">Matkailun kehittäminen</a>
 <a href="/fi/pages/national-vision-strategy">Kansallinen visiostrategia</a>
 <a href="/fi/pages/special-projects">Erityishankkeet</a>
 <a href="/fi/pages/digital-transformation">Digitaalinen transformaatio</a>
+<a class="dd-all" href="/fi/pages/services">Kaikki palvelut</a>
 </div>
 </li>
-<li><a href="/fi/pages/experience">Kokemus</a></li><li><a href="/fi/pages/reports">Raportit</a></li><li><a href="/fi/pages/insights">Näkökulmat</a></li><li><a href="/fi/pages/about">Meistä</a></li>
-<li><a href="/fi/pages/services">Palvelut</a></li>
-<li><a class="navbar-cta" href="/fi/pages/contact">Yhteystiedot</a></li>
+<li><a href="/fi/pages/reports">Tutkimus</a></li>
+<li><a href="/fi/pages/experience">Kokemus</a></li>
+<li><a href="/fi/pages/about">Meistä</a></li>
+<li class="nav-cta"><a class="navbar-cta" href="/fi/pages/contact">Yhteystiedot</a></li>
 <!-- i18n:switch --><li class="dropdown lang-switch" data-i18n-skip=""><button aria-haspopup="true" aria-label="Kieli" class="lang-btn" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg><span>FI</span></button><div class="dropdown-menu lang-menu"><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a aria-current="true" data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div></li><!-- /i18n:switch -->
 </ul>
 <button aria-controls="mobileNav" aria-expanded="false" aria-label="Avaa valikko" class="hamburger" id="hamburger">
 <span></span><span></span><span></span>
 </button>
 </nav>
-<!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav">
-<a href="/fi/">Etusivu</a>
-<a href="/fi/pages/real-estate-strategy">Kiinteistöstrategia</a>
-<a href="/fi/pages/tourism-development">Matkailun kehittäminen</a>
-<a href="/fi/pages/national-vision-strategy">Kansallinen visiostrategia</a>
-<a href="/fi/pages/special-projects">Erityishankkeet</a>
-<a href="/fi/pages/digital-transformation">Digitaalinen transformaatio</a>
+<a href="/fi/pages/services">Osaaminen</a>
+<a class="mn-sub" href="/fi/pages/real-estate-strategy">Kiinteistöstrategia</a>
+<a class="mn-sub" href="/fi/pages/tourism-development">Matkailun kehittäminen</a>
+<a class="mn-sub" href="/fi/pages/national-vision-strategy">Kansallinen visiostrategia</a>
+<a class="mn-sub" href="/fi/pages/special-projects">Erityishankkeet</a>
+<a class="mn-sub" href="/fi/pages/digital-transformation">Digitaalinen transformaatio</a>
+<a href="/fi/pages/reports">Tutkimus</a>
 <a href="/fi/pages/experience">Kokemus</a>
-<a href="/fi/pages/reports">Raportit</a>
-<a href="/fi/pages/insights">Näkökulmat</a>
 <a href="/fi/pages/about">Meistä</a>
-<a href="/fi/pages/services">Palvelut</a>
+<a href="/fi/pages/insights">Näkökulmat</a>
 <a href="/fi/pages/contact">Yhteystiedot</a>
 <!-- i18n:mswitch --><div aria-label="Kieli" class="mobile-lang" data-i18n-skip=""><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a aria-current="true" data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div><!-- /i18n:mswitch -->
 </div>
-<main id="main">
-<!-- HERO -->
-<section class="hero">
-<div aria-hidden="true" class="hero-slides">
-<div class="hero-slide active" style="background-image:url('/Media/hero-1.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-2.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-3.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-4.webp')"></div>
-</div>
-<div aria-hidden="true" class="hero-overlay"></div>
-<div class="hero-content">
-<p class="hero-kicker">Konsultointi ja strateginen neuvonta — Dubai · Kairo</p>
-<h1>Erikoistunut neuvonantaja läpinäkymättömille ja kunnianhimoisille markkinoille.</h1>
-<p>Heirstone neuvoo valtioita, institutionaalisia sijoittajia ja kiinteistökehittäjiä siellä, missä perinteiset konsultointimallit eivät enää toimi — ja muuttaa kansallisen vision kaupallisesti kannattaviksi ja toteuttamiskelpoisiksi strategioiksi MENA-alueella, Afrikassa ja Keski-Aasiassa.</p>
-<div class="hero-actions">
-<a class="btn-primary" href="#services">Tutustu osaamiseemme</a>
-<a class="btn-secondary" href="/fi/pages/contact">Ota yhteyttä</a>
-</div>
-</div>
-<div aria-hidden="true" class="hero-ticker">
-<div class="tick-track"><span class="tick-item">Paras ja tuottavin käyttö</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Kannattavuusselvitykset</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Kansainvälinen vertailu</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Markkinatutkimus</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Matkakohdestrategia</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Kansallinen visio</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">PPP-strategia</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Lentokenttä- ja satamastrategia</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Branded residences</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Investointien houkuttelu</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Digitaaliset luvat</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Poliittinen riski</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Paras ja tuottavin käyttö</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Kannattavuusselvitykset</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Kansainvälinen vertailu</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Markkinatutkimus</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Matkakohdestrategia</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Kansallinen visio</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">PPP-strategia</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Lentokenttä- ja satamastrategia</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Branded residences</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Investointien houkuttelu</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Digitaaliset luvat</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Poliittinen riski</span><span aria-hidden="true" class="tick-dot"></span></div>
-</div>
-</section>
-<!-- FACTS BAR -->
-<section aria-label="Yritys lyhyesti" class="facts-bar">
-<div class="facts-inner">
-<div class="fact">
-<span class="fact-label">Toimistot</span>
-<span class="fact-value">Dubai · Kairo</span>
-</div>
-<div class="fact">
-<span class="fact-label">Tausta</span>
-<span class="fact-value">Kokemus johtavista konsulttitaloista</span>
-</div>
-<div class="fact">
-<span class="fact-label">Toimeksiantojen profiili</span>
-<span class="fact-value">Valtiolliset ja institutionaaliset</span>
-</div>
-<div class="fact">
-<span class="fact-label">Toiminta-alue</span>
-<span class="fact-value">Persianlahden maat · MENA · Afrikka · Keski-Aasia</span>
-</div>
-</div>
-</section>
-<!-- SELECTED ENGAGEMENTS (carousel) -->
-<section aria-label="Tiimin valikoituja toimeksiantoja" aria-roledescription="karuselli" class="eng" id="engagements">
-<div class="eng-head">
+<header class="hero" id="main">
+<div aria-label="Nairobin siluetti" class="hero-img" role="img"></div>
+<div class="hero-body">
 <div>
-<p class="eyebrow eyebrow-light">Tiimin valikoituja toimeksiantoja</p>
-<h2>Toimeksiantoja valtiolliselle, institutionaaliselle ja yksityiselle pääomalle.</h2>
-</div>
-<div class="eng-controls">
-<span class="eng-count"><b class="eng-cur">01</b> / 07</span>
-<button aria-label="Edellinen toimeksianto" class="eng-btn eng-prev" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
-<button aria-label="Seuraava toimeksianto" class="eng-btn eng-next" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
-</div>
-</div>
-<div class="eng-track" tabindex="0">
-<article aria-label="1/7" aria-roledescription="dia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Maamerkkinä tunnettu historiallinen kaupunginosa veden äärellä" height="480" loading="eager" src="/Media/exp-giza.webp" width="800"/>
-<span class="eng-num">01</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Valtiollinen viranomainen — Egypti</p>
-<h3>Gizan pyramidien yleissuunnitelma</h3>
-<p class="eng-desc">Markkina-arvio ja kehitysstrategia maamerkiksi tarkoitetulle monikäyttöhankkeelle yhden maailman vierailluimman kulttuuriperintökohteen vieressä: kysyntäennusteet lähtömarkkinoittain, matkan tarkoituksen ja kausivaihtelun mukaan, muunnettuina maankäytöksi, toimintojen mitoitukseksi ja vaiheistukseksi.</p>
-<p class="eng-outcome"><span>Tulos</span>Perusta hankkeen asemoinnille, kaupalliselle strategialle ja pitkän aikavälin vierailijainfrastruktuurin suunnittelulle kansallisella tasolla.</p>
-</div>
-</article>
-<article aria-label="2/7" aria-roledescription="dia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Katuelämää Saharan eteläpuolisen Afrikan kaupungissa" height="480" loading="eager" src="/Media/exp-tourism.webp" width="800"/>
-<span class="eng-num">02</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Kansallinen hallitus — Saharan eteläpuolinen Afrikka</p>
-<h3>Kansallinen matkailun kehittämisohjelma</h3>
-<p class="eng-desc">Kokonaisvaltainen matkailustrategia useille matkakohdeklustereille: kysynnän ennustaminen, matkakohteen asemointi, tuotekehityksen viitekehykset ja investointien houkuttelustrategia.</p>
-<p class="eng-outcome"><span>Tulos</span>Vakiintui kansalliseksi matkailun kehittämisen viitekehykseksi, joka tukee politiikkojen yhteensovittamista ja yksityisten investointien saamista liikkeelle.</p>
-</div>
-</article>
-<article aria-label="3/7" aria-roledescription="dia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Moderni lasitorneista koostuva kokonaisuus" height="480" loading="lazy" src="/Media/exp-giga.webp" width="800"/>
-<span class="eng-num">03</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Valtion tukema kiinteistökehittäjä — Saudi-Arabia</p>
-<h3>Strategia ja neuvonta jättihankkeisiin</h3>
-<p class="eng-desc">Asuntostrategia, branded residences -kohteiden asemointi sekä parhaan ja tuottavimman käytön analyysi suurille valtion tukemille hankkeille jättihankeympäristöissä.</p>
-<p class="eng-outcome"><span>Tulos</span>Ohjasi hankkeen asemointia ja tuotestrategiaa valtion investointitavoitteiden mukaisesti.</p>
-</div>
-</article>
-<article aria-label="4/7" aria-roledescription="dia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Moderneja monikäyttötorneja rannikon siluetissa" height="480" loading="lazy" src="/Media/exp-northcoast.webp" width="800"/>
-<span class="eng-num">04</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Institutionaalinen sijoittaja — Egypti</p>
-<h3>Sijoitusneuvonta Kairossa ja pohjoisrannikolla</h3>
-<p class="eng-desc">Useiden omaisuuslajien markkinatutkimus ja sijoitusneuvonta keskiaasialaiselle institutionaaliselle sijoittajalle: asunnot, toimistot, kauppa ja majoitus Suur-Kairossa sekä pohjoisrannikolla / Ras El Hekmassa.</p>
-<p class="eng-outcome"><span>Tulos</span>Jäsennelty sijoituskehys, joka mahdollistaa rajat ylittävän pääoman sijoittamisen yhdelle alueen nopeimmin kasvavista rannikko- ja monikäyttömarkkinoista.</p>
-</div>
-</article>
-<article aria-label="5/7" aria-roledescription="dia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Toimistotorneja keskeisellä liikealueella" height="480" loading="lazy" src="/Media/exp-office.webp" width="800"/>
-<span class="eng-num">05</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Institutionaalinen / neuvonta-alusta — Egypti</p>
-<h3>Kairon toimistomarkkinoiden tietoalusta</h3>
-<p class="eng-desc">Suunnittelimme ja rakensimme Suur-Kairon toimistomarkkinoita kattavan kiinteistödata-alustan: vuokrausdata, käyttöasteet, hintavertailut ja markkinaindikaattorit.</p>
-<p class="eng-outcome"><span>Tulos</span>Perusta institutionaalisen tason markkinatiedolle ja neuvonnalle, joka tukee sijoituspäätöksiä ja neljännesvuosittaista markkinaraportointia.</p>
-</div>
-</article>
-<article aria-label="6/7" aria-roledescription="dia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Ilmakuva uudesta infrastruktuurista kehittyvillä rajamarkkinoilla" height="480" loading="lazy" src="/Media/exp-frontier.webp" width="800"/>
-<span class="eng-num">06</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Kiinteistökehittäjä — Saharan eteläpuolinen Afrikka</p>
-<h3>Kannattavuus sekä paras ja tuottavin käyttö rajamarkkinoilla</h3>
-<p class="eng-desc">Parhaan ja tuottavimman käytön analyysi sekä kannattavuusselvitys suurille monikäyttöhankkeille vähäisen datan kaupunkiympäristöissä — primääritutkimukseen perustuen.</p>
-<p class="eng-outcome"><span>Tulos</span>Muotoili kehitysohjelmat uudelleen ja tuki pääoman rakenteistamista ja investoinnin kannattavuutta rajamarkkinoiden olosuhteissa.</p>
-</div>
-</article>
-<article aria-label="7/7" aria-roledescription="dia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Ilmakuva uudistuvasta historiallisesta kaupunginosasta" height="480" loading="lazy" src="/Media/exp-heritage.webp" width="800"/>
-<span class="eng-num">07</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Julkishallinto ja instituutiot — MENA</p>
-<h3>Kulttuuriperinnön ja kaupunkiuudistuksen strategia</h3>
-<p class="eng-desc">Kulttuuriperintökohteiden uudelleenkäyttö ja kaupunkiuudistuksen strategia, joka yhdistää matkailu-, kauppa- ja kulttuurikäytöt kaupallisesti kannattaviksi kehityskokonaisuuksiksi.</p>
-<p class="eng-outcome"><span>Tulos</span>Sovitti yhteen kulttuuriperinnön suojelun, tulonmuodostuksen ja kaupunkitilan pitkän aikavälin elävöittämisen.</p>
-</div>
-</article>
-</div>
-<div class="eng-foot">
-<div aria-hidden="true" class="eng-progress"><span></span></div>
-<a class="eng-all" href="/fi/pages/experience">Katso kaikki toimeksiannot <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</section>
-<!-- PRACTICES (explorer: tabs on desktop, accordion on mobile) -->
-<section class="px-section" id="services">
-<div class="px-head">
-<p class="eyebrow">Mitä teemme</p>
-<h2>Viisi osaamisaluetta. <em>Yksi laatutaso.</em></h2>
-<p class="px-intro">Jokainen toimeksianto on osakkaan johtama, näyttöön perustuva ja laadittu päättäjille, jotka vastaavat hallituksille, ministeriöille ja sijoittajille.</p>
-</div>
-<div aria-label="Osaamisalueet" class="px" role="tablist">
-<div class="px-item is-active">
-<button aria-controls="px-panel-0" aria-expanded="true" aria-selected="true" class="px-tab" id="px-tab-0" role="tab" type="button">
-<span class="px-n">01</span>
-<span class="px-text"><span class="px-name">Kiinteistöstrategia</span><span class="px-tag">Tontista salkkuun.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-0" class="px-panel" id="px-panel-0" role="tabpanel">
-<div class="px-media"><img alt="Ilmakuva yleiskaavan mukaisesta monikäyttöisestä kiinteistökehityshankkeesta" height="384" loading="lazy" src="/Media/cap-realestate.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Vapautamme maan, omaisuuserien ja salkkujen arvon markkinatiedon, taloudellisen mallinnuksen ja kehitysstrategian avulla.</p>
-<p class="px-sublabel">7 osaamisaluetta</p>
-<div class="px-chips"><a class="px-chip" href="/fi/pages/highest-and-best-use">Parhaan ja tuottavimman käytön analyysi</a><a class="px-chip" href="/fi/pages/development-strategy">Kehitysstrategia ja vaiheistus</a><a class="px-chip" href="/fi/pages/market-research">Markkinatutkimus ja mahdollisuuksien tunnistaminen</a><a class="px-chip" href="/fi/pages/commercial-feasibility">Kaupalliset kannattavuusselvitykset</a><a class="px-chip" href="/fi/pages/investment-attraction">Investointien houkuttelu ja rakenteistaminen</a><a class="px-chip" href="/fi/pages/competitive-benchmarking">Kilpailija-analyysi</a><a class="px-chip" href="/fi/pages/branded-residences">Branded residences -kohteiden strategiakonsultointi</a></div>
-<a class="px-cta" href="/fi/pages/real-estate-strategy">Tutustu osaamisalueeseen <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<p class="eyebrow">Strategiakonsultointi · Dubai ja Kairo</p>
+<h1>Näyttöön perustuvaa strategiaa kiinteistöalalle, matkailulle ja kansalliselle kehitykselle.</h1>
+<p class="hero-lead">Neuvomme hallituksia, valtiollisia ja institutionaalisia sijoittajia sekä kiinteistökehittäjiä Lähi-idässä, Afrikassa ja Keski-Aasiassa. Jokaista toimeksiantoa johtavat kokeneet neuvonantajat, ja se perustuu primääritutkimukseen.</p>
+<div class="hero-cta">
+<a class="btn btn--light" href="/fi/pages/contact">Keskustellaan toimeksiannosta <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="link link--light" href="/fi/pages/reports">Lue tutkimuksiamme <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </div>
+<a class="latest" href="/fi/pages/report-airport-cities">
+<img alt="Heirstonen raportin ”Kiitotien osinko” kansi" height="116" src="/Media/reports/airport-cities.webp" width="82"/>
+<div class="latest-text">
+<p class="latest-label">Uusin raportti</p>
+<p class="latest-title">Lentoasemakaupungit: Kiitotien osinko</p>
+<p class="latest-stat"><span class="rp-n">11:1</span> ennakkomyynnin ja jälleenmyynnin asuntokauppojen arvon suhde Dubai Southissa vuonna 2025: 10,23 mrd. AED ja 0,91 mrd. AED</p>
 </div>
-<div class="px-item">
-<button aria-controls="px-panel-1" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-1" role="tab" type="button">
-<span class="px-n">02</span>
-<span class="px-text"><span class="px-name">Matkailu ja matkakohteet</span><span class="px-tag">Matkakohteita, jotka kilpailevat maailmanlaajuisesti.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-1" class="px-panel" id="px-panel-1" role="tabpanel">
-<div class="px-media"><img alt="Rantamatkakohde lomakeskuksineen ja venesatamineen" height="384" loading="lazy" src="/Media/cap-tourism.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Kilpailukykyisiä ja sijoituskelpoisia matkakohdestrategioita: kysynnän ennustaminen, tuotekehitys ja asemointi johdonmukaisissa matkailutalouden viitekehyksissä.</p>
-<p class="px-sublabel">4 osaamisaluetta</p>
-<div class="px-chips"><a class="px-chip" href="/fi/pages/destination-strategy">Matkakohteen strategia ja asemointi</a><a class="px-chip" href="/fi/pages/tourism-market-research">Matkailun markkinatutkimus ja kysynnän ennustaminen</a><a class="px-chip" href="/fi/pages/visitor-economy">Matkailutalouden strategia</a><a class="px-chip" href="/fi/pages/airport-port-strategy">Lentokenttien, satamien ja porttikohteiden kaupallinen strategia</a></div>
-<a class="px-cta" href="/fi/pages/tourism-development">Tutustu osaamisalueeseen <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</a>
 </div>
+</header>
+<main>
+<section aria-labelledby="shelfTitle" class="shelf">
+<div class="wrap">
+<div class="shelf-head">
+<h2 id="shelfTitle">32 riippumatonta raporttia markkinoista, joilla toimimme neuvonantajana, maksutta luettavissa.</h2>
+<a class="link" href="/fi/pages/reports">Selaa kaikkia tutkimuksia <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-2" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-2" role="tab" type="button">
-<span class="px-n">03</span>
-<span class="px-text"><span class="px-name">Kansallinen visio ja toimialastrategia</span><span class="px-tag">Visio, joka voidaan toteuttaa.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-2" class="px-panel" id="px-panel-2" role="tabpanel">
-<div class="px-media"><img alt="Modernin pääkaupungin siluetti aamunkoitteessa" height="384" loading="lazy" src="/Media/cap-national.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Muutamme kansallisen kunnianhimon jäsennellyiksi ja toteuttamiskelpoisiksi ohjelmiksi sovittamalla yhteen politiikan, investoinnit ja toimeenpanon.</p>
-<p class="px-sublabel">7 osaamisaluetta</p>
-<div class="px-chips"><a class="px-chip" href="/fi/pages/national-vision">Kansallinen visio ja strategiset viitekehykset</a><a class="px-chip" href="/fi/pages/sector-transformation">Toimialan muutoksen neuvonta</a><a class="px-chip" href="/fi/pages/ppp-strategy">Julkisen ja yksityisen sektorin kumppanuuksien (PPP) strategia</a><a class="px-chip" href="/fi/pages/policy-framework">Politiikka- ja instituutiokehysten neuvonta</a><a class="px-chip" href="/fi/pages/global-benchmarking">Kansallisten muutosohjelmien kansainvälinen vertailu</a><a class="px-chip" href="/fi/pages/monitoring-frameworks">Seuranta- ja korjauskehykset</a><a class="px-chip" href="/fi/pages/political-risk-assessment">Poliittisen riskin ja investointi-ilmapiirin arviointi</a></div>
-<a class="px-cta" href="/fi/pages/national-vision-strategy">Tutustu osaamisalueeseen <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-3" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-3" role="tab" type="button">
-<span class="px-n">04</span>
-<span class="px-text"><span class="px-name">Erityishankkeet ja strateginen neuvonta</span><span class="px-tag">Räätälöityjä toimeksiantoja, monimutkaisia kokonaisuuksia.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-3" class="px-panel" id="px-panel-3" role="tabpanel">
-<div class="px-media"><img alt="Ikoninen suurhanke dramaattisen taivaan alla" height="384" loading="lazy" src="/Media/cap-special.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Valtion omaisuuserien rahallistamisesta rajat ylittävään laajentumiseen ja suurtapahtumastrategiaan — siellä, missä tavanomaiset lähestymistavat eivät riitä.</p>
-<p class="px-sublabel">6 osaamisaluetta</p>
-<div class="px-chips"><a class="px-chip" href="/fi/pages/asset-monetization">Laajamittaisten omaisuuserien rahallistamisstrategia</a><a class="px-chip" href="/fi/pages/destination-brand">Matkakohteen brändin kehittämisen neuvonta</a><a class="px-chip" href="/fi/pages/investor-outreach">Sijoittajasuhteiden ja -yhteydenpidon suunnittelu</a><a class="px-chip" href="/fi/pages/cross-border-expansion">Kansainvälisen laajentumisen neuvonta</a><a class="px-chip" href="/fi/pages/innovation-ecosystem">Innovaatioekosysteemien strategia</a><a class="px-chip" href="/fi/pages/sports-culture">Urheilun, kulttuurin ja suurtapahtumien strategia</a></div>
-<a class="px-cta" href="/fi/pages/special-projects">Tutustu osaamisalueeseen <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-4" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-4" role="tab" type="button">
-<span class="px-n">05</span>
-<span class="px-text"><span class="px-name">Digitaalinen transformaatio</span><span class="px-tag">Palvelut digitaalisina alusta loppuun.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-4" class="px-panel" id="px-panel-4" role="tabpanel">
-<div class="px-media"><img alt="Hallinnon digitaalinen operaatiokeskus kaupunkisuunnittelun ja lupakäsittelyn näkymineen" height="384" loading="lazy" src="/Media/cap-digital.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Digitalisoimme julkiset palvelut, joista kiinteistö- ja rakennusala ovat riippuvaisia — luvat, kiinteistörekisterin, toimiluvat ja omaisuusdatan — jotta pääoma liikkuu päätöksenteon tahdissa.</p>
-<p class="px-sublabel">4 osaamisaluetta</p>
-<div class="px-chips"><a class="px-chip" href="/fi/pages/digital-permitting">Digitaaliset rakennusluvat ja rakentamisen luvitus</a><a class="px-chip" href="/fi/pages/land-registry-digitization">Kiinteistörekisterin ja kiinteistökauppojen digitalisointi</a><a class="px-chip" href="/fi/pages/digital-service-design">Digitaalisten palvelujen muotoilu ja kansalaiskokemus</a><a class="px-chip" href="/fi/pages/bim-digital-twins">BIM, digitaaliset kaksoset ja omaisuustiedon standardit</a></div>
-<a class="px-cta" href="/fi/pages/digital-transformation">Tutustu osaamisalueeseen <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
+<div class="shelf-row">
+<a class="cover" href="/fi/pages/report-airport-cities"><div class="cover-img"><img alt="Heirstonen raportin ”Kiitotien osinko” kansi" height="1273" loading="lazy" src="/Media/reports/airport-cities.webp" width="900"/></div><p class="cover-tag">Lentoasemakaupungit</p><p class="cover-title">Kiitotien osinko</p></a>
+<a class="cover" href="/fi/pages/report-africa-construction-costs"><div class="cover-img"><img alt="Heirstonen raportin ”Yhdeksän kaupunkia, yksi neliömetri” kansi" height="1273" loading="lazy" src="/Media/reports/africa-construction-costs.webp" width="900"/></div><p class="cover-tag">Rakennuskustannukset ja rakennusteknologia</p><p class="cover-title">Yhdeksän kaupunkia, yksi neliömetri</p></a>
+<a class="cover" href="/fi/pages/report-airports-terminals"><div class="cover-img"><img alt="Heirstonen raportin ”Vilkkain tunti” kansi" height="1273" loading="lazy" src="/Media/reports/airports-terminals.webp" width="900"/></div><p class="cover-tag">Lentoasemat ja terminaalit</p><p class="cover-title">Vilkkain tunti</p></a>
+<a class="cover" href="/fi/pages/report-uzbekistan-new-cities"><div class="cover-img"><img alt="Heirstonen raportin ”Päiväkaupunki” kansi" height="1273" loading="lazy" src="/Media/reports/uzbekistan-new-cities.webp" width="900"/></div><p class="cover-tag">Uudet kaupungit Uzbekistanissa</p><p class="cover-title">Päiväkaupunki</p></a>
+<a class="cover" href="/fi/pages/report-africa-real-estate-capital"><div class="cover-img"><img alt="Heirstonen raportin ”Raha on jo täällä” kansi" height="1273" loading="lazy" src="/Media/reports/africa-real-estate-capital.webp" width="900"/></div><p class="cover-tag">Kiinteistöpääoma Afrikassa</p><p class="cover-title">Raha on jo täällä</p></a>
+<a class="cover" href="/fi/pages/report-branded-residences"><div class="cover-img"><img alt="Heirstonen raportin ”Kenelle preemio jää” kansi" height="1273" loading="lazy" src="/Media/reports/branded-residences.webp" width="900"/></div><p class="cover-tag">Branded residences</p><p class="cover-title">Kenelle preemio jää</p></a>
 </div>
 </div>
 </section>
-<!-- ENGAGEMENT MODEL (timeline) -->
-<section class="tl-section">
-<div class="tl-head">
+<section aria-labelledby="prTitle" class="principles">
+<div class="wrap">
 <p class="eyebrow">Miten työskentelemme</p>
-<h2>Neljän vaiheen toimintamalli.</h2>
-<p>Ei valmiita malleja. Jokainen toimeksianto sovitetaan kontekstiin, tavoitteisiin ja reunaehtoihin — ja johtavat osakkaat vievät sitä eturintamassa.</p>
+<h2 class="h2" id="prTitle">Neljä asiaa, jotka määrittävät jokaisen toimeksiannon.</h2>
+<div class="p-grid">
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+<h3>Ensin primääritutkimus</h3>
+<p>Kun dataa on niukasti, keräämme sen: kyselyt, haastattelut, kohdekäynnit ja kauppatiedot, ennen kuin yhtään mallia rakennetaan.</p>
 </div>
-<div class="tl-wrap">
-<span aria-hidden="true" class="tl-line"><span class="tl-fill"></span></span>
-<ol class="tl">
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">01</span>
-<h3>Ymmärrä</h3>
-<p>Perusteellinen diagnoosi. Perehdymme asiakkaan tilanteeseen, markkinaympäristöön ja strategisiin tavoitteisiin — ja kyseenalaistamme toimeksiannon, kun se on tarpeen.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">02</span>
-<h3>Analysoi</h3>
-<p>Perusteellinen määrällinen ja laadullinen analyysi — markkinatutkimus, taloudellinen mallinnus, vertailu ja sidosryhmäkartoitus — näyttöön perustuvien johtopäätösten tueksi.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">03</span>
-<h3>Laadi strategia</h3>
-<p>Analyysista tulee strategia. Vaiheistetut suositukset, priorisoidut toimenpiteet ja selkeä näkemys riskeistä, järjestyksestä ja pääomavaikutuksista.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">04</span>
-<h3>Toteuta</h3>
-<p>Päättäjille suunnitellut tuotokset — tiiviitä, hallitusvalmiita ja laadittu esitettäviksi valtion, ministeriöiden ja sijoituskomiteoiden tasolla.</p>
-</li>
-</ol>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>
+<h3>Kokeneet neuvonantajat alusta loppuun</h3>
+<p>Toimeksiannon rajaavat henkilöt pysyvät mukana ensimmäisestä työpajasta hallitukselle pidettävään esitykseen asti.</p>
+</div>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 3v18M5 7h14M5 7l-3 7h6l-3-7zM19 7l-3 7h6l-3-7zM8 21h8"></path></svg>
+<h3>Riippumaton neuvonta</h3>
+<p>Meillä ei ole eturistiriitoja, joten suosituksemme perustuvat näyttöön ja asiakkaan tavoitteisiin.</p>
+</div>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
+<h3>Syvä aluetuntemus</h3>
+<p>Toimistot Dubaissa ja Kairossa sekä toimeksiantoja Persianlahden maissa, Pohjois-Afrikassa, Saharan eteläpuolisessa Afrikassa ja Keski-Aasiassa.</p>
+</div>
+</div>
 </div>
 </section>
-<!-- ABOUT SECTION -->
-<section class="about-section">
-<div class="about-inner">
-<div class="about-image">
-<img alt="Ilmakuva kehittyvästä kaupunginosasta uusine torneineen ja infrastruktuureineen" height="801" loading="lazy" src="/Media/about.webp" width="1400"/>
+<section aria-labelledby="pracTitle" class="practices">
+<div class="wrap pr-grid">
+<div class="pr-intro">
+<p class="eyebrow">Osaaminen</p>
+<h2 class="h2" id="pracTitle">Viisi osaamisaluetta.</h2>
+<p class="lead">Kukin osaamisalue yhdistää markkinatutkimuksen, taloudellisen analyysin ja strategian tietynlaisen päätöksen tueksi, jotta neuvot kestävät hallituksen, ministeriön tai sijoituskomitean tarkastelun.</p>
+<a class="link" href="/fi/pages/services">Kaikki palvelut <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-<div class="about-text">
-<h2>Tietoa Heirstone Consulting &amp; Strategic Advisorysta</h2>
-<p>Heirstone on rajamarkkinoihin ja nopean kasvun markkinoihin erikoistunut strategiakonsultti — ympäristöihin, joissa dataa on vähän, päätöksillä on suuri painoarvo ja perinteiset konsultointimallit eivät enää toimi.</p>
-<p>Dubaissa ja Kairossa toimiva yritys yhdistää johtavien konsulttitalojen kokemuksen syvään alueelliseen tuntemukseen. Työskentelemme liiketoiminnallisen kunnianhimon ja institutionaalisen todellisuuden rajapinnassa — yksittäisen kohteen asemoinnista kansallisiin muutosohjelmiin.</p>
-<a class="btn-primary" href="/fi/pages/about" style="margin-top:8px;">Lue lisää meistä</a>
+<div class="pr-cards">
+<a class="pr-card" href="/fi/pages/real-estate-strategy">
+<h3>Kiinteistöstrategia</h3>
+<p>Mitä rakennetaan, minne ja missä järjestyksessä: paras ja tuottavin käyttö, kannattavuus, kehitysstrategia ja investointien rakenteistaminen.</p>
+<span class="pr-foot"><span class="pr-count">7 osaamisaluetta</span><span class="link">Tutustu <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/fi/pages/tourism-development">
+<h3>Matkailun kehittäminen</h3>
+<p>Kysyntäennusteet, matkakohteen asemointi ja matkailutalouden suunnitelmat, joiden pohjalta sijoittajat ja hallitukset voivat toimia.</p>
+<span class="pr-foot"><span class="pr-count">4 osaamisaluetta</span><span class="link">Tutustu <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/fi/pages/national-vision-strategy">
+<h3>Kansallinen visiostrategia</h3>
+<p>Kansalliset tavoitteet muutettuina ohjelmiksi, kumppanuuksiksi ja politiikaksi sekä toteutukseen tarvittavat instituutiot ja rahoitus.</p>
+<span class="pr-foot"><span class="pr-count">7 osaamisaluetta</span><span class="link">Tutustu <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/fi/pages/special-projects">
+<h3>Erityishankkeet</h3>
+<p>Toimeksiantoja, jotka ulottuvat yksittäistä kohdetta laajemmalle: omaisuuserien rahallistaminen, kansainvälinen laajentuminen, sijoittajien tavoittaminen ja suurtapahtumat.</p>
+<span class="pr-foot"><span class="pr-count">6 osaamisaluetta</span><span class="link">Tutustu <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/fi/pages/digital-transformation">
+<h3>Digitaalinen transformaatio</h3>
+<p>Lupa-, kiinteistörekisteri- ja toimilupapalvelut, joiden ansiosta kiinteistö- ja rakennushankkeet etenevät päätöksenteon tahdissa.</p>
+<span class="pr-foot"><span class="pr-count">4 osaamisaluetta</span><span class="link">Tutustu <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card pr-card--ink" href="/fi/pages/contact">
+<h3>Ettekö ole varma, mihin kysymyksenne kuuluu?</h3>
+<p>Kertokaa meille, millaisen päätöksen edessä olette. Kerromme, miten lähestyisimme sitä ja olemmeko siihen oikea yritys.</p>
+<span class="pr-foot"><span class="pr-count">Dubai · Kairo</span><span class="link link--light">Yhteystiedot <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
 </div>
 </div>
-<div class="profile-strip">
-<a class="profile-cover" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf"><img alt="Heirstone Consultingin yritysesittelyn kansi" height="405" loading="lazy" src="/Media/docs/company-profile-cover.webp" width="720"/></a>
-<div class="profile-text">
+</section>
+<section aria-labelledby="exTitle" class="experience">
+<div class="wrap">
+<div class="ex-head">
+<div>
+<p class="eyebrow">Tiimin valikoituja toimeksiantoja</p>
+<h2 class="h2" id="exTitle">Toimeksiantoja hallituksille, sijoittajille ja kiinteistökehittäjille.</h2>
+<p class="lead">Heirstonen tiimin jäsenten toteuttamia toimeksiantoja. Asiakkaiden nimet jätetään mainitsematta heidän pyynnöstään.</p>
+</div>
+<div class="ex-ctrl">
+<button aria-label="Edellinen" data-dir="-1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
+<button aria-label="Seuraava" data-dir="1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+<div class="ex-track" id="exTrack">
+<article class="ex-card">
+<p class="ex-client">Valtiollinen viranomainen · Egypti</p>
+<h3>Gizan pyramidien yleissuunnitelma</h3>
+<p class="ex-label">Toimeksianto</p>
+<p>Markkina-arvio ja kehitysstrategia monikäyttöhankkeelle yhden maailman vierailluimman kulttuuriperintökohteen vieressä, lähtömarkkinoittain ja kausittain arvioidusta kysynnästä maankäyttöön, mitoitukseen ja vaiheistukseen.</p>
+<div class="ex-out"><p class="ex-label">Tulos</p><p>Perusta hankkeen asemoinnille, kaupalliselle strategialle ja pitkän aikavälin vierailijainfrastruktuurin suunnittelulle.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Kansallinen hallitus · Saharan eteläpuolinen Afrikka</p>
+<h3>Kansallinen matkailun kehittämisohjelma</h3>
+<p class="ex-label">Toimeksianto</p>
+<p>Matkailustrategia useille matkakohdeklustereille: kysynnän ennustaminen, asemointi, tuotekehitys ja investointien houkuttelu.</p>
+<div class="ex-out"><p class="ex-label">Tulos</p><p>Hyväksyttiin kansalliseksi matkailun kehittämisen viitekehykseksi, joka ohjaa politiikkaa ja yksityisiä investointeja.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Valtion tukema kiinteistökehittäjä · Saudi-Arabia</p>
+<h3>Jättihankkeiden strategia</h3>
+<p class="ex-label">Toimeksianto</p>
+<p>Asuntostrategia, branded residences -kohteiden asemointi sekä paras ja tuottavin käyttö suurille valtion tukemille hankkeille.</p>
+<div class="ex-out"><p class="ex-label">Tulos</p><p>Hankkeen asemointi ja tuotestrategia valtiollisen sijoittajan tavoitteiden mukaisesti.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Institutionaalinen sijoittaja · Egypti</p>
+<h3>Sijoitusneuvonta Kairossa ja pohjoisrannikolla</h3>
+<p class="ex-label">Toimeksianto</p>
+<p>Markkinatutkimus ja sijoitusneuvonta keskiaasialaiselle institutionaaliselle sijoittajalle asunto-, toimisto-, kauppa- ja majoitussektorilla Suur-Kairossa ja Ras El Hekmassa.</p>
+<div class="ex-out"><p class="ex-label">Tulos</p><p>Sijoituskehys rajat ylittävän pääoman sijoittamiseen yhdelle alueen nopeimmin kasvavista rannikkomarkkinoista.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Neuvonta-alusta · Egypti</p>
+<h3>Kairon toimistomarkkinoiden markkinatieto</h3>
+<p class="ex-label">Toimeksianto</p>
+<p>Suunnittelimme ja rakensimme data-alustan Suur-Kairon toimistomarkkinoille: vuokraus, käyttöasteet, hintavertailut ja markkinaindikaattorit.</p>
+<div class="ex-out"><p class="ex-label">Tulos</p><p>Institutionaalisen tason markkinatietoa sijoituspäätösten ja neljännesvuosiraportoinnin pohjaksi.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Kiinteistökehittäjä · Saharan eteläpuolinen Afrikka</p>
+<h3>Kannattavuus niukan datan oloissa</h3>
+<p class="ex-label">Toimeksianto</p>
+<p>Paras ja tuottavin käyttö sekä kannattavuus suurille monikäyttöhankkeille kaupungeissa, joissa dataa on niukasti, primääritutkimukseen perustuen.</p>
+<div class="ex-out"><p class="ex-label">Tulos</p><p>Muotoili kehitysohjelmat uudelleen ja tuki pääoman rakenteistamista rajamarkkinoiden olosuhteissa.</p></div>
+</article>
+</div>
+<p class="ex-more"><a class="link" href="/fi/pages/experience">Kaikki valikoidut toimeksiannot <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></p>
+</div>
+</section>
+<section aria-labelledby="rsTitle" class="research">
+<div class="wrap">
+<div class="rs-head">
+<div>
+<p class="eyebrow">Tutkimus</p>
+<h2 class="h2" id="rsTitle">Julkaisemme sen, minkä opimme.</h2>
+</div>
+<p class="lead">Maksuttomia raportteja kiinteistöistä, infrastruktuurista ja matkailusta, jokaisessa oma vertailunsa ja jokaiselle luvulle lähdeviite. Kieliversioita englanniksi, ranskaksi, venäjäksi ja arabiaksi.</p>
+</div>
+<div class="rs-grid">
+<a class="rs-card" href="/fi/pages/report-airport-cities">
+<div class="rs-art"><img alt="Heirstonen raportin ”Kiitotien osinko” kansi" height="1273" loading="lazy" src="/Media/reports/airport-cities.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Lentoasemakaupungit</p>
+<h3 class="rs-title">Kiitotien osinko</h3>
+<p class="rs-stat"><span class="rp-n">11:1</span> ennakkomyynnin ja jälleenmyynnin asuntokauppojen arvon suhde Dubai Southissa vuonna 2025: 10,23 mrd. AED ja 0,91 mrd. AED</p>
+</div>
+</a>
+<a class="rs-card" href="/fi/pages/report-africa-construction-costs">
+<div class="rs-art"><img alt="Heirstonen raportin ”Yhdeksän kaupunkia, yksi neliömetri” kansi" height="1273" loading="lazy" src="/Media/reports/africa-construction-costs.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Rakennuskustannukset ja rakennusteknologia</p>
+<h3 class="rs-title">Yhdeksän kaupunkia, yksi neliömetri</h3>
+<p class="rs-stat"><span class="rp-n">2,9x</span> AECOMin hinta asuinkerrostalolle Lagosissa Nairobiin verrattuna sen 2024/25-oppaassa: 2 330 US$ vastaan 796 US$ neliömetriltä</p>
+</div>
+</a>
+<a class="rs-card" href="/fi/pages/report-africa-hotel-development">
+<div class="rs-art"><img alt="Heirstonen raportin ”Hotellit paperilla” kansi" height="1273" loading="lazy" src="/Media/reports/africa-hotel-development.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Hotellikehitys Afrikassa</p>
+<h3 class="rs-title">Hotellit paperilla</h3>
+<p class="rs-stat"><span class="rp-n">123 846</span> huonetta 675 hotellissa ketjujen Afrikan kehityshankekannassa alkuvuonna 2026, ennätys ja 19 % enemmän kuin vuotta aiemmin</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<section aria-labelledby="pfTitle" class="profile">
+<div class="wrap">
+<div class="pf-card">
+<img alt="Heirstone Consultingin yritysesittelyn kansi" height="405" loading="lazy" src="/Media/docs/company-profile-cover.webp" width="720"/>
+<div>
 <p class="eyebrow">Yritysesittely</p>
-<h3>Heirstone 21 sivulla</h3>
-<p>Viisi osaamisaluettamme, toimintatapamme ja tiimin valikoituja toimeksiantoja Lähi-idässä, Afrikassa ja Keski-Aasiassa. Ladattavissa maksutta, ilman lomakkeen täyttämistä.</p>
-<div class="profile-actions">
-<a class="btn-primary" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">Lataa englanniksi</a>
-<a class="btn-outline" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
+<h2 class="h2" id="pfTitle">Heirstone 21 sivulla</h2>
+<p class="lead">Viisi osaamisaluettamme, toimintatapamme ja tiimin valikoituja toimeksiantoja Lähi-idässä, Afrikassa ja Keski-Aasiassa. Ladattavissa maksutta, ilman lomakkeen täyttämistä.</p>
+<div class="pf-actions">
+<a class="btn" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">Lataa englanniksi</a>
+<a class="btn btn--ghost" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
 </div>
-<p class="profile-meta">PDF · 21 sivua · noin 8 Mt</p>
+<p class="pf-meta">PDF · 21 sivua · noin 8 Mt</p>
 </div>
-</div>
-</section>
-<!-- WHO WE ADVISE + WHERE WE ARE DIFFERENT -->
-<section class="band">
-<div class="band-inner">
-<div class="band-col">
-<p class="eyebrow eyebrow-light">Ketä palvelemme</p>
-<h2>Neuvomme niitä, jotka päättävät maasta, politiikasta ja pääomasta.</h2>
-<ul class="who">
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<path d="M3 21h18M4 21V8l8-5 8 5v13M8 21v-8h8v8M12 3v2"></path>
-</svg><div><h3>Hallitukset ja viranomaiset</h3><p>Ministeriöt, matkailuviranomaiset ja suunnitteluviranomaiset, jotka laativat ja toteuttavat mullistavia kansallisia kehitysstrategioita.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="9"></circle><path d="M12 7v10M8.5 9.5c0-1.1 1.4-2 3.5-2s3.5.9 3.5 2-1 1.8-3.5 2.3-3.5 1.2-3.5 2.2 1.4 2 3.5 2 3.5-.9 3.5-2"></path>
-</svg><div><h3>Valtiolliset ja institutionaaliset sijoittajat</h3><p>Valtiolliset sijoitusrahastot, eläkerahastot ja institutionaalinen pääoma, jotka tarvitsevat riippumatonta markkinatietoa ja sijoitusstrategiaa.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<path d="M2 21h20M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M10 7h4M10 11h4M10 15h4"></path>
-</svg><div><h3>Kiinteistökehittäjät</h3><p>Kaikenkokoiset kiinteistökehittäjät, jotka tarvitsevat parhaan ja tuottavimman käytön analyysia, kehitysstrategiaa ja kaupallista kannattavuusarviota kohteilleen ja yleissuunnitelmilleen.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="10"></circle><path d="M12 2v20M2 12h20M4.9 5.5c4.3 3 9.9 3 14.2 0M4.9 18.5c4.3-3 9.9-3 14.2 0"></path>
-</svg><div><h3>Monikansalliset yritykset</h3><p>Kansainväliset yritykset, jotka tulevat MENA-alueelle tai laajentavat siellä: markkinoille tulo, sijaintivalinta ja kilpailija-analyysi.</p></div></li>
-</ul>
-</div>
-<div class="band-col">
-<p class="eyebrow eyebrow-light">Miten Heirstone eroaa muista</p>
-<h2>Rakennettu markkinoille, joilla perinteiset mallit eivät enää toimi.</h2>
-<ol class="why2">
-<li class="why2-item"><span class="why2-n">01</span><div><h3>Osakkaiden johtama, ketterä luonteeltaan</h3><p>Johtavat osakkaat osallistuvat aktiivisesti jokaiseen toimeksiantoon — he tuovat mukanaan vuosikymmenten kokemuksen strategisesta suunnittelusta ja etenevät kauppojen vaatimassa tahdissa.</p></div></li>
-<li class="why2-item"><span class="why2-n">02</span><div><h3>Rajamarkkinoiden asiantuntemus</h3><p>Rakennettu läpinäkymättömille ja vähäisen datan markkinoille, joilla kaupallinen harkinta ja paikallistuntemus ratkaisevat.</p></div></li>
-<li class="why2-item"><span class="why2-n">03</span><div><h3>Neuvonta valtioille ja hallituksille</h3><p>Suoraa kokemusta valtiollisista toimeksiannoista, ministeriöistä ja kansallisista muutosohjelmista.</p></div></li>
-<li class="why2-item"><span class="why2-n">04</span><div><h3>Kaupallisesti perusteltua neuvontaa</h3><p>Suosituksia, jotka eivät ole vain analyyttisesti vankkoja vaan myös kaupallisesti kannattavia, pääomatietoisia ja markkinoihin perustuvia.</p></div></li>
-<li class="why2-item"><span class="why2-n">05</span><div><h3>Riippumaton ja eturistiriidaton</h3><p>Riippumattomana neuvonantajana asetamme asiakkaan etusijalle ja perustamme neuvomme tosiasioihin ja markkinoiden todelliseen dynamiikkaan.</p></div></li>
-<li class="why2-item"><span class="why2-n">06</span><div><h3>Kansainvälinen näkökulma</h3><p>Rajat ylittävää sijoitusneuvontaa, jota on muovannut suora konsultointikokemus markkinoilta eri puolilta maailmaa.</p></div></li>
-</ol>
-</div>
-</div>
-</section>
-<!-- CONTACT -->
-<section class="contact-section">
-<div class="section-inner-narrow">
-<h2 class="section-title">Ota yhteyttä</h2>
-<p class="section-lead">Muuta visionne vakuuttavaksi strategiaksi. Ota yhteyttä ja keskustele toimeksiannostasi johtavan osakkaan kanssa.</p>
-<div class="contact-inner">
-<div class="contact-info">
-<h3>Yhteystiedot</h3>
-<div class="contact-item">
-<svg aria-hidden="true" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-</svg>
-<span>Dubai, Arabiemiirikunnat · Kairo, Egypti</span>
-</div>
-<div class="contact-item">
-<svg aria-hidden="true" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-<a class="contact-link" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
-</div>
-</div>
-<form class="contact-form" novalidate="">
-<div class="form-field">
-<label for="cf-name">Nimi</label>
-<input autocomplete="name" class="form-input" id="cf-name" name="name" required="" type="text"/>
-</div>
-<div class="form-field">
-<label for="cf-email">Sähköposti</label>
-<input autocomplete="email" class="form-input" id="cf-email" name="email" required="" type="email"/>
-</div>
-<div class="form-field">
-<label for="cf-subject">Aihe</label>
-<input class="form-input" id="cf-subject" name="_subject" type="text"/>
-</div>
-<div class="form-field">
-<label for="cf-message">Viesti</label>
-<textarea class="form-input" id="cf-message" name="message" required="" rows="4"></textarea>
-</div>
-<input aria-hidden="true" autocomplete="off" class="honeypot" name="_honey" tabindex="-1" type="text"/>
-<button class="btn-primary btn-submit" type="submit">Lähetä viesti</button>
-<p aria-live="polite" class="form-status" role="status"></p>
-</form>
 </div>
 </div>
 </section>
 </main>
-<!-- FOOTER -->
+<section aria-labelledby="clTitle" class="closing">
+<div class="cl-inner">
+<h2 class="h2" id="clTitle">Onko teillä edessänne päätös näillä markkinoilla?</h2>
+<div>
+<p>Kertokaa, mistä olette päättämässä ja mihin mennessä. Kokenut neuvonantaja vastaa yhden arkipäivän kuluessa.</p>
+<div class="cl-actions">
+<a class="btn btn--light" href="/fi/pages/contact">Ota yhteyttä <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="link link--light" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
+</div>
+</div>
+</div>
+</section>
 <footer class="footer">
-<div style="max-width:1200px;margin:0 auto;">
-<div class="footer-grid">
-<div class="footer-brand">
-<h3>Heirstone Consulting &amp;<br/>Strategic Advisory</h3>
-<p>Rajamarkkinoihin ja nopean kasvun markkinoihin erikoistunut strategiakonsultti MENA-alueella, Afrikassa ja Keski-Aasiassa.</p>
-<div class="footer-social">
-<a aria-label="Heirstone Consulting LinkedInissä" href="https://www.linkedin.com/company/heirstoneconsulting" rel="noopener" target="_blank">
-<svg aria-hidden="true" fill="currentColor" height="16" viewbox="0 0 24 24" width="16">
-<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle>
-</svg>
+<div class="ft-wrap">
+<div class="ft-grid">
+<div>
+<a aria-label="Heirstone Consulting" class="ft-brand" href="/fi/">
+<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect height="34" stroke="#5D6E82" stroke-width="2" width="34" x="13" y="13"></rect><rect height="34" stroke="#5D6E82" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect></svg>
+<span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
 </a>
+<p class="ft-about">Strategiakonsultointia kiinteistöalalle, matkailulle ja kansalliselle kehitykselle Lähi-idässä, Afrikassa ja Keski-Aasiassa.</p>
 </div>
+<div class="ft-col"><h4>Osaamisalueet</h4><a href="/fi/pages/real-estate-strategy">Kiinteistöstrategia</a><a href="/fi/pages/tourism-development">Matkailun kehittäminen</a><a href="/fi/pages/national-vision-strategy">Kansallinen visiostrategia</a><a href="/fi/pages/special-projects">Erityishankkeet</a><a href="/fi/pages/digital-transformation">Digitaalinen transformaatio</a></div>
+<div class="ft-col"><h4>Yritys</h4><a href="/fi/pages/about">Meistä</a><a href="/fi/pages/experience">Kokemus</a><a href="/fi/pages/reports">Tutkimus</a><a href="/fi/pages/insights">Näkökulmat</a><a href="/fi/pages/services">Palvelut</a><a href="/fi/pages/contact">Yhteystiedot</a></div>
+<div class="ft-col"><h4>Toimistot</h4><span>Dubai, Arabiemiirikunnat</span><span>Kairo, Egypti</span><a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a><a data-i18n-skip="" href="https://www.linkedin.com/company/heirstoneconsulting" rel="noopener" target="_blank">LinkedIn</a></div>
 </div>
-<div class="footer-col">
-<h4>Osaamisemme</h4>
-<ul>
-<li><a href="/fi/pages/real-estate-strategy">Kiinteistöstrategia</a></li>
-<li><a href="/fi/pages/tourism-development">Matkailun kehittäminen</a></li>
-<li><a href="/fi/pages/national-vision-strategy">Kansallinen visiostrategia</a></li>
-<li><a href="/fi/pages/special-projects">Erityishankkeet</a></li><li><a href="/fi/pages/digital-transformation">Digitaalinen transformaatio</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Yritys</h4>
-<ul>
-<li><a href="/fi/pages/about">Meistä</a></li>
-<li><a href="/fi/pages/services">Palvelut</a></li>
-<li><a href="/fi/pages/experience">Kokemus</a></li><li><a href="/fi/pages/reports">Raportit</a></li><li><a href="/fi/pages/insights">Näkökulmat</a></li>
-<li><a href="/fi/pages/contact">Yhteystiedot</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Yhteystiedot</h4>
-<div class="footer-contact-item">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-</svg>
-<span>Dubai, Arabiemiirikunnat · Kairo, Egypti</span>
-</div>
-<div class="footer-contact-item">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-<a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
-</div>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026 Heirstone Consulting &amp; Strategic Advisory. Kaikki oikeudet pidätetään.</p>
-</div>
+<div class="ft-base"><span data-i18n-skip="">© 2026 Heirstone Consulting L.L.C-FZ</span><span>Saatavilla 26 kielellä</span></div>
 </div>
 </footer>
 <script>window.HS_I18N={"Sending…": "Lähetetään…", "Message Sent": "Viesti lähetetty", "Thank you — your message has been sent. We typically respond within one business day.": "Kiitos — viestinne on lähetetty. Vastaamme yleensä yhden arkipäivän kuluessa.", "Something went wrong and your message was not sent. Please email us directly at <a href=\"mailto:info@heirstoneconsulting.com\">info@heirstoneconsulting.com</a>.": "Jokin meni vikaan, eikä viestiänne lähetetty. Lähettäkää meille sähköpostia suoraan osoitteeseen <a href=\"mailto:info@heirstoneconsulting.com\">info@heirstoneconsulting.com</a>.", "Open menu": "Avaa valikko", "Close menu": "Sulje valikko", "Language": "Kieli"};</script><script src="/js/main.js"></script>
-<script src="/js/home.js"></script>
 </body>
 </html>

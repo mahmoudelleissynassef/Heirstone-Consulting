@@ -113,6 +113,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="/css/style.css" rel="stylesheet"/>
 <link href="/css/home.css" rel="stylesheet"/>
+<link href="/css/v2.css" rel="stylesheet"/>
 <link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link as="image" href="/Media/hero-1.webp" rel="preload"/>
 <!-- i18n:alternates -->
@@ -150,487 +151,297 @@
 <!-- NAVBAR -->
 <nav class="navbar">
 <a class="navbar-brand" href="/hr/">
-<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-<rect height="34" stroke="#8FA0B2" stroke-width="2" width="34" x="13" y="13"></rect>
-<rect height="34" stroke="#8FA0B2" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect>
-</svg>
+<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect height="34" stroke="#8FA0B2" stroke-width="2" width="34" x="13" y="13"></rect><rect height="34" stroke="#8FA0B2" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect></svg>
 <span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
 </a>
 <ul class="navbar-nav">
-<li><a href="/hr/">Početna</a></li>
-<li class="dropdown">
-<a href="/hr/pages/services">Naše kompetencije</a>
+<li class="dropdown"><a href="/hr/pages/services">Kompetencije</a>
 <div class="dropdown-menu">
 <a href="/hr/pages/real-estate-strategy">Strategija nekretnina</a>
 <a href="/hr/pages/tourism-development">Razvoj turizma</a>
 <a href="/hr/pages/national-vision-strategy">Strategija nacionalne vizije</a>
 <a href="/hr/pages/special-projects">Posebni projekti</a>
 <a href="/hr/pages/digital-transformation">Digitalna transformacija</a>
+<a class="dd-all" href="/hr/pages/services">Sve kompetencije</a>
 </div>
 </li>
-<li><a href="/hr/pages/experience">Iskustvo</a></li><li><a href="/hr/pages/reports">Izvješća</a></li><li><a href="/hr/pages/insights">Uvidi</a></li><li><a href="/hr/pages/about">O nama</a></li>
-<li><a href="/hr/pages/services">Usluge</a></li>
-<li><a class="navbar-cta" href="/hr/pages/contact">Kontakt</a></li>
+<li><a href="/hr/pages/reports">Istraživanja</a></li>
+<li><a href="/hr/pages/experience">Iskustvo</a></li>
+<li><a href="/hr/pages/about">O nama</a></li>
+<li class="nav-cta"><a class="navbar-cta" href="/hr/pages/contact">Kontakt</a></li>
 <!-- i18n:switch --><li class="dropdown lang-switch" data-i18n-skip=""><button aria-haspopup="true" aria-label="Jezik" class="lang-btn" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg><span>HR</span></button><div class="dropdown-menu lang-menu"><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a aria-current="true" data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div></li><!-- /i18n:switch -->
 </ul>
 <button aria-controls="mobileNav" aria-expanded="false" aria-label="Otvori izbornik" class="hamburger" id="hamburger">
 <span></span><span></span><span></span>
 </button>
 </nav>
-<!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav">
-<a href="/hr/">Početna</a>
-<a href="/hr/pages/real-estate-strategy">Strategija nekretnina</a>
-<a href="/hr/pages/tourism-development">Razvoj turizma</a>
-<a href="/hr/pages/national-vision-strategy">Strategija nacionalne vizije</a>
-<a href="/hr/pages/special-projects">Posebni projekti</a>
-<a href="/hr/pages/digital-transformation">Digitalna transformacija</a>
+<a href="/hr/pages/services">Kompetencije</a>
+<a class="mn-sub" href="/hr/pages/real-estate-strategy">Strategija nekretnina</a>
+<a class="mn-sub" href="/hr/pages/tourism-development">Razvoj turizma</a>
+<a class="mn-sub" href="/hr/pages/national-vision-strategy">Strategija nacionalne vizije</a>
+<a class="mn-sub" href="/hr/pages/special-projects">Posebni projekti</a>
+<a class="mn-sub" href="/hr/pages/digital-transformation">Digitalna transformacija</a>
+<a href="/hr/pages/reports">Istraživanja</a>
 <a href="/hr/pages/experience">Iskustvo</a>
-<a href="/hr/pages/reports">Izvješća</a>
-<a href="/hr/pages/insights">Uvidi</a>
 <a href="/hr/pages/about">O nama</a>
-<a href="/hr/pages/services">Usluge</a>
+<a href="/hr/pages/insights">Uvidi</a>
 <a href="/hr/pages/contact">Kontakt</a>
 <!-- i18n:mswitch --><div aria-label="Jezik" class="mobile-lang" data-i18n-skip=""><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a aria-current="true" data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div><!-- /i18n:mswitch -->
 </div>
-<main id="main">
-<!-- HERO -->
-<section class="hero">
-<div aria-hidden="true" class="hero-slides">
-<div class="hero-slide active" style="background-image:url('/Media/hero-1.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-2.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-3.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-4.webp')"></div>
-</div>
-<div aria-hidden="true" class="hero-overlay"></div>
-<div class="hero-content">
-<p class="hero-kicker">Konzalting i strateško savjetovanje — Dubai · Kairo</p>
-<h1>Specijalizirana savjetodavna kuća za netransparentna, ambiciozna tržišta.</h1>
-<p>Heirstone savjetuje države, institucionalni kapital i developere ondje gdje uobičajeni konzultantski okviri zakazuju — pretačući nacionalnu viziju u komercijalno održivu, provedivu strategiju u regiji MENA, Africi i Srednjoj Aziji.</p>
-<div class="hero-actions">
-<a class="btn-primary" href="#services">Istražite našu stručnost</a>
-<a class="btn-secondary" href="/hr/pages/contact">Kontaktirajte nas</a>
-</div>
-</div>
-<div aria-hidden="true" class="hero-ticker">
-<div class="tick-track"><span class="tick-item">Najviša i najbolja upotreba</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Studije izvedivosti</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Globalna usporedna analiza</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Istraživanje tržišta</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Strategija destinacije</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Nacionalna vizija</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Strategija JPP-a</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Strategija zračnih luka i luka</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Brendirane rezidencije</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Privlačenje investicija</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Digitalno izdavanje dozvola</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Politički rizik</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Najviša i najbolja upotreba</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Studije izvedivosti</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Globalna usporedna analiza</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Istraživanje tržišta</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Strategija destinacije</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Nacionalna vizija</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Strategija JPP-a</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Strategija zračnih luka i luka</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Brendirane rezidencije</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Privlačenje investicija</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Digitalno izdavanje dozvola</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Politički rizik</span><span aria-hidden="true" class="tick-dot"></span></div>
-</div>
-</section>
-<!-- FACTS BAR -->
-<section aria-label="Pregled tvrtke" class="facts-bar">
-<div class="facts-inner">
-<div class="fact">
-<span class="fact-label">Uredi</span>
-<span class="fact-value">Dubai · Kairo</span>
-</div>
-<div class="fact">
-<span class="fact-label">Podrijetlo</span>
-<span class="fact-value">Iskustvo iz vodećih savjetodavnih kuća</span>
-</div>
-<div class="fact">
-<span class="fact-label">Profil mandata</span>
-<span class="fact-value">Državni i institucionalni</span>
-</div>
-<div class="fact">
-<span class="fact-label">Pokrivenost</span>
-<span class="fact-value">GCC · MENA · Afrika · Srednja Azija</span>
-</div>
-</div>
-</section>
-<!-- SELECTED ENGAGEMENTS (carousel) -->
-<section aria-label="Odabrano iskustvo tima" aria-roledescription="vrtuljak" class="eng" id="engagements">
-<div class="eng-head">
+<header class="hero" id="main">
+<div aria-label="Panorama Nairobija" class="hero-img" role="img"></div>
+<div class="hero-body">
 <div>
-<p class="eyebrow eyebrow-light">Odabrano iskustvo tima</p>
-<h2>Mandati za državni, institucionalni i privatni kapital.</h2>
-</div>
-<div class="eng-controls">
-<span class="eng-count"><b class="eng-cur">01</b> / 07</span>
-<button aria-label="Prethodni angažman" class="eng-btn eng-prev" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
-<button aria-label="Sljedeći angažman" class="eng-btn eng-next" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
-</div>
-</div>
-<div class="eng-track" tabindex="0">
-<article aria-label="1 od 7" aria-roledescription="slajd" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Prepoznatljiva povijesna gradska četvrt uz vodu" height="480" loading="eager" src="/Media/exp-giza.webp" width="800"/>
-<span class="eng-num">01</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Državno tijelo — Egipat</p>
-<h3>Master plan piramida u Gizi</h3>
-<p class="eng-desc">Procjena tržišta i strategija razvoja za prepoznatljiv projekt mješovite namjene uz jedan od najposjećenijih lokaliteta baštine na svijetu — projekcije potražnje prema emitivnom tržištu, svrsi putovanja i sezonalnosti, pretočene u namjenu zemljišta, dimenzioniranje sastavnica i plan etapa.</p>
-<p class="eng-outcome"><span>Ishod</span>Temelj za razvojno pozicioniranje, komercijalnu strategiju i dugoročno planiranje turističke infrastrukture na nacionalnoj razini.</p>
-</div>
-</article>
-<article aria-label="2 od 7" aria-roledescription="slajd" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Ulični život u gradu supsaharske Afrike" height="480" loading="eager" src="/Media/exp-tourism.webp" width="800"/>
-<span class="eng-num">02</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Nacionalna vlada — Supsaharska Afrika</p>
-<h3>Nacionalni program razvoja turizma</h3>
-<p class="eng-desc">Cjelovita strategija turizma za više destinacijskih klastera — prognoziranje potražnje, pozicioniranje destinacije, okviri za razvoj proizvoda i strategija privlačenja investicija.</p>
-<p class="eng-outcome"><span>Ishod</span>Usvojeno kao nacionalni okvir razvoja turizma, uz potporu usklađivanju javnih politika i mobilizaciji investicija privatnog sektora.</p>
-</div>
-</article>
-<article aria-label="3 od 7" aria-roledescription="slajd" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Suvremeni projekt staklenog nebodera" height="480" loading="lazy" src="/Media/exp-giga.webp" width="800"/>
-<span class="eng-num">03</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Developer s državnom potporom — Saudijska Arabija</p>
-<h3>Strategija i savjetovanje za giga-projekt</h3>
-<p class="eng-desc">Stambena strategija, pozicioniranje brendiranih rezidencija i analiza najviše i najbolje upotrebe za projekte velikih razmjera s državnom potporom u okruženju giga-projekata.</p>
-<p class="eng-outcome"><span>Ishod</span>Podloga za razvojno pozicioniranje i strategiju proizvoda usklađene s investicijskim ciljevima države.</p>
-</div>
-</article>
-<article aria-label="4 od 7" aria-roledescription="slajd" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Moderni neboderi mješovite namjene u obalnoj vizuri grada" height="480" loading="lazy" src="/Media/exp-northcoast.webp" width="800"/>
-<span class="eng-num">04</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Institucionalni investitor — Egipat</p>
-<h3>Investicijsko savjetovanje za Kairo i Sjevernu obalu</h3>
-<p class="eng-desc">Istraživanje tržišta za više vrsta imovine i investicijsko savjetovanje za institucionalnog investitora iz Srednje Azije — stambeni, uredski, maloprodajni i hotelijerski segment u širem području Kaira te na Sjevernoj obali / Ras El Hekmi.</p>
-<p class="eng-outcome"><span>Ishod</span>Strukturirani investicijski okvir koji omogućuje prekogranično plasiranje kapitala na jedno od najbrže rastućih tržišta mješovite namjene i obalnih nekretnina u regiji.</p>
-</div>
-</article>
-<article aria-label="5 od 7" aria-roledescription="slajd" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Uredski neboderi u središnjoj poslovnoj četvrti" height="480" loading="lazy" src="/Media/exp-office.webp" width="800"/>
-<span class="eng-num">05</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Institucionalna / savjetodavna platforma — Egipat</p>
-<h3>Analitička platforma za tržište uredskih prostora u Kairu</h3>
-<p class="eng-desc">Osmišljena i izgrađena podatkovna platforma za nekretnine koja pokriva tržište uredskih prostora šireg područja Kaira — podaci o najmu, stope popunjenosti, usporedni pokazatelji cijena i tržišni indikatori.</p>
-<p class="eng-outcome"><span>Ishod</span>Temelj za tržišnu analitiku i savjetovanje institucionalne razine, kao potpora investicijskim odlukama i tromjesečnom izvješćivanju o tržištu.</p>
-</div>
-</article>
-<article aria-label="6 od 7" aria-roledescription="slajd" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Pogled iz zraka na novu infrastrukturu na graničnom tržištu" height="480" loading="lazy" src="/Media/exp-frontier.webp" width="800"/>
-<span class="eng-num">06</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Developer — Supsaharska Afrika</p>
-<h3>Izvedivost i HBU na graničnom tržištu</h3>
-<p class="eng-desc">Analiza najviše i najbolje upotrebe i izvedivosti za projekte mješovite namjene velikih razmjera u urbanim sredinama s oskudnim podacima — utemeljena na primarnom istraživanju.</p>
-<p class="eng-outcome"><span>Ishod</span>Preoblikovani razvojni programi te potpora strukturiranju kapitala i investicijskoj održivosti u uvjetima graničnog tržišta.</p>
-</div>
-</article>
-<article aria-label="7 od 7" aria-roledescription="slajd" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Pogled iz zraka na povijesnu gradsku četvrt u procesu urbane regeneracije" height="480" loading="lazy" src="/Media/exp-heritage.webp" width="800"/>
-<span class="eng-num">07</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Vlada i institucije — MENA</p>
-<h3>Strategija baštine i urbane regeneracije</h3>
-<p class="eng-desc">Strategija prenamjene lokaliteta baštine i urbane regeneracije — integracija turističkih, maloprodajnih i kulturnih sadržaja u komercijalno održive razvojne okvire.</p>
-<p class="eng-outcome"><span>Ishod</span>Uravnoteženo očuvanje kulturne baštine s ostvarivanjem prihoda i dugoročnom urbanom aktivacijom.</p>
-</div>
-</article>
-</div>
-<div class="eng-foot">
-<div aria-hidden="true" class="eng-progress"><span></span></div>
-<a class="eng-all" href="/hr/pages/experience">Pogledajte sve angažmane <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</section>
-<!-- PRACTICES (explorer: tabs on desktop, accordion on mobile) -->
-<section class="px-section" id="services">
-<div class="px-head">
-<p class="eyebrow">Čime se bavimo</p>
-<h2>Pet područja djelovanja. <em>Jedan standard.</em></h2>
-<p class="px-intro">Svaki angažman vodi partner, utemeljen je na dokazima i namijenjen donositeljima odluka koji odgovaraju upravama, ministarstvima i kapitalu.</p>
-</div>
-<div aria-label="Područja djelovanja" class="px" role="tablist">
-<div class="px-item is-active">
-<button aria-controls="px-panel-0" aria-expanded="true" aria-selected="true" class="px-tab" id="px-tab-0" role="tab" type="button">
-<span class="px-n">01</span>
-<span class="px-text"><span class="px-name">Strategija nekretnina</span><span class="px-tag">Od parcele do portfelja.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-0" class="px-panel" id="px-panel-0" role="tabpanel">
-<div class="px-media"><img alt="Pogled iz zraka na projekt mješovite namjene izgrađen prema master planu" height="384" loading="lazy" src="/Media/cap-realestate.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Oslobađamo vrijednost zemljišta, imovine i portfelja tržišnom analitikom, financijskim modeliranjem i strategijom razvoja.</p>
-<p class="px-sublabel">7 kompetencija</p>
-<div class="px-chips"><a class="px-chip" href="/hr/pages/highest-and-best-use">Analiza najviše i najbolje upotrebe</a><a class="px-chip" href="/hr/pages/development-strategy">Strategija razvoja i plan etapa</a><a class="px-chip" href="/hr/pages/market-research">Istraživanje tržišta i identifikacija prilika</a><a class="px-chip" href="/hr/pages/commercial-feasibility">Komercijalne studije izvedivosti</a><a class="px-chip" href="/hr/pages/investment-attraction">Privlačenje i strukturiranje investicija</a><a class="px-chip" href="/hr/pages/competitive-benchmarking">Konkurentska usporedna analiza</a><a class="px-chip" href="/hr/pages/branded-residences">Strateško savjetovanje za brendirane rezidencije</a></div>
-<a class="px-cta" href="/hr/pages/real-estate-strategy">Istražite područje djelovanja <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<p class="eyebrow">Strateško savjetovanje · Dubai i Kairo</p>
+<h1>Strategija utemeljena na dokazima za nekretnine, turizam i nacionalni razvoj.</h1>
+<p class="hero-lead">Savjetujemo vlade, državne i institucionalne investitore te developere na Bliskom istoku, u Africi i Srednjoj Aziji. Svaki mandat vode viši savjetnici i temelji se na primarnom istraživanju.</p>
+<div class="hero-cta">
+<a class="btn btn--light" href="/hr/pages/contact">Razgovarajmo o mandatu <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="link link--light" href="/hr/pages/reports">Pročitajte naša istraživanja <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </div>
+<a class="latest" href="/hr/pages/report-airport-cities">
+<img alt="Naslovnica Heirstoneova izvješća „Dividenda uzletno-sletne staze”" height="116" src="/Media/reports/airport-cities.webp" width="82"/>
+<div class="latest-text">
+<p class="latest-label">Najnovije izvješće</p>
+<p class="latest-title">Gradovi zračnih luka: Dividenda uzletno-sletne staze</p>
+<p class="latest-stat"><span class="rp-n">11 prema 1</span> omjer vrijednosti prodaje stanova u predprodaji i preprodaje u Dubai Southu u 2025.: 10,23 mlrd. AED naspram 0,91 mlrd. AED</p>
 </div>
-<div class="px-item">
-<button aria-controls="px-panel-1" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-1" role="tab" type="button">
-<span class="px-n">02</span>
-<span class="px-text"><span class="px-name">Turizam i destinacije</span><span class="px-tag">Destinacije koje konkuriraju na globalnoj razini.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-1" class="px-panel" id="px-panel-1" role="tabpanel">
-<div class="px-media"><img alt="Destinacija uz plažu s turističkim kompleksima i marinom" height="384" loading="lazy" src="/Media/cap-tourism.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Konkurentne strategije destinacija pogodne za ulaganje — prognoziranje potražnje, razvoj proizvoda i pozicioniranje u koherentnim okvirima turističkog gospodarstva.</p>
-<p class="px-sublabel">4 kompetencije</p>
-<div class="px-chips"><a class="px-chip" href="/hr/pages/destination-strategy">Strategija i pozicioniranje destinacije</a><a class="px-chip" href="/hr/pages/tourism-market-research">Istraživanje turističkog tržišta i prognoziranje potražnje</a><a class="px-chip" href="/hr/pages/visitor-economy">Strategija turističkog gospodarstva</a><a class="px-chip" href="/hr/pages/airport-port-strategy">Komercijalna strategija zračnih luka, luka i ulaznih točaka</a></div>
-<a class="px-cta" href="/hr/pages/tourism-development">Istražite područje djelovanja <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</a>
 </div>
+</header>
+<main>
+<section aria-labelledby="shelfTitle" class="shelf">
+<div class="wrap">
+<div class="shelf-head">
+<h2 id="shelfTitle">32 neovisna izvješća o tržištima na kojima savjetujemo, besplatno dostupna.</h2>
+<a class="link" href="/hr/pages/reports">Pregledajte sva istraživanja <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-2" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-2" role="tab" type="button">
-<span class="px-n">03</span>
-<span class="px-text"><span class="px-name">Nacionalna vizija i sektorska strategija</span><span class="px-tag">Vizija pretočena u provedbu.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-2" class="px-panel" id="px-panel-2" role="tabpanel">
-<div class="px-media"><img alt="Vizura moderne državne prijestolnice u zoru" height="384" loading="lazy" src="/Media/cap-national.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Pretačemo nacionalne ambicije u strukturirane, provedive programe — usklađujući javne politike, investicije i mehanizme provedbe.</p>
-<p class="px-sublabel">7 kompetencija</p>
-<div class="px-chips"><a class="px-chip" href="/hr/pages/national-vision">Nacionalna vizija i strateški okviri</a><a class="px-chip" href="/hr/pages/sector-transformation">Savjetovanje za transformaciju sektora</a><a class="px-chip" href="/hr/pages/ppp-strategy">Strategija javno-privatnog partnerstva (JPP)</a><a class="px-chip" href="/hr/pages/policy-framework">Savjetovanje o javnim politikama i institucionalnom okviru</a><a class="px-chip" href="/hr/pages/global-benchmarking">Globalna usporedna analiza nacionalnih programa transformacije</a><a class="px-chip" href="/hr/pages/monitoring-frameworks">Okviri za praćenje i prilagodbu</a><a class="px-chip" href="/hr/pages/political-risk-assessment">Procjena političkog rizika i investicijske klime</a></div>
-<a class="px-cta" href="/hr/pages/national-vision-strategy">Istražite područje djelovanja <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-3" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-3" role="tab" type="button">
-<span class="px-n">04</span>
-<span class="px-text"><span class="px-name">Posebni projekti i strateško savjetovanje</span><span class="px-tag">Mandati po mjeri, složeni opsezi.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-3" class="px-panel" id="px-panel-3" role="tabpanel">
-<div class="px-media"><img alt="Ikonični megaprojekt velikih razmjera pod dramatičnim nebom" height="384" loading="lazy" src="/Media/cap-special.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Od monetizacije državne imovine do prekograničnog širenja i strategije mega-događanja — ondje gdje uobičajeni pristupi nisu dovoljni.</p>
-<p class="px-sublabel">6 kompetencija</p>
-<div class="px-chips"><a class="px-chip" href="/hr/pages/asset-monetization">Strategija monetizacije imovine velikih razmjera</a><a class="px-chip" href="/hr/pages/destination-brand">Savjetovanje za razvoj brenda destinacije</a><a class="px-chip" href="/hr/pages/investor-outreach">Planiranje pristupa investitorima i suradnje s njima</a><a class="px-chip" href="/hr/pages/cross-border-expansion">Savjetovanje za prekogranično širenje</a><a class="px-chip" href="/hr/pages/innovation-ecosystem">Strategija inovacijskog ekosustava</a><a class="px-chip" href="/hr/pages/sports-culture">Strategija sporta, kulture i mega-događanja</a></div>
-<a class="px-cta" href="/hr/pages/special-projects">Istražite područje djelovanja <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-4" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-4" role="tab" type="button">
-<span class="px-n">05</span>
-<span class="px-text"><span class="px-name">Digitalna transformacija</span><span class="px-tag">Usluge, digitalizirane od početka do kraja.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-4" class="px-panel" id="px-panel-4" role="tabpanel">
-<div class="px-media"><img alt="Državni digitalni operativni centar s nadzornim pločama za urbanističko planiranje i dozvole" height="384" loading="lazy" src="/Media/cap-digital.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Digitaliziramo javne usluge o kojima ovise nekretnine i graditeljstvo — izdavanje dozvola, zemljišne knjige, licenciranje i podatke o imovini — kako bi se kapital kretao brzinom odluke.</p>
-<p class="px-sublabel">4 kompetencije</p>
-<div class="px-chips"><a class="px-chip" href="/hr/pages/digital-permitting">Digitalno izdavanje dozvola i licenciranje gradnje</a><a class="px-chip" href="/hr/pages/land-registry-digitization">Digitalizacija zemljišnih knjiga i prometa nekretnina</a><a class="px-chip" href="/hr/pages/digital-service-design">Dizajn digitalnih usluga i iskustvo građana</a><a class="px-chip" href="/hr/pages/bim-digital-twins">BIM, digitalni blizanci i standardi informacija o imovini</a></div>
-<a class="px-cta" href="/hr/pages/digital-transformation">Istražite područje djelovanja <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
+<div class="shelf-row">
+<a class="cover" href="/hr/pages/report-airport-cities"><div class="cover-img"><img alt="Naslovnica Heirstoneova izvješća „Dividenda uzletno-sletne staze”" height="1273" loading="lazy" src="/Media/reports/airport-cities.webp" width="900"/></div><p class="cover-tag">Gradovi zračnih luka</p><p class="cover-title">Dividenda uzletno-sletne staze</p></a>
+<a class="cover" href="/hr/pages/report-africa-construction-costs"><div class="cover-img"><img alt="Naslovnica Heirstoneova izvješća „Devet gradova, jedan četvorni metar”" height="1273" loading="lazy" src="/Media/reports/africa-construction-costs.webp" width="900"/></div><p class="cover-tag">Troškovi gradnje i građevinske tehnologije</p><p class="cover-title">Devet gradova, jedan četvorni metar</p></a>
+<a class="cover" href="/hr/pages/report-airports-terminals"><div class="cover-img"><img alt="Naslovnica Heirstoneova izvješća „Najprometniji sat”" height="1273" loading="lazy" src="/Media/reports/airports-terminals.webp" width="900"/></div><p class="cover-tag">Zračne luke i terminali</p><p class="cover-title">Najprometniji sat</p></a>
+<a class="cover" href="/hr/pages/report-uzbekistan-new-cities"><div class="cover-img"><img alt="Naslovnica Heirstoneova izvješća „Grad danju”" height="1273" loading="lazy" src="/Media/reports/uzbekistan-new-cities.webp" width="900"/></div><p class="cover-tag">Novi gradovi u Uzbekistanu</p><p class="cover-title">Grad danju</p></a>
+<a class="cover" href="/hr/pages/report-africa-real-estate-capital"><div class="cover-img"><img alt="Naslovnica Heirstoneova izvješća „Novac je već ovdje”" height="1273" loading="lazy" src="/Media/reports/africa-real-estate-capital.webp" width="900"/></div><p class="cover-tag">Kapital za nekretnine u Africi</p><p class="cover-title">Novac je već ovdje</p></a>
+<a class="cover" href="/hr/pages/report-branded-residences"><div class="cover-img"><img alt="Naslovnica Heirstoneova izvješća „Kome ostaje premija”" height="1273" loading="lazy" src="/Media/reports/branded-residences.webp" width="900"/></div><p class="cover-tag">Brendirane rezidencije</p><p class="cover-title">Kome ostaje premija</p></a>
 </div>
 </div>
 </section>
-<!-- ENGAGEMENT MODEL (timeline) -->
-<section class="tl-section">
-<div class="tl-head">
+<section aria-labelledby="prTitle" class="principles">
+<div class="wrap">
 <p class="eyebrow">Kako radimo</p>
-<h2>Model suradnje u četiri koraka.</h2>
-<p>Bez gotovih predložaka. Svaki mandat oblikujemo prema kontekstu, ciljevima i ograničenjima — a neposredno ga vode viši partneri.</p>
+<h2 class="h2" id="prTitle">Četiri elementa koja oblikuju svaki angažman.</h2>
+<div class="p-grid">
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+<h3>Primarno istraživanje na prvom mjestu</h3>
+<p>Ondje gdje je podataka malo, prikupljamo ih prije izrade bilo kakvog modela: ankete, intervjui, obilasci lokacija i evidencije transakcija.</p>
 </div>
-<div class="tl-wrap">
-<span aria-hidden="true" class="tl-line"><span class="tl-fill"></span></span>
-<ol class="tl">
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">01</span>
-<h3>Razumijevanje</h3>
-<p>Temeljita dijagnostika. Uranjamo u kontekst klijenta, tržišno okruženje i strateške ciljeve — i preispitujemo projektni zadatak ondje gdje ga treba preispitati.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">02</span>
-<h3>Analiza</h3>
-<p>Rigorozna kvantitativna i kvalitativna analiza — istraživanje tržišta, financijsko modeliranje, usporedna analiza i mapiranje dionika — za uvide utemeljene na dokazima.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">03</span>
-<h3>Strategija</h3>
-<p>Analiza postaje strategija. Preporuke po etapama, prioritizirane inicijative i trijezan pogled na rizike, redoslijed provedbe i kapitalne implikacije.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">04</span>
-<h3>Provedba</h3>
-<p>Rezultati namijenjeni donositeljima odluka — sažeti, spremni za upravu i pripremljeni za predstavljanje na razini države, ministarstva i investicijskog odbora.</p>
-</li>
-</ol>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>
+<h3>Viši savjetnici od početka do kraja</h3>
+<p>Ljudi koji definiraju opseg mandata ostaju na njemu, od prve radionice do prezentacije upravi.</p>
+</div>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 3v18M5 7h14M5 7l-3 7h6l-3-7zM19 7l-3 7h6l-3-7zM8 21h8"></path></svg>
+<h3>Neovisno savjetovanje</h3>
+<p>Nemamo sukoba interesa, pa se naše preporuke vode dokazima i ciljevima klijenta.</p>
+</div>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
+<h3>Dubinsko poznavanje regije</h3>
+<p>Uredi u Dubaiju i Kairu te projekti u Zaljevu, u Sjevernoj i Supsaharskoj Africi te u Srednjoj Aziji.</p>
+</div>
+</div>
 </div>
 </section>
-<!-- ABOUT SECTION -->
-<section class="about-section">
-<div class="about-inner">
-<div class="about-image">
-<img alt="Pogled iz zraka na gradsku četvrt u razvoju s novim neboderima i infrastrukturom" height="801" loading="lazy" src="/Media/about.webp" width="1400"/>
+<section aria-labelledby="pracTitle" class="practices">
+<div class="wrap pr-grid">
+<div class="pr-intro">
+<p class="eyebrow">Kompetencije</p>
+<h2 class="h2" id="pracTitle">Pet područja djelovanja.</h2>
+<p class="lead">Svako od njih povezuje istraživanje tržišta, financijsku analizu i strategiju za jednu vrstu odluke, kako bi savjet izdržao provjeru pred upravom, ministarstvom ili investicijskim odborom.</p>
+<a class="link" href="/hr/pages/services">Sve kompetencije <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-<div class="about-text">
-<h2>O tvrtki Heirstone Consulting &amp; Strategic Advisory</h2>
-<p>Heirstone je specijalizirana kuća za strateško savjetovanje na graničnim i brzorastućim tržištima — u okruženjima u kojima su podaci ograničeni, odluke nose visoke uloge, a uobičajeni konzultantski okviri zakazuju.</p>
-<p>S uredima u Dubaiju i Kairu, tvrtka spaja iskustvo vodećih savjetodavnih kuća s dubokim poznavanjem regije. Djelujemo na sjecištu poslovnih ambicija i institucionalne stvarnosti, a naš opseg rada seže od pozicioniranja pojedinačne imovine do nacionalnih programa transformacije.</p>
-<a class="btn-primary" href="/hr/pages/about" style="margin-top:8px;">Saznajte više o nama</a>
+<div class="pr-cards">
+<a class="pr-card" href="/hr/pages/real-estate-strategy">
+<h3>Strategija nekretnina</h3>
+<p>Što graditi, gdje i kojim redoslijedom: najviša i najbolja upotreba, izvedivost, strategija razvoja i strukturiranje investicija.</p>
+<span class="pr-foot"><span class="pr-count">7 kompetencija</span><span class="link">Istražite <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/hr/pages/tourism-development">
+<h3>Razvoj turizma</h3>
+<p>Prognoze potražnje, pozicioniranje destinacija i planovi turističkog gospodarstva na temelju kojih investitori i vlade mogu djelovati.</p>
+<span class="pr-foot"><span class="pr-count">4 kompetencije</span><span class="link">Istražite <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/hr/pages/national-vision-strategy">
+<h3>Strategija nacionalne vizije</h3>
+<p>Nacionalne ambicije pretočene u programe, partnerstva i javne politike, s institucijama i financiranjem potrebnima za njihovu provedbu.</p>
+<span class="pr-foot"><span class="pr-count">7 kompetencija</span><span class="link">Istražite <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/hr/pages/special-projects">
+<h3>Posebni projekti</h3>
+<p>Mandati koji nadilaze pojedinačnu imovinu: monetizacija imovine, prekogranično širenje, pristup investitorima i velika događanja.</p>
+<span class="pr-foot"><span class="pr-count">6 kompetencija</span><span class="link">Istražite <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/hr/pages/digital-transformation">
+<h3>Digitalna transformacija</h3>
+<p>Usluge izdavanja dozvola, zemljišnih knjiga i licenciranja koje omogućuju da se projekti nekretnina i gradnje kreću brzinom odluke.</p>
+<span class="pr-foot"><span class="pr-count">4 kompetencije</span><span class="link">Istražite <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card pr-card--ink" href="/hr/pages/contact">
+<h3>Niste sigurni kamo spada Vaše pitanje?</h3>
+<p>Recite nam pred kojom odlukom stojite. Reći ćemo Vam kako bismo joj pristupili i jesmo li prava tvrtka za nju.</p>
+<span class="pr-foot"><span class="pr-count">Dubai · Kairo</span><span class="link link--light">Kontakt <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
 </div>
 </div>
-<div class="profile-strip">
-<a class="profile-cover" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf"><img alt="Naslovnica profila tvrtke Heirstone Consulting" height="405" loading="lazy" src="/Media/docs/company-profile-cover.webp" width="720"/></a>
-<div class="profile-text">
+</section>
+<section aria-labelledby="exTitle" class="experience">
+<div class="wrap">
+<div class="ex-head">
+<div>
+<p class="eyebrow">Odabrano iskustvo tima</p>
+<h2 class="h2" id="exTitle">Angažmani za vlade, investitore i developere.</h2>
+<p class="lead">Mandati koje su proveli članovi tima Heirstone. Imena klijenata ne navodimo na njihov zahtjev.</p>
+</div>
+<div class="ex-ctrl">
+<button aria-label="Prethodni" data-dir="-1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
+<button aria-label="Sljedeći" data-dir="1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+<div class="ex-track" id="exTrack">
+<article class="ex-card">
+<p class="ex-client">Državno tijelo · Egipat</p>
+<h3>Master plan piramida u Gizi</h3>
+<p class="ex-label">Mandat</p>
+<p>Procjena tržišta i strategija razvoja za projekt mješovite namjene uz jedan od najposjećenijih lokaliteta baštine na svijetu, od potražnje prema emitivnom tržištu i sezoni do namjene zemljišta, dimenzioniranja i plana etapa.</p>
+<div class="ex-out"><p class="ex-label">Ishod</p><p>Temelj za pozicioniranje projekta, komercijalnu strategiju i dugoročno planiranje infrastrukture za posjetitelje.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Nacionalna vlada · Supsaharska Afrika</p>
+<h3>Nacionalni program razvoja turizma</h3>
+<p class="ex-label">Mandat</p>
+<p>Strategija turizma za više destinacijskih klastera: prognoziranje potražnje, pozicioniranje, razvoj proizvoda i privlačenje investicija.</p>
+<div class="ex-out"><p class="ex-label">Ishod</p><p>Usvojeno kao nacionalni okvir razvoja turizma koji usmjerava javne politike i privatna ulaganja.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Developer s državnom potporom · Saudijska Arabija</p>
+<h3>Strategija giga-projekta</h3>
+<p class="ex-label">Mandat</p>
+<p>Stambena strategija, pozicioniranje brendiranih rezidencija i analiza najviše i najbolje upotrebe za velike projekte s državnom potporom.</p>
+<div class="ex-out"><p class="ex-label">Ishod</p><p>Razvojno pozicioniranje i strategija proizvoda usklađeni s ciljevima državnog investitora.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Institucionalni investitor · Egipat</p>
+<h3>Investicijsko savjetovanje za Kairo i Sjevernu obalu</h3>
+<p class="ex-label">Mandat</p>
+<p>Istraživanje tržišta i investicijsko savjetovanje za institucionalnog investitora iz Srednje Azije u stambenom, uredskom, maloprodajnom i hotelijerskom segmentu u širem području Kaira te u Ras El Hekmi.</p>
+<div class="ex-out"><p class="ex-label">Ishod</p><p>Investicijski okvir za prekogranično plasiranje kapitala na jedno od najbrže rastućih obalnih tržišta u regiji.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Savjetodavna platforma · Egipat</p>
+<h3>Analitika tržišta uredskih prostora u Kairu</h3>
+<p class="ex-label">Mandat</p>
+<p>Osmišljena i izgrađena podatkovna platforma za tržište uredskih prostora šireg područja Kaira: najam, popunjenost, usporedni pokazatelji cijena i tržišni indikatori.</p>
+<div class="ex-out"><p class="ex-label">Ishod</p><p>Tržišna analitika institucionalne razine kao temelj investicijskih odluka i tromjesečnog izvješćivanja.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Developer · Supsaharska Afrika</p>
+<h3>Izvedivost uz oskudne podatke</h3>
+<p class="ex-label">Mandat</p>
+<p>Analiza najviše i najbolje upotrebe i izvedivosti za velike projekte mješovite namjene u gradovima s oskudnim podacima, utemeljena na primarnom istraživanju.</p>
+<div class="ex-out"><p class="ex-label">Ishod</p><p>Preoblikovani razvojni programi i potpora strukturiranju kapitala u uvjetima graničnog tržišta.</p></div>
+</article>
+</div>
+<p class="ex-more"><a class="link" href="/hr/pages/experience">Sve odabrano iskustvo <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></p>
+</div>
+</section>
+<section aria-labelledby="rsTitle" class="research">
+<div class="wrap">
+<div class="rs-head">
+<div>
+<p class="eyebrow">Istraživanja</p>
+<h2 class="h2" id="rsTitle">Objavljujemo ono što naučimo.</h2>
+</div>
+<p class="lead">Besplatna izvješća o nekretninama, infrastrukturi i turizmu, svako s vlastitim usporednim pokazateljem i izvorom za svaki podatak. Izdanja na engleskom, francuskom, ruskom i arapskom.</p>
+</div>
+<div class="rs-grid">
+<a class="rs-card" href="/hr/pages/report-airport-cities">
+<div class="rs-art"><img alt="Naslovnica Heirstoneova izvješća „Dividenda uzletno-sletne staze”" height="1273" loading="lazy" src="/Media/reports/airport-cities.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Gradovi zračnih luka</p>
+<h3 class="rs-title">Dividenda uzletno-sletne staze</h3>
+<p class="rs-stat"><span class="rp-n">11 prema 1</span> omjer vrijednosti prodaje stanova u predprodaji i preprodaje u Dubai Southu u 2025.: 10,23 mlrd. AED naspram 0,91 mlrd. AED</p>
+</div>
+</a>
+<a class="rs-card" href="/hr/pages/report-africa-construction-costs">
+<div class="rs-art"><img alt="Naslovnica Heirstoneova izvješća „Devet gradova, jedan četvorni metar”" height="1273" loading="lazy" src="/Media/reports/africa-construction-costs.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Troškovi gradnje i građevinske tehnologije</p>
+<h3 class="rs-title">Devet gradova, jedan četvorni metar</h3>
+<p class="rs-stat"><span class="rp-n">2,9x</span> AECOM-ova cijena višekatne stambene zgrade u Lagosu u odnosu na Nairobi prema njegovu vodiču 2024./25.: 2.330 USD naspram 796 USD po m²</p>
+</div>
+</a>
+<a class="rs-card" href="/hr/pages/report-africa-hotel-development">
+<div class="rs-art"><img alt="Naslovnica Heirstoneova izvješća „Hoteli na papiru”" height="1273" loading="lazy" src="/Media/reports/africa-hotel-development.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Razvoj hotela u Africi</p>
+<h3 class="rs-title">Hoteli na papiru</h3>
+<p class="rs-stat"><span class="rp-n">123.846</span> smještajnih jedinica u 675 hotela u afričkom portfelju projekata hotelskih lanaca u pripremi početkom 2026., što je rekord i 19 % više nego godinu ranije</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<section aria-labelledby="pfTitle" class="profile">
+<div class="wrap">
+<div class="pf-card">
+<img alt="Naslovnica profila tvrtke Heirstone Consulting" height="405" loading="lazy" src="/Media/docs/company-profile-cover.webp" width="720"/>
+<div>
 <p class="eyebrow">Profil tvrtke</p>
-<h3>Heirstone na 21 stranici</h3>
-<p>Naših pet područja djelovanja, način na koji radimo i odabrano iskustvo tima na Bliskom istoku, u Africi i Srednjoj Aziji. Besplatno za preuzimanje, bez ispunjavanja obrasca.</p>
-<div class="profile-actions">
-<a class="btn-primary" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">Preuzmite na engleskom</a>
-<a class="btn-outline" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
+<h2 class="h2" id="pfTitle">Heirstone na 21 stranici</h2>
+<p class="lead">Naših pet područja djelovanja, način na koji radimo i odabrano iskustvo tima na Bliskom istoku, u Africi i Srednjoj Aziji. Besplatno za preuzimanje, bez ispunjavanja obrasca.</p>
+<div class="pf-actions">
+<a class="btn" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">Preuzmite na engleskom</a>
+<a class="btn btn--ghost" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
 </div>
-<p class="profile-meta">PDF · 21 stranica · oko 8 MB</p>
+<p class="pf-meta">PDF · 21 stranica · oko 8 MB</p>
 </div>
-</div>
-</section>
-<!-- WHO WE ADVISE + WHERE WE ARE DIFFERENT -->
-<section class="band">
-<div class="band-inner">
-<div class="band-col">
-<p class="eyebrow eyebrow-light">Za koga radimo</p>
-<h2>Savjetujemo one koji odlučuju o zemljištu, javnim politikama i kapitalu.</h2>
-<ul class="who">
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<path d="M3 21h18M4 21V8l8-5 8 5v13M8 21v-8h8v8M12 3v2"></path>
-</svg><div><h3>Vlade i javna tijela</h3><p>Nacionalna ministarstva, turističke zajednice i tijela za prostorno planiranje koja osmišljavaju i provode transformativne strategije nacionalnog razvoja.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="9"></circle><path d="M12 7v10M8.5 9.5c0-1.1 1.4-2 3.5-2s3.5.9 3.5 2-1 1.8-3.5 2.3-3.5 1.2-3.5 2.2 1.4 2 3.5 2 3.5-.9 3.5-2"></path>
-</svg><div><h3>Državni i institucionalni investitori</h3><p>Državni investicijski fondovi, mirovinski fondovi i institucionalni kapital kojima su potrebne neovisna tržišna analitika i investicijska strategija.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<path d="M2 21h20M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M10 7h4M10 11h4M10 15h4"></path>
-</svg><div><h3>Developeri nekretnina</h3><p>Developeri svih veličina kojima su potrebni analiza najviše i najbolje upotrebe, strategija razvoja i komercijalna izvedivost za imovinu i master planove.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="10"></circle><path d="M12 2v20M2 12h20M4.9 5.5c4.3 3 9.9 3 14.2 0M4.9 18.5c4.3-3 9.9-3 14.2 0"></path>
-</svg><div><h3>Multinacionalne korporacije</h3><p>Međunarodne korporacije koje ulaze na tržišta regije MENA ili se na njima šire — ulazak na tržište, odabir lokacije i konkurentska usporedna analiza.</p></div></li>
-</ul>
-</div>
-<div class="band-col">
-<p class="eyebrow eyebrow-light">Po čemu se Heirstone razlikuje</p>
-<h2>Stvoreni za tržišta na kojima standardni okviri zakazuju.</h2>
-<ol class="why2">
-<li class="why2-item"><span class="why2-n">01</span><div><h3>Pod vodstvom partnera, agilni po ustroju</h3><p>Viši partneri aktivno sudjeluju u svakom angažmanu — donose desetljeća stručnosti u strateškom planiranju i rade brzinom transakcija.</p></div></li>
-<li class="why2-item"><span class="why2-n">02</span><div><h3>Stručnost za granična tržišta</h3><p>Stvoreni za netransparentna tržišta s oskudnim podacima — gdje su komercijalna prosudba i saznanja s terena presudni.</p></div></li>
-<li class="why2-item"><span class="why2-n">03</span><div><h3>Savjetovanje država i vlada</h3><p>Neposredno iskustvo u državnim mandatima, ministarstvima i nacionalnim programima transformacije.</p></div></li>
-<li class="why2-item"><span class="why2-n">04</span><div><h3>Komercijalno utemeljeni savjeti</h3><p>Savjeti koji nisu samo analitički čvrsti, nego i komercijalno održivi, svjesni zahtjeva kapitala i utemeljeni na poznavanju tržišta.</p></div></li>
-<li class="why2-item"><span class="why2-n">05</span><div><h3>Neovisni i bez sukoba interesa</h3><p>Kao neovisna savjetodavna kuća, interes klijenta stavljamo na prvo mjesto, a naši se savjeti temelje na činjenicama i stvarnoj tržišnoj dinamici.</p></div></li>
-<li class="why2-item"><span class="why2-n">06</span><div><h3>Perspektiva utemeljena na globalnom iskustvu</h3><p>Prekogranično investicijsko savjetovanje oblikovano neposrednim konzultantskim iskustvom na svjetskim tržištima.</p></div></li>
-</ol>
-</div>
-</div>
-</section>
-<!-- CONTACT -->
-<section class="contact-section">
-<div class="section-inner-narrow">
-<h2 class="section-title">Kontaktirajte nas</h2>
-<p class="section-lead">Pretočite svoju viziju u uvjerljivu strategiju. Javite nam se kako biste o svom mandatu razgovarali s višim partnerom.</p>
-<div class="contact-inner">
-<div class="contact-info">
-<h3>Kontaktni podaci</h3>
-<div class="contact-item">
-<svg aria-hidden="true" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-</svg>
-<span>Dubai, UAE · Kairo, Egipat</span>
-</div>
-<div class="contact-item">
-<svg aria-hidden="true" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-<a class="contact-link" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
-</div>
-</div>
-<form class="contact-form" novalidate="">
-<div class="form-field">
-<label for="cf-name">Ime i prezime</label>
-<input autocomplete="name" class="form-input" id="cf-name" name="name" required="" type="text"/>
-</div>
-<div class="form-field">
-<label for="cf-email">E-pošta</label>
-<input autocomplete="email" class="form-input" id="cf-email" name="email" required="" type="email"/>
-</div>
-<div class="form-field">
-<label for="cf-subject">Predmet</label>
-<input class="form-input" id="cf-subject" name="_subject" type="text"/>
-</div>
-<div class="form-field">
-<label for="cf-message">Poruka</label>
-<textarea class="form-input" id="cf-message" name="message" required="" rows="4"></textarea>
-</div>
-<input aria-hidden="true" autocomplete="off" class="honeypot" name="_honey" tabindex="-1" type="text"/>
-<button class="btn-primary btn-submit" type="submit">Pošalji poruku</button>
-<p aria-live="polite" class="form-status" role="status"></p>
-</form>
 </div>
 </div>
 </section>
 </main>
-<!-- FOOTER -->
+<section aria-labelledby="clTitle" class="closing">
+<div class="cl-inner">
+<h2 class="h2" id="clTitle">Trebate donijeti odluku na ovim tržištima?</h2>
+<div>
+<p>Recite nam o čemu odlučujete i do kada. Viši savjetnik odgovorit će Vam u roku od jednog radnog dana.</p>
+<div class="cl-actions">
+<a class="btn btn--light" href="/hr/pages/contact">Kontaktirajte nas <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="link link--light" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
+</div>
+</div>
+</div>
+</section>
 <footer class="footer">
-<div style="max-width:1200px;margin:0 auto;">
-<div class="footer-grid">
-<div class="footer-brand">
-<h3>Heirstone Consulting &amp;<br/>Strategic Advisory</h3>
-<p>Specijalizirano strateško savjetovanje za granična i brzorastuća tržišta u regiji MENA, Africi i Srednjoj Aziji.</p>
-<div class="footer-social">
-<a aria-label="Heirstone Consulting na LinkedInu" href="https://www.linkedin.com/company/heirstoneconsulting" rel="noopener" target="_blank">
-<svg aria-hidden="true" fill="currentColor" height="16" viewbox="0 0 24 24" width="16">
-<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle>
-</svg>
+<div class="ft-wrap">
+<div class="ft-grid">
+<div>
+<a aria-label="Heirstone Consulting" class="ft-brand" href="/hr/">
+<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect height="34" stroke="#5D6E82" stroke-width="2" width="34" x="13" y="13"></rect><rect height="34" stroke="#5D6E82" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect></svg>
+<span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
 </a>
+<p class="ft-about">Strateško savjetovanje za nekretnine, turizam i nacionalni razvoj na Bliskom istoku, u Africi i Srednjoj Aziji.</p>
 </div>
+<div class="ft-col"><h4>Područja djelovanja</h4><a href="/hr/pages/real-estate-strategy">Strategija nekretnina</a><a href="/hr/pages/tourism-development">Razvoj turizma</a><a href="/hr/pages/national-vision-strategy">Strategija nacionalne vizije</a><a href="/hr/pages/special-projects">Posebni projekti</a><a href="/hr/pages/digital-transformation">Digitalna transformacija</a></div>
+<div class="ft-col"><h4>Tvrtka</h4><a href="/hr/pages/about">O nama</a><a href="/hr/pages/experience">Iskustvo</a><a href="/hr/pages/reports">Istraživanja</a><a href="/hr/pages/insights">Uvidi</a><a href="/hr/pages/services">Usluge</a><a href="/hr/pages/contact">Kontakt</a></div>
+<div class="ft-col"><h4>Uredi</h4><span>Dubai, Ujedinjeni Arapski Emirati</span><span>Kairo, Egipat</span><a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a><a data-i18n-skip="" href="https://www.linkedin.com/company/heirstoneconsulting" rel="noopener" target="_blank">LinkedIn</a></div>
 </div>
-<div class="footer-col">
-<h4>Naše kompetencije</h4>
-<ul>
-<li><a href="/hr/pages/real-estate-strategy">Strategija nekretnina</a></li>
-<li><a href="/hr/pages/tourism-development">Razvoj turizma</a></li>
-<li><a href="/hr/pages/national-vision-strategy">Strategija nacionalne vizije</a></li>
-<li><a href="/hr/pages/special-projects">Posebni projekti</a></li><li><a href="/hr/pages/digital-transformation">Digitalna transformacija</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Tvrtka</h4>
-<ul>
-<li><a href="/hr/pages/about">O nama</a></li>
-<li><a href="/hr/pages/services">Usluge</a></li>
-<li><a href="/hr/pages/experience">Iskustvo</a></li><li><a href="/hr/pages/reports">Izvješća</a></li><li><a href="/hr/pages/insights">Uvidi</a></li>
-<li><a href="/hr/pages/contact">Kontakt</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Kontakt</h4>
-<div class="footer-contact-item">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-</svg>
-<span>Dubai, UAE · Kairo, Egipat</span>
-</div>
-<div class="footer-contact-item">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-<a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
-</div>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026. Heirstone Consulting &amp; Strategic Advisory. Sva prava pridržana.</p>
-</div>
+<div class="ft-base"><span data-i18n-skip="">© 2026 Heirstone Consulting L.L.C-FZ</span><span>Dostupno na 26 jezika</span></div>
 </div>
 </footer>
 <script>window.HS_I18N={"Sending…": "Slanje…", "Message Sent": "Poruka je poslana", "Thank you — your message has been sent. We typically respond within one business day.": "Hvala Vam – Vaša je poruka poslana. Obično odgovaramo u roku od jednog radnog dana.", "Something went wrong and your message was not sent. Please email us directly at <a href=\"mailto:info@heirstoneconsulting.com\">info@heirstoneconsulting.com</a>.": "Došlo je do pogreške i Vaša poruka nije poslana. Molimo Vas da nam pišete izravno na <a href=\"mailto:info@heirstoneconsulting.com\">info@heirstoneconsulting.com</a>.", "Open menu": "Otvori izbornik", "Close menu": "Zatvori izbornik", "Language": "Jezik"};</script><script src="/js/main.js"></script>
-<script src="/js/home.js"></script>
 </body>
 </html>

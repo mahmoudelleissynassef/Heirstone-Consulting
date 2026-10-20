@@ -113,6 +113,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="/css/style.css" rel="stylesheet"/>
 <link href="/css/home.css" rel="stylesheet"/>
+<link href="/css/v2.css" rel="stylesheet"/>
 <link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link as="image" href="/Media/hero-1.webp" rel="preload"/>
 <!-- i18n:alternates -->
@@ -150,487 +151,297 @@
 <!-- NAVBAR -->
 <nav class="navbar">
 <a class="navbar-brand" href="/tr/">
-<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-<rect height="34" stroke="#8FA0B2" stroke-width="2" width="34" x="13" y="13"></rect>
-<rect height="34" stroke="#8FA0B2" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect>
-</svg>
+<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect height="34" stroke="#8FA0B2" stroke-width="2" width="34" x="13" y="13"></rect><rect height="34" stroke="#8FA0B2" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect></svg>
 <span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
 </a>
 <ul class="navbar-nav">
-<li><a href="/tr/">Ana Sayfa</a></li>
-<li class="dropdown">
-<a href="/tr/pages/services">Yetkinliklerimiz</a>
+<li class="dropdown"><a href="/tr/pages/services">Yetkinlikler</a>
 <div class="dropdown-menu">
 <a href="/tr/pages/real-estate-strategy">Gayrimenkul Stratejisi</a>
 <a href="/tr/pages/tourism-development">Turizm Geliştirme</a>
 <a href="/tr/pages/national-vision-strategy">Ulusal Vizyon Stratejisi</a>
 <a href="/tr/pages/special-projects">Özel Projeler</a>
 <a href="/tr/pages/digital-transformation">Dijital Dönüşüm</a>
+<a class="dd-all" href="/tr/pages/services">Tüm yetkinlikler</a>
 </div>
 </li>
-<li><a href="/tr/pages/experience">Deneyim</a></li><li><a href="/tr/pages/reports">Raporlar</a></li><li><a href="/tr/pages/insights">Analizler</a></li><li><a href="/tr/pages/about">Hakkımızda</a></li>
-<li><a href="/tr/pages/services">Hizmetler</a></li>
-<li><a class="navbar-cta" href="/tr/pages/contact">İletişim</a></li>
+<li><a href="/tr/pages/reports">Araştırmalar</a></li>
+<li><a href="/tr/pages/experience">Deneyim</a></li>
+<li><a href="/tr/pages/about">Hakkımızda</a></li>
+<li class="nav-cta"><a class="navbar-cta" href="/tr/pages/contact">İletişim</a></li>
 <!-- i18n:switch --><li class="dropdown lang-switch" data-i18n-skip=""><button aria-haspopup="true" aria-label="Dil" class="lang-btn" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg><span>TR</span></button><div class="dropdown-menu lang-menu"><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a aria-current="true" data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div></li><!-- /i18n:switch -->
 </ul>
 <button aria-controls="mobileNav" aria-expanded="false" aria-label="Menüyü aç" class="hamburger" id="hamburger">
 <span></span><span></span><span></span>
 </button>
 </nav>
-<!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav">
-<a href="/tr/">Ana Sayfa</a>
-<a href="/tr/pages/real-estate-strategy">Gayrimenkul Stratejisi</a>
-<a href="/tr/pages/tourism-development">Turizm Geliştirme</a>
-<a href="/tr/pages/national-vision-strategy">Ulusal Vizyon Stratejisi</a>
-<a href="/tr/pages/special-projects">Özel Projeler</a>
-<a href="/tr/pages/digital-transformation">Dijital Dönüşüm</a>
+<a href="/tr/pages/services">Yetkinlikler</a>
+<a class="mn-sub" href="/tr/pages/real-estate-strategy">Gayrimenkul Stratejisi</a>
+<a class="mn-sub" href="/tr/pages/tourism-development">Turizm Geliştirme</a>
+<a class="mn-sub" href="/tr/pages/national-vision-strategy">Ulusal Vizyon Stratejisi</a>
+<a class="mn-sub" href="/tr/pages/special-projects">Özel Projeler</a>
+<a class="mn-sub" href="/tr/pages/digital-transformation">Dijital Dönüşüm</a>
+<a href="/tr/pages/reports">Araştırmalar</a>
 <a href="/tr/pages/experience">Deneyim</a>
-<a href="/tr/pages/reports">Raporlar</a>
-<a href="/tr/pages/insights">Analizler</a>
 <a href="/tr/pages/about">Hakkımızda</a>
-<a href="/tr/pages/services">Hizmetler</a>
+<a href="/tr/pages/insights">Analizler</a>
 <a href="/tr/pages/contact">İletişim</a>
 <!-- i18n:mswitch --><div aria-label="Dil" class="mobile-lang" data-i18n-skip=""><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a aria-current="true" data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div><!-- /i18n:mswitch -->
 </div>
-<main id="main">
-<!-- HERO -->
-<section class="hero">
-<div aria-hidden="true" class="hero-slides">
-<div class="hero-slide active" style="background-image:url('/Media/hero-1.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-2.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-3.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-4.webp')"></div>
-</div>
-<div aria-hidden="true" class="hero-overlay"></div>
-<div class="hero-content">
-<p class="hero-kicker">Danışmanlık ve Strateji Danışmanlığı — Dubai · Kahire</p>
-<h1>Şeffaf olmayan ve iddialı pazarlar için uzman danışmanlık.</h1>
-<p>Heirstone, geleneksel danışmanlık yaklaşımlarının yetersiz kaldığı yerlerde devletlere, kurumsal sermayeye ve geliştiricilere danışmanlık verir; ulusal vizyonu MENA, Afrika ve Orta Asya'da ticari olarak sürdürülebilir ve uygulanabilir stratejilere dönüştürür.</p>
-<div class="hero-actions">
-<a class="btn-primary" href="#services">Uzmanlığımızı keşfedin</a>
-<a class="btn-secondary" href="/tr/pages/contact">Bize ulaşın</a>
-</div>
-</div>
-<div aria-hidden="true" class="hero-ticker">
-<div class="tick-track"><span class="tick-item">En etkin ve verimli kullanım</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Fizibilite çalışmaları</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Küresel kıyaslama</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Pazar araştırması</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Destinasyon stratejisi</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Ulusal vizyon</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">KÖİ Stratejisi</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Havalimanı ve liman stratejisi</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Markalı konutlar</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Yatırım çekme</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Dijital ruhsatlandırma</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Siyasi risk</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">En etkin ve verimli kullanım</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Fizibilite çalışmaları</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Küresel kıyaslama</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Pazar araştırması</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Destinasyon stratejisi</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Ulusal vizyon</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">KÖİ Stratejisi</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Havalimanı ve liman stratejisi</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Markalı konutlar</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Yatırım çekme</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Dijital ruhsatlandırma</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Siyasi risk</span><span aria-hidden="true" class="tick-dot"></span></div>
-</div>
-</section>
-<!-- FACTS BAR -->
-<section aria-label="Firmaya genel bakış" class="facts-bar">
-<div class="facts-inner">
-<div class="fact">
-<span class="fact-label">Ofisler</span>
-<span class="fact-value">Dubai · Kahire</span>
-</div>
-<div class="fact">
-<span class="fact-label">Birikim</span>
-<span class="fact-value">Önde gelen danışmanlık firmalarından deneyim</span>
-</div>
-<div class="fact">
-<span class="fact-label">Proje profili</span>
-<span class="fact-value">Devlet ve kurumsal</span>
-</div>
-<div class="fact">
-<span class="fact-label">Kapsam</span>
-<span class="fact-value">Körfez ülkeleri · MENA · Afrika · Orta Asya</span>
-</div>
-</div>
-</section>
-<!-- SELECTED ENGAGEMENTS (carousel) -->
-<section aria-label="Ekibin seçilmiş deneyimleri" aria-roledescription="kaydırmalı galeri" class="eng" id="engagements">
-<div class="eng-head">
+<header class="hero" id="main">
+<div aria-label="Nairobi silueti" class="hero-img" role="img"></div>
+<div class="hero-body">
 <div>
-<p class="eyebrow eyebrow-light">Ekibin seçilmiş deneyimleri</p>
-<h2>Devlet, kurumsal ve özel sermaye için projeler.</h2>
-</div>
-<div class="eng-controls">
-<span class="eng-count"><b class="eng-cur">01</b> / 07</span>
-<button aria-label="Önceki proje" class="eng-btn eng-prev" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
-<button aria-label="Sonraki proje" class="eng-btn eng-next" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
-</div>
-</div>
-<div class="eng-track" tabindex="0">
-<article aria-label="1 / 7" aria-roledescription="slayt" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Su kenarında simgesel tarihi kent dokusu" height="480" loading="eager" src="/Media/exp-giza.webp" width="800"/>
-<span class="eng-num">01</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Devlet kurumu — Mısır</p>
-<h3>Gize Piramitleri Master Planı</h3>
-<p class="eng-desc">Dünyanın en çok ziyaret edilen miras alanlarından birinin bitişiğindeki simgesel karma kullanımlı proje için pazar değerlendirmesi ve geliştirme stratejisi: kaynak pazar, seyahat amacı ve mevsimselliğe göre talep projeksiyonları; arazi kullanımı, bileşen boyutlandırması ve etaplamaya dönüştürüldü.</p>
-<p class="eng-outcome"><span>Sonuç</span>Projenin konumlandırılması, ticari strateji ve ulusal ölçekte uzun vadeli ziyaretçi altyapısı planlaması için temel oluşturdu.</p>
-</div>
-</article>
-<article aria-label="2 / 7" aria-roledescription="slayt" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Sahra Altı Afrika'daki bir şehirde sokak hayatı" height="480" loading="eager" src="/Media/exp-tourism.webp" width="800"/>
-<span class="eng-num">02</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Ulusal hükümet — Sahra Altı Afrika</p>
-<h3>Ulusal Turizm Geliştirme Programı</h3>
-<p class="eng-desc">Birden fazla destinasyon kümesini kapsayan uçtan uca turizm stratejisi: talep tahmini, destinasyon konumlandırması, ürün geliştirme çerçeveleri ve yatırım çekme stratejisi.</p>
-<p class="eng-outcome"><span>Sonuç</span>Ulusal turizm geliştirme çerçevesi olarak benimsendi; politika uyumunu ve özel sektör yatırımlarının harekete geçirilmesini destekledi.</p>
-</div>
-</article>
-<article aria-label="3 / 7" aria-roledescription="slayt" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Çağdaş cam kuleler projesi" height="480" loading="lazy" src="/Media/exp-giga.webp" width="800"/>
-<span class="eng-num">03</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Devlet destekli geliştirici — Suudi Arabistan</p>
-<h3>Mega Proje Stratejisi ve Danışmanlığı</h3>
-<p class="eng-desc">Mega proje ortamlarındaki büyük ölçekli devlet destekli projeler için konut stratejisi, markalı konut konumlandırması ve en etkin ve verimli kullanım analizi.</p>
-<p class="eng-outcome"><span>Sonuç</span>Projenin konumlandırılmasına ve ürün stratejisine, devletin yatırım hedefleriyle uyumlu biçimde yön verdi.</p>
-</div>
-</article>
-<article aria-label="4 / 7" aria-roledescription="slayt" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Kıyı siluetinde modern karma kullanımlı kuleler" height="480" loading="lazy" src="/Media/exp-northcoast.webp" width="800"/>
-<span class="eng-num">04</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Kurumsal yatırımcı — Mısır</p>
-<h3>Kahire ve Kuzey Sahil Yatırım Danışmanlığı</h3>
-<p class="eng-desc">Orta Asyalı bir kurumsal yatırımcı için çok varlıklı pazar araştırması ve yatırım danışmanlığı: Büyük Kahire ile Kuzey Sahil / Ras El Hekma'da konut, ofis, perakende ve konaklama.</p>
-<p class="eng-outcome"><span>Sonuç</span>Bölgenin en hızlı büyüyen karma kullanımlı ve kıyı pazarlarından birine sınır ötesi sermaye yönlendirilmesini sağlayan yapılandırılmış bir yatırım çerçevesi.</p>
-</div>
-</article>
-<article aria-label="5 / 7" aria-roledescription="slayt" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Merkezi iş bölgesinde ofis kuleleri" height="480" loading="lazy" src="/Media/exp-office.webp" width="800"/>
-<span class="eng-num">05</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Kurumsal / danışmanlık platformu — Mısır</p>
-<h3>Kahire Ofis Piyasası İstihbarat Platformu</h3>
-<p class="eng-desc">Büyük Kahire ofis piyasasını kapsayan bir gayrimenkul veri platformu tasarlayıp kurduk: kiralama verileri, doluluk oranları, fiyat kıyasları ve piyasa göstergeleri.</p>
-<p class="eng-outcome"><span>Sonuç</span>Yatırım kararlarını ve üç aylık piyasa raporlamasını destekleyen kurumsal düzeyde piyasa istihbaratı ve danışmanlık için temel oluşturdu.</p>
-</div>
-</article>
-<article aria-label="6 / 7" aria-roledescription="slayt" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Gelişmekte olan bir pazarda yeni altyapının havadan görünümü" height="480" loading="lazy" src="/Media/exp-frontier.webp" width="800"/>
-<span class="eng-num">06</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Geliştirici — Sahra Altı Afrika</p>
-<h3>Gelişmekte Olan Pazarlarda Fizibilite ve En Etkin ve Verimli Kullanım</h3>
-<p class="eng-desc">Verinin kıt olduğu kentsel ortamlarda büyük ölçekli karma kullanımlı projeler için birincil araştırmaya dayalı en etkin ve verimli kullanım analizi ile fizibilite.</p>
-<p class="eng-outcome"><span>Sonuç</span>Geliştirme programlarını yeniden kurguladı; gelişmekte olan pazar koşullarında sermaye yapılandırmasını ve yatırımın uygulanabilirliğini destekledi.</p>
-</div>
-</article>
-<article aria-label="7 / 7" aria-roledescription="slayt" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Dönüşüm sürecindeki tarihi bir mahallenin havadan görünümü" height="480" loading="lazy" src="/Media/exp-heritage.webp" width="800"/>
-<span class="eng-num">07</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Kamu ve kurumlar — MENA</p>
-<h3>Miras ve Kentsel Dönüşüm Stratejisi</h3>
-<p class="eng-desc">Miras alanlarının yeniden işlevlendirilmesi ve kentsel dönüşüm stratejisi; turizm, perakende ve kültürel kullanımları ticari olarak sürdürülebilir geliştirme çerçevelerine entegre eder.</p>
-<p class="eng-outcome"><span>Sonuç</span>Kültürel mirasın korunmasını gelir yaratma ve uzun vadeli kentsel canlandırmayla dengeledi.</p>
-</div>
-</article>
-</div>
-<div class="eng-foot">
-<div aria-hidden="true" class="eng-progress"><span></span></div>
-<a class="eng-all" href="/tr/pages/experience">Tüm projeleri görün <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</section>
-<!-- PRACTICES (explorer: tabs on desktop, accordion on mobile) -->
-<section class="px-section" id="services">
-<div class="px-head">
-<p class="eyebrow">Ne yapıyoruz</p>
-<h2>Beş uzmanlık alanı. <em>Tek standart.</em></h2>
-<p class="px-intro">Her proje ortaklar tarafından yönetilir, kanıta dayanır ve yönetim kurullarına, bakanlıklara ve sermayeye hesap veren karar vericiler için tasarlanır.</p>
-</div>
-<div aria-label="Uzmanlık alanları" class="px" role="tablist">
-<div class="px-item is-active">
-<button aria-controls="px-panel-0" aria-expanded="true" aria-selected="true" class="px-tab" id="px-tab-0" role="tab" type="button">
-<span class="px-n">01</span>
-<span class="px-text"><span class="px-name">Gayrimenkul Stratejisi</span><span class="px-tag">Parselden portföye.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-0" class="px-panel" id="px-panel-0" role="tabpanel">
-<div class="px-media"><img alt="Master plana göre geliştirilen karma kullanımlı bir gayrimenkul projesinin havadan görünümü" height="384" loading="lazy" src="/Media/cap-realestate.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Pazar istihbaratı, finansal modelleme ve geliştirme stratejisiyle arazi, varlık ve portföylerin değerini açığa çıkarıyoruz.</p>
-<p class="px-sublabel">7 yetkinlik</p>
-<div class="px-chips"><a class="px-chip" href="/tr/pages/highest-and-best-use">En Etkin ve Verimli Kullanım Analizi</a><a class="px-chip" href="/tr/pages/development-strategy">Geliştirme Stratejisi ve Etaplama</a><a class="px-chip" href="/tr/pages/market-research">Pazar Araştırması ve Fırsat Belirleme</a><a class="px-chip" href="/tr/pages/commercial-feasibility">Ticari Fizibilite Çalışmaları</a><a class="px-chip" href="/tr/pages/investment-attraction">Yatırım Çekme ve Yapılandırma</a><a class="px-chip" href="/tr/pages/competitive-benchmarking">Rakip Analizi</a><a class="px-chip" href="/tr/pages/branded-residences">Markalı Konut Strateji Danışmanlığı</a></div>
-<a class="px-cta" href="/tr/pages/real-estate-strategy">Uzmanlık alanını keşfedin <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<p class="eyebrow">Strateji danışmanlığı · Dubai ve Kahire</p>
+<h1>Gayrimenkul, turizm ve ulusal kalkınma için kanıta dayalı strateji.</h1>
+<p class="hero-lead">Orta Doğu, Afrika ve Orta Asya'da hükümetlere, devlet ve kurumsal yatırımcılara ve geliştiricilere danışmanlık veriyoruz. Her proje kıdemli danışmanlar tarafından yönetilir ve birincil araştırmaya dayanır.</p>
+<div class="hero-cta">
+<a class="btn btn--light" href="/tr/pages/contact">Projenizi görüşelim <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="link link--light" href="/tr/pages/reports">Araştırmalarımızı okuyun <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </div>
+<a class="latest" href="/tr/pages/report-airport-cities">
+<img alt="Heirstone'un “Pistin getirisi” raporunun kapağı" height="116" src="/Media/reports/airport-cities.webp" width="82"/>
+<div class="latest-text">
+<p class="latest-label">Son rapor</p>
+<p class="latest-title">Havalimanı Kentleri: Pistin getirisi</p>
+<p class="latest-stat"><span class="rp-n">11'e 1</span> 2025'te Dubai South'ta projeden daire satışlarının ikinci el satışlara değer bazında oranı: 0,91 milyar AED'ye karşılık 10,23 milyar AED</p>
 </div>
-<div class="px-item">
-<button aria-controls="px-panel-1" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-1" role="tab" type="button">
-<span class="px-n">02</span>
-<span class="px-text"><span class="px-name">Turizm ve Destinasyonlar</span><span class="px-tag">Küresel ölçekte rekabet eden destinasyonlar.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-1" class="px-panel" id="px-panel-1" role="tabpanel">
-<div class="px-media"><img alt="Tatil köyleri ve marinası olan sahil turizm destinasyonu" height="384" loading="lazy" src="/Media/cap-tourism.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Rekabetçi ve yatırım yapılabilir destinasyon stratejileri: talep tahmini, ürün geliştirme ve tutarlı ziyaretçi ekonomisi çerçeveleri içinde konumlandırma.</p>
-<p class="px-sublabel">4 yetkinlik</p>
-<div class="px-chips"><a class="px-chip" href="/tr/pages/destination-strategy">Destinasyon Stratejisi ve Konumlandırma</a><a class="px-chip" href="/tr/pages/tourism-market-research">Turizm Pazar Araştırması ve Talep Tahmini</a><a class="px-chip" href="/tr/pages/visitor-economy">Ziyaretçi Ekonomisi Stratejisi</a><a class="px-chip" href="/tr/pages/airport-port-strategy">Havalimanı ve Liman Ticari Stratejisi</a></div>
-<a class="px-cta" href="/tr/pages/tourism-development">Uzmanlık alanını keşfedin <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</a>
 </div>
+</header>
+<main>
+<section aria-labelledby="shelfTitle" class="shelf">
+<div class="wrap">
+<div class="shelf-head">
+<h2 id="shelfTitle">Danışmanlık verdiğimiz pazarlara ilişkin 32 bağımsız rapor; tümü ücretsiz okunabilir.</h2>
+<a class="link" href="/tr/pages/reports">Tüm araştırmalara göz atın <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-2" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-2" role="tab" type="button">
-<span class="px-n">03</span>
-<span class="px-text"><span class="px-name">Ulusal Vizyon ve Sektör Stratejisi</span><span class="px-tag">Uygulanabilir hâle getirilmiş vizyon.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-2" class="px-panel" id="px-panel-2" role="tabpanel">
-<div class="px-media"><img alt="Şafak vakti modern bir başkent silueti" height="384" loading="lazy" src="/Media/cap-national.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Ulusal hedefleri yapılandırılmış ve uygulanabilir programlara dönüştürüyor; politikayı, yatırımı ve uygulama mekanizmalarını uyumlu hâle getiriyoruz.</p>
-<p class="px-sublabel">7 yetkinlik</p>
-<div class="px-chips"><a class="px-chip" href="/tr/pages/national-vision">Ulusal Vizyon ve Stratejik Çerçeveler</a><a class="px-chip" href="/tr/pages/sector-transformation">Sektörel Dönüşüm Danışmanlığı</a><a class="px-chip" href="/tr/pages/ppp-strategy">Kamu Özel İşbirliği (KÖİ) Stratejisi</a><a class="px-chip" href="/tr/pages/policy-framework">Politika ve Kurumsal Çerçeve Danışmanlığı</a><a class="px-chip" href="/tr/pages/global-benchmarking">Ulusal Dönüşüm Programlarının Küresel Kıyaslaması</a><a class="px-chip" href="/tr/pages/monitoring-frameworks">İzleme ve Düzeltme Çerçeveleri</a><a class="px-chip" href="/tr/pages/political-risk-assessment">Siyasi Risk ve Yatırım Ortamı Değerlendirmesi</a></div>
-<a class="px-cta" href="/tr/pages/national-vision-strategy">Uzmanlık alanını keşfedin <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-3" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-3" role="tab" type="button">
-<span class="px-n">04</span>
-<span class="px-text"><span class="px-name">Özel Projeler ve Stratejik Danışmanlık</span><span class="px-tag">Size özel projeler, karmaşık kapsamlar.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-3" class="px-panel" id="px-panel-3" role="tabpanel">
-<div class="px-media"><img alt="Dramatik bir gökyüzü altında simgesel büyük ölçekli mega proje" height="384" loading="lazy" src="/Media/cap-special.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Devlet varlıklarının değerlendirilmesinden sınır ötesi genişlemeye ve mega etkinlik stratejisine kadar — geleneksel yaklaşımların yetersiz kaldığı her yerde.</p>
-<p class="px-sublabel">6 yetkinlik</p>
-<div class="px-chips"><a class="px-chip" href="/tr/pages/asset-monetization">Büyük Ölçekli Varlık Değerlendirme Stratejisi</a><a class="px-chip" href="/tr/pages/destination-brand">Destinasyon Markası Geliştirme Danışmanlığı</a><a class="px-chip" href="/tr/pages/investor-outreach">Yatırımcı İlişkileri Planlaması</a><a class="px-chip" href="/tr/pages/cross-border-expansion">Sınır Ötesi Genişleme Danışmanlığı</a><a class="px-chip" href="/tr/pages/innovation-ecosystem">İnovasyon Ekosistemi Stratejisi</a><a class="px-chip" href="/tr/pages/sports-culture">Spor, Kültür ve Mega Etkinlik Stratejisi</a></div>
-<a class="px-cta" href="/tr/pages/special-projects">Uzmanlık alanını keşfedin <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-4" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-4" role="tab" type="button">
-<span class="px-n">05</span>
-<span class="px-text"><span class="px-name">Dijital Dönüşüm</span><span class="px-tag">Uçtan uca dijitalleşen hizmetler.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-4" class="px-panel" id="px-panel-4" role="tabpanel">
-<div class="px-media"><img alt="Kentsel planlama ve ruhsat panolarıyla donatılmış kamu dijital operasyon merkezi" height="384" loading="lazy" src="/Media/cap-digital.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Gayrimenkul ve inşaat sektörlerinin bağlı olduğu kamu hizmetlerini — ruhsatlar, tapu sicili, lisanslar ve varlık verileri — dijitalleştiriyoruz; böylece sermaye karar hızında hareket ediyor.</p>
-<p class="px-sublabel">4 yetkinlik</p>
-<div class="px-chips"><a class="px-chip" href="/tr/pages/digital-permitting">Dijital Yapı Ruhsatı ve İnşaat İzinleri</a><a class="px-chip" href="/tr/pages/land-registry-digitization">Tapu Sicili ve Gayrimenkul İşlemlerinin Dijitalleştirilmesi</a><a class="px-chip" href="/tr/pages/digital-service-design">Dijital Hizmet Tasarımı ve Vatandaş Deneyimi</a><a class="px-chip" href="/tr/pages/bim-digital-twins">BIM, Dijital İkizler ve Varlık Bilgi Standartları</a></div>
-<a class="px-cta" href="/tr/pages/digital-transformation">Uzmanlık alanını keşfedin <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
+<div class="shelf-row">
+<a class="cover" href="/tr/pages/report-airport-cities"><div class="cover-img"><img alt="Heirstone'un “Pistin getirisi” raporunun kapağı" height="1273" loading="lazy" src="/Media/reports/airport-cities.webp" width="900"/></div><p class="cover-tag">Havalimanı Kentleri</p><p class="cover-title">Pistin getirisi</p></a>
+<a class="cover" href="/tr/pages/report-africa-construction-costs"><div class="cover-img"><img alt="Heirstone'un “Dokuz kent, tek metrekare” raporunun kapağı" height="1273" loading="lazy" src="/Media/reports/africa-construction-costs.webp" width="900"/></div><p class="cover-tag">İnşaat Maliyetleri ve Yapı Teknolojisi</p><p class="cover-title">Dokuz kent, tek metrekare</p></a>
+<a class="cover" href="/tr/pages/report-airports-terminals"><div class="cover-img"><img alt="Heirstone'un “En yoğun saat” raporunun kapağı" height="1273" loading="lazy" src="/Media/reports/airports-terminals.webp" width="900"/></div><p class="cover-tag">Havalimanları ve Terminaller</p><p class="cover-title">En yoğun saat</p></a>
+<a class="cover" href="/tr/pages/report-uzbekistan-new-cities"><div class="cover-img"><img alt="Heirstone'un “Gündüz kenti” raporunun kapağı" height="1273" loading="lazy" src="/Media/reports/uzbekistan-new-cities.webp" width="900"/></div><p class="cover-tag">Özbekistan'da Yeni Kentler</p><p class="cover-title">Gündüz kenti</p></a>
+<a class="cover" href="/tr/pages/report-africa-real-estate-capital"><div class="cover-img"><img alt="Heirstone'un “Para zaten burada” raporunun kapağı" height="1273" loading="lazy" src="/Media/reports/africa-real-estate-capital.webp" width="900"/></div><p class="cover-tag">Afrika'da Gayrimenkul Sermayesi</p><p class="cover-title">Para zaten burada</p></a>
+<a class="cover" href="/tr/pages/report-branded-residences"><div class="cover-img"><img alt="Heirstone'un “Prim kimde kalıyor?” raporunun kapağı" height="1273" loading="lazy" src="/Media/reports/branded-residences.webp" width="900"/></div><p class="cover-tag">Markalı konutlar</p><p class="cover-title">Prim kimde kalıyor?</p></a>
 </div>
 </div>
 </section>
-<!-- ENGAGEMENT MODEL (timeline) -->
-<section class="tl-section">
-<div class="tl-head">
+<section aria-labelledby="prTitle" class="principles">
+<div class="wrap">
 <p class="eyebrow">Nasıl çalışıyoruz</p>
-<h2>Dört aşamalı bir çalışma modeli.</h2>
-<p>Hazır kalıplar yok. Her proje bağlama, hedeflere ve kısıtlara göre şekillenir — ve kıdemli ortaklar tarafından ön saflarda yönetilir.</p>
+<h2 class="h2" id="prTitle">Her projeyi biçimlendiren dört ilke.</h2>
+<div class="p-grid">
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+<h3>Önce birincil araştırma</h3>
+<p>Verinin kıt olduğu yerde, herhangi bir model kurulmadan önce veriyi kendimiz topluyoruz: anketler, görüşmeler, saha ziyaretleri ve işlem kayıtları.</p>
 </div>
-<div class="tl-wrap">
-<span aria-hidden="true" class="tl-line"><span class="tl-fill"></span></span>
-<ol class="tl">
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">01</span>
-<h3>Anlamak</h3>
-<p>Kapsamlı teşhis. Müşterinin bağlamına, pazar ortamına ve stratejik hedeflerine derinlemesine odaklanır, gerektiğinde talebi sorgularız.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">02</span>
-<h3>Analiz etmek</h3>
-<p>Kanıta dayalı içgörü üretmek için titiz nicel ve nitel analiz — pazar araştırması, finansal modelleme, kıyaslama ve paydaş haritalama.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">03</span>
-<h3>Strateji oluşturmak</h3>
-<p>Analiz stratejiye dönüşür. Aşamalı öneriler, önceliklendirilmiş girişimler ve risk, sıralama ve sermaye etkilerine net bir bakış.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">04</span>
-<h3>Teslim etmek</h3>
-<p>Karar vericiler için tasarlanmış çıktılar — öz, yönetim kuruluna hazır ve devlet, bakanlık ve yatırım komitesi düzeyinde sunulmak üzere hazırlanmış.</p>
-</li>
-</ol>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>
+<h3>Baştan sona kıdemli danışmanlar</h3>
+<p>Projenin kapsamını belirleyen kişiler, ilk çalıştaydan yönetim kurulu sunumuna kadar projede kalır.</p>
+</div>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 3v18M5 7h14M5 7l-3 7h6l-3-7zM19 7l-3 7h6l-3-7zM8 21h8"></path></svg>
+<h3>Bağımsız danışmanlık</h3>
+<p>Hiçbir çıkar çatışmamız yok; bu nedenle önerilerimiz kanıtları ve müşterinin hedeflerini esas alır.</p>
+</div>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
+<h3>Bölgesel derinlik</h3>
+<p>Dubai ve Kahire'de ofisler; Körfez, Kuzey ve Sahra Altı Afrika ile Orta Asya'da çalışmalar.</p>
+</div>
+</div>
 </div>
 </section>
-<!-- ABOUT SECTION -->
-<section class="about-section">
-<div class="about-inner">
-<div class="about-image">
-<img alt="Yeni kuleler ve altyapıyla gelişen bir kent bölgesinin havadan görünümü" height="801" loading="lazy" src="/Media/about.webp" width="1400"/>
+<section aria-labelledby="pracTitle" class="practices">
+<div class="wrap pr-grid">
+<div class="pr-intro">
+<p class="eyebrow">Yetkinlikler</p>
+<h2 class="h2" id="pracTitle">Beş uzmanlık alanı.</h2>
+<p class="lead">Her biri pazar araştırmasını, finansal analizi ve stratejiyi tek bir karar türüne odaklar; böylece tavsiyelerimiz bir yönetim kurulu, bir bakanlık ya da bir yatırım komitesi karşısında geçerliliğini korur.</p>
+<a class="link" href="/tr/pages/services">Tüm yetkinlikler <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-<div class="about-text">
-<h2>Heirstone Consulting &amp; Strategic Advisory Hakkında</h2>
-<p>Heirstone, gelişmekte olan ve yüksek büyüme potansiyelli pazarlarda uzmanlaşmış bir strateji danışmanlık firmasıdır — verinin sınırlı olduğu, kararların yüksek risk taşıdığı ve geleneksel danışmanlık yaklaşımlarının yetersiz kaldığı ortamlar.</p>
-<p>Dubai ve Kahire'deki ofisleriyle firma, önde gelen danışmanlık firmalarından gelen birikimi derin bölgesel bilgiyle birleştirir. İş hedefleri ile kurumsal gerçeklik arasındaki kesişimde çalışıyor; tek bir varlığın konumlandırılmasından ulusal dönüşüm programlarına kadar geniş bir alanda hizmet veriyoruz.</p>
-<a class="btn-primary" href="/tr/pages/about" style="margin-top:8px;">Bizi Daha Yakından Tanıyın</a>
+<div class="pr-cards">
+<a class="pr-card" href="/tr/pages/real-estate-strategy">
+<h3>Gayrimenkul Stratejisi</h3>
+<p>Neyin, nerede ve hangi sırayla inşa edileceği: en etkin ve verimli kullanım, fizibilite, geliştirme stratejisi ve yatırım yapılandırması.</p>
+<span class="pr-foot"><span class="pr-count">7 yetkinlik</span><span class="link">Keşfedin <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/tr/pages/tourism-development">
+<h3>Turizm Geliştirme</h3>
+<p>Yatırımcıların ve hükümetlerin harekete geçebileceği talep tahminleri, destinasyon konumlandırması ve ziyaretçi ekonomisi planları.</p>
+<span class="pr-foot"><span class="pr-count">4 yetkinlik</span><span class="link">Keşfedin <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/tr/pages/national-vision-strategy">
+<h3>Ulusal Vizyon Stratejisi</h3>
+<p>Programlara, ortaklıklara ve politikalara dönüştürülen ulusal hedefler; bunları hayata geçirecek kurumlar ve finansmanla birlikte.</p>
+<span class="pr-foot"><span class="pr-count">7 yetkinlik</span><span class="link">Keşfedin <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/tr/pages/special-projects">
+<h3>Özel Projeler</h3>
+<p>Tek bir varlığın ötesine geçen projeler: varlık değerlendirme, sınır ötesi genişleme, yatırımcı ilişkileri ve büyük etkinlikler.</p>
+<span class="pr-foot"><span class="pr-count">6 yetkinlik</span><span class="link">Keşfedin <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/tr/pages/digital-transformation">
+<h3>Dijital Dönüşüm</h3>
+<p>Gayrimenkul ve inşaat projelerinin karar hızında ilerlemesini sağlayan ruhsatlandırma, tapu sicili ve lisanslama hizmetleri.</p>
+<span class="pr-foot"><span class="pr-count">4 yetkinlik</span><span class="link">Keşfedin <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card pr-card--ink" href="/tr/pages/contact">
+<h3>Sorunuzun hangi alana girdiğinden emin değil misiniz?</h3>
+<p>Karşı karşıya olduğunuz kararı bize anlatın. Ona nasıl yaklaşacağımızı ve bu iş için doğru firma olup olmadığımızı size söyleyelim.</p>
+<span class="pr-foot"><span class="pr-count">Dubai · Kahire</span><span class="link link--light">İletişim <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
 </div>
 </div>
-<div class="profile-strip">
-<a class="profile-cover" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf"><img alt="Heirstone Consulting kurumsal profilinin kapağı" height="405" loading="lazy" src="/Media/docs/company-profile-cover.webp" width="720"/></a>
-<div class="profile-text">
+</section>
+<section aria-labelledby="exTitle" class="experience">
+<div class="wrap">
+<div class="ex-head">
+<div>
+<p class="eyebrow">Ekibin seçilmiş deneyimleri</p>
+<h2 class="h2" id="exTitle">Hükümetler, yatırımcılar ve geliştiriciler için projeler.</h2>
+<p class="lead">Heirstone ekibinin üyeleri tarafından yürütülen projeler. Müşteri adları, talepleri üzerine paylaşılmamaktadır.</p>
+</div>
+<div class="ex-ctrl">
+<button aria-label="Önceki" data-dir="-1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
+<button aria-label="Sonraki" data-dir="1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+<div class="ex-track" id="exTrack">
+<article class="ex-card">
+<p class="ex-client">Devlet kurumu · Mısır</p>
+<h3>Gize Piramitleri master planı</h3>
+<p class="ex-label">Proje</p>
+<p>Dünyanın en çok ziyaret edilen miras alanlarından birinin yanındaki karma kullanımlı bir proje için pazar değerlendirmesi ve geliştirme stratejisi: kaynak pazar ve mevsime göre talepten arazi kullanımına, boyutlandırmaya ve etaplamaya kadar.</p>
+<div class="ex-out"><p class="ex-label">Sonuç</p><p>Projenin konumlandırması, ticari stratejisi ve uzun vadeli ziyaretçi altyapısı planlaması için temel.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Ulusal hükümet · Sahra Altı Afrika</p>
+<h3>Ulusal turizm geliştirme programı</h3>
+<p class="ex-label">Proje</p>
+<p>Birden fazla destinasyon kümesini kapsayan turizm stratejisi: talep tahmini, konumlandırma, ürün geliştirme ve yatırım çekme.</p>
+<div class="ex-out"><p class="ex-label">Sonuç</p><p>Ulusal turizm geliştirme çerçevesi olarak benimsendi; politikaya ve özel yatırımlara yön veriyor.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Devlet destekli geliştirici · Suudi Arabistan</p>
+<h3>Mega proje stratejisi</h3>
+<p class="ex-label">Proje</p>
+<p>Büyük ölçekli devlet destekli projeler için konut stratejisi, markalı konut konumlandırması ve en etkin ve verimli kullanım analizi.</p>
+<div class="ex-out"><p class="ex-label">Sonuç</p><p>Devlet yatırımcısının hedefleriyle uyumlu proje konumlandırması ve ürün stratejisi.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Kurumsal yatırımcı · Mısır</p>
+<h3>Kahire ve Kuzey Sahil yatırım danışmanlığı</h3>
+<p class="ex-label">Proje</p>
+<p>Orta Asyalı bir kurumsal yatırımcı için pazar araştırması ve yatırım danışmanlığı: Büyük Kahire ve Ras El Hekma'da konut, ofis, perakende ve konaklama.</p>
+<div class="ex-out"><p class="ex-label">Sonuç</p><p>Bölgenin en hızlı büyüyen kıyı pazarlarından birine sınır ötesi sermaye yönlendirmek için bir yatırım çerçevesi.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Danışmanlık platformu · Mısır</p>
+<h3>Kahire ofis piyasası istihbaratı</h3>
+<p class="ex-label">Proje</p>
+<p>Büyük Kahire ofis piyasası için bir veri platformu tasarlayıp kurduk: kiralama, doluluk, fiyat kıyasları ve piyasa göstergeleri.</p>
+<div class="ex-out"><p class="ex-label">Sonuç</p><p>Yatırım kararlarına ve üç aylık raporlamaya dayanak olan kurumsal düzeyde piyasa istihbaratı.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Geliştirici · Sahra Altı Afrika</p>
+<h3>Verinin kıt olduğu yerde fizibilite</h3>
+<p class="ex-label">Proje</p>
+<p>Verinin kıt olduğu kentlerde büyük karma kullanımlı projeler için birincil araştırmaya dayalı en etkin ve verimli kullanım analizi ile fizibilite.</p>
+<div class="ex-out"><p class="ex-label">Sonuç</p><p>Geliştirme programlarını yeniden kurguladı ve gelişmekte olan pazar koşullarında sermaye yapılandırmasını destekledi.</p></div>
+</article>
+</div>
+<p class="ex-more"><a class="link" href="/tr/pages/experience">Tüm seçilmiş deneyimler <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></p>
+</div>
+</section>
+<section aria-labelledby="rsTitle" class="research">
+<div class="wrap">
+<div class="rs-head">
+<div>
+<p class="eyebrow">Araştırmalar</p>
+<h2 class="h2" id="rsTitle">Öğrendiklerimizi yayımlıyoruz.</h2>
+</div>
+<p class="lead">Gayrimenkul, altyapı ve turizm üzerine ücretsiz raporlar; her birinin kendi kıyaslaması var ve her rakamın kaynağı belirtiliyor. İngilizce, Fransızca, Rusça ve Arapça sürümler.</p>
+</div>
+<div class="rs-grid">
+<a class="rs-card" href="/tr/pages/report-airport-cities">
+<div class="rs-art"><img alt="Heirstone'un “Pistin getirisi” raporunun kapağı" height="1273" loading="lazy" src="/Media/reports/airport-cities.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Havalimanı Kentleri</p>
+<h3 class="rs-title">Pistin getirisi</h3>
+<p class="rs-stat"><span class="rp-n">11'e 1</span> 2025'te Dubai South'ta projeden daire satışlarının ikinci el satışlara değer bazında oranı: 0,91 milyar AED'ye karşılık 10,23 milyar AED</p>
+</div>
+</a>
+<a class="rs-card" href="/tr/pages/report-africa-construction-costs">
+<div class="rs-art"><img alt="Heirstone'un “Dokuz kent, tek metrekare” raporunun kapağı" height="1273" loading="lazy" src="/Media/reports/africa-construction-costs.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">İnşaat Maliyetleri ve Yapı Teknolojisi</p>
+<h3 class="rs-title">Dokuz kent, tek metrekare</h3>
+<p class="rs-stat"><span class="rp-n">2,9 kat</span> AECOM'un 2024/25 kılavuzunda Lagos'ta çok katlı bir konut bloğunun fiyatının Nairobi'dekine oranı: metrekare başına 2.330 ABD doları karşısında 796 ABD doları</p>
+</div>
+</a>
+<a class="rs-card" href="/tr/pages/report-africa-hotel-development">
+<div class="rs-art"><img alt="Heirstone'un “Kâğıt üzerinde oteller” raporunun kapağı" height="1273" loading="lazy" src="/Media/reports/africa-hotel-development.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Afrika'da Otel Geliştirme</p>
+<h3 class="rs-title">Kâğıt üzerinde oteller</h3>
+<p class="rs-stat"><span class="rp-n">123.846</span> zincirlerin Afrika geliştirme hattında 2026 başında 675 otelde bulunan oda; rekor ve bir yıl öncesinden %19 fazla</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<section aria-labelledby="pfTitle" class="profile">
+<div class="wrap">
+<div class="pf-card">
+<img alt="Heirstone Consulting kurumsal profilinin kapağı" height="405" loading="lazy" src="/Media/docs/company-profile-cover.webp" width="720"/>
+<div>
 <p class="eyebrow">Kurumsal profil</p>
-<h3>21 sayfada Heirstone</h3>
-<p>Beş uzmanlık alanımız, çalışma biçimimiz ve ekibimizin Orta Doğu, Afrika ve Orta Asya'daki seçilmiş deneyimleri. Ücretsiz indirilebilir; form doldurmanız gerekmez.</p>
-<div class="profile-actions">
-<a class="btn-primary" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">İngilizcesini indirin</a>
-<a class="btn-outline" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
+<h2 class="h2" id="pfTitle">21 sayfada Heirstone</h2>
+<p class="lead">Beş uzmanlık alanımız, çalışma biçimimiz ve ekibimizin Orta Doğu, Afrika ve Orta Asya'daki seçilmiş deneyimleri. Ücretsiz indirilebilir; form doldurmanız gerekmez.</p>
+<div class="pf-actions">
+<a class="btn" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">İngilizcesini indirin</a>
+<a class="btn btn--ghost" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
 </div>
-<p class="profile-meta">PDF · 21 sayfa · yaklaşık 8 MB</p>
+<p class="pf-meta">PDF · 21 sayfa · yaklaşık 8 MB</p>
 </div>
-</div>
-</section>
-<!-- WHO WE ADVISE + WHERE WE ARE DIFFERENT -->
-<section class="band">
-<div class="band-inner">
-<div class="band-col">
-<p class="eyebrow eyebrow-light">Kimler için çalışıyoruz</p>
-<h2>Araziyi, politikayı ve sermayeyi yönlendirenlere danışmanlık veriyoruz.</h2>
-<ul class="who">
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<path d="M3 21h18M4 21V8l8-5 8 5v13M8 21v-8h8v8M12 3v2"></path>
-</svg><div><h3>Hükümetler ve Kamu Kurumları</h3><p>Dönüştürücü ulusal kalkınma stratejileri tasarlayan ve uygulayan bakanlıklar, turizm kurumları ve planlama otoriteleri.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="9"></circle><path d="M12 7v10M8.5 9.5c0-1.1 1.4-2 3.5-2s3.5.9 3.5 2-1 1.8-3.5 2.3-3.5 1.2-3.5 2.2 1.4 2 3.5 2 3.5-.9 3.5-2"></path>
-</svg><div><h3>Devlet ve Kurumsal Yatırımcılar</h3><p>Bağımsız pazar istihbaratına ve yatırım stratejisine ihtiyaç duyan varlık fonları, emeklilik fonları ve kurumsal sermaye.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<path d="M2 21h20M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M10 7h4M10 11h4M10 15h4"></path>
-</svg><div><h3>Gayrimenkul Geliştiricileri</h3><p>Varlıkları ve master planları için en etkin ve verimli kullanım analizi, geliştirme stratejisi ve ticari fizibilite arayan her ölçekteki geliştiriciler.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="10"></circle><path d="M12 2v20M2 12h20M4.9 5.5c4.3 3 9.9 3 14.2 0M4.9 18.5c4.3-3 9.9-3 14.2 0"></path>
-</svg><div><h3>Çok Uluslu Şirketler</h3><p>MENA'ya giren ya da burada büyüyen uluslararası şirketler: pazara giriş, yer seçimi ve rakip analizi.</p></div></li>
-</ul>
-</div>
-<div class="band-col">
-<p class="eyebrow eyebrow-light">Heirstone'u farklı kılan</p>
-<h2>Geleneksel yaklaşımların yetersiz kaldığı pazarlar için tasarlandı.</h2>
-<ol class="why2">
-<li class="why2-item"><span class="why2-n">01</span><div><h3>Ortaklar tarafından yönetilen, doğası gereği çevik</h3><p>Kıdemli ortaklar her projede bizzat yer alır; on yılları bulan stratejik planlama birikimini işlem hızıyla birleştirir.</p></div></li>
-<li class="why2-item"><span class="why2-n">02</span><div><h3>Gelişmekte Olan Pazarlarda Uzmanlık</h3><p>Ticari muhakemenin ve sahadan elde edilen istihbaratın belirleyici olduğu, şeffaf olmayan ve verinin kıt olduğu pazarlar için tasarlandı.</p></div></li>
-<li class="why2-item"><span class="why2-n">03</span><div><h3>Devlet ve Kamu Danışmanlığı</h3><p>Devlet görevlendirmeleri, bakanlıklar ve ulusal dönüşüm programlarında doğrudan deneyim.</p></div></li>
-<li class="why2-item"><span class="why2-n">04</span><div><h3>Ticari Temelli Danışmanlık</h3><p>Yalnızca analitik açıdan sağlam değil; aynı zamanda ticari olarak uygulanabilir, sermaye bilinciyle şekillenmiş ve pazar gerçeklerine dayanan tavsiyeler.</p></div></li>
-<li class="why2-item"><span class="why2-n">05</span><div><h3>Bağımsız ve Çıkar Çatışmasından Uzak</h3><p>Bağımsız bir danışmanlık firması olarak tavsiyelerimiz müşteri odaklıdır; olgulara ve gerçek pazar dinamiklerine dayanır.</p></div></li>
-<li class="why2-item"><span class="why2-n">06</span><div><h3>Küresel Bakış Açısı</h3><p>Küresel pazarlardaki doğrudan danışmanlık deneyimiyle şekillenen sınır ötesi yatırım danışmanlığı.</p></div></li>
-</ol>
-</div>
-</div>
-</section>
-<!-- CONTACT -->
-<section class="contact-section">
-<div class="section-inner-narrow">
-<h2 class="section-title">Bize ulaşın</h2>
-<p class="section-lead">Vizyonunuzu güçlü bir stratejiye dönüştürün. Projenizi kıdemli bir ortakla görüşmek için bize ulaşın.</p>
-<div class="contact-inner">
-<div class="contact-info">
-<h3>İletişim Bilgileri</h3>
-<div class="contact-item">
-<svg aria-hidden="true" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-</svg>
-<span>Dubai, BAE · Kahire, Mısır</span>
-</div>
-<div class="contact-item">
-<svg aria-hidden="true" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-<a class="contact-link" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
-</div>
-</div>
-<form class="contact-form" novalidate="">
-<div class="form-field">
-<label for="cf-name">Ad Soyad</label>
-<input autocomplete="name" class="form-input" id="cf-name" name="name" required="" type="text"/>
-</div>
-<div class="form-field">
-<label for="cf-email">E-posta</label>
-<input autocomplete="email" class="form-input" id="cf-email" name="email" required="" type="email"/>
-</div>
-<div class="form-field">
-<label for="cf-subject">Konu</label>
-<input class="form-input" id="cf-subject" name="_subject" type="text"/>
-</div>
-<div class="form-field">
-<label for="cf-message">Mesaj</label>
-<textarea class="form-input" id="cf-message" name="message" required="" rows="4"></textarea>
-</div>
-<input aria-hidden="true" autocomplete="off" class="honeypot" name="_honey" tabindex="-1" type="text"/>
-<button class="btn-primary btn-submit" type="submit">Mesaj Gönder</button>
-<p aria-live="polite" class="form-status" role="status"></p>
-</form>
 </div>
 </div>
 </section>
 </main>
-<!-- FOOTER -->
+<section aria-labelledby="clTitle" class="closing">
+<div class="cl-inner">
+<h2 class="h2" id="clTitle">Bu pazarlarda vermeniz gereken bir karar mı var?</h2>
+<div>
+<p>Neye karar verdiğinizi ve ne zamana kadar karar vermeniz gerektiğini bize iletin. Kıdemli bir danışmanımız bir iş günü içinde yanıt verir.</p>
+<div class="cl-actions">
+<a class="btn btn--light" href="/tr/pages/contact">Bize ulaşın <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="link link--light" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
+</div>
+</div>
+</div>
+</section>
 <footer class="footer">
-<div style="max-width:1200px;margin:0 auto;">
-<div class="footer-grid">
-<div class="footer-brand">
-<h3>Heirstone Consulting &amp;<br/>Strategic Advisory</h3>
-<p>MENA, Afrika ve Orta Asya'daki gelişmekte olan ve yüksek büyüme potansiyelli pazarlar için uzman bir strateji danışmanlık firması.</p>
-<div class="footer-social">
-<a aria-label="LinkedIn'de Heirstone Consulting" href="https://www.linkedin.com/company/heirstoneconsulting" rel="noopener" target="_blank">
-<svg aria-hidden="true" fill="currentColor" height="16" viewbox="0 0 24 24" width="16">
-<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle>
-</svg>
+<div class="ft-wrap">
+<div class="ft-grid">
+<div>
+<a aria-label="Heirstone Consulting" class="ft-brand" href="/tr/">
+<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect height="34" stroke="#5D6E82" stroke-width="2" width="34" x="13" y="13"></rect><rect height="34" stroke="#5D6E82" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect></svg>
+<span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
 </a>
+<p class="ft-about">Orta Doğu, Afrika ve Orta Asya'da gayrimenkul, turizm ve ulusal kalkınma için strateji danışmanlığı.</p>
 </div>
+<div class="ft-col"><h4>Uzmanlık alanları</h4><a href="/tr/pages/real-estate-strategy">Gayrimenkul Stratejisi</a><a href="/tr/pages/tourism-development">Turizm Geliştirme</a><a href="/tr/pages/national-vision-strategy">Ulusal Vizyon Stratejisi</a><a href="/tr/pages/special-projects">Özel Projeler</a><a href="/tr/pages/digital-transformation">Dijital Dönüşüm</a></div>
+<div class="ft-col"><h4>Kurumsal</h4><a href="/tr/pages/about">Hakkımızda</a><a href="/tr/pages/experience">Deneyim</a><a href="/tr/pages/reports">Araştırmalar</a><a href="/tr/pages/insights">Analizler</a><a href="/tr/pages/services">Hizmetler</a><a href="/tr/pages/contact">İletişim</a></div>
+<div class="ft-col"><h4>Ofisler</h4><span>Dubai, Birleşik Arap Emirlikleri</span><span>Kahire, Mısır</span><a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a><a data-i18n-skip="" href="https://www.linkedin.com/company/heirstoneconsulting" rel="noopener" target="_blank">LinkedIn</a></div>
 </div>
-<div class="footer-col">
-<h4>Yetkinliklerimiz</h4>
-<ul>
-<li><a href="/tr/pages/real-estate-strategy">Gayrimenkul Stratejisi</a></li>
-<li><a href="/tr/pages/tourism-development">Turizm Geliştirme</a></li>
-<li><a href="/tr/pages/national-vision-strategy">Ulusal Vizyon Stratejisi</a></li>
-<li><a href="/tr/pages/special-projects">Özel Projeler</a></li><li><a href="/tr/pages/digital-transformation">Dijital Dönüşüm</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Kurumsal</h4>
-<ul>
-<li><a href="/tr/pages/about">Hakkımızda</a></li>
-<li><a href="/tr/pages/services">Hizmetler</a></li>
-<li><a href="/tr/pages/experience">Deneyim</a></li><li><a href="/tr/pages/reports">Raporlar</a></li><li><a href="/tr/pages/insights">Analizler</a></li>
-<li><a href="/tr/pages/contact">İletişim</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>İletişim Bilgileri</h4>
-<div class="footer-contact-item">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-</svg>
-<span>Dubai, BAE · Kahire, Mısır</span>
-</div>
-<div class="footer-contact-item">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-<a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
-</div>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026 Heirstone Consulting &amp; Strategic Advisory. Tüm hakları saklıdır.</p>
-</div>
+<div class="ft-base"><span data-i18n-skip="">© 2026 Heirstone Consulting L.L.C-FZ</span><span>26 dilde mevcut</span></div>
 </div>
 </footer>
 <script>window.HS_I18N={"Sending…": "Gönderiliyor…", "Message Sent": "Mesaj Gönderildi", "Thank you — your message has been sent. We typically respond within one business day.": "Teşekkür ederiz, mesajınız gönderildi. Genellikle bir iş günü içinde yanıt veriyoruz.", "Something went wrong and your message was not sent. Please email us directly at <a href=\"mailto:info@heirstoneconsulting.com\">info@heirstoneconsulting.com</a>.": "Bir sorun oluştu ve mesajınız gönderilemedi. Lütfen bize doğrudan <a href=\"mailto:info@heirstoneconsulting.com\">info@heirstoneconsulting.com</a> adresinden e-posta gönderin.", "Open menu": "Menüyü aç", "Close menu": "Menüyü kapat", "Language": "Dil"};</script><script src="/js/main.js"></script>
-<script src="/js/home.js"></script>
 </body>
 </html>

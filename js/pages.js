@@ -1,5 +1,5 @@
 /* ============================================
-   INNER PAGES — FAQ accordion + scroll reveals
+   INNER PAGES: FAQ accordion
    Loaded by every page in /pages after main.js.
    ============================================ */
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,15 +26,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  if (reducedMotion) return;
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(en => {
-      if (!en.isIntersecting) return;
-      en.target.classList.add('in');
-      io.unobserve(en.target);
-    });
-  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
-
-  document.querySelectorAll('.svc-item, .insight-card, .rel-head, .faq-inner > h2, .methodology-title, .page-prose h2, .about-page .about-inner')
-    .forEach(el => { el.classList.add('rv'); io.observe(el); });
 });

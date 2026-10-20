@@ -112,6 +112,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/v2.css" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preload" as="image" href="Media/hero-1.webp" />
   <!-- i18n:alternates -->
@@ -151,500 +152,306 @@
   <!-- NAVBAR -->
   <nav class="navbar">
     <a href="/" class="navbar-brand">
-      <svg class="navbar-logo" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="13" y="13" width="34" height="34" stroke="#8FA0B2" stroke-width="2"/>
-        <rect x="13" y="13" width="34" height="34" transform="rotate(45 30 30)" stroke="#8FA0B2" stroke-width="2"/>
-      </svg>
+      <svg class="navbar-logo" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="13" y="13" width="34" height="34" stroke="#8FA0B2" stroke-width="2"/><rect x="13" y="13" width="34" height="34" transform="rotate(45 30 30)" stroke="#8FA0B2" stroke-width="2"/></svg>
       <span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
     </a>
     <ul class="navbar-nav">
-      <li><a href="/">Home</a></li>
-      <li class="dropdown">
-        <a href="pages/services">Our Capabilities</a>
+      <li class="dropdown"><a href="pages/services">Capabilities</a>
         <div class="dropdown-menu">
           <a href="pages/real-estate-strategy">Real Estate Strategy</a>
           <a href="pages/tourism-development">Tourism Development</a>
           <a href="pages/national-vision-strategy">National Vision Strategy</a>
           <a href="pages/special-projects">Special Projects</a>
           <a href="pages/digital-transformation">Digital Transformation</a>
+          <a href="pages/services" class="dd-all">All capabilities</a>
         </div>
       </li>
-      <li><a href="pages/experience">Experience</a></li><li><a href="pages/reports">Reports</a></li><li><a href="pages/insights">Insights</a></li><li><a href="pages/about">About Us</a></li>
-      <li><a href="pages/services">Services</a></li>
-      <li><a href="pages/contact" class="navbar-cta">Contact</a></li>
+      <li><a href="pages/reports">Research</a></li>
+      <li><a href="pages/experience">Experience</a></li>
+      <li><a href="pages/about">About</a></li>
+      <li class="nav-cta"><a href="pages/contact" class="navbar-cta">Contact</a></li>
       <!-- i18n:switch --><li class="dropdown lang-switch" data-i18n-skip><button class="lang-btn" type="button" aria-haspopup="true" aria-label="Language"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span>EN</span></button><div class="dropdown-menu lang-menu"><a href="/" hreflang="en" lang="en" data-lang="en" aria-current="true">English</a><a href="/ar/" hreflang="ar" lang="ar" data-lang="ar">العربية</a><a href="/zh/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh">中文</a><a href="/ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a><a href="/ko/" hreflang="ko" lang="ko" data-lang="ko">한국어</a><a href="/id/" hreflang="id" lang="id" data-lang="id">Bahasa Indonesia</a><a href="/ms/" hreflang="ms" lang="ms" data-lang="ms">Bahasa Melayu</a><a href="/es/" hreflang="es" lang="es" data-lang="es">Español</a><a href="/fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a><a href="/it/" hreflang="it" lang="it" data-lang="it">Italiano</a><a href="/pt/" hreflang="pt" lang="pt" data-lang="pt">Português</a><a href="/el/" hreflang="el" lang="el" data-lang="el">Ελληνικά</a><a href="/de/" hreflang="de" lang="de" data-lang="de">Deutsch</a><a href="/nl/" hreflang="nl" lang="nl" data-lang="nl">Nederlands</a><a href="/fi/" hreflang="fi" lang="fi" data-lang="fi">Suomi</a><a href="/da/" hreflang="da" lang="da" data-lang="da">Dansk</a><a href="/no/" hreflang="no" lang="no" data-lang="no">Norsk</a><a href="/ro/" hreflang="ro" lang="ro" data-lang="ro">Română</a><a href="/pl/" hreflang="pl" lang="pl" data-lang="pl">Polski</a><a href="/sk/" hreflang="sk" lang="sk" data-lang="sk">Slovenčina</a><a href="/hr/" hreflang="hr" lang="hr" data-lang="hr">Hrvatski</a><a href="/sw/" hreflang="sw" lang="sw" data-lang="sw">Kiswahili</a><a href="/ru/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="/ky/" hreflang="ky" lang="ky" data-lang="ky">Кыргызча</a><a href="/kk/" hreflang="kk" lang="kk" data-lang="kk">Қазақша</a><a href="/tr/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a></div></li><!-- /i18n:switch -->
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
       <span></span><span></span><span></span>
     </button>
   </nav>
-
-  <!-- Mobile Nav -->
   <div class="mobile-nav" id="mobileNav">
-    <a href="/">Home</a>
-    <a href="pages/real-estate-strategy">Real Estate Strategy</a>
-    <a href="pages/tourism-development">Tourism Development</a>
-    <a href="pages/national-vision-strategy">National Vision Strategy</a>
-    <a href="pages/special-projects">Special Projects</a>
-    <a href="pages/digital-transformation">Digital Transformation</a>
+    <a href="pages/services">Capabilities</a>
+    <a href="pages/real-estate-strategy" class="mn-sub">Real Estate Strategy</a>
+    <a href="pages/tourism-development" class="mn-sub">Tourism Development</a>
+    <a href="pages/national-vision-strategy" class="mn-sub">National Vision Strategy</a>
+    <a href="pages/special-projects" class="mn-sub">Special Projects</a>
+    <a href="pages/digital-transformation" class="mn-sub">Digital Transformation</a>
+    <a href="pages/reports">Research</a>
     <a href="pages/experience">Experience</a>
-    <a href="pages/reports">Reports</a>
+    <a href="pages/about">About</a>
     <a href="pages/insights">Insights</a>
-    <a href="pages/about">About Us</a>
-    <a href="pages/services">Services</a>
     <a href="pages/contact">Contact</a>
     <!-- i18n:mswitch --><div class="mobile-lang" data-i18n-skip aria-label="Language"><a href="/" hreflang="en" lang="en" data-lang="en" aria-current="true">English</a><a href="/ar/" hreflang="ar" lang="ar" data-lang="ar">العربية</a><a href="/zh/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh">中文</a><a href="/ja/" hreflang="ja" lang="ja" data-lang="ja">日本語</a><a href="/ko/" hreflang="ko" lang="ko" data-lang="ko">한국어</a><a href="/id/" hreflang="id" lang="id" data-lang="id">Bahasa Indonesia</a><a href="/ms/" hreflang="ms" lang="ms" data-lang="ms">Bahasa Melayu</a><a href="/es/" hreflang="es" lang="es" data-lang="es">Español</a><a href="/fr/" hreflang="fr" lang="fr" data-lang="fr">Français</a><a href="/it/" hreflang="it" lang="it" data-lang="it">Italiano</a><a href="/pt/" hreflang="pt" lang="pt" data-lang="pt">Português</a><a href="/el/" hreflang="el" lang="el" data-lang="el">Ελληνικά</a><a href="/de/" hreflang="de" lang="de" data-lang="de">Deutsch</a><a href="/nl/" hreflang="nl" lang="nl" data-lang="nl">Nederlands</a><a href="/fi/" hreflang="fi" lang="fi" data-lang="fi">Suomi</a><a href="/da/" hreflang="da" lang="da" data-lang="da">Dansk</a><a href="/no/" hreflang="no" lang="no" data-lang="no">Norsk</a><a href="/ro/" hreflang="ro" lang="ro" data-lang="ro">Română</a><a href="/pl/" hreflang="pl" lang="pl" data-lang="pl">Polski</a><a href="/sk/" hreflang="sk" lang="sk" data-lang="sk">Slovenčina</a><a href="/hr/" hreflang="hr" lang="hr" data-lang="hr">Hrvatski</a><a href="/sw/" hreflang="sw" lang="sw" data-lang="sw">Kiswahili</a><a href="/ru/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="/ky/" hreflang="ky" lang="ky" data-lang="ky">Кыргызча</a><a href="/kk/" hreflang="kk" lang="kk" data-lang="kk">Қазақша</a><a href="/tr/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a></div><!-- /i18n:mswitch -->
   </div>
-
-  <main id="main">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-slides" aria-hidden="true">
-      <div class="hero-slide active" style="background-image:url('Media/hero-1.webp')"></div>
-      <div class="hero-slide" style="background-image:url('Media/hero-2.webp')"></div>
-      <div class="hero-slide" style="background-image:url('Media/hero-3.webp')"></div>
-      <div class="hero-slide" style="background-image:url('Media/hero-4.webp')"></div>
-    </div>
-    <div class="hero-overlay" aria-hidden="true"></div>
-    <div class="hero-content">
-      <p class="hero-kicker">Consulting &amp; Strategic Advisory — Dubai · Cairo</p>
-      <h1>A specialist advisory for opaque, ambitious markets.</h1>
-      <p>Heirstone advises sovereigns, institutional capital and developers where conventional consulting frameworks break down — translating national vision into commercially viable, executable strategy across MENA, Africa and Central Asia.</p>
-      <div class="hero-actions">
-        <a href="#services" class="btn-primary">Explore Our Expertise</a>
-        <a href="pages/contact" class="btn-secondary">Get in Touch</a>
-      </div>
-    </div>
-
-    <div class="hero-ticker" aria-hidden="true">
-      <div class="tick-track"><span class="tick-item">Highest &amp; Best Use</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">Feasibility Studies</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">Global Benchmarking</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">Market Research</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">Destination Strategy</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">National Vision</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">PPP Strategy</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">Airport &amp; Port Strategy</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">Branded Residences</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">Investment Attraction</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">Digital Permitting</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">Political Risk</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">Highest &amp; Best Use</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">Feasibility Studies</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">Global Benchmarking</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">Market Research</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">Destination Strategy</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">National Vision</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">PPP Strategy</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">Airport &amp; Port Strategy</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">Branded Residences</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">Investment Attraction</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">Digital Permitting</span><span class="tick-dot" aria-hidden="true"></span><span class="tick-item">Political Risk</span><span class="tick-dot" aria-hidden="true"></span></div>
-    </div>
-  </section>
-
-  <!-- FACTS BAR -->
-  <section class="facts-bar" aria-label="Firm overview">
-    <div class="facts-inner">
-      <div class="fact">
-        <span class="fact-label">Offices</span>
-        <span class="fact-value">Dubai · Cairo</span>
-      </div>
-      <div class="fact">
-        <span class="fact-label">Pedigree</span>
-        <span class="fact-value">Tier-1 advisory background</span>
-      </div>
-      <div class="fact">
-        <span class="fact-label">Mandate Profile</span>
-        <span class="fact-value">Sovereign &amp; institutional</span>
-      </div>
-      <div class="fact">
-        <span class="fact-label">Coverage</span>
-        <span class="fact-value">GCC · MENA · Africa · Central Asia</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- SELECTED ENGAGEMENTS (carousel) -->
-  <section class="eng" id="engagements" aria-roledescription="carousel" aria-label="Selected team experience">
-    <div class="eng-head">
+  <header class="hero" id="main">
+    <div class="hero-img" role="img" aria-label="Skyline of Nairobi"></div>
+    <div class="hero-body">
       <div>
-        <p class="eyebrow eyebrow-light">Selected team experience</p>
-        <h2>Mandates across sovereign, institutional and private capital.</h2>
+        <p class="eyebrow">Strategy advisory &middot; Dubai and Cairo</p>
+        <h1>Evidence-led strategy for real estate, tourism and national development.</h1>
+        <p class="hero-lead">We advise governments, sovereign and institutional investors and developers across the Middle East, Africa and Central Asia. Every mandate is led by senior advisers and built on primary research.</p>
+        <div class="hero-cta">
+          <a class="btn btn--light" href="pages/contact">Discuss a mandate <svg class="v2-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="link link--light" href="pages/reports">Read our research <svg class="v2-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
       </div>
-      <div class="eng-controls">
-        <span class="eng-count"><b class="eng-cur">01</b> / 07</span>
-        <button class="eng-btn eng-prev" type="button" aria-label="Previous engagement"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
-        <button class="eng-btn eng-next" type="button" aria-label="Next engagement"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-      </div>
+      <a class="latest" href="pages/report-airport-cities">
+        <img src="Media/reports/airport-cities.webp" alt="Cover of the Heirstone report The runway dividend" width="82" height="116" />
+        <div class="latest-text">
+          <p class="latest-label">Latest report</p>
+          <p class="latest-title">Airport Cities: The runway dividend</p>
+          <p class="latest-stat"><span class="rp-n">11 to 1</span> off-plan against resale apartment sales by value in Dubai South in 2025: AED 10.23 billion against AED 0.91 billion</p>
+        </div>
+      </a>
     </div>
-    <div class="eng-track" tabindex="0">
-      <article class="eng-card" role="group" aria-roledescription="slide" aria-label="1 of 7">
-        <div class="eng-media">
-          <img src="Media/exp-giza.webp" alt="Landmark heritage city district by the water" width="800" height="480" loading="eager" />
-          <span class="eng-num">01</span>
-        </div>
-        <div class="eng-body">
-          <p class="eng-label">Sovereign Authority — Egypt</p>
-          <h3>Pyramids of Giza Masterplan</h3>
-          <p class="eng-desc">Market assessment and development strategy for a landmark mixed-use development adjacent to one of the world's most visited heritage sites — demand projections by source market, purpose and seasonality, translated into land-use, component sizing and phasing.</p>
-          <p class="eng-outcome"><span>Outcome</span>Foundation for development positioning, commercial strategy and long-term visitor infrastructure planning at a national level.</p>
-        </div>
-      </article>
-      <article class="eng-card" role="group" aria-roledescription="slide" aria-label="2 of 7">
-        <div class="eng-media">
-          <img src="Media/exp-tourism.webp" alt="Street life in a Sub-Saharan African city" width="800" height="480" loading="eager" />
-          <span class="eng-num">02</span>
-        </div>
-        <div class="eng-body">
-          <p class="eng-label">National Government — Sub-Saharan Africa</p>
-          <h3>National Tourism Development Programme</h3>
-          <p class="eng-desc">End-to-end tourism strategy across multiple destination clusters — demand forecasting, destination positioning, product-development frameworks and investment-attraction strategy.</p>
-          <p class="eng-outcome"><span>Outcome</span>Established as the national tourism development framework, supporting policy alignment and private-sector investment mobilisation.</p>
-        </div>
-      </article>
-      <article class="eng-card" role="group" aria-roledescription="slide" aria-label="3 of 7">
-        <div class="eng-media">
-          <img src="Media/exp-giga.webp" alt="Contemporary glass tower development" width="800" height="480" loading="lazy" />
-          <span class="eng-num">03</span>
-        </div>
-        <div class="eng-body">
-          <p class="eng-label">Sovereign-Backed Developer — KSA</p>
-          <h3>Giga-Project Strategy &amp; Advisory</h3>
-          <p class="eng-desc">Residential strategy, branded-residences positioning and highest-and-best-use for large-scale government-backed developments within giga-project environments.</p>
-          <p class="eng-outcome"><span>Outcome</span>Informed development positioning and product strategy aligned with sovereign investment objectives.</p>
-        </div>
-      </article>
-      <article class="eng-card" role="group" aria-roledescription="slide" aria-label="4 of 7">
-        <div class="eng-media">
-          <img src="Media/exp-northcoast.webp" alt="Modern mixed-use towers on a coastal skyline" width="800" height="480" loading="lazy" />
-          <span class="eng-num">04</span>
-        </div>
-        <div class="eng-body">
-          <p class="eng-label">Institutional Investor — Egypt</p>
-          <h3>Cairo &amp; North Coast Investment Advisory</h3>
-          <p class="eng-desc">Multi-asset market research and investment advisory for a Central Asian institutional investor — residential, office, retail and hospitality across Greater Cairo and the North Coast / Ras El Hekma.</p>
-          <p class="eng-outcome"><span>Outcome</span>Structured investment framework enabling cross-border capital deployment into one of the region's fastest-growing mixed-use and coastal markets.</p>
-        </div>
-      </article>
-      <article class="eng-card" role="group" aria-roledescription="slide" aria-label="5 of 7">
-        <div class="eng-media">
-          <img src="Media/exp-office.webp" alt="Office towers in a central business district" width="800" height="480" loading="lazy" />
-          <span class="eng-num">05</span>
-        </div>
-        <div class="eng-body">
-          <p class="eng-label">Institutional / Advisory Platform — Egypt</p>
-          <h3>Cairo Office Market Intelligence Platform</h3>
-          <p class="eng-desc">Designed and built a real estate data platform covering the Greater Cairo office market — leasing data, occupancy rates, pricing benchmarks and market indicators.</p>
-          <p class="eng-outcome"><span>Outcome</span>Foundation for institutional-grade market intelligence and advisory, supporting investment decisions and quarterly market reporting.</p>
-        </div>
-      </article>
-      <article class="eng-card" role="group" aria-roledescription="slide" aria-label="6 of 7">
-        <div class="eng-media">
-          <img src="Media/exp-frontier.webp" alt="Aerial view of new infrastructure in a frontier market" width="800" height="480" loading="lazy" />
-          <span class="eng-num">06</span>
-        </div>
-        <div class="eng-body">
-          <p class="eng-label">Developer — Sub-Saharan Africa</p>
-          <h3>Frontier Market Feasibility &amp; HBU</h3>
-          <p class="eng-desc">Highest-and-best-use analysis and feasibility for large-scale mixed-use developments in data-scarce urban environments — primary research-driven.</p>
-          <p class="eng-outcome"><span>Outcome</span>Reframed development programmes and supported capital structuring and investment viability under frontier-market conditions.</p>
-        </div>
-      </article>
-      <article class="eng-card" role="group" aria-roledescription="slide" aria-label="7 of 7">
-        <div class="eng-media">
-          <img src="Media/exp-heritage.webp" alt="Aerial view of a historic urban quarter undergoing regeneration" width="800" height="480" loading="lazy" />
-          <span class="eng-num">07</span>
-        </div>
-        <div class="eng-body">
-          <p class="eng-label">Government &amp; Institutional — MENA</p>
-          <h3>Heritage &amp; Urban Regeneration Strategy</h3>
-          <p class="eng-desc">Heritage-site repurposing and urban-regeneration strategy — integrating tourism, retail and cultural uses into commercially viable development frameworks.</p>
-          <p class="eng-outcome"><span>Outcome</span>Balanced cultural preservation with revenue generation and long-term urban activation.</p>
-        </div>
-      </article>
-    </div>
-    <div class="eng-foot">
-      <div class="eng-progress" aria-hidden="true"><span></span></div>
-      <a href="pages/experience" class="eng-all">View all engagements <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
-  </section>
+  </header>
 
-  <!-- PRACTICES (explorer: tabs on desktop, accordion on mobile) -->
-  <section class="px-section" id="services">
-    <div class="px-head">
-      <p class="eyebrow">What we do</p>
-      <h2>Five practices. <em>One standard.</em></h2>
-      <p class="px-intro">Every engagement partner-led, evidence-based, and built for decision-makers who answer to boards, ministries and capital.</p>
-    </div>
-    <div class="px" role="tablist" aria-label="Practices">
-      <div class="px-item is-active">
-        <button class="px-tab" type="button" id="px-tab-0" role="tab" aria-selected="true" aria-expanded="true" aria-controls="px-panel-0">
-          <span class="px-n">01</span>
-          <span class="px-text"><span class="px-name">Real Estate Strategy</span><span class="px-tag">From parcel to portfolio.</span></span>
-          <span class="px-caret" aria-hidden="true"></span>
-        </button>
-        <div class="px-panel" id="px-panel-0" role="tabpanel" aria-labelledby="px-tab-0">
-          <div class="px-media"><img src="Media/cap-realestate.webp" alt="Aerial view of a mixed-use real estate masterplan development" width="640" height="384" loading="lazy" /></div>
-          <div class="px-copy">
-            <p class="px-lead">Unlocking value from land, assets and portfolios through market intelligence, financial modelling and development strategy.</p>
-            <p class="px-sublabel">7 capabilities</p>
-            <div class="px-chips"><a href="pages/highest-and-best-use" class="px-chip">Highest and Best Use Analysis</a><a href="pages/development-strategy" class="px-chip">Development Strategy &amp; Phasing</a><a href="pages/market-research" class="px-chip">Market Research &amp; Opportunity Identification</a><a href="pages/commercial-feasibility" class="px-chip">Commercial Feasibility Studies</a><a href="pages/investment-attraction" class="px-chip">Investment Attraction &amp; Structuring</a><a href="pages/competitive-benchmarking" class="px-chip">Competitive Benchmarking</a><a href="pages/branded-residences" class="px-chip">Branded Residences Strategy Advisory</a></div>
-            <a class="px-cta" href="pages/real-estate-strategy">Explore the practice <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          </div>
+  <main>
+    <section class="shelf" aria-labelledby="shelfTitle">
+      <div class="wrap">
+        <div class="shelf-head">
+          <h2 id="shelfTitle">32 independent reports on the markets we advise in, free to read.</h2>
+          <a class="link" href="pages/reports">Browse all research <svg class="v2-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="shelf-row">
+          <a class="cover" href="pages/report-airport-cities"><div class="cover-img"><img src="Media/reports/airport-cities.webp" alt="Cover of the Heirstone report The runway dividend" width="900" height="1273" loading="lazy" /></div><p class="cover-tag">Airport Cities</p><p class="cover-title">The runway dividend</p></a>
+          <a class="cover" href="pages/report-africa-construction-costs"><div class="cover-img"><img src="Media/reports/africa-construction-costs.webp" alt="Cover of the Heirstone report Nine cities, one square metre" width="900" height="1273" loading="lazy" /></div><p class="cover-tag">Construction Costs and Building Technology</p><p class="cover-title">Nine cities, one square metre</p></a>
+          <a class="cover" href="pages/report-airports-terminals"><div class="cover-img"><img src="Media/reports/airports-terminals.webp" alt="Cover of the Heirstone report The busiest hour" width="900" height="1273" loading="lazy" /></div><p class="cover-tag">Airports and Terminals</p><p class="cover-title">The busiest hour</p></a>
+          <a class="cover" href="pages/report-uzbekistan-new-cities"><div class="cover-img"><img src="Media/reports/uzbekistan-new-cities.webp" alt="Cover of the Heirstone report The daytime city" width="900" height="1273" loading="lazy" /></div><p class="cover-tag">New Cities in Uzbekistan</p><p class="cover-title">The daytime city</p></a>
+          <a class="cover" href="pages/report-africa-real-estate-capital"><div class="cover-img"><img src="Media/reports/africa-real-estate-capital.webp" alt="Cover of the Heirstone report The money is already here" width="900" height="1273" loading="lazy" /></div><p class="cover-tag">Real Estate Capital in Africa</p><p class="cover-title">The money is already here</p></a>
+          <a class="cover" href="pages/report-branded-residences"><div class="cover-img"><img src="Media/reports/branded-residences.webp" alt="Cover of the Heirstone report Who keeps the premium" width="900" height="1273" loading="lazy" /></div><p class="cover-tag">Branded Residences</p><p class="cover-title">Who keeps the premium</p></a>
         </div>
       </div>
-      <div class="px-item">
-        <button class="px-tab" type="button" id="px-tab-1" role="tab" aria-selected="false" aria-expanded="false" aria-controls="px-panel-1">
-          <span class="px-n">02</span>
-          <span class="px-text"><span class="px-name">Tourism &amp; Destinations</span><span class="px-tag">Destinations that compete globally.</span></span>
-          <span class="px-caret" aria-hidden="true"></span>
-        </button>
-        <div class="px-panel" id="px-panel-1" role="tabpanel" aria-labelledby="px-tab-1">
-          <div class="px-media"><img src="Media/cap-tourism.webp" alt="Beachfront tourism destination with resorts and a marina" width="640" height="384" loading="lazy" /></div>
-          <div class="px-copy">
-            <p class="px-lead">Competitive, investable destination strategies — demand forecasting, product development and positioning in coherent visitor-economy frameworks.</p>
-            <p class="px-sublabel">4 capabilities</p>
-            <div class="px-chips"><a href="pages/destination-strategy" class="px-chip">Destination Strategy and Positioning</a><a href="pages/tourism-market-research" class="px-chip">Tourism Market Research and Demand Forecasting</a><a href="pages/visitor-economy" class="px-chip">Visitor Economy Strategy</a><a href="pages/airport-port-strategy" class="px-chip">Airport, Port &amp; Gateway Commercial Strategy</a></div>
-            <a class="px-cta" href="pages/tourism-development">Explore the practice <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          </div>
-        </div>
-      </div>
-      <div class="px-item">
-        <button class="px-tab" type="button" id="px-tab-2" role="tab" aria-selected="false" aria-expanded="false" aria-controls="px-panel-2">
-          <span class="px-n">03</span>
-          <span class="px-text"><span class="px-name">National Vision &amp; Sector Strategy</span><span class="px-tag">Vision, made executable.</span></span>
-          <span class="px-caret" aria-hidden="true"></span>
-        </button>
-        <div class="px-panel" id="px-panel-2" role="tabpanel" aria-labelledby="px-tab-2">
-          <div class="px-media"><img src="Media/cap-national.webp" alt="Modern national capital skyline at dawn" width="640" height="384" loading="lazy" /></div>
-          <div class="px-copy">
-            <p class="px-lead">Translating national ambition into structured, actionable programmes — aligning policy, investment and delivery mechanisms.</p>
-            <p class="px-sublabel">7 capabilities</p>
-            <div class="px-chips"><a href="pages/national-vision" class="px-chip">National Vision &amp; Strategic Frameworks</a><a href="pages/sector-transformation" class="px-chip">Sector Transformation Advisory</a><a href="pages/ppp-strategy" class="px-chip">Public-Private Partnership (PPP) Strategy</a><a href="pages/policy-framework" class="px-chip">Policy &amp; Institutional Framework Advisory</a><a href="pages/global-benchmarking" class="px-chip">Global Benchmarking of National Transformation Programs</a><a href="pages/monitoring-frameworks" class="px-chip">Monitoring &amp; Adjustment Frameworks</a><a href="pages/political-risk-assessment" class="px-chip">Political Risk &amp; Investment Climate Assessment</a></div>
-            <a class="px-cta" href="pages/national-vision-strategy">Explore the practice <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          </div>
-        </div>
-      </div>
-      <div class="px-item">
-        <button class="px-tab" type="button" id="px-tab-3" role="tab" aria-selected="false" aria-expanded="false" aria-controls="px-panel-3">
-          <span class="px-n">04</span>
-          <span class="px-text"><span class="px-name">Special Projects &amp; Strategic Advisory</span><span class="px-tag">Bespoke mandates, complex scopes.</span></span>
-          <span class="px-caret" aria-hidden="true"></span>
-        </button>
-        <div class="px-panel" id="px-panel-3" role="tabpanel" aria-labelledby="px-tab-3">
-          <div class="px-media"><img src="Media/cap-special.webp" alt="Iconic large-scale landmark megaproject under a dramatic sky" width="640" height="384" loading="lazy" /></div>
-          <div class="px-copy">
-            <p class="px-lead">From sovereign asset monetisation to cross-border expansion and mega-event strategy — where conventional approaches are insufficient.</p>
-            <p class="px-sublabel">6 capabilities</p>
-            <div class="px-chips"><a href="pages/asset-monetization" class="px-chip">Large-Scale Asset Monetization Strategy</a><a href="pages/destination-brand" class="px-chip">Destination Brand Development Advisory</a><a href="pages/investor-outreach" class="px-chip">Investor Outreach &amp; Engagement Planning</a><a href="pages/cross-border-expansion" class="px-chip">Cross-Border Expansion Advisory</a><a href="pages/innovation-ecosystem" class="px-chip">Innovation Ecosystem Strategy</a><a href="pages/sports-culture" class="px-chip">Sports, Culture &amp; Mega-Event Strategy</a></div>
-            <a class="px-cta" href="pages/special-projects">Explore the practice <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          </div>
-        </div>
-      </div>
-      <div class="px-item">
-        <button class="px-tab" type="button" id="px-tab-4" role="tab" aria-selected="false" aria-expanded="false" aria-controls="px-panel-4">
-          <span class="px-n">05</span>
-          <span class="px-text"><span class="px-name">Digital Transformation</span><span class="px-tag">Services, digitised end to end.</span></span>
-          <span class="px-caret" aria-hidden="true"></span>
-        </button>
-        <div class="px-panel" id="px-panel-4" role="tabpanel" aria-labelledby="px-tab-4">
-          <div class="px-media"><img src="Media/cap-digital.webp" alt="Government digital operations centre with city planning and permit dashboards" width="640" height="384" loading="lazy" /></div>
-          <div class="px-copy">
-            <p class="px-lead">Digitising the government services real estate and construction depend on — permitting, land registry, licensing and asset data — so capital moves at the speed of the decision.</p>
-            <p class="px-sublabel">4 capabilities</p>
-            <div class="px-chips"><a href="pages/digital-permitting" class="px-chip">Digital Permitting &amp; Construction Licensing</a><a href="pages/land-registry-digitization" class="px-chip">Land Registry &amp; Property Transaction Digitization</a><a href="pages/digital-service-design" class="px-chip">Digital Service Design &amp; Citizen Experience</a><a href="pages/bim-digital-twins" class="px-chip">BIM, Digital Twins &amp; Asset Information Standards</a></div>
-            <a class="px-cta" href="pages/digital-transformation">Explore the practice <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ENGAGEMENT MODEL (timeline) -->
-  <section class="tl-section">
-    <div class="tl-head">
-      <p class="eyebrow">How we work</p>
-      <h2>A four-step engagement model.</h2>
-      <p>No off-the-shelf frameworks. Every mandate is shaped to context, objectives and constraints — and led from the front by senior partners.</p>
-    </div>
-    <div class="tl-wrap">
-      <span class="tl-line" aria-hidden="true"><span class="tl-fill"></span></span>
-      <ol class="tl">
-      <li class="tl-step">
-        <span class="tl-dot" aria-hidden="true"></span>
-        <span class="tl-n">01</span>
-        <h3>Understand</h3>
-        <p>Intensive diagnostic. We immerse in the client's context, market environment and strategic objectives — and challenge the brief where it needs challenging.</p>
-      </li>
-      <li class="tl-step">
-        <span class="tl-dot" aria-hidden="true"></span>
-        <span class="tl-n">02</span>
-        <h3>Analyse</h3>
-        <p>Rigorous quantitative and qualitative analysis — market research, financial modelling, benchmarking and stakeholder mapping — to generate evidence-based insight.</p>
-      </li>
-      <li class="tl-step">
-        <span class="tl-dot" aria-hidden="true"></span>
-        <span class="tl-n">03</span>
-        <h3>Strategise</h3>
-        <p>Analysis becomes strategy. Phased recommendations, prioritised initiatives and a clear-eyed view of risk, sequencing and capital implications.</p>
-      </li>
-      <li class="tl-step">
-        <span class="tl-dot" aria-hidden="true"></span>
-        <span class="tl-n">04</span>
-        <h3>Deliver</h3>
-        <p>Outputs designed for decision-makers — concise, board-ready and built to be presented at sovereign, ministerial and investment-committee level.</p>
-      </li>
-      </ol>
-    </div>
-  </section>
-  <!-- ABOUT SECTION -->
-  <section class="about-section">
-    <div class="about-inner">
-      <div class="about-image">
-        <img src="Media/about.webp" alt="Aerial view of a developing city district with new towers and infrastructure" width="1400" height="801" loading="lazy" />
-      </div>
-      <div class="about-text">
-        <h2>About Heirstone Consulting &amp; Strategic Advisory</h2>
-        <p>Heirstone is a specialist strategy advisory for frontier and high-growth markets — the environments where data is limited, decisions are high-stakes, and conventional consulting frameworks break down.</p>
-        <p>With offices in Dubai and Cairo, the firm pairs Tier-1 advisory pedigree with deep regional knowledge. We work at the intersection of business ambition and institutional reality, and our remit spans single-asset positioning to national transformation programmes.</p>
-        <a href="pages/about" class="btn-primary" style="margin-top:8px;">Learn More About Us</a>
-      </div>
-    </div>
-      <div class="profile-strip">
-        <a class="profile-cover" href="Media/docs/heirstone-consulting-company-profile-en.pdf" download="Heirstone Consulting - Company Profile - EN.pdf"><img src="Media/docs/company-profile-cover.webp" alt="Cover of the Heirstone Consulting company profile" width="720" height="405" loading="lazy" /></a>
-        <div class="profile-text">
-          <p class="eyebrow">Company profile</p>
-          <h3>Heirstone in 21 pages</h3>
-          <p>Our five practices, how we work and selected team experience across the Middle East, Africa and Central Asia. Free to download, with no form to fill in.</p>
-          <div class="profile-actions">
-            <a class="btn-primary" href="Media/docs/heirstone-consulting-company-profile-en.pdf" download="Heirstone Consulting - Company Profile - EN.pdf">Download in English</a>
-            <a class="btn-outline" href="Media/docs/heirstone-consulting-company-profile-fr.pdf" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" hreflang="fr" lang="fr" data-i18n-skip>Télécharger en français</a>
+    <section class="principles" aria-labelledby="prTitle">
+      <div class="wrap">
+        <p class="eyebrow">How we work</p>
+        <h2 class="h2" id="prTitle">Four things that shape every engagement.</h2>
+        <div class="p-grid">
+          <div class="p-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+            <h3>Primary research first</h3>
+            <p>Where data is thin, we collect it: surveys, interviews, site visits and transaction records, before any model is built.</p>
           </div>
-          <p class="profile-meta">PDF &middot; 21 pages &middot; about 8 MB</p>
-        </div>
-      </div>
-  </section>
-
-  <!-- WHO WE ADVISE + WHERE WE ARE DIFFERENT -->
-  <section class="band">
-    <div class="band-inner">
-      <div class="band-col">
-        <p class="eyebrow eyebrow-light">Whom we work for</p>
-        <h2>Advising those who allocate land, policy and capital.</h2>
-        <ul class="who">
-          <li class="who-item"><svg class="who-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="M3 21h18M4 21V8l8-5 8 5v13M8 21v-8h8v8M12 3v2"/>
-        </svg><div><h3>Governments &amp; Public Authorities</h3><p>National ministries, tourism boards and planning authorities designing and executing transformative national-development strategies.</p></div></li>
-          <li class="who-item"><svg class="who-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <circle cx="12" cy="12" r="9"/><path d="M12 7v10M8.5 9.5c0-1.1 1.4-2 3.5-2s3.5.9 3.5 2-1 1.8-3.5 2.3-3.5 1.2-3.5 2.2 1.4 2 3.5 2 3.5-.9 3.5-2"/>
-        </svg><div><h3>Sovereign &amp; Institutional Investors</h3><p>Sovereign wealth funds, pension funds and institutional capital requiring independent market intelligence and investment strategy.</p></div></li>
-          <li class="who-item"><svg class="who-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="M2 21h20M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M10 7h4M10 11h4M10 15h4"/>
-        </svg><div><h3>Real Estate Developers</h3><p>Developers of all scales seeking highest-and-best-use, development strategy and commercial feasibility for assets and master-plans.</p></div></li>
-          <li class="who-item"><svg class="who-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20M4.9 5.5c4.3 3 9.9 3 14.2 0M4.9 18.5c4.3-3 9.9-3 14.2 0"/>
-        </svg><div><h3>Multinational Corporations</h3><p>International corporates entering or expanding in MENA — market entry, site selection and competitive benchmarking.</p></div></li>
-        </ul>
-      </div>
-      <div class="band-col">
-        <p class="eyebrow eyebrow-light">Where Heirstone is different</p>
-        <h2>Built for markets where frameworks break down.</h2>
-        <ol class="why2">
-          <li class="why2-item"><span class="why2-n">01</span><div><h3>Partner-Led, Agile by Design</h3><p>Senior partners are actively involved in every engagement — bringing decades of strategic planning expertise, and moving at deal speed.</p></div></li>
-          <li class="why2-item"><span class="why2-n">02</span><div><h3>Frontier-Market Expertise</h3><p>Built for opaque, data-scarce markets — where commercial judgement and on-the-ground intelligence are decisive.</p></div></li>
-          <li class="why2-item"><span class="why2-n">03</span><div><h3>Sovereign &amp; Government Advisory</h3><p>Direct experience across sovereign mandates, ministries and national transformation programmes.</p></div></li>
-          <li class="why2-item"><span class="why2-n">04</span><div><h3>Commercially Grounded Counsel</h3><p>Advice that is not just analytically robust but commercially viable, capital-aware and market-informed.</p></div></li>
-          <li class="why2-item"><span class="why2-n">05</span><div><h3>Independent &amp; Conflict-Free</h3><p>As an independent advisory, our counsel is client-first and grounded in facts and real market dynamics.</p></div></li>
-          <li class="why2-item"><span class="why2-n">06</span><div><h3>Globally Informed Perspective</h3><p>Cross-border investment advisory shaped by direct consulting experience across global markets.</p></div></li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact-section">
-    <div class="section-inner-narrow">
-      <h2 class="section-title">Get in Touch</h2>
-      <p class="section-lead">Transform your vision into a compelling strategy. Reach out to discuss your mandate with a senior partner.</p>
-      <div class="contact-inner">
-        <div class="contact-info">
-          <h3>Contact Information</h3>
-          <div class="contact-item">
-            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-            </svg>
-            <span>Dubai, UAE · Cairo, Egypt</span>
+          <div class="p-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+            <h3>Senior advisers throughout</h3>
+            <p>The people who scope a mandate stay on it, from the first workshop to the board presentation.</p>
           </div>
-          <div class="contact-item">
-            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-            </svg>
-            <a class="contact-link" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
+          <div class="p-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7h6l-3-7zM19 7l-3 7h6l-3-7zM8 21h8"/></svg>
+            <h3>Independent advice</h3>
+            <p>We have no conflicts of interest, so our recommendations follow the evidence and the client's objectives.</p>
+          </div>
+          <div class="p-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <h3>Regional depth</h3>
+            <p>Offices in Dubai and Cairo, and work across the Gulf, North and Sub-Saharan Africa and Central Asia.</p>
           </div>
         </div>
-        <form class="contact-form" novalidate>
-          <div class="form-field">
-            <label for="cf-name">Name</label>
-            <input type="text" id="cf-name" name="name" class="form-input" autocomplete="name" required />
-          </div>
-          <div class="form-field">
-            <label for="cf-email">Email</label>
-            <input type="email" id="cf-email" name="email" class="form-input" autocomplete="email" required />
-          </div>
-          <div class="form-field">
-            <label for="cf-subject">Subject</label>
-            <input type="text" id="cf-subject" name="_subject" class="form-input" />
-          </div>
-          <div class="form-field">
-            <label for="cf-message">Message</label>
-            <textarea id="cf-message" name="message" class="form-input" rows="4" required></textarea>
-          </div>
-          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          <button type="submit" class="btn-primary btn-submit">Send Message</button>
-          <p class="form-status" role="status" aria-live="polite"></p>
-        </form>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <section class="practices" aria-labelledby="pracTitle">
+      <div class="wrap pr-grid">
+        <div class="pr-intro">
+          <p class="eyebrow">Capabilities</p>
+          <h2 class="h2" id="pracTitle">Five practices.</h2>
+          <p class="lead">Each brings market research, financial analysis and strategy to one kind of decision, so the advice holds up in front of a board, a ministry or an investment committee.</p>
+          <a class="link" href="pages/services">All capabilities <svg class="v2-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="pr-cards">
+          <a class="pr-card" href="pages/real-estate-strategy">
+            <h3>Real Estate Strategy</h3>
+            <p>What to build, where and in what order: highest and best use, feasibility, development strategy and investment structuring.</p>
+            <span class="pr-foot"><span class="pr-count">7 capabilities</span><span class="link">Explore <svg class="v2-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          </a>
+          <a class="pr-card" href="pages/tourism-development">
+            <h3>Tourism Development</h3>
+            <p>Demand forecasts, destination positioning and visitor-economy plans that investors and governments can act on.</p>
+            <span class="pr-foot"><span class="pr-count">4 capabilities</span><span class="link">Explore <svg class="v2-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          </a>
+          <a class="pr-card" href="pages/national-vision-strategy">
+            <h3>National Vision Strategy</h3>
+            <p>National ambitions turned into programmes, partnerships and policy, with the institutions and funding to deliver them.</p>
+            <span class="pr-foot"><span class="pr-count">7 capabilities</span><span class="link">Explore <svg class="v2-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          </a>
+          <a class="pr-card" href="pages/special-projects">
+            <h3>Special Projects</h3>
+            <p>Mandates beyond a single asset: asset monetisation, cross-border expansion, investor outreach and major events.</p>
+            <span class="pr-foot"><span class="pr-count">6 capabilities</span><span class="link">Explore <svg class="v2-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          </a>
+          <a class="pr-card" href="pages/digital-transformation">
+            <h3>Digital Transformation</h3>
+            <p>Permitting, land registry and licensing services that let real estate and construction projects move at the speed of the decision.</p>
+            <span class="pr-foot"><span class="pr-count">4 capabilities</span><span class="link">Explore <svg class="v2-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          </a>
+          <a class="pr-card pr-card--ink" href="pages/contact">
+            <h3>Not sure where your question fits?</h3>
+            <p>Tell us the decision you face. We will tell you how we would approach it, and whether we are the right firm for it.</p>
+            <span class="pr-foot"><span class="pr-count">Dubai &middot; Cairo</span><span class="link link--light">Contact <svg class="v2-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" aria-labelledby="exTitle">
+      <div class="wrap">
+        <div class="ex-head">
+          <div>
+            <p class="eyebrow">Selected team experience</p>
+            <h2 class="h2" id="exTitle">Work for governments, investors and developers.</h2>
+            <p class="lead">Mandates delivered by members of the Heirstone team. Client names are withheld at their request.</p>
+          </div>
+          <div class="ex-ctrl">
+            <button type="button" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+            <button type="button" data-dir="1" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </div>
+        </div>
+        <div class="ex-track" id="exTrack">
+          <article class="ex-card">
+            <p class="ex-client">Sovereign authority · Egypt</p>
+            <h3>Pyramids of Giza masterplan</h3>
+            <p class="ex-label">Mandate</p>
+            <p>Market assessment and development strategy for a mixed-use development beside one of the world's most visited heritage sites, from demand by source market and season to land use, sizing and phasing.</p>
+            <div class="ex-out"><p class="ex-label">Outcome</p><p>The basis for the project's positioning, commercial strategy and long-term visitor infrastructure planning.</p></div>
+          </article>
+          <article class="ex-card">
+            <p class="ex-client">National government · Sub-Saharan Africa</p>
+            <h3>National tourism development programme</h3>
+            <p class="ex-label">Mandate</p>
+            <p>Tourism strategy across several destination clusters: demand forecasting, positioning, product development and investment attraction.</p>
+            <div class="ex-out"><p class="ex-label">Outcome</p><p>Adopted as the national tourism development framework, guiding policy and private investment.</p></div>
+          </article>
+          <article class="ex-card">
+            <p class="ex-client">Sovereign-backed developer · Saudi Arabia</p>
+            <h3>Giga-project strategy</h3>
+            <p class="ex-label">Mandate</p>
+            <p>Residential strategy, branded-residence positioning and highest and best use for large government-backed developments.</p>
+            <div class="ex-out"><p class="ex-label">Outcome</p><p>Development positioning and product strategy aligned with the sovereign investor's objectives.</p></div>
+          </article>
+          <article class="ex-card">
+            <p class="ex-client">Institutional investor · Egypt</p>
+            <h3>Cairo and North Coast investment advisory</h3>
+            <p class="ex-label">Mandate</p>
+            <p>Market research and investment advice for a Central Asian institutional investor across residential, office, retail and hospitality in Greater Cairo and Ras El Hekma.</p>
+            <div class="ex-out"><p class="ex-label">Outcome</p><p>An investment framework for deploying cross-border capital into one of the region's fastest-growing coastal markets.</p></div>
+          </article>
+          <article class="ex-card">
+            <p class="ex-client">Advisory platform · Egypt</p>
+            <h3>Cairo office market intelligence</h3>
+            <p class="ex-label">Mandate</p>
+            <p>Designed and built a data platform for the Greater Cairo office market: leasing, occupancy, pricing benchmarks and market indicators.</p>
+            <div class="ex-out"><p class="ex-label">Outcome</p><p>Institutional-grade market intelligence behind investment decisions and quarterly reporting.</p></div>
+          </article>
+          <article class="ex-card">
+            <p class="ex-client">Developer · Sub-Saharan Africa</p>
+            <h3>Feasibility where data is scarce</h3>
+            <p class="ex-label">Mandate</p>
+            <p>Highest and best use and feasibility for large mixed-use developments in data-scarce cities, built on primary research.</p>
+            <div class="ex-out"><p class="ex-label">Outcome</p><p>Reshaped development programmes and supported capital structuring under frontier-market conditions.</p></div>
+          </article>
+        </div>
+        <p class="ex-more"><a class="link" href="pages/experience">All selected experience <svg class="v2-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+      </div>
+    </section>
+
+    <section class="research" aria-labelledby="rsTitle">
+      <div class="wrap">
+        <div class="rs-head">
+          <div>
+            <p class="eyebrow">Research</p>
+            <h2 class="h2" id="rsTitle">We publish what we learn.</h2>
+          </div>
+          <p class="lead">Free reports on real estate, infrastructure and tourism, each with its own benchmark and every figure referenced. Editions in English, French, Russian and Arabic.</p>
+        </div>
+        <div class="rs-grid">
+          <a class="rs-card" href="pages/report-airport-cities">
+            <div class="rs-art"><img src="Media/reports/airport-cities.webp" alt="Cover of the Heirstone report The runway dividend" width="900" height="1273" loading="lazy" /></div>
+            <div class="rs-body">
+              <p class="rs-tag">Airport Cities</p>
+              <h3 class="rs-title">The runway dividend</h3>
+              <p class="rs-stat"><span class="rp-n">11 to 1</span> off-plan against resale apartment sales by value in Dubai South in 2025: AED 10.23 billion against AED 0.91 billion</p>
+            </div>
+          </a>
+          <a class="rs-card" href="pages/report-africa-construction-costs">
+            <div class="rs-art"><img src="Media/reports/africa-construction-costs.webp" alt="Cover of the Heirstone report Nine cities, one square metre" width="900" height="1273" loading="lazy" /></div>
+            <div class="rs-body">
+              <p class="rs-tag">Construction Costs and Building Technology</p>
+              <h3 class="rs-title">Nine cities, one square metre</h3>
+              <p class="rs-stat"><span class="rp-n">2.9x</span> AECOM's price for a multi-storey residential block in Lagos against Nairobi on its 2024/25 guide: US$2,330 against US$796 per m²</p>
+            </div>
+          </a>
+          <a class="rs-card" href="pages/report-africa-hotel-development">
+            <div class="rs-art"><img src="Media/reports/africa-hotel-development.webp" alt="Cover of the Heirstone report Hotels on paper" width="900" height="1273" loading="lazy" /></div>
+            <div class="rs-body">
+              <p class="rs-tag">Hotel Development in Africa</p>
+              <h3 class="rs-title">Hotels on paper</h3>
+              <p class="rs-stat"><span class="rp-n">123,846</span> rooms in 675 hotels in the chains' African development pipeline in early 2026, a record and 19% more than a year earlier</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile" aria-labelledby="pfTitle">
+      <div class="wrap">
+        <div class="pf-card">
+          <img src="Media/docs/company-profile-cover.webp" alt="Cover of the Heirstone Consulting company profile" width="720" height="405" loading="lazy" />
+          <div>
+            <p class="eyebrow">Company profile</p>
+            <h2 class="h2" id="pfTitle">Heirstone in 21 pages</h2>
+            <p class="lead">Our five practices, how we work and selected team experience across the Middle East, Africa and Central Asia. Free to download, with no form to fill in.</p>
+            <div class="pf-actions">
+              <a class="btn" href="Media/docs/heirstone-consulting-company-profile-en.pdf" download="Heirstone Consulting - Company Profile - EN.pdf">Download in English</a>
+              <a class="btn btn--ghost" href="Media/docs/heirstone-consulting-company-profile-fr.pdf" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" hreflang="fr" lang="fr" data-i18n-skip>Télécharger en français</a>
+            </div>
+            <p class="pf-meta">PDF &middot; 21 pages &middot; about 8 MB</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- FOOTER -->
+  <section class="closing" aria-labelledby="clTitle">
+    <div class="cl-inner">
+      <h2 class="h2" id="clTitle">Have a decision to make in these markets?</h2>
+      <div>
+        <p>Tell us what you are deciding and by when. A senior adviser replies within one business day.</p>
+        <div class="cl-actions">
+          <a class="btn btn--light" href="pages/contact">Contact us <svg class="v2-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="link link--light" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
-    <div style="max-width:1200px;margin:0 auto;">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <h3>Heirstone Consulting &<br>Strategic Advisory</h3>
-          <p>A specialist strategy advisory for frontier and high-growth markets across MENA, Africa and Central Asia.</p>
-          <div class="footer-social">
-            <a href="https://www.linkedin.com/company/heirstoneconsulting" target="_blank" rel="noopener" aria-label="Heirstone Consulting on LinkedIn">
-              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" aria-hidden="true">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
-              </svg>
-            </a>
-          </div>
+    <div class="ft-wrap">
+      <div class="ft-grid">
+        <div>
+          <a class="ft-brand" href="/" aria-label="Heirstone Consulting">
+            <svg class="navbar-logo" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="13" y="13" width="34" height="34" stroke="#5D6E82" stroke-width="2"/><rect x="13" y="13" width="34" height="34" transform="rotate(45 30 30)" stroke="#5D6E82" stroke-width="2"/></svg>
+            <span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
+          </a>
+          <p class="ft-about">Strategy advisory for real estate, tourism and national development across the Middle East, Africa and Central Asia.</p>
         </div>
-        <div class="footer-col">
-          <h4>Our Capabilities</h4>
-          <ul>
-            <li><a href="pages/real-estate-strategy">Real Estate Strategy</a></li>
-            <li><a href="pages/tourism-development">Tourism Development</a></li>
-            <li><a href="pages/national-vision-strategy">National Vision Strategy</a></li>
-            <li><a href="pages/special-projects">Special Projects</a></li><li><a href="pages/digital-transformation">Digital Transformation</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Company</h4>
-          <ul>
-            <li><a href="pages/about">About Us</a></li>
-            <li><a href="pages/services">Services</a></li>
-            <li><a href="pages/experience">Experience</a></li><li><a href="pages/reports">Reports</a></li><li><a href="pages/insights">Insights</a></li>
-            <li><a href="pages/contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Contact Info</h4>
-          <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
-            </svg>
-            <span>Dubai, UAE · Cairo, Egypt</span>
-          </div>
-          <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-            </svg>
-            <a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
-          </div>
-        </div>
+        <div class="ft-col"><h4>Practices</h4><a href="pages/real-estate-strategy">Real Estate Strategy</a><a href="pages/tourism-development">Tourism Development</a><a href="pages/national-vision-strategy">National Vision Strategy</a><a href="pages/special-projects">Special Projects</a><a href="pages/digital-transformation">Digital Transformation</a></div>
+        <div class="ft-col"><h4>Firm</h4><a href="pages/about">About</a><a href="pages/experience">Experience</a><a href="pages/reports">Research</a><a href="pages/insights">Insights</a><a href="pages/services">Services</a><a href="pages/contact">Contact</a></div>
+        <div class="ft-col"><h4>Offices</h4><span>Dubai, United Arab Emirates</span><span>Cairo, Egypt</span><a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a><a href="https://www.linkedin.com/company/heirstoneconsulting" target="_blank" rel="noopener" data-i18n-skip>LinkedIn</a></div>
       </div>
-      <div class="footer-bottom">
-        <p>© 2026 Heirstone Consulting & Strategic Advisory. All rights reserved.</p>
-      </div>
+      <div class="ft-base"><span data-i18n-skip>&copy; 2026 Heirstone Consulting L.L.C-FZ</span><span>Available in 26 languages</span></div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="js/home.js"></script>
 </body>
 </html>

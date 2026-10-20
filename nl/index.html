@@ -113,6 +113,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="/css/style.css" rel="stylesheet"/>
 <link href="/css/home.css" rel="stylesheet"/>
+<link href="/css/v2.css" rel="stylesheet"/>
 <link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link as="image" href="/Media/hero-1.webp" rel="preload"/>
 <!-- i18n:alternates -->
@@ -150,487 +151,297 @@
 <!-- NAVBAR -->
 <nav class="navbar">
 <a class="navbar-brand" href="/nl/">
-<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-<rect height="34" stroke="#8FA0B2" stroke-width="2" width="34" x="13" y="13"></rect>
-<rect height="34" stroke="#8FA0B2" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect>
-</svg>
+<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect height="34" stroke="#8FA0B2" stroke-width="2" width="34" x="13" y="13"></rect><rect height="34" stroke="#8FA0B2" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect></svg>
 <span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
 </a>
 <ul class="navbar-nav">
-<li><a href="/nl/">Home</a></li>
-<li class="dropdown">
-<a href="/nl/pages/services">Onze expertise</a>
+<li class="dropdown"><a href="/nl/pages/services">Expertise</a>
 <div class="dropdown-menu">
 <a href="/nl/pages/real-estate-strategy">Vastgoedstrategie</a>
 <a href="/nl/pages/tourism-development">Toerismeontwikkeling</a>
 <a href="/nl/pages/national-vision-strategy">Nationale visiestrategie</a>
 <a href="/nl/pages/special-projects">Speciale projecten</a>
 <a href="/nl/pages/digital-transformation">Digitale transformatie</a>
+<a class="dd-all" href="/nl/pages/services">Alle diensten</a>
 </div>
 </li>
-<li><a href="/nl/pages/experience">Ervaring</a></li><li><a href="/nl/pages/reports">Rapporten</a></li><li><a href="/nl/pages/insights">Inzichten</a></li><li><a href="/nl/pages/about">Over ons</a></li>
-<li><a href="/nl/pages/services">Diensten</a></li>
-<li><a class="navbar-cta" href="/nl/pages/contact">Contact</a></li>
+<li><a href="/nl/pages/reports">Onderzoek</a></li>
+<li><a href="/nl/pages/experience">Ervaring</a></li>
+<li><a href="/nl/pages/about">Over ons</a></li>
+<li class="nav-cta"><a class="navbar-cta" href="/nl/pages/contact">Contact</a></li>
 <!-- i18n:switch --><li class="dropdown lang-switch" data-i18n-skip=""><button aria-haspopup="true" aria-label="Taal" class="lang-btn" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg><span>NL</span></button><div class="dropdown-menu lang-menu"><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a aria-current="true" data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div></li><!-- /i18n:switch -->
 </ul>
 <button aria-controls="mobileNav" aria-expanded="false" aria-label="Menu openen" class="hamburger" id="hamburger">
 <span></span><span></span><span></span>
 </button>
 </nav>
-<!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav">
-<a href="/nl/">Home</a>
-<a href="/nl/pages/real-estate-strategy">Vastgoedstrategie</a>
-<a href="/nl/pages/tourism-development">Toerismeontwikkeling</a>
-<a href="/nl/pages/national-vision-strategy">Nationale visiestrategie</a>
-<a href="/nl/pages/special-projects">Speciale projecten</a>
-<a href="/nl/pages/digital-transformation">Digitale transformatie</a>
+<a href="/nl/pages/services">Expertise</a>
+<a class="mn-sub" href="/nl/pages/real-estate-strategy">Vastgoedstrategie</a>
+<a class="mn-sub" href="/nl/pages/tourism-development">Toerismeontwikkeling</a>
+<a class="mn-sub" href="/nl/pages/national-vision-strategy">Nationale visiestrategie</a>
+<a class="mn-sub" href="/nl/pages/special-projects">Speciale projecten</a>
+<a class="mn-sub" href="/nl/pages/digital-transformation">Digitale transformatie</a>
+<a href="/nl/pages/reports">Onderzoek</a>
 <a href="/nl/pages/experience">Ervaring</a>
-<a href="/nl/pages/reports">Rapporten</a>
-<a href="/nl/pages/insights">Inzichten</a>
 <a href="/nl/pages/about">Over ons</a>
-<a href="/nl/pages/services">Diensten</a>
+<a href="/nl/pages/insights">Inzichten</a>
 <a href="/nl/pages/contact">Contact</a>
 <!-- i18n:mswitch --><div aria-label="Taal" class="mobile-lang" data-i18n-skip=""><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a aria-current="true" data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div><!-- /i18n:mswitch -->
 </div>
-<main id="main">
-<!-- HERO -->
-<section class="hero">
-<div aria-hidden="true" class="hero-slides">
-<div class="hero-slide active" style="background-image:url('/Media/hero-1.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-2.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-3.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-4.webp')"></div>
-</div>
-<div aria-hidden="true" class="hero-overlay"></div>
-<div class="hero-content">
-<p class="hero-kicker">Consultancy &amp; strategisch advies — Dubai · Caïro</p>
-<h1>Een gespecialiseerd adviesbureau voor ondoorzichtige, ambitieuze markten.</h1>
-<p>Heirstone adviseert overheden, institutioneel kapitaal en ontwikkelaars waar conventionele adviesmodellen tekortschieten — en vertaalt nationale visie naar commercieel levensvatbare, uitvoerbare strategie in MENA, Afrika en Centraal-Azië.</p>
-<div class="hero-actions">
-<a class="btn-primary" href="#services">Ontdek onze expertise</a>
-<a class="btn-secondary" href="/nl/pages/contact">Neem contact op</a>
-</div>
-</div>
-<div aria-hidden="true" class="hero-ticker">
-<div class="tick-track"><span class="tick-item">Hoogste en beste gebruik</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Haalbaarheidsstudies</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Wereldwijde benchmarking</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Marktonderzoek</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Bestemmingsstrategie</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Nationale visie</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">PPS-strategie</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Luchthaven- &amp; havenstrategie</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Branded residences</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Investeringen aantrekken</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Digitale vergunningverlening</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Politiek risico</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Hoogste en beste gebruik</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Haalbaarheidsstudies</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Wereldwijde benchmarking</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Marktonderzoek</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Bestemmingsstrategie</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Nationale visie</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">PPS-strategie</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Luchthaven- &amp; havenstrategie</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Branded residences</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Investeringen aantrekken</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Digitale vergunningverlening</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Politiek risico</span><span aria-hidden="true" class="tick-dot"></span></div>
-</div>
-</section>
-<!-- FACTS BAR -->
-<section aria-label="Overzicht van het bureau" class="facts-bar">
-<div class="facts-inner">
-<div class="fact">
-<span class="fact-label">Kantoren</span>
-<span class="fact-value">Dubai · Caïro</span>
-</div>
-<div class="fact">
-<span class="fact-label">Achtergrond</span>
-<span class="fact-value">Ervaring bij topadviesbureaus</span>
-</div>
-<div class="fact">
-<span class="fact-label">Opdrachtprofiel</span>
-<span class="fact-value">Overheden &amp; institutionelen</span>
-</div>
-<div class="fact">
-<span class="fact-label">Werkgebied</span>
-<span class="fact-value">GCC · MENA · Afrika · Centraal-Azië</span>
-</div>
-</div>
-</section>
-<!-- SELECTED ENGAGEMENTS (carousel) -->
-<section aria-label="Geselecteerde teamervaring" aria-roledescription="carrousel" class="eng" id="engagements">
-<div class="eng-head">
+<header class="hero" id="main">
+<div aria-label="Skyline van Nairobi" class="hero-img" role="img"></div>
+<div class="hero-body">
 <div>
-<p class="eyebrow eyebrow-light">Geselecteerde teamervaring</p>
-<h2>Opdrachten voor staatskapitaal, institutioneel en particulier kapitaal.</h2>
-</div>
-<div class="eng-controls">
-<span class="eng-count"><b class="eng-cur">01</b> / 07</span>
-<button aria-label="Vorige opdracht" class="eng-btn eng-prev" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
-<button aria-label="Volgende opdracht" class="eng-btn eng-next" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
-</div>
-</div>
-<div class="eng-track" tabindex="0">
-<article aria-label="1 van 7" aria-roledescription="dia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Iconische historische stadswijk aan het water" height="480" loading="eager" src="/Media/exp-giza.webp" width="800"/>
-<span class="eng-num">01</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Overheidsinstantie — Egypte</p>
-<h3>Masterplan Piramides van Gizeh</h3>
-<p class="eng-desc">Marktanalyse en ontwikkelstrategie voor een toonaangevende multifunctionele ontwikkeling naast een van de meest bezochte erfgoedlocaties ter wereld — vraagprognoses naar herkomstmarkt, reisdoel en seizoen, vertaald naar grondgebruik, dimensionering van de onderdelen en fasering.</p>
-<p class="eng-outcome"><span>Resultaat</span>Basis voor de ontwikkelpositionering, de commerciële strategie en de langetermijnplanning van bezoekersinfrastructuur op nationaal niveau.</p>
-</div>
-</article>
-<article aria-label="2 van 7" aria-roledescription="dia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Straatleven in een stad in Afrika bezuiden de Sahara" height="480" loading="eager" src="/Media/exp-tourism.webp" width="800"/>
-<span class="eng-num">02</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Nationale overheid — Afrika bezuiden de Sahara</p>
-<h3>Nationaal programma voor toerismeontwikkeling</h3>
-<p class="eng-desc">Integrale toerismestrategie voor meerdere bestemmingsclusters — vraagprognoses, bestemmingspositionering, kaders voor productontwikkeling en een strategie om investeringen aan te trekken.</p>
-<p class="eng-outcome"><span>Resultaat</span>Vastgesteld als het nationale kader voor toerismeontwikkeling, ter ondersteuning van beleidsafstemming en het mobiliseren van particuliere investeringen.</p>
-</div>
-</article>
-<article aria-label="3 van 7" aria-roledescription="dia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Eigentijdse ontwikkeling met glazen torens" height="480" loading="lazy" src="/Media/exp-giga.webp" width="800"/>
-<span class="eng-num">03</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Door de staat gesteunde ontwikkelaar — Saoedi-Arabië</p>
-<h3>Strategie &amp; advies voor gigaprojecten</h3>
-<p class="eng-desc">Woonstrategie, positionering van branded residences en hoogste en beste gebruik voor grootschalige, door de overheid gesteunde ontwikkelingen binnen gigaprojecten.</p>
-<p class="eng-outcome"><span>Resultaat</span>Onderbouwde ontwikkelpositionering en productstrategie, afgestemd op de investeringsdoelen van de staat.</p>
-</div>
-</article>
-<article aria-label="4 van 7" aria-roledescription="dia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Moderne multifunctionele torens langs een kustskyline" height="480" loading="lazy" src="/Media/exp-northcoast.webp" width="800"/>
-<span class="eng-num">04</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Institutionele belegger — Egypte</p>
-<h3>Investeringsadvies Caïro &amp; Noordkust</h3>
-<p class="eng-desc">Marktonderzoek over meerdere vastgoedsegmenten en investeringsadvies voor een Centraal-Aziatische institutionele belegger — wonen, kantoren, retail en hotels in Groot-Caïro en aan de Noordkust / Ras El Hekma.</p>
-<p class="eng-outcome"><span>Resultaat</span>Gestructureerd investeringskader dat grensoverschrijdende kapitaalinzet mogelijk maakt in een van de snelstgroeiende multifunctionele en kustmarkten van de regio.</p>
-</div>
-</article>
-<article aria-label="5 van 7" aria-roledescription="dia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Kantoortorens in een centraal zakendistrict" height="480" loading="lazy" src="/Media/exp-office.webp" width="800"/>
-<span class="eng-num">05</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Institutioneel / adviesplatform — Egypte</p>
-<h3>Informatieplatform kantorenmarkt Caïro</h3>
-<p class="eng-desc">Ontwerp en bouw van een vastgoeddataplatform voor de kantorenmarkt van Groot-Caïro — verhuurdata, bezettingsgraden, prijsbenchmarks en marktindicatoren.</p>
-<p class="eng-outcome"><span>Resultaat</span>Basis voor marktinformatie en advies van institutionele kwaliteit, ter ondersteuning van investeringsbeslissingen en kwartaalrapportages over de markt.</p>
-</div>
-</article>
-<article aria-label="6 van 7" aria-roledescription="dia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Luchtfoto van nieuwe infrastructuur in een frontiermarkt" height="480" loading="lazy" src="/Media/exp-frontier.webp" width="800"/>
-<span class="eng-num">06</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Ontwikkelaar — Afrika bezuiden de Sahara</p>
-<h3>Haalbaarheid &amp; HBU in frontiermarkten</h3>
-<p class="eng-desc">Analyse van het hoogste en beste gebruik en haalbaarheid voor grootschalige multifunctionele ontwikkelingen in stedelijke omgevingen met schaarse data — gedreven door primair onderzoek.</p>
-<p class="eng-outcome"><span>Resultaat</span>Ontwikkelprogramma's opnieuw vormgegeven, en kapitaalstructurering en investeringshaalbaarheid ondersteund onder de omstandigheden van een frontiermarkt.</p>
-</div>
-</article>
-<article aria-label="7 van 7" aria-roledescription="dia" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Luchtfoto van een historische stadswijk die stedelijke vernieuwing ondergaat" height="480" loading="lazy" src="/Media/exp-heritage.webp" width="800"/>
-<span class="eng-num">07</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Overheid &amp; institutioneel — MENA</p>
-<h3>Strategie voor erfgoed &amp; stedelijke vernieuwing</h3>
-<p class="eng-desc">Herbestemming van erfgoedlocaties en strategie voor stedelijke vernieuwing — toerisme, retail en culturele functies geïntegreerd in commercieel levensvatbare ontwikkelkaders.</p>
-<p class="eng-outcome"><span>Resultaat</span>Cultureel behoud in evenwicht gebracht met inkomstengeneratie en blijvende stedelijke activering.</p>
-</div>
-</article>
-</div>
-<div class="eng-foot">
-<div aria-hidden="true" class="eng-progress"><span></span></div>
-<a class="eng-all" href="/nl/pages/experience">Bekijk alle opdrachten <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</section>
-<!-- PRACTICES (explorer: tabs on desktop, accordion on mobile) -->
-<section class="px-section" id="services">
-<div class="px-head">
-<p class="eyebrow">Wat we doen</p>
-<h2>Vijf vakgebieden. <em>Eén standaard.</em></h2>
-<p class="px-intro">Elke opdracht partnergeleid, onderbouwd met feiten en gebouwd voor besluitvormers die verantwoording afleggen aan raden van bestuur, ministeries en kapitaalverschaffers.</p>
-</div>
-<div aria-label="Vakgebieden" class="px" role="tablist">
-<div class="px-item is-active">
-<button aria-controls="px-panel-0" aria-expanded="true" aria-selected="true" class="px-tab" id="px-tab-0" role="tab" type="button">
-<span class="px-n">01</span>
-<span class="px-text"><span class="px-name">Vastgoedstrategie</span><span class="px-tag">Van kavel tot portefeuille.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-0" class="px-panel" id="px-panel-0" role="tabpanel">
-<div class="px-media"><img alt="Luchtfoto van een multifunctionele vastgoedontwikkeling volgens masterplan" height="384" loading="lazy" src="/Media/cap-realestate.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Waarde ontsluiten uit grond, assets en portefeuilles met marktinformatie, financiële modellering en ontwikkelstrategie.</p>
-<p class="px-sublabel">7 diensten</p>
-<div class="px-chips"><a class="px-chip" href="/nl/pages/highest-and-best-use">Analyse van het hoogste en beste gebruik</a><a class="px-chip" href="/nl/pages/development-strategy">Ontwikkelstrategie &amp; fasering</a><a class="px-chip" href="/nl/pages/market-research">Marktonderzoek &amp; kansenidentificatie</a><a class="px-chip" href="/nl/pages/commercial-feasibility">Commerciële haalbaarheidsstudies</a><a class="px-chip" href="/nl/pages/investment-attraction">Investeringen aantrekken &amp; structureren</a><a class="px-chip" href="/nl/pages/competitive-benchmarking">Concurrentiebenchmarking</a><a class="px-chip" href="/nl/pages/branded-residences">Strategisch advies voor branded residences</a></div>
-<a class="px-cta" href="/nl/pages/real-estate-strategy">Bekijk het vakgebied <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<p class="eyebrow">Strategisch advies · Dubai en Caïro</p>
+<h1>Op feiten gebaseerde strategie voor vastgoed, toerisme en nationale ontwikkeling.</h1>
+<p class="hero-lead">Wij adviseren overheden, staatsfondsen, institutionele beleggers en ontwikkelaars in het Midden-Oosten, Afrika en Centraal-Azië. Elke opdracht wordt geleid door senior adviseurs en steunt op primair onderzoek.</p>
+<div class="hero-cta">
+<a class="btn btn--light" href="/nl/pages/contact">Bespreek een opdracht <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="link link--light" href="/nl/pages/reports">Lees ons onderzoek <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </div>
+<a class="latest" href="/nl/pages/report-airport-cities">
+<img alt="Omslag van het Heirstone-rapport Het startbaandividend" height="116" src="/Media/reports/airport-cities.webp" width="82"/>
+<div class="latest-text">
+<p class="latest-label">Nieuwste rapport</p>
+<p class="latest-title">Luchthavensteden: Het startbaandividend</p>
+<p class="latest-stat"><span class="rp-n">11 tegen 1</span> verkoop van appartementen op tekening tegenover doorverkoop, naar waarde, in Dubai South in 2025: AED 10,23 mld tegenover AED 0,91 mld</p>
 </div>
-<div class="px-item">
-<button aria-controls="px-panel-1" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-1" role="tab" type="button">
-<span class="px-n">02</span>
-<span class="px-text"><span class="px-name">Toerisme &amp; bestemmingen</span><span class="px-tag">Bestemmingen die wereldwijd concurreren.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-1" class="px-panel" id="px-panel-1" role="tabpanel">
-<div class="px-media"><img alt="Toeristische strandbestemming met resorts en een jachthaven" height="384" loading="lazy" src="/Media/cap-tourism.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Concurrerende, investeerbare bestemmingsstrategieën — vraagprognoses, productontwikkeling en positionering in samenhangende kaders voor de bezoekerseconomie.</p>
-<p class="px-sublabel">4 diensten</p>
-<div class="px-chips"><a class="px-chip" href="/nl/pages/destination-strategy">Bestemmingsstrategie en positionering</a><a class="px-chip" href="/nl/pages/tourism-market-research">Toeristisch marktonderzoek en vraagprognoses</a><a class="px-chip" href="/nl/pages/visitor-economy">Strategie voor de bezoekerseconomie</a><a class="px-chip" href="/nl/pages/airport-port-strategy">Commerciële strategie voor luchthavens, havens &amp; gateways</a></div>
-<a class="px-cta" href="/nl/pages/tourism-development">Bekijk het vakgebied <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</a>
 </div>
+</header>
+<main>
+<section aria-labelledby="shelfTitle" class="shelf">
+<div class="wrap">
+<div class="shelf-head">
+<h2 id="shelfTitle">32 onafhankelijke rapporten over de markten waarin wij adviseren, gratis te lezen.</h2>
+<a class="link" href="/nl/pages/reports">Bekijk al ons onderzoek <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-2" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-2" role="tab" type="button">
-<span class="px-n">03</span>
-<span class="px-text"><span class="px-name">Nationale visie &amp; sectorstrategie</span><span class="px-tag">Visie, uitvoerbaar gemaakt.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-2" class="px-panel" id="px-panel-2" role="tabpanel">
-<div class="px-media"><img alt="Skyline van een moderne hoofdstad bij dageraad" height="384" loading="lazy" src="/Media/cap-national.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Nationale ambitie vertalen naar gestructureerde, uitvoerbare programma's — met beleid, investeringen en uitvoeringsmechanismen op één lijn.</p>
-<p class="px-sublabel">7 diensten</p>
-<div class="px-chips"><a class="px-chip" href="/nl/pages/national-vision">Nationale visie &amp; strategische kaders</a><a class="px-chip" href="/nl/pages/sector-transformation">Advies over sectortransformatie</a><a class="px-chip" href="/nl/pages/ppp-strategy">Strategie voor publiek-private samenwerking (PPS)</a><a class="px-chip" href="/nl/pages/policy-framework">Advies over beleid &amp; institutionele kaders</a><a class="px-chip" href="/nl/pages/global-benchmarking">Wereldwijde benchmarking van nationale transformatieprogramma's</a><a class="px-chip" href="/nl/pages/monitoring-frameworks">Kaders voor monitoring &amp; bijsturing</a><a class="px-chip" href="/nl/pages/political-risk-assessment">Beoordeling van politiek risico &amp; investeringsklimaat</a></div>
-<a class="px-cta" href="/nl/pages/national-vision-strategy">Bekijk het vakgebied <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-3" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-3" role="tab" type="button">
-<span class="px-n">04</span>
-<span class="px-text"><span class="px-name">Speciale projecten &amp; strategisch advies</span><span class="px-tag">Maatwerkopdrachten, complexe vraagstukken.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-3" class="px-panel" id="px-panel-3" role="tabpanel">
-<div class="px-media"><img alt="Iconisch grootschalig megaproject onder een dramatische lucht" height="384" loading="lazy" src="/Media/cap-special.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Van assetmonetisatie voor overheden tot grensoverschrijdende expansie en strategie voor mega-evenementen — waar conventionele benaderingen tekortschieten.</p>
-<p class="px-sublabel">6 diensten</p>
-<div class="px-chips"><a class="px-chip" href="/nl/pages/asset-monetization">Strategie voor grootschalige assetmonetisatie</a><a class="px-chip" href="/nl/pages/destination-brand">Advies over de ontwikkeling van bestemmingsmerken</a><a class="px-chip" href="/nl/pages/investor-outreach">Investeerdersbenadering &amp; relatieplanning</a><a class="px-chip" href="/nl/pages/cross-border-expansion">Advies over grensoverschrijdende expansie</a><a class="px-chip" href="/nl/pages/innovation-ecosystem">Strategie voor innovatie-ecosystemen</a><a class="px-chip" href="/nl/pages/sports-culture">Strategie voor sport, cultuur &amp; mega-evenementen</a></div>
-<a class="px-cta" href="/nl/pages/special-projects">Bekijk het vakgebied <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-4" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-4" role="tab" type="button">
-<span class="px-n">05</span>
-<span class="px-text"><span class="px-name">Digitale transformatie</span><span class="px-tag">Dienstverlening, van begin tot eind digitaal.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-4" class="px-panel" id="px-panel-4" role="tabpanel">
-<div class="px-media"><img alt="Digitaal operationeel centrum van de overheid met dashboards voor stadsplanning en vergunningen" height="384" loading="lazy" src="/Media/cap-digital.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Digitalisering van de overheidsdiensten waarvan vastgoed en bouw afhankelijk zijn — vergunningverlening, kadaster, licentieverlening en assetdata — zodat kapitaal zich beweegt in het tempo van het besluit.</p>
-<p class="px-sublabel">4 diensten</p>
-<div class="px-chips"><a class="px-chip" href="/nl/pages/digital-permitting">Digitale vergunningverlening &amp; bouwvergunningen</a><a class="px-chip" href="/nl/pages/land-registry-digitization">Digitalisering van kadaster &amp; vastgoedtransacties</a><a class="px-chip" href="/nl/pages/digital-service-design">Digitaal dienstontwerp &amp; burgerervaring</a><a class="px-chip" href="/nl/pages/bim-digital-twins">BIM, digitale tweelingen &amp; standaarden voor assetinformatie</a></div>
-<a class="px-cta" href="/nl/pages/digital-transformation">Bekijk het vakgebied <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
+<div class="shelf-row">
+<a class="cover" href="/nl/pages/report-airport-cities"><div class="cover-img"><img alt="Omslag van het Heirstone-rapport Het startbaandividend" height="1273" loading="lazy" src="/Media/reports/airport-cities.webp" width="900"/></div><p class="cover-tag">Luchthavensteden</p><p class="cover-title">Het startbaandividend</p></a>
+<a class="cover" href="/nl/pages/report-africa-construction-costs"><div class="cover-img"><img alt="Omslag van het Heirstone-rapport Negen steden, één vierkante meter" height="1273" loading="lazy" src="/Media/reports/africa-construction-costs.webp" width="900"/></div><p class="cover-tag">Bouwkosten en bouwtechnologie</p><p class="cover-title">Negen steden, één vierkante meter</p></a>
+<a class="cover" href="/nl/pages/report-airports-terminals"><div class="cover-img"><img alt="Omslag van het Heirstone-rapport Het drukste uur" height="1273" loading="lazy" src="/Media/reports/airports-terminals.webp" width="900"/></div><p class="cover-tag">Luchthavens en terminals</p><p class="cover-title">Het drukste uur</p></a>
+<a class="cover" href="/nl/pages/report-uzbekistan-new-cities"><div class="cover-img"><img alt="Omslag van het Heirstone-rapport De dagstad" height="1273" loading="lazy" src="/Media/reports/uzbekistan-new-cities.webp" width="900"/></div><p class="cover-tag">Nieuwe steden in Oezbekistan</p><p class="cover-title">De dagstad</p></a>
+<a class="cover" href="/nl/pages/report-africa-real-estate-capital"><div class="cover-img"><img alt="Omslag van het Heirstone-rapport Het geld is er al" height="1273" loading="lazy" src="/Media/reports/africa-real-estate-capital.webp" width="900"/></div><p class="cover-tag">Vastgoedkapitaal in Afrika</p><p class="cover-title">Het geld is er al</p></a>
+<a class="cover" href="/nl/pages/report-branded-residences"><div class="cover-img"><img alt="Omslag van het Heirstone-rapport Wie de meerprijs houdt" height="1273" loading="lazy" src="/Media/reports/branded-residences.webp" width="900"/></div><p class="cover-tag">Branded residences</p><p class="cover-title">Wie de meerprijs houdt</p></a>
 </div>
 </div>
 </section>
-<!-- ENGAGEMENT MODEL (timeline) -->
-<section class="tl-section">
-<div class="tl-head">
+<section aria-labelledby="prTitle" class="principles">
+<div class="wrap">
 <p class="eyebrow">Onze werkwijze</p>
-<h2>Een aanpak in vier stappen.</h2>
-<p>Geen standaardkaders. Elke opdracht wordt afgestemd op context, doelen en randvoorwaarden — en persoonlijk geleid door senior partners.</p>
+<h2 class="h2" id="prTitle">Vier uitgangspunten die elke opdracht bepalen.</h2>
+<div class="p-grid">
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+<h3>Eerst primair onderzoek</h3>
+<p>Waar data schaars zijn, verzamelen wij ze: enquêtes, interviews, locatiebezoeken en transactiegegevens, voordat er een model wordt gebouwd.</p>
 </div>
-<div class="tl-wrap">
-<span aria-hidden="true" class="tl-line"><span class="tl-fill"></span></span>
-<ol class="tl">
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">01</span>
-<h3>Begrijpen</h3>
-<p>Intensieve diagnose. Wij verdiepen ons in de context van de klant, de marktomgeving en de strategische doelen — en stellen de opdracht ter discussie waar dat nodig is.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">02</span>
-<h3>Analyseren</h3>
-<p>Grondige kwantitatieve en kwalitatieve analyse — marktonderzoek, financiële modellering, benchmarking en stakeholderanalyse — voor inzichten die op feiten zijn gebaseerd.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">03</span>
-<h3>Strategie bepalen</h3>
-<p>Analyse wordt strategie. Gefaseerde aanbevelingen, geprioriteerde initiatieven en een nuchtere kijk op risico, volgorde en gevolgen voor het kapitaal.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">04</span>
-<h3>Uitvoeren</h3>
-<p>Resultaten voor besluitvormers — beknopt, klaar voor de raad van bestuur en gemaakt om te presenteren op het niveau van staat, ministerie en investeringscomité.</p>
-</li>
-</ol>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>
+<h3>Senior adviseurs van begin tot eind</h3>
+<p>Wie een opdracht afbakent, blijft er ook aan werken, van de eerste workshop tot de presentatie aan de raad van bestuur.</p>
+</div>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 3v18M5 7h14M5 7l-3 7h6l-3-7zM19 7l-3 7h6l-3-7zM8 21h8"></path></svg>
+<h3>Onafhankelijk advies</h3>
+<p>Wij hebben geen belangenconflicten, dus onze aanbevelingen volgen de feiten en de doelen van de klant.</p>
+</div>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
+<h3>Regionale diepgang</h3>
+<p>Kantoren in Dubai en Caïro, en opdrachten in de Golf, Noord-Afrika, Afrika bezuiden de Sahara en Centraal-Azië.</p>
+</div>
+</div>
 </div>
 </section>
-<!-- ABOUT SECTION -->
-<section class="about-section">
-<div class="about-inner">
-<div class="about-image">
-<img alt="Luchtfoto van een stadsdeel in ontwikkeling met nieuwe torens en infrastructuur" height="801" loading="lazy" src="/Media/about.webp" width="1400"/>
+<section aria-labelledby="pracTitle" class="practices">
+<div class="wrap pr-grid">
+<div class="pr-intro">
+<p class="eyebrow">Expertise</p>
+<h2 class="h2" id="pracTitle">Vijf vakgebieden.</h2>
+<p class="lead">Elk vakgebied brengt marktonderzoek, financiële analyse en strategie samen rond één soort beslissing, zodat het advies overeind blijft tegenover een raad van bestuur, een ministerie of een investeringscommissie.</p>
+<a class="link" href="/nl/pages/services">Alle diensten <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-<div class="about-text">
-<h2>Over Heirstone Consulting &amp; Strategic Advisory</h2>
-<p>Heirstone is een gespecialiseerd strategisch adviesbureau voor frontier- en snelgroeiende markten — omgevingen waar data beperkt zijn, er veel op het spel staat en conventionele adviesmodellen tekortschieten.</p>
-<p>Met kantoren in Dubai en Caïro combineert het bureau ervaring bij topadviesbureaus met diepgaande regionale kennis. Wij werken op het snijvlak van zakelijke ambitie en institutionele realiteit, en ons werkterrein reikt van de positionering van één asset tot nationale transformatieprogramma's.</p>
-<a class="btn-primary" href="/nl/pages/about" style="margin-top:8px;">Meer over ons</a>
+<div class="pr-cards">
+<a class="pr-card" href="/nl/pages/real-estate-strategy">
+<h3>Vastgoedstrategie</h3>
+<p>Wat er gebouwd wordt, waar en in welke volgorde: hoogste en beste gebruik, haalbaarheid, ontwikkelstrategie en investeringsstructurering.</p>
+<span class="pr-foot"><span class="pr-count">7 diensten</span><span class="link">Ontdek <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/nl/pages/tourism-development">
+<h3>Toerismeontwikkeling</h3>
+<p>Vraagprognoses, bestemmingspositionering en plannen voor de bezoekerseconomie waarmee investeerders en overheden aan de slag kunnen.</p>
+<span class="pr-foot"><span class="pr-count">4 diensten</span><span class="link">Ontdek <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/nl/pages/national-vision-strategy">
+<h3>Nationale visiestrategie</h3>
+<p>Nationale ambities vertaald naar programma's, partnerschappen en beleid, met de instellingen en financiering om ze te realiseren.</p>
+<span class="pr-foot"><span class="pr-count">7 diensten</span><span class="link">Ontdek <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/nl/pages/special-projects">
+<h3>Speciale projecten</h3>
+<p>Opdrachten die verder reiken dan één asset: assetmonetisatie, grensoverschrijdende expansie, investeerdersbenadering en grote evenementen.</p>
+<span class="pr-foot"><span class="pr-count">6 diensten</span><span class="link">Ontdek <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/nl/pages/digital-transformation">
+<h3>Digitale transformatie</h3>
+<p>Diensten voor vergunningverlening, kadaster en licenties waarmee vastgoed- en bouwprojecten zich bewegen in het tempo van het besluit.</p>
+<span class="pr-foot"><span class="pr-count">4 diensten</span><span class="link">Ontdek <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card pr-card--ink" href="/nl/pages/contact">
+<h3>Weet u niet waar uw vraag thuishoort?</h3>
+<p>Vertel ons voor welke beslissing u staat. Wij vertellen u hoe we die zouden aanpakken, en of wij daarvoor het juiste bureau zijn.</p>
+<span class="pr-foot"><span class="pr-count">Dubai · Caïro</span><span class="link link--light">Contact <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
 </div>
 </div>
-<div class="profile-strip">
-<a class="profile-cover" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf"><img alt="Omslag van het bedrijfsprofiel van Heirstone Consulting" height="405" loading="lazy" src="/Media/docs/company-profile-cover.webp" width="720"/></a>
-<div class="profile-text">
+</section>
+<section aria-labelledby="exTitle" class="experience">
+<div class="wrap">
+<div class="ex-head">
+<div>
+<p class="eyebrow">Geselecteerde teamervaring</p>
+<h2 class="h2" id="exTitle">Opdrachten voor overheden, investeerders en ontwikkelaars.</h2>
+<p class="lead">Opdrachten uitgevoerd door leden van het Heirstone-team. Namen van klanten worden op hun verzoek niet genoemd.</p>
+</div>
+<div class="ex-ctrl">
+<button aria-label="Vorige" data-dir="-1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
+<button aria-label="Volgende" data-dir="1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+<div class="ex-track" id="exTrack">
+<article class="ex-card">
+<p class="ex-client">Overheidsinstantie · Egypte</p>
+<h3>Masterplan Piramides van Gizeh</h3>
+<p class="ex-label">Opdracht</p>
+<p>Marktanalyse en ontwikkelstrategie voor een multifunctionele ontwikkeling naast een van de meest bezochte erfgoedlocaties ter wereld, van de vraag per herkomstmarkt en seizoen tot grondgebruik, dimensionering en fasering.</p>
+<div class="ex-out"><p class="ex-label">Resultaat</p><p>De basis voor de positionering van het project, de commerciële strategie en de langetermijnplanning van bezoekersinfrastructuur.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Nationale overheid · Afrika bezuiden de Sahara</p>
+<h3>Nationaal programma voor toerismeontwikkeling</h3>
+<p class="ex-label">Opdracht</p>
+<p>Toerismestrategie voor meerdere bestemmingsclusters: vraagprognoses, positionering, productontwikkeling en het aantrekken van investeringen.</p>
+<div class="ex-out"><p class="ex-label">Resultaat</p><p>Vastgesteld als het nationale kader voor toerismeontwikkeling, dat richting geeft aan beleid en particuliere investeringen.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Door de staat gesteunde ontwikkelaar · Saoedi-Arabië</p>
+<h3>Strategie voor gigaprojecten</h3>
+<p class="ex-label">Opdracht</p>
+<p>Woonstrategie, positionering van branded residences en hoogste en beste gebruik voor grote, door de overheid gesteunde ontwikkelingen.</p>
+<div class="ex-out"><p class="ex-label">Resultaat</p><p>Ontwikkelpositionering en productstrategie, afgestemd op de doelen van de staatsinvesteerder.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Institutionele belegger · Egypte</p>
+<h3>Investeringsadvies Caïro en Noordkust</h3>
+<p class="ex-label">Opdracht</p>
+<p>Marktonderzoek en investeringsadvies voor een Centraal-Aziatische institutionele belegger in wonen, kantoren, retail en hotels in Groot-Caïro en Ras El Hekma.</p>
+<div class="ex-out"><p class="ex-label">Resultaat</p><p>Een investeringskader voor de inzet van grensoverschrijdend kapitaal in een van de snelstgroeiende kustmarkten van de regio.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Adviesplatform · Egypte</p>
+<h3>Marktinformatie kantorenmarkt Caïro</h3>
+<p class="ex-label">Opdracht</p>
+<p>Ontwerp en bouw van een dataplatform voor de kantorenmarkt van Groot-Caïro: verhuur, bezetting, prijsbenchmarks en marktindicatoren.</p>
+<div class="ex-out"><p class="ex-label">Resultaat</p><p>Marktinformatie van institutionele kwaliteit als basis voor investeringsbeslissingen en kwartaalrapportages.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Ontwikkelaar · Afrika bezuiden de Sahara</p>
+<h3>Haalbaarheid bij schaarse data</h3>
+<p class="ex-label">Opdracht</p>
+<p>Hoogste en beste gebruik en haalbaarheid voor grote multifunctionele ontwikkelingen in steden met schaarse data, gebaseerd op primair onderzoek.</p>
+<div class="ex-out"><p class="ex-label">Resultaat</p><p>Ontwikkelprogramma's opnieuw vormgegeven en kapitaalstructurering ondersteund onder de omstandigheden van een frontiermarkt.</p></div>
+</article>
+</div>
+<p class="ex-more"><a class="link" href="/nl/pages/experience">Alle geselecteerde ervaring <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></p>
+</div>
+</section>
+<section aria-labelledby="rsTitle" class="research">
+<div class="wrap">
+<div class="rs-head">
+<div>
+<p class="eyebrow">Onderzoek</p>
+<h2 class="h2" id="rsTitle">Wij publiceren wat we leren.</h2>
+</div>
+<p class="lead">Gratis rapporten over vastgoed, infrastructuur en toerisme, elk met een eigen benchmark en een bronvermelding bij elk cijfer. Edities in het Engels, Frans, Russisch en Arabisch.</p>
+</div>
+<div class="rs-grid">
+<a class="rs-card" href="/nl/pages/report-airport-cities">
+<div class="rs-art"><img alt="Omslag van het Heirstone-rapport Het startbaandividend" height="1273" loading="lazy" src="/Media/reports/airport-cities.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Luchthavensteden</p>
+<h3 class="rs-title">Het startbaandividend</h3>
+<p class="rs-stat"><span class="rp-n">11 tegen 1</span> verkoop van appartementen op tekening tegenover doorverkoop, naar waarde, in Dubai South in 2025: AED 10,23 mld tegenover AED 0,91 mld</p>
+</div>
+</a>
+<a class="rs-card" href="/nl/pages/report-africa-construction-costs">
+<div class="rs-art"><img alt="Omslag van het Heirstone-rapport Negen steden, één vierkante meter" height="1273" loading="lazy" src="/Media/reports/africa-construction-costs.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Bouwkosten en bouwtechnologie</p>
+<h3 class="rs-title">Negen steden, één vierkante meter</h3>
+<p class="rs-stat"><span class="rp-n">2,9x</span> de prijs van AECOM voor een appartementengebouw met meerdere bouwlagen in Lagos tegenover Nairobi in zijn gids 2024/25: US$ 2.330 tegenover US$ 796 per m²</p>
+</div>
+</a>
+<a class="rs-card" href="/nl/pages/report-africa-hotel-development">
+<div class="rs-art"><img alt="Omslag van het Heirstone-rapport Hotels op papier" height="1273" loading="lazy" src="/Media/reports/africa-hotel-development.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Hotelontwikkeling in Afrika</p>
+<h3 class="rs-title">Hotels op papier</h3>
+<p class="rs-stat"><span class="rp-n">123.846</span> kamers in 675 hotels in de Afrikaanse ontwikkelpijplijn van de hotelketens begin 2026, een record en 19% meer dan een jaar eerder</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<section aria-labelledby="pfTitle" class="profile">
+<div class="wrap">
+<div class="pf-card">
+<img alt="Omslag van het bedrijfsprofiel van Heirstone Consulting" height="405" loading="lazy" src="/Media/docs/company-profile-cover.webp" width="720"/>
+<div>
 <p class="eyebrow">Bedrijfsprofiel</p>
-<h3>Heirstone in 21 pagina's</h3>
-<p>Onze vijf vakgebieden, onze werkwijze en geselecteerde teamervaring in het Midden-Oosten, Afrika en Centraal-Azië. Gratis te downloaden, zonder formulier.</p>
-<div class="profile-actions">
-<a class="btn-primary" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">Download in het Engels</a>
-<a class="btn-outline" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
+<h2 class="h2" id="pfTitle">Heirstone in 21 pagina's</h2>
+<p class="lead">Onze vijf vakgebieden, onze werkwijze en geselecteerde teamervaring in het Midden-Oosten, Afrika en Centraal-Azië. Gratis te downloaden, zonder formulier.</p>
+<div class="pf-actions">
+<a class="btn" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">Download in het Engels</a>
+<a class="btn btn--ghost" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
 </div>
-<p class="profile-meta">pdf · 21 pagina's · ca. 8 MB</p>
+<p class="pf-meta">pdf · 21 pagina's · ca. 8 MB</p>
 </div>
-</div>
-</section>
-<!-- WHO WE ADVISE + WHERE WE ARE DIFFERENT -->
-<section class="band">
-<div class="band-inner">
-<div class="band-col">
-<p class="eyebrow eyebrow-light">Voor wie we werken</p>
-<h2>Wij adviseren wie grond, beleid en kapitaal toewijst.</h2>
-<ul class="who">
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<path d="M3 21h18M4 21V8l8-5 8 5v13M8 21v-8h8v8M12 3v2"></path>
-</svg><div><h3>Overheden &amp; publieke instanties</h3><p>Nationale ministeries, toerismeorganisaties en planningsautoriteiten die ingrijpende nationale ontwikkelstrategieën ontwerpen en uitvoeren.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="9"></circle><path d="M12 7v10M8.5 9.5c0-1.1 1.4-2 3.5-2s3.5.9 3.5 2-1 1.8-3.5 2.3-3.5 1.2-3.5 2.2 1.4 2 3.5 2 3.5-.9 3.5-2"></path>
-</svg><div><h3>Staatsfondsen &amp; institutionele beleggers</h3><p>Staatsfondsen, pensioenfondsen en institutioneel kapitaal die onafhankelijke marktinformatie en investeringsstrategie nodig hebben.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<path d="M2 21h20M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M10 7h4M10 11h4M10 15h4"></path>
-</svg><div><h3>Vastgoedontwikkelaars</h3><p>Ontwikkelaars van elke omvang die advies zoeken over hoogste en beste gebruik, ontwikkelstrategie en commerciële haalbaarheid voor assets en masterplannen.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="10"></circle><path d="M12 2v20M2 12h20M4.9 5.5c4.3 3 9.9 3 14.2 0M4.9 18.5c4.3-3 9.9-3 14.2 0"></path>
-</svg><div><h3>Multinationals</h3><p>Internationale ondernemingen die de MENA-regio betreden of er uitbreiden — markttoetreding, locatiekeuze en concurrentiebenchmarking.</p></div></li>
-</ul>
-</div>
-<div class="band-col">
-<p class="eyebrow eyebrow-light">Waarin Heirstone anders is</p>
-<h2>Gebouwd voor markten waar standaardmodellen tekortschieten.</h2>
-<ol class="why2">
-<li class="why2-item"><span class="why2-n">01</span><div><h3>Partnergeleid en wendbaar van opzet</h3><p>Senior partners zijn actief betrokken bij elke opdracht — met tientallen jaren ervaring in strategische planning, en in het tempo van een deal.</p></div></li>
-<li class="why2-item"><span class="why2-n">02</span><div><h3>Expertise in frontiermarkten</h3><p>Gebouwd voor ondoorzichtige markten met schaarse data — waar commercieel oordeel en kennis ter plaatse doorslaggevend zijn.</p></div></li>
-<li class="why2-item"><span class="why2-n">03</span><div><h3>Advies aan staten &amp; overheden</h3><p>Directe ervaring met opdrachten voor staten, ministeries en nationale transformatieprogramma's.</p></div></li>
-<li class="why2-item"><span class="why2-n">04</span><div><h3>Commercieel onderbouwd advies</h3><p>Advies dat niet alleen analytisch robuust is, maar ook commercieel levensvatbaar, bewust van kapitaal en geïnformeerd door de markt.</p></div></li>
-<li class="why2-item"><span class="why2-n">05</span><div><h3>Onafhankelijk &amp; vrij van belangenconflicten</h3><p>Als onafhankelijk adviesbureau stellen wij de klant voorop, met advies dat gebaseerd is op feiten en reële marktdynamiek.</p></div></li>
-<li class="why2-item"><span class="why2-n">06</span><div><h3>Wereldwijd geïnformeerd perspectief</h3><p>Grensoverschrijdend investeringsadvies, gevormd door directe advieservaring op wereldwijde markten.</p></div></li>
-</ol>
-</div>
-</div>
-</section>
-<!-- CONTACT -->
-<section class="contact-section">
-<div class="section-inner-narrow">
-<h2 class="section-title">Neem contact op</h2>
-<p class="section-lead">Vertaal uw visie naar een overtuigende strategie. Neem contact op om uw opdracht met een senior partner te bespreken.</p>
-<div class="contact-inner">
-<div class="contact-info">
-<h3>Contactgegevens</h3>
-<div class="contact-item">
-<svg aria-hidden="true" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-</svg>
-<span>Dubai, VAE · Caïro, Egypte</span>
-</div>
-<div class="contact-item">
-<svg aria-hidden="true" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-<a class="contact-link" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
-</div>
-</div>
-<form class="contact-form" novalidate="">
-<div class="form-field">
-<label for="cf-name">Naam</label>
-<input autocomplete="name" class="form-input" id="cf-name" name="name" required="" type="text"/>
-</div>
-<div class="form-field">
-<label for="cf-email">E-mail</label>
-<input autocomplete="email" class="form-input" id="cf-email" name="email" required="" type="email"/>
-</div>
-<div class="form-field">
-<label for="cf-subject">Onderwerp</label>
-<input class="form-input" id="cf-subject" name="_subject" type="text"/>
-</div>
-<div class="form-field">
-<label for="cf-message">Bericht</label>
-<textarea class="form-input" id="cf-message" name="message" required="" rows="4"></textarea>
-</div>
-<input aria-hidden="true" autocomplete="off" class="honeypot" name="_honey" tabindex="-1" type="text"/>
-<button class="btn-primary btn-submit" type="submit">Bericht verzenden</button>
-<p aria-live="polite" class="form-status" role="status"></p>
-</form>
 </div>
 </div>
 </section>
 </main>
-<!-- FOOTER -->
+<section aria-labelledby="clTitle" class="closing">
+<div class="cl-inner">
+<h2 class="h2" id="clTitle">Staat u voor een beslissing in deze markten?</h2>
+<div>
+<p>Vertel ons waarover u moet beslissen en binnen welke termijn. Een senior adviseur reageert binnen één werkdag.</p>
+<div class="cl-actions">
+<a class="btn btn--light" href="/nl/pages/contact">Neem contact op <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="link link--light" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
+</div>
+</div>
+</div>
+</section>
 <footer class="footer">
-<div style="max-width:1200px;margin:0 auto;">
-<div class="footer-grid">
-<div class="footer-brand">
-<h3>Heirstone Consulting &amp;<br/>Strategic Advisory</h3>
-<p>Een gespecialiseerd strategisch adviesbureau voor frontier- en snelgroeiende markten in MENA, Afrika en Centraal-Azië.</p>
-<div class="footer-social">
-<a aria-label="Heirstone Consulting op LinkedIn" href="https://www.linkedin.com/company/heirstoneconsulting" rel="noopener" target="_blank">
-<svg aria-hidden="true" fill="currentColor" height="16" viewbox="0 0 24 24" width="16">
-<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle>
-</svg>
+<div class="ft-wrap">
+<div class="ft-grid">
+<div>
+<a aria-label="Heirstone Consulting" class="ft-brand" href="/nl/">
+<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect height="34" stroke="#5D6E82" stroke-width="2" width="34" x="13" y="13"></rect><rect height="34" stroke="#5D6E82" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect></svg>
+<span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
 </a>
+<p class="ft-about">Strategisch advies voor vastgoed, toerisme en nationale ontwikkeling in het Midden-Oosten, Afrika en Centraal-Azië.</p>
 </div>
+<div class="ft-col"><h4>Vakgebieden</h4><a href="/nl/pages/real-estate-strategy">Vastgoedstrategie</a><a href="/nl/pages/tourism-development">Toerismeontwikkeling</a><a href="/nl/pages/national-vision-strategy">Nationale visiestrategie</a><a href="/nl/pages/special-projects">Speciale projecten</a><a href="/nl/pages/digital-transformation">Digitale transformatie</a></div>
+<div class="ft-col"><h4>Het bureau</h4><a href="/nl/pages/about">Over ons</a><a href="/nl/pages/experience">Ervaring</a><a href="/nl/pages/reports">Onderzoek</a><a href="/nl/pages/insights">Inzichten</a><a href="/nl/pages/services">Diensten</a><a href="/nl/pages/contact">Contact</a></div>
+<div class="ft-col"><h4>Kantoren</h4><span>Dubai, Verenigde Arabische Emiraten</span><span>Caïro, Egypte</span><a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a><a data-i18n-skip="" href="https://www.linkedin.com/company/heirstoneconsulting" rel="noopener" target="_blank">LinkedIn</a></div>
 </div>
-<div class="footer-col">
-<h4>Onze expertise</h4>
-<ul>
-<li><a href="/nl/pages/real-estate-strategy">Vastgoedstrategie</a></li>
-<li><a href="/nl/pages/tourism-development">Toerismeontwikkeling</a></li>
-<li><a href="/nl/pages/national-vision-strategy">Nationale visiestrategie</a></li>
-<li><a href="/nl/pages/special-projects">Speciale projecten</a></li><li><a href="/nl/pages/digital-transformation">Digitale transformatie</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Bedrijf</h4>
-<ul>
-<li><a href="/nl/pages/about">Over ons</a></li>
-<li><a href="/nl/pages/services">Diensten</a></li>
-<li><a href="/nl/pages/experience">Ervaring</a></li><li><a href="/nl/pages/reports">Rapporten</a></li><li><a href="/nl/pages/insights">Inzichten</a></li>
-<li><a href="/nl/pages/contact">Contact</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Contactgegevens</h4>
-<div class="footer-contact-item">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-</svg>
-<span>Dubai, VAE · Caïro, Egypte</span>
-</div>
-<div class="footer-contact-item">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-<a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
-</div>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026 Heirstone Consulting &amp; Strategic Advisory. Alle rechten voorbehouden.</p>
-</div>
+<div class="ft-base"><span data-i18n-skip="">© 2026 Heirstone Consulting L.L.C-FZ</span><span>Beschikbaar in 26 talen</span></div>
 </div>
 </footer>
 <script>window.HS_I18N={"Sending…": "Bezig met verzenden…", "Message Sent": "Bericht verzonden", "Thank you — your message has been sent. We typically respond within one business day.": "Dank u wel — uw bericht is verzonden. Wij reageren doorgaans binnen één werkdag.", "Something went wrong and your message was not sent. Please email us directly at <a href=\"mailto:info@heirstoneconsulting.com\">info@heirstoneconsulting.com</a>.": "Er is iets misgegaan en uw bericht is niet verzonden. Mail ons rechtstreeks via <a href=\"mailto:info@heirstoneconsulting.com\">info@heirstoneconsulting.com</a>.", "Open menu": "Menu openen", "Close menu": "Menu sluiten", "Language": "Taal"};</script><script src="/js/main.js"></script>
-<script src="/js/home.js"></script>
 </body>
 </html>

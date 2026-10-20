@@ -113,6 +113,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="/css/style.css" rel="stylesheet"/>
 <link href="/css/home.css" rel="stylesheet"/>
+<link href="/css/v2.css" rel="stylesheet"/>
 <link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link as="image" href="/Media/hero-1.webp" rel="preload"/>
 <!-- i18n:alternates -->
@@ -150,487 +151,297 @@
 <!-- NAVBAR -->
 <nav class="navbar">
 <a class="navbar-brand" href="/ru/">
-<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-<rect height="34" stroke="#8FA0B2" stroke-width="2" width="34" x="13" y="13"></rect>
-<rect height="34" stroke="#8FA0B2" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect>
-</svg>
+<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect height="34" stroke="#8FA0B2" stroke-width="2" width="34" x="13" y="13"></rect><rect height="34" stroke="#8FA0B2" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect></svg>
 <span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
 </a>
 <ul class="navbar-nav">
-<li><a href="/ru/">Главная</a></li>
-<li class="dropdown">
-<a href="/ru/pages/services">Наши компетенции</a>
+<li class="dropdown"><a href="/ru/pages/services">Компетенции</a>
 <div class="dropdown-menu">
 <a href="/ru/pages/real-estate-strategy">Стратегия в сфере недвижимости</a>
 <a href="/ru/pages/tourism-development">Развитие туризма</a>
 <a href="/ru/pages/national-vision-strategy">Стратегия национального видения</a>
 <a href="/ru/pages/special-projects">Специальные проекты</a>
 <a href="/ru/pages/digital-transformation">Цифровая трансформация</a>
+<a class="dd-all" href="/ru/pages/services">Все компетенции</a>
 </div>
 </li>
-<li><a href="/ru/pages/experience">Опыт</a></li><li><a href="/ru/pages/reports">Отчёты</a></li><li><a href="/ru/pages/insights">Аналитика</a></li><li><a href="/ru/pages/about">О нас</a></li>
-<li><a href="/ru/pages/services">Услуги</a></li>
-<li><a class="navbar-cta" href="/ru/pages/contact">Контакты</a></li>
+<li><a href="/ru/pages/reports">Исследования</a></li>
+<li><a href="/ru/pages/experience">Опыт</a></li>
+<li><a href="/ru/pages/about">О нас</a></li>
+<li class="nav-cta"><a class="navbar-cta" href="/ru/pages/contact">Контакты</a></li>
 <!-- i18n:switch --><li class="dropdown lang-switch" data-i18n-skip=""><button aria-haspopup="true" aria-label="Язык" class="lang-btn" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg><span>RU</span></button><div class="dropdown-menu lang-menu"><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a aria-current="true" data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div></li><!-- /i18n:switch -->
 </ul>
 <button aria-controls="mobileNav" aria-expanded="false" aria-label="Открыть меню" class="hamburger" id="hamburger">
 <span></span><span></span><span></span>
 </button>
 </nav>
-<!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav">
-<a href="/ru/">Главная</a>
-<a href="/ru/pages/real-estate-strategy">Стратегия в сфере недвижимости</a>
-<a href="/ru/pages/tourism-development">Развитие туризма</a>
-<a href="/ru/pages/national-vision-strategy">Стратегия национального видения</a>
-<a href="/ru/pages/special-projects">Специальные проекты</a>
-<a href="/ru/pages/digital-transformation">Цифровая трансформация</a>
+<a href="/ru/pages/services">Компетенции</a>
+<a class="mn-sub" href="/ru/pages/real-estate-strategy">Стратегия в сфере недвижимости</a>
+<a class="mn-sub" href="/ru/pages/tourism-development">Развитие туризма</a>
+<a class="mn-sub" href="/ru/pages/national-vision-strategy">Стратегия национального видения</a>
+<a class="mn-sub" href="/ru/pages/special-projects">Специальные проекты</a>
+<a class="mn-sub" href="/ru/pages/digital-transformation">Цифровая трансформация</a>
+<a href="/ru/pages/reports">Исследования</a>
 <a href="/ru/pages/experience">Опыт</a>
-<a href="/ru/pages/reports">Отчёты</a>
-<a href="/ru/pages/insights">Аналитика</a>
 <a href="/ru/pages/about">О нас</a>
-<a href="/ru/pages/services">Услуги</a>
+<a href="/ru/pages/insights">Аналитика</a>
 <a href="/ru/pages/contact">Контакты</a>
 <!-- i18n:mswitch --><div aria-label="Язык" class="mobile-lang" data-i18n-skip=""><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a aria-current="true" data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div><!-- /i18n:mswitch -->
 </div>
-<main id="main">
-<!-- HERO -->
-<section class="hero">
-<div aria-hidden="true" class="hero-slides">
-<div class="hero-slide active" style="background-image:url('/Media/hero-1.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-2.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-3.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-4.webp')"></div>
-</div>
-<div aria-hidden="true" class="hero-overlay"></div>
-<div class="hero-content">
-<p class="hero-kicker">Консалтинг и стратегическое консультирование — Дубай · Каир</p>
-<h1>Специализированный консалтинг для непрозрачных рынков с высокими амбициями.</h1>
-<p>Heirstone консультирует государства, институциональных инвесторов и девелоперов там, где традиционные консалтинговые подходы перестают работать, — превращая национальное видение в коммерчески жизнеспособную и реализуемую стратегию на Ближнем Востоке и в Северной Африке (MENA), в Африке и Центральной Азии.</p>
-<div class="hero-actions">
-<a class="btn-primary" href="#services">Наша экспертиза</a>
-<a class="btn-secondary" href="/ru/pages/contact">Связаться с нами</a>
-</div>
-</div>
-<div aria-hidden="true" class="hero-ticker">
-<div class="tick-track"><span class="tick-item">Наиболее эффективное использование</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">ТЭО и оценка реализуемости</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Международный бенчмаркинг</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Исследования рынка</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Стратегия туристического направления</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Национальное видение</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Стратегия ГЧП</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Стратегия аэропортов и портов</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Брендированные резиденции</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Привлечение инвестиций</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Цифровые разрешения</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Политические риски</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Наиболее эффективное использование</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">ТЭО и оценка реализуемости</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Международный бенчмаркинг</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Исследования рынка</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Стратегия туристического направления</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Национальное видение</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Стратегия ГЧП</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Стратегия аэропортов и портов</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Брендированные резиденции</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Привлечение инвестиций</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Цифровые разрешения</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">Политические риски</span><span aria-hidden="true" class="tick-dot"></span></div>
-</div>
-</section>
-<!-- FACTS BAR -->
-<section aria-label="О компании" class="facts-bar">
-<div class="facts-inner">
-<div class="fact">
-<span class="fact-label">Офисы</span>
-<span class="fact-value">Дубай · Каир</span>
-</div>
-<div class="fact">
-<span class="fact-label">Экспертиза</span>
-<span class="fact-value">Опыт работы в консалтинговых компаниях первого эшелона</span>
-</div>
-<div class="fact">
-<span class="fact-label">Профиль мандатов</span>
-<span class="fact-value">Суверенные и институциональные клиенты</span>
-</div>
-<div class="fact">
-<span class="fact-label">География</span>
-<span class="fact-value">Страны Персидского залива · MENA · Африка · Центральная Азия</span>
-</div>
-</div>
-</section>
-<!-- SELECTED ENGAGEMENTS (carousel) -->
-<section aria-label="Избранный опыт команды" aria-roledescription="карусель" class="eng" id="engagements">
-<div class="eng-head">
+<header class="hero" id="main">
+<div aria-label="Панорама Найроби" class="hero-img" role="img"></div>
+<div class="hero-body">
 <div>
-<p class="eyebrow eyebrow-light">Избранный опыт команды</p>
-<h2>Мандаты от суверенных, институциональных и частных инвесторов.</h2>
-</div>
-<div class="eng-controls">
-<span class="eng-count"><b class="eng-cur">01</b> / 07</span>
-<button aria-label="Предыдущий проект" class="eng-btn eng-prev" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
-<button aria-label="Следующий проект" class="eng-btn eng-next" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
-</div>
-</div>
-<div class="eng-track" tabindex="0">
-<article aria-label="1 из 7" aria-roledescription="слайд" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Знаковый исторический городской квартал у воды" height="480" loading="eager" src="/Media/exp-giza.webp" width="800"/>
-<span class="eng-num">01</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Государственный орган — Египет</p>
-<h3>Мастер-план района пирамид Гизы</h3>
-<p class="eng-desc">Оценка рынка и стратегия развития знакового многофункционального проекта рядом с одним из самых посещаемых объектов культурного наследия в мире: прогнозы спроса в разрезе рынков-источников, целей поездок и сезонности, преобразованные в решения по функциональному зонированию, параметрам компонентов и этапности.</p>
-<p class="eng-outcome"><span>Результат</span>Основа для позиционирования проекта, коммерческой стратегии и долгосрочного планирования туристической инфраструктуры на национальном уровне.</p>
-</div>
-</article>
-<article aria-label="2 из 7" aria-roledescription="слайд" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Уличная жизнь в городе Африки к югу от Сахары" height="480" loading="eager" src="/Media/exp-tourism.webp" width="800"/>
-<span class="eng-num">02</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Национальное правительство — Африка к югу от Сахары</p>
-<h3>Национальная программа развития туризма</h3>
-<p class="eng-desc">Комплексная стратегия развития туризма для нескольких кластеров туристических направлений: прогнозирование спроса, позиционирование дестинаций, рамочные подходы к развитию турпродукта и стратегия привлечения инвестиций.</p>
-<p class="eng-outcome"><span>Результат</span>Утверждена в качестве национальной рамочной программы развития туризма, обеспечивающей согласованность политики и мобилизацию частных инвестиций.</p>
-</div>
-</article>
-<article aria-label="3 из 7" aria-roledescription="слайд" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Современная стеклянная высотная застройка" height="480" loading="lazy" src="/Media/exp-giga.webp" width="800"/>
-<span class="eng-num">03</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Девелопер с государственной поддержкой — Саудовская Аравия</p>
-<h3>Стратегия и консалтинг для гигапроектов</h3>
-<p class="eng-desc">Жилищная стратегия, позиционирование брендированных резиденций и анализ наиболее эффективного использования для масштабных проектов с государственной поддержкой в рамках гигапроектов.</p>
-<p class="eng-outcome"><span>Результат</span>Обоснованное позиционирование проекта и продуктовая стратегия, согласованные с целями суверенного инвестора.</p>
-</div>
-</article>
-<article aria-label="4 из 7" aria-roledescription="слайд" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Современные многофункциональные башни на фоне прибрежного силуэта города" height="480" loading="lazy" src="/Media/exp-northcoast.webp" width="800"/>
-<span class="eng-num">04</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Институциональный инвестор — Египет</p>
-<h3>Инвестиционный консалтинг: Каир и Северное побережье</h3>
-<p class="eng-desc">Мультисекторное исследование рынка и инвестиционный консалтинг для институционального инвестора из Центральной Азии: жилая, офисная, торговая и гостиничная недвижимость в Большом Каире и на Северном побережье / в Рас-эль-Хекме.</p>
-<p class="eng-outcome"><span>Результат</span>Структурированная инвестиционная модель, обеспечивающая трансграничное размещение капитала на одном из самых быстрорастущих рынков многофункциональной и прибрежной недвижимости в регионе.</p>
-</div>
-</article>
-<article aria-label="5 из 7" aria-roledescription="слайд" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Офисные башни в центральном деловом районе" height="480" loading="lazy" src="/Media/exp-office.webp" width="800"/>
-<span class="eng-num">05</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Институциональная / консалтинговая платформа — Египет</p>
-<h3>Аналитическая платформа офисного рынка Каира</h3>
-<p class="eng-desc">Разработка и создание платформы данных о недвижимости, охватывающей офисный рынок Большого Каира: данные об аренде, уровень заполняемости, ценовые бенчмарки и рыночные индикаторы.</p>
-<p class="eng-outcome"><span>Результат</span>Основа для рыночной аналитики и консалтинга институционального уровня, поддерживающая инвестиционные решения и ежеквартальную рыночную отчётность.</p>
-</div>
-</article>
-<article aria-label="6 из 7" aria-roledescription="слайд" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Вид с высоты на новую инфраструктуру на пограничном рынке (frontier)" height="480" loading="lazy" src="/Media/exp-frontier.webp" width="800"/>
-<span class="eng-num">06</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Девелопер — Африка к югу от Сахары</p>
-<h3>ТЭО и НЭИ на пограничных рынках</h3>
-<p class="eng-desc">Анализ наиболее эффективного использования и оценка реализуемости масштабных многофункциональных проектов в городской среде с дефицитом данных — на основе первичных исследований.</p>
-<p class="eng-outcome"><span>Результат</span>Пересмотр девелоперских программ и поддержка структурирования капитала и обеспечения инвестиционной жизнеспособности в условиях пограничных рынков.</p>
-</div>
-</article>
-<article aria-label="7 из 7" aria-roledescription="слайд" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="Вид с высоты на исторический городской квартал в процессе реновации" height="480" loading="lazy" src="/Media/exp-heritage.webp" width="800"/>
-<span class="eng-num">07</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">Государственный и институциональный сектор — MENA</p>
-<h3>Стратегия ревитализации объектов наследия и городской реновации</h3>
-<p class="eng-desc">Стратегия перепрофилирования объектов наследия и реновации городской среды: интеграция туристических, торговых и культурных функций в коммерчески жизнеспособные девелоперские концепции.</p>
-<p class="eng-outcome"><span>Результат</span>Баланс между сохранением культурного наследия, генерированием доходов и долгосрочной активацией городской среды.</p>
-</div>
-</article>
-</div>
-<div class="eng-foot">
-<div aria-hidden="true" class="eng-progress"><span></span></div>
-<a class="eng-all" href="/ru/pages/experience">Все проекты <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</section>
-<!-- PRACTICES (explorer: tabs on desktop, accordion on mobile) -->
-<section class="px-section" id="services">
-<div class="px-head">
-<p class="eyebrow">Что мы делаем</p>
-<h2>Пять направлений. <em>Единый стандарт.</em></h2>
-<p class="px-intro">Каждый проект ведётся под руководством партнёра, опирается на факты и создаётся для руководителей, подотчётных советам директоров, министерствам и инвесторам.</p>
-</div>
-<div aria-label="Направления" class="px" role="tablist">
-<div class="px-item is-active">
-<button aria-controls="px-panel-0" aria-expanded="true" aria-selected="true" class="px-tab" id="px-tab-0" role="tab" type="button">
-<span class="px-n">01</span>
-<span class="px-text"><span class="px-name">Стратегия в сфере недвижимости</span><span class="px-tag">От участка до портфеля.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-0" class="px-panel" id="px-panel-0" role="tabpanel">
-<div class="px-media"><img alt="Вид с высоты на мастер-план многофункционального девелоперского проекта" height="384" loading="lazy" src="/Media/cap-realestate.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Раскрываем ценность земли, активов и портфелей с помощью рыночной аналитики, финансового моделирования и девелоперской стратегии.</p>
-<p class="px-sublabel">7 компетенций</p>
-<div class="px-chips"><a class="px-chip" href="/ru/pages/highest-and-best-use">Анализ наиболее эффективного использования</a><a class="px-chip" href="/ru/pages/development-strategy">Девелоперская стратегия и этапность</a><a class="px-chip" href="/ru/pages/market-research">Исследования рынка и выявление возможностей</a><a class="px-chip" href="/ru/pages/commercial-feasibility">Коммерческие ТЭО</a><a class="px-chip" href="/ru/pages/investment-attraction">Привлечение и структурирование инвестиций</a><a class="px-chip" href="/ru/pages/competitive-benchmarking">Конкурентный бенчмаркинг</a><a class="px-chip" href="/ru/pages/branded-residences">Стратегический консалтинг по брендированным резиденциям</a></div>
-<a class="px-cta" href="/ru/pages/real-estate-strategy">Подробнее о направлении <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<p class="eyebrow">Стратегический консалтинг · Дубай и Каир</p>
+<h1>Стратегии в сфере недвижимости, туризма и национального развития, основанные на фактах.</h1>
+<p class="hero-lead">Мы консультируем правительства, суверенных и институциональных инвесторов и девелоперов на Ближнем Востоке, в Африке и Центральной Азии. Каждый мандат ведётся под руководством старших консультантов и опирается на первичные исследования.</p>
+<div class="hero-cta">
+<a class="btn btn--light" href="/ru/pages/contact">Обсудить Ваш мандат <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="link link--light" href="/ru/pages/reports">Читать наши исследования <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </div>
+<a class="latest" href="/ru/pages/report-airport-cities">
+<img alt="Обложка отчёта Heirstone «Дивиденд взлётной полосы»" height="116" src="/Media/reports/airport-cities.webp" width="82"/>
+<div class="latest-text">
+<p class="latest-label">Последний отчёт</p>
+<p class="latest-title">Аэропортовые города: Дивиденд взлётной полосы</p>
+<p class="latest-stat"><span class="rp-n">11 к 1</span> соотношение по стоимости продаж квартир на этапе строительства и перепродаж в Dubai South в 2025 году: 10,23 млрд дирхамов ОАЭ против 0,91 млрд</p>
 </div>
-<div class="px-item">
-<button aria-controls="px-panel-1" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-1" role="tab" type="button">
-<span class="px-n">02</span>
-<span class="px-text"><span class="px-name">Туризм и дестинации</span><span class="px-tag">Дестинации, конкурентоспособные в мировом масштабе.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-1" class="px-panel" id="px-panel-1" role="tabpanel">
-<div class="px-media"><img alt="Пляжная туристическая дестинация с курортами и яхтенной мариной" height="384" loading="lazy" src="/Media/cap-tourism.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Стратегии конкурентоспособных и инвестиционно привлекательных туристических направлений: прогнозирование спроса, развитие турпродукта и позиционирование в рамках целостной модели экономики гостеприимства.</p>
-<p class="px-sublabel">4 компетенции</p>
-<div class="px-chips"><a class="px-chip" href="/ru/pages/destination-strategy">Стратегия и позиционирование туристического направления</a><a class="px-chip" href="/ru/pages/tourism-market-research">Исследования туристического рынка и прогнозирование спроса</a><a class="px-chip" href="/ru/pages/visitor-economy">Стратегия экономики гостеприимства</a><a class="px-chip" href="/ru/pages/airport-port-strategy">Коммерческая стратегия аэропортов, портов и транспортных ворот</a></div>
-<a class="px-cta" href="/ru/pages/tourism-development">Подробнее о направлении <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</a>
 </div>
+</header>
+<main>
+<section aria-labelledby="shelfTitle" class="shelf">
+<div class="wrap">
+<div class="shelf-head">
+<h2 id="shelfTitle">32 независимых отчёта о рынках, на которых мы работаем, в свободном доступе.</h2>
+<a class="link" href="/ru/pages/reports">Смотреть все исследования <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-2" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-2" role="tab" type="button">
-<span class="px-n">03</span>
-<span class="px-text"><span class="px-name">Национальное видение и отраслевые стратегии</span><span class="px-tag">Видение, ставшее планом действий.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-2" class="px-panel" id="px-panel-2" role="tabpanel">
-<div class="px-media"><img alt="Силуэт современной столицы на рассвете" height="384" loading="lazy" src="/Media/cap-national.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Превращаем национальные амбиции в структурированные, практически реализуемые программы, согласуя политику, инвестиции и механизмы реализации.</p>
-<p class="px-sublabel">7 компетенций</p>
-<div class="px-chips"><a class="px-chip" href="/ru/pages/national-vision">Национальное видение и стратегические рамочные документы</a><a class="px-chip" href="/ru/pages/sector-transformation">Консалтинг по отраслевой трансформации</a><a class="px-chip" href="/ru/pages/ppp-strategy">Стратегия государственно-частного партнёрства (ГЧП)</a><a class="px-chip" href="/ru/pages/policy-framework">Консалтинг по политике и институциональной архитектуре</a><a class="px-chip" href="/ru/pages/global-benchmarking">Международный бенчмаркинг программ национальной трансформации</a><a class="px-chip" href="/ru/pages/monitoring-frameworks">Системы мониторинга и корректировки</a><a class="px-chip" href="/ru/pages/political-risk-assessment">Оценка политических рисков и инвестиционного климата</a></div>
-<a class="px-cta" href="/ru/pages/national-vision-strategy">Подробнее о направлении <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-3" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-3" role="tab" type="button">
-<span class="px-n">04</span>
-<span class="px-text"><span class="px-name">Специальные проекты и стратегический консалтинг</span><span class="px-tag">Индивидуальные мандаты, сложные задачи.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-3" class="px-panel" id="px-panel-3" role="tabpanel">
-<div class="px-media"><img alt="Знаковый масштабный мегапроект под драматичным небом" height="384" loading="lazy" src="/Media/cap-special.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">От монетизации суверенных активов до трансграничной экспансии и стратегии мегасобытий — там, где традиционных подходов недостаточно.</p>
-<p class="px-sublabel">6 компетенций</p>
-<div class="px-chips"><a class="px-chip" href="/ru/pages/asset-monetization">Стратегия монетизации крупных активов</a><a class="px-chip" href="/ru/pages/destination-brand">Консалтинг по развитию бренда туристического направления</a><a class="px-chip" href="/ru/pages/investor-outreach">Планирование работы с инвесторами и их вовлечения</a><a class="px-chip" href="/ru/pages/cross-border-expansion">Консалтинг по трансграничной экспансии</a><a class="px-chip" href="/ru/pages/innovation-ecosystem">Стратегия инновационной экосистемы</a><a class="px-chip" href="/ru/pages/sports-culture">Стратегия в сфере спорта, культуры и мегасобытий</a></div>
-<a class="px-cta" href="/ru/pages/special-projects">Подробнее о направлении <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-4" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-4" role="tab" type="button">
-<span class="px-n">05</span>
-<span class="px-text"><span class="px-name">Цифровая трансформация</span><span class="px-tag">Государственные услуги, цифровые от начала до конца.</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-4" class="px-panel" id="px-panel-4" role="tabpanel">
-<div class="px-media"><img alt="Государственный центр цифровых операций с панелями мониторинга градостроительного планирования и разрешений" height="384" loading="lazy" src="/Media/cap-digital.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">Цифровизация государственных услуг, от которых зависят рынок недвижимости и строительная отрасль, — разрешения, земельный реестр, лицензирование и данные об активах, — чтобы капитал двигался со скоростью принятия решений.</p>
-<p class="px-sublabel">4 компетенции</p>
-<div class="px-chips"><a class="px-chip" href="/ru/pages/digital-permitting">Цифровые разрешения и лицензирование строительства</a><a class="px-chip" href="/ru/pages/land-registry-digitization">Цифровизация земельного реестра и сделок с недвижимостью</a><a class="px-chip" href="/ru/pages/digital-service-design">Проектирование цифровых услуг и клиентский опыт граждан</a><a class="px-chip" href="/ru/pages/bim-digital-twins">BIM, цифровые двойники и стандарты информации об активах</a></div>
-<a class="px-cta" href="/ru/pages/digital-transformation">Подробнее о направлении <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
+<div class="shelf-row">
+<a class="cover" href="/ru/pages/report-airport-cities"><div class="cover-img"><img alt="Обложка отчёта Heirstone «Дивиденд взлётной полосы»" height="1273" loading="lazy" src="/Media/reports/airport-cities.webp" width="900"/></div><p class="cover-tag">Аэропортовые города</p><p class="cover-title">Дивиденд взлётной полосы</p></a>
+<a class="cover" href="/ru/pages/report-africa-construction-costs"><div class="cover-img"><img alt="Обложка отчёта Heirstone «Девять городов, один квадратный метр»" height="1273" loading="lazy" src="/Media/reports/africa-construction-costs.webp" width="900"/></div><p class="cover-tag">Стоимость строительства и строительные технологии</p><p class="cover-title">Девять городов, один квадратный метр</p></a>
+<a class="cover" href="/ru/pages/report-airports-terminals"><div class="cover-img"><img alt="Обложка отчёта Heirstone «Час пик»" height="1273" loading="lazy" src="/Media/reports/airports-terminals.webp" width="900"/></div><p class="cover-tag">Аэропорты и аэровокзалы</p><p class="cover-title">Час пик</p></a>
+<a class="cover" href="/ru/pages/report-uzbekistan-new-cities"><div class="cover-img"><img alt="Обложка отчёта Heirstone «Дневной город»" height="1273" loading="lazy" src="/Media/reports/uzbekistan-new-cities.webp" width="900"/></div><p class="cover-tag">Новые города Узбекистана</p><p class="cover-title">Дневной город</p></a>
+<a class="cover" href="/ru/pages/report-africa-real-estate-capital"><div class="cover-img"><img alt="Обложка отчёта Heirstone «Деньги уже здесь»" height="1273" loading="lazy" src="/Media/reports/africa-real-estate-capital.webp" width="900"/></div><p class="cover-tag">Капитал для недвижимости в Африке</p><p class="cover-title">Деньги уже здесь</p></a>
+<a class="cover" href="/ru/pages/report-branded-residences"><div class="cover-img"><img alt="Обложка отчёта Heirstone «Кому достаётся премия»" height="1273" loading="lazy" src="/Media/reports/branded-residences.webp" width="900"/></div><p class="cover-tag">Брендированные резиденции</p><p class="cover-title">Кому достаётся премия</p></a>
 </div>
 </div>
 </section>
-<!-- ENGAGEMENT MODEL (timeline) -->
-<section class="tl-section">
-<div class="tl-head">
+<section aria-labelledby="prTitle" class="principles">
+<div class="wrap">
 <p class="eyebrow">Как мы работаем</p>
-<h2>Модель работы из четырёх этапов.</h2>
-<p>Никаких шаблонных решений. Каждый мандат выстраивается с учётом контекста, целей и ограничений — и ведётся непосредственно старшими партнёрами.</p>
+<h2 class="h2" id="prTitle">Четыре принципа, которые определяют каждый проект.</h2>
+<div class="p-grid">
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+<h3>Прежде всего первичные исследования</h3>
+<p>Там, где данных мало, мы собираем их: опросы, интервью, выезды на объекты и данные о сделках, прежде чем строить какую-либо модель.</p>
 </div>
-<div class="tl-wrap">
-<span aria-hidden="true" class="tl-line"><span class="tl-fill"></span></span>
-<ol class="tl">
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">01</span>
-<h3>Понимание</h3>
-<p>Глубокая диагностика. Мы погружаемся в контекст клиента, рыночную среду и стратегические цели — и подвергаем техническое задание сомнению там, где это необходимо.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">02</span>
-<h3>Анализ</h3>
-<p>Тщательный количественный и качественный анализ — исследования рынка, финансовое моделирование, бенчмаркинг и картирование стейкхолдеров — для получения выводов, основанных на фактах.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">03</span>
-<h3>Стратегия</h3>
-<p>Анализ превращается в стратегию: поэтапные рекомендации, приоритизированные инициативы и трезвая оценка рисков, последовательности действий и потребностей в капитале.</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">04</span>
-<h3>Реализация</h3>
-<p>Материалы, созданные для лиц, принимающих решения, — лаконичные, готовые для совета директоров и рассчитанные на презентацию на уровне государства, министерств и инвестиционных комитетов.</p>
-</li>
-</ol>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>
+<h3>Старшие консультанты на всех этапах</h3>
+<p>Те, кто определяет рамки мандата, остаются в проекте от первой рабочей сессии до презентации совету директоров.</p>
+</div>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 3v18M5 7h14M5 7l-3 7h6l-3-7zM19 7l-3 7h6l-3-7zM8 21h8"></path></svg>
+<h3>Независимые рекомендации</h3>
+<p>У нас нет конфликта интересов, поэтому наши рекомендации опираются на факты и цели клиента.</p>
+</div>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
+<h3>Глубокое знание региона</h3>
+<p>Офисы в Дубае и Каире и работа в странах Персидского залива, в Северной Африке и Африке к югу от Сахары, а также в Центральной Азии.</p>
+</div>
+</div>
 </div>
 </section>
-<!-- ABOUT SECTION -->
-<section class="about-section">
-<div class="about-inner">
-<div class="about-image">
-<img alt="Вид с высоты на развивающийся городской район с новыми башнями и инфраструктурой" height="801" loading="lazy" src="/Media/about.webp" width="1400"/>
+<section aria-labelledby="pracTitle" class="practices">
+<div class="wrap pr-grid">
+<div class="pr-intro">
+<p class="eyebrow">Компетенции</p>
+<h2 class="h2" id="pracTitle">Пять направлений.</h2>
+<p class="lead">Каждое направление сочетает исследования рынка, финансовый анализ и стратегию для одного типа решений, чтобы рекомендации выдерживали проверку советом директоров, министерством или инвестиционным комитетом.</p>
+<a class="link" href="/ru/pages/services">Все компетенции <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-<div class="about-text">
-<h2>О компании Heirstone Consulting &amp; Strategic Advisory</h2>
-<p>Heirstone — специализированная стратегическая консалтинговая компания для пограничных (frontier) и быстрорастущих рынков: сред, где данных мало, ставки решений высоки, а традиционные консалтинговые подходы перестают работать.</p>
-<p>Располагая офисами в Дубае и Каире, компания сочетает опыт консалтинга первого эшелона с глубоким знанием региона. Мы работаем на стыке бизнес-амбиций и институциональной реальности, а наша практика охватывает всё — от позиционирования отдельных активов до программ национальной трансформации.</p>
-<a class="btn-primary" href="/ru/pages/about" style="margin-top:8px;">Подробнее о нас</a>
+<div class="pr-cards">
+<a class="pr-card" href="/ru/pages/real-estate-strategy">
+<h3>Стратегия в сфере недвижимости</h3>
+<p>Что строить, где и в какой последовательности: наиболее эффективное использование, оценка реализуемости, девелоперская стратегия и структурирование инвестиций.</p>
+<span class="pr-foot"><span class="pr-count">7 компетенций</span><span class="link">Подробнее <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/ru/pages/tourism-development">
+<h3>Развитие туризма</h3>
+<p>Прогнозы спроса, позиционирование туристических направлений и планы развития туристической экономики, которые инвесторы и правительства могут применить на практике.</p>
+<span class="pr-foot"><span class="pr-count">4 компетенции</span><span class="link">Подробнее <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/ru/pages/national-vision-strategy">
+<h3>Стратегия национального видения</h3>
+<p>Национальные амбиции, воплощённые в программы, партнёрства и государственную политику, с институтами и финансированием для их реализации.</p>
+<span class="pr-foot"><span class="pr-count">7 компетенций</span><span class="link">Подробнее <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/ru/pages/special-projects">
+<h3>Специальные проекты</h3>
+<p>Мандаты за рамками отдельного актива: монетизация активов, трансграничная экспансия, работа с инвесторами и крупные мероприятия.</p>
+<span class="pr-foot"><span class="pr-count">6 компетенций</span><span class="link">Подробнее <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/ru/pages/digital-transformation">
+<h3>Цифровая трансформация</h3>
+<p>Услуги по выдаче разрешений, ведению земельного реестра и лицензированию, благодаря которым проекты в сфере недвижимости и строительства движутся со скоростью принятия решений.</p>
+<span class="pr-foot"><span class="pr-count">4 компетенции</span><span class="link">Подробнее <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card pr-card--ink" href="/ru/pages/contact">
+<h3>Не знаете, к какому направлению относится Ваш вопрос?</h3>
+<p>Опишите решение, которое Вам предстоит принять. Мы расскажем, как подошли бы к нему, и скажем, подходим ли мы для этой задачи.</p>
+<span class="pr-foot"><span class="pr-count">Дубай · Каир</span><span class="link link--light">Контакты <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
 </div>
 </div>
-<div class="profile-strip">
-<a class="profile-cover" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf"><img alt="Обложка профиля компании Heirstone Consulting" height="405" loading="lazy" src="/Media/docs/company-profile-cover.webp" width="720"/></a>
-<div class="profile-text">
+</section>
+<section aria-labelledby="exTitle" class="experience">
+<div class="wrap">
+<div class="ex-head">
+<div>
+<p class="eyebrow">Избранный опыт команды</p>
+<h2 class="h2" id="exTitle">Проекты для правительств, инвесторов и девелоперов.</h2>
+<p class="lead">Мандаты, выполненные членами команды Heirstone. Названия клиентов не раскрываются по их просьбе.</p>
+</div>
+<div class="ex-ctrl">
+<button aria-label="Предыдущий" data-dir="-1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
+<button aria-label="Следующий" data-dir="1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+<div class="ex-track" id="exTrack">
+<article class="ex-card">
+<p class="ex-client">Государственный орган · Египет</p>
+<h3>Мастер-план района пирамид Гизы</h3>
+<p class="ex-label">Мандат</p>
+<p>Оценка рынка и стратегия развития многофункционального проекта рядом с одним из самых посещаемых объектов культурного наследия в мире: от спроса в разрезе рынков-источников и сезонов до функционального зонирования, параметров и этапности.</p>
+<div class="ex-out"><p class="ex-label">Результат</p><p>Основа для позиционирования проекта, коммерческой стратегии и долгосрочного планирования туристической инфраструктуры.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Национальное правительство · Африка к югу от Сахары</p>
+<h3>Национальная программа развития туризма</h3>
+<p class="ex-label">Мандат</p>
+<p>Стратегия развития туризма для нескольких кластеров туристических направлений: прогнозирование спроса, позиционирование, развитие турпродукта и привлечение инвестиций.</p>
+<div class="ex-out"><p class="ex-label">Результат</p><p>Утверждена в качестве национальной рамочной программы развития туризма и служит ориентиром для государственной политики и частных инвестиций.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Девелопер с государственной поддержкой · Саудовская Аравия</p>
+<h3>Стратегия гигапроекта</h3>
+<p class="ex-label">Мандат</p>
+<p>Жилищная стратегия, позиционирование брендированных резиденций и анализ наиболее эффективного использования для крупных проектов с государственной поддержкой.</p>
+<div class="ex-out"><p class="ex-label">Результат</p><p>Позиционирование проекта и продуктовая стратегия, согласованные с целями суверенного инвестора.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Институциональный инвестор · Египет</p>
+<h3>Инвестиционный консалтинг: Каир и Северное побережье</h3>
+<p class="ex-label">Мандат</p>
+<p>Исследование рынка и инвестиционный консалтинг для институционального инвестора из Центральной Азии: жилая, офисная, торговая и гостиничная недвижимость в Большом Каире и Рас-эль-Хекме.</p>
+<div class="ex-out"><p class="ex-label">Результат</p><p>Инвестиционная модель для трансграничного размещения капитала на одном из самых быстрорастущих прибрежных рынков региона.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Консалтинговая платформа · Египет</p>
+<h3>Аналитика офисного рынка Каира</h3>
+<p class="ex-label">Мандат</p>
+<p>Разработка и создание платформы данных об офисном рынке Большого Каира: аренда, заполняемость, ценовые бенчмарки и рыночные индикаторы.</p>
+<div class="ex-out"><p class="ex-label">Результат</p><p>Рыночная аналитика институционального уровня для инвестиционных решений и ежеквартальной отчётности.</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">Девелопер · Африка к югу от Сахары</p>
+<h3>Оценка реализуемости при дефиците данных</h3>
+<p class="ex-label">Мандат</p>
+<p>Анализ наиболее эффективного использования и оценка реализуемости крупных многофункциональных проектов в городах с дефицитом данных на основе первичных исследований.</p>
+<div class="ex-out"><p class="ex-label">Результат</p><p>Пересмотр девелоперских программ и поддержка структурирования капитала в условиях пограничных рынков.</p></div>
+</article>
+</div>
+<p class="ex-more"><a class="link" href="/ru/pages/experience">Все избранные проекты <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></p>
+</div>
+</section>
+<section aria-labelledby="rsTitle" class="research">
+<div class="wrap">
+<div class="rs-head">
+<div>
+<p class="eyebrow">Исследования</p>
+<h2 class="h2" id="rsTitle">Мы публикуем то, что узнаём.</h2>
+</div>
+<p class="lead">Бесплатные отчёты о недвижимости, инфраструктуре и туризме: в каждом собственный бенчмарк и источник для каждой цифры. Издания на английском, французском, русском и арабском языках.</p>
+</div>
+<div class="rs-grid">
+<a class="rs-card" href="/ru/pages/report-airport-cities">
+<div class="rs-art"><img alt="Обложка отчёта Heirstone «Дивиденд взлётной полосы»" height="1273" loading="lazy" src="/Media/reports/airport-cities.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Аэропортовые города</p>
+<h3 class="rs-title">Дивиденд взлётной полосы</h3>
+<p class="rs-stat"><span class="rp-n">11 к 1</span> соотношение по стоимости продаж квартир на этапе строительства и перепродаж в Dubai South в 2025 году: 10,23 млрд дирхамов ОАЭ против 0,91 млрд</p>
+</div>
+</a>
+<a class="rs-card" href="/ru/pages/report-africa-construction-costs">
+<div class="rs-art"><img alt="Обложка отчёта Heirstone «Девять городов, один квадратный метр»" height="1273" loading="lazy" src="/Media/reports/africa-construction-costs.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Стоимость строительства и строительные технологии</p>
+<h3 class="rs-title">Девять городов, один квадратный метр</h3>
+<p class="rs-stat"><span class="rp-n">2,9×</span> разница в цене многоэтажного жилого дома между Лагосом и Найроби по справочнику AECOM 2024/25: 2330 против 796 долл. США за м²</p>
+</div>
+</a>
+<a class="rs-card" href="/ru/pages/report-africa-hotel-development">
+<div class="rs-art"><img alt="Обложка отчёта Heirstone «Отели на бумаге»" height="1273" loading="lazy" src="/Media/reports/africa-hotel-development.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">Развитие гостиничного сектора в Африке</p>
+<h3 class="rs-title">Отели на бумаге</h3>
+<p class="rs-stat"><span class="rp-n">123 846</span> номеров в 675 отелях в африканском портфеле развития гостиничных сетей в начале 2026 года — рекорд и на 19% больше, чем годом ранее</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<section aria-labelledby="pfTitle" class="profile">
+<div class="wrap">
+<div class="pf-card">
+<img alt="Обложка профиля компании Heirstone Consulting" height="405" loading="lazy" src="/Media/docs/company-profile-cover.webp" width="720"/>
+<div>
 <p class="eyebrow">Профиль компании</p>
-<h3>Heirstone на 21 странице</h3>
-<p>Пять наших направлений, наш подход к работе и избранный опыт команды на Ближнем Востоке, в Африке и Центральной Азии. Скачать можно бесплатно, без заполнения форм.</p>
-<div class="profile-actions">
-<a class="btn-primary" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">Скачать на английском</a>
-<a class="btn-outline" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
+<h2 class="h2" id="pfTitle">Heirstone на 21 странице</h2>
+<p class="lead">Пять наших направлений, наш подход к работе и избранный опыт команды на Ближнем Востоке, в Африке и Центральной Азии. Скачать можно бесплатно, без заполнения форм.</p>
+<div class="pf-actions">
+<a class="btn" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">Скачать на английском</a>
+<a class="btn btn--ghost" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
 </div>
-<p class="profile-meta">PDF · 21 страница · около 8 МБ</p>
+<p class="pf-meta">PDF · 21 страница · около 8 МБ</p>
 </div>
-</div>
-</section>
-<!-- WHO WE ADVISE + WHERE WE ARE DIFFERENT -->
-<section class="band">
-<div class="band-inner">
-<div class="band-col">
-<p class="eyebrow eyebrow-light">Наши клиенты</p>
-<h2>Мы консультируем тех, кто распоряжается землёй, политикой и капиталом.</h2>
-<ul class="who">
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<path d="M3 21h18M4 21V8l8-5 8 5v13M8 21v-8h8v8M12 3v2"></path>
-</svg><div><h3>Правительства и государственные органы</h3><p>Национальные министерства, туристические ведомства и органы территориального планирования, которые разрабатывают и реализуют преобразующие стратегии национального развития.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="9"></circle><path d="M12 7v10M8.5 9.5c0-1.1 1.4-2 3.5-2s3.5.9 3.5 2-1 1.8-3.5 2.3-3.5 1.2-3.5 2.2 1.4 2 3.5 2 3.5-.9 3.5-2"></path>
-</svg><div><h3>Суверенные и институциональные инвесторы</h3><p>Суверенные фонды благосостояния, пенсионные фонды и институциональные инвесторы, которым требуются независимая рыночная аналитика и инвестиционная стратегия.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<path d="M2 21h20M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M10 7h4M10 11h4M10 15h4"></path>
-</svg><div><h3>Девелоперы</h3><p>Девелоперы любого масштаба, которым нужны анализ наиболее эффективного использования, девелоперская стратегия и коммерческое ТЭО для активов и мастер-планов.</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="10"></circle><path d="M12 2v20M2 12h20M4.9 5.5c4.3 3 9.9 3 14.2 0M4.9 18.5c4.3-3 9.9-3 14.2 0"></path>
-</svg><div><h3>Транснациональные корпорации</h3><p>Международные корпорации, выходящие на рынки MENA или расширяющие присутствие в регионе: выход на рынок, выбор площадки и конкурентный бенчмаркинг.</p></div></li>
-</ul>
-</div>
-<div class="band-col">
-<p class="eyebrow eyebrow-light">Чем отличается Heirstone</p>
-<h2>Созданы для рынков, где стандартные подходы не работают.</h2>
-<ol class="why2">
-<li class="why2-item"><span class="why2-n">01</span><div><h3>Под руководством партнёров, гибкие по своей сути</h3><p>Старшие партнёры активно участвуют в каждом проекте, привнося десятилетия опыта стратегического планирования и работая в темпе сделки.</p></div></li>
-<li class="why2-item"><span class="why2-n">02</span><div><h3>Экспертиза пограничных рынков (frontier)</h3><p>Созданы для непрозрачных рынков с дефицитом данных — где решающую роль играют коммерческое суждение и информация, полученная на местах.</p></div></li>
-<li class="why2-item"><span class="why2-n">03</span><div><h3>Консалтинг для государства и суверенных клиентов</h3><p>Непосредственный опыт работы по суверенным мандатам, с министерствами и программами национальной трансформации.</p></div></li>
-<li class="why2-item"><span class="why2-n">04</span><div><h3>Коммерчески обоснованные рекомендации</h3><p>Рекомендации, которые не только аналитически безупречны, но и коммерчески жизнеспособны, учитывают требования капитала и реалии рынка.</p></div></li>
-<li class="why2-item"><span class="why2-n">05</span><div><h3>Независимость и отсутствие конфликта интересов</h3><p>Как независимая консалтинговая компания, мы ставим интересы клиента на первое место и опираемся на факты и реальную рыночную динамику.</p></div></li>
-<li class="why2-item"><span class="why2-n">06</span><div><h3>Глобальная перспектива</h3><p>Трансграничный инвестиционный консалтинг, основанный на непосредственном опыте работы на мировых рынках.</p></div></li>
-</ol>
-</div>
-</div>
-</section>
-<!-- CONTACT -->
-<section class="contact-section">
-<div class="section-inner-narrow">
-<h2 class="section-title">Связаться с нами</h2>
-<p class="section-lead">Превратите своё видение в убедительную стратегию. Свяжитесь с нами, чтобы обсудить Ваш мандат со старшим партнёром.</p>
-<div class="contact-inner">
-<div class="contact-info">
-<h3>Контактная информация</h3>
-<div class="contact-item">
-<svg aria-hidden="true" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-</svg>
-<span>Дубай, ОАЭ · Каир, Египет</span>
-</div>
-<div class="contact-item">
-<svg aria-hidden="true" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-<a class="contact-link" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
-</div>
-</div>
-<form class="contact-form" novalidate="">
-<div class="form-field">
-<label for="cf-name">Имя</label>
-<input autocomplete="name" class="form-input" id="cf-name" name="name" required="" type="text"/>
-</div>
-<div class="form-field">
-<label for="cf-email">Электронная почта</label>
-<input autocomplete="email" class="form-input" id="cf-email" name="email" required="" type="email"/>
-</div>
-<div class="form-field">
-<label for="cf-subject">Тема</label>
-<input class="form-input" id="cf-subject" name="_subject" type="text"/>
-</div>
-<div class="form-field">
-<label for="cf-message">Сообщение</label>
-<textarea class="form-input" id="cf-message" name="message" required="" rows="4"></textarea>
-</div>
-<input aria-hidden="true" autocomplete="off" class="honeypot" name="_honey" tabindex="-1" type="text"/>
-<button class="btn-primary btn-submit" type="submit">Отправить сообщение</button>
-<p aria-live="polite" class="form-status" role="status"></p>
-</form>
 </div>
 </div>
 </section>
 </main>
-<!-- FOOTER -->
+<section aria-labelledby="clTitle" class="closing">
+<div class="cl-inner">
+<h2 class="h2" id="clTitle">Вам предстоит принять решение на этих рынках?</h2>
+<div>
+<p>Расскажите, какое решение Вы принимаете и в какие сроки. Старший консультант ответит Вам в течение одного рабочего дня.</p>
+<div class="cl-actions">
+<a class="btn btn--light" href="/ru/pages/contact">Связаться с нами <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="link link--light" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
+</div>
+</div>
+</div>
+</section>
 <footer class="footer">
-<div style="max-width:1200px;margin:0 auto;">
-<div class="footer-grid">
-<div class="footer-brand">
-<h3>Heirstone Consulting &amp;<br/>Strategic Advisory</h3>
-<p>Специализированный стратегический консалтинг для пограничных (frontier) и быстрорастущих рынков Ближнего Востока и Северной Африки (MENA), Африки и Центральной Азии.</p>
-<div class="footer-social">
-<a aria-label="Heirstone Consulting в LinkedIn" href="https://www.linkedin.com/company/heirstoneconsulting" rel="noopener" target="_blank">
-<svg aria-hidden="true" fill="currentColor" height="16" viewbox="0 0 24 24" width="16">
-<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle>
-</svg>
+<div class="ft-wrap">
+<div class="ft-grid">
+<div>
+<a aria-label="Heirstone Consulting" class="ft-brand" href="/ru/">
+<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect height="34" stroke="#5D6E82" stroke-width="2" width="34" x="13" y="13"></rect><rect height="34" stroke="#5D6E82" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect></svg>
+<span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
 </a>
+<p class="ft-about">Стратегический консалтинг в сфере недвижимости, туризма и национального развития на Ближнем Востоке, в Африке и Центральной Азии.</p>
 </div>
+<div class="ft-col"><h4>Направления</h4><a href="/ru/pages/real-estate-strategy">Стратегия в сфере недвижимости</a><a href="/ru/pages/tourism-development">Развитие туризма</a><a href="/ru/pages/national-vision-strategy">Стратегия национального видения</a><a href="/ru/pages/special-projects">Специальные проекты</a><a href="/ru/pages/digital-transformation">Цифровая трансформация</a></div>
+<div class="ft-col"><h4>Компания</h4><a href="/ru/pages/about">О нас</a><a href="/ru/pages/experience">Опыт</a><a href="/ru/pages/reports">Исследования</a><a href="/ru/pages/insights">Аналитика</a><a href="/ru/pages/services">Услуги</a><a href="/ru/pages/contact">Контакты</a></div>
+<div class="ft-col"><h4>Офисы</h4><span>Дубай, Объединённые Арабские Эмираты</span><span>Каир, Египет</span><a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a><a data-i18n-skip="" href="https://www.linkedin.com/company/heirstoneconsulting" rel="noopener" target="_blank">LinkedIn</a></div>
 </div>
-<div class="footer-col">
-<h4>Наши компетенции</h4>
-<ul>
-<li><a href="/ru/pages/real-estate-strategy">Стратегия в сфере недвижимости</a></li>
-<li><a href="/ru/pages/tourism-development">Развитие туризма</a></li>
-<li><a href="/ru/pages/national-vision-strategy">Стратегия национального видения</a></li>
-<li><a href="/ru/pages/special-projects">Специальные проекты</a></li><li><a href="/ru/pages/digital-transformation">Цифровая трансформация</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Компания</h4>
-<ul>
-<li><a href="/ru/pages/about">О нас</a></li>
-<li><a href="/ru/pages/services">Услуги</a></li>
-<li><a href="/ru/pages/experience">Опыт</a></li><li><a href="/ru/pages/reports">Отчёты</a></li><li><a href="/ru/pages/insights">Аналитика</a></li>
-<li><a href="/ru/pages/contact">Контакты</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Контактная информация</h4>
-<div class="footer-contact-item">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-</svg>
-<span>Дубай, ОАЭ · Каир, Египет</span>
-</div>
-<div class="footer-contact-item">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-<a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
-</div>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026 Heirstone Consulting &amp; Strategic Advisory. Все права защищены.</p>
-</div>
+<div class="ft-base"><span data-i18n-skip="">© 2026 Heirstone Consulting L.L.C-FZ</span><span>Доступно на 26 языках</span></div>
 </div>
 </footer>
 <script>window.HS_I18N={"Sending…": "Отправка…", "Message Sent": "Сообщение отправлено", "Thank you — your message has been sent. We typically respond within one business day.": "Благодарим Вас — Ваше сообщение отправлено. Как правило, мы отвечаем в течение одного рабочего дня.", "Something went wrong and your message was not sent. Please email us directly at <a href=\"mailto:info@heirstoneconsulting.com\">info@heirstoneconsulting.com</a>.": "Что-то пошло не так, и Ваше сообщение не было отправлено. Пожалуйста, напишите нам напрямую по адресу <a href=\"mailto:info@heirstoneconsulting.com\">info@heirstoneconsulting.com</a>.", "Open menu": "Открыть меню", "Close menu": "Закрыть меню", "Language": "Язык"};</script><script src="/js/main.js"></script>
-<script src="/js/home.js"></script>
 </body>
 </html>

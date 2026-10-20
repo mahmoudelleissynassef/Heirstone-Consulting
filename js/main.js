@@ -38,16 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Navbar scroll effect
-  const navbar = document.querySelector('.navbar');
-  if (navbar) {
-    window.addEventListener('scroll', () => {
-      navbar.style.background = window.scrollY > 20
-        ? 'rgba(13, 27, 42, 0.99)'
-        : 'rgba(13, 27, 42, 0.97)';
-    }, { passive: true });
-  }
-
   // Active nav link (compare resolved pathnames so relative prefixes don't matter)
   const currentFile = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
   document.querySelectorAll('.navbar-nav a, .mobile-nav a, .dropdown-menu a').forEach(link => {
@@ -161,23 +151,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Intersection Observer for fade-in animations
-  if (!reducedMotion) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          observer.unobserve(entry.target);
-        }
+  // Experience carousel arrows (homepage): one card per click, mirrored in right-to-left pages
+  const exTrack = document.getElementById('exTrack');
+  if (exTrack) {
+    document.querySelectorAll('.ex-ctrl button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const card = exTrack.querySelector('.ex-card');
+        const step = (card ? card.offsetWidth : 320) + 18;
+        const rtl = document.documentElement.dir === 'rtl';
+        exTrack.scrollBy({ left: step * Number(btn.dataset.dir) * (rtl ? -1 : 1), behavior: reducedMotion ? 'auto' : 'smooth' });
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-    document.querySelectorAll('.method-card, .sector-card, .why-item, .serve-item, .exp-card, .approach-step, .service-tag').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      observer.observe(el);
     });
   }
 

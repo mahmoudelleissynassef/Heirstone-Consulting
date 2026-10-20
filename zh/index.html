@@ -113,6 +113,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="/css/style.css" rel="stylesheet"/>
 <link href="/css/home.css" rel="stylesheet"/>
+<link href="/css/v2.css" rel="stylesheet"/>
 <link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
 <link as="image" href="/Media/hero-1.webp" rel="preload"/>
 <!-- i18n:alternates -->
@@ -150,487 +151,297 @@
 <!-- NAVBAR -->
 <nav class="navbar">
 <a class="navbar-brand" href="/zh/">
-<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
-<rect height="34" stroke="#8FA0B2" stroke-width="2" width="34" x="13" y="13"></rect>
-<rect height="34" stroke="#8FA0B2" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect>
-</svg>
+<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect height="34" stroke="#8FA0B2" stroke-width="2" width="34" x="13" y="13"></rect><rect height="34" stroke="#8FA0B2" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect></svg>
 <span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
 </a>
 <ul class="navbar-nav">
-<li><a href="/zh/">首页</a></li>
-<li class="dropdown">
-<a href="/zh/pages/services">核心能力</a>
+<li class="dropdown"><a href="/zh/pages/services">核心能力</a>
 <div class="dropdown-menu">
 <a href="/zh/pages/real-estate-strategy">房地产战略</a>
 <a href="/zh/pages/tourism-development">旅游发展</a>
 <a href="/zh/pages/national-vision-strategy">国家愿景战略</a>
 <a href="/zh/pages/special-projects">特别项目</a>
 <a href="/zh/pages/digital-transformation">数字化转型</a>
+<a class="dd-all" href="/zh/pages/services">全部能力</a>
 </div>
 </li>
-<li><a href="/zh/pages/experience">项目经验</a></li><li><a href="/zh/pages/reports">研究报告</a></li><li><a href="/zh/pages/insights">洞见</a></li><li><a href="/zh/pages/about">关于我们</a></li>
-<li><a href="/zh/pages/services">服务</a></li>
-<li><a class="navbar-cta" href="/zh/pages/contact">联系我们</a></li>
+<li><a href="/zh/pages/reports">研究</a></li>
+<li><a href="/zh/pages/experience">项目经验</a></li>
+<li><a href="/zh/pages/about">关于我们</a></li>
+<li class="nav-cta"><a class="navbar-cta" href="/zh/pages/contact">联系我们</a></li>
 <!-- i18n:switch --><li class="dropdown lang-switch" data-i18n-skip=""><button aria-haspopup="true" aria-label="语言" class="lang-btn" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg><span>ZH</span></button><div class="dropdown-menu lang-menu"><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a aria-current="true" data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div></li><!-- /i18n:switch -->
 </ul>
 <button aria-controls="mobileNav" aria-expanded="false" aria-label="打开菜单" class="hamburger" id="hamburger">
 <span></span><span></span><span></span>
 </button>
 </nav>
-<!-- Mobile Nav -->
 <div class="mobile-nav" id="mobileNav">
-<a href="/zh/">首页</a>
-<a href="/zh/pages/real-estate-strategy">房地产战略</a>
-<a href="/zh/pages/tourism-development">旅游发展</a>
-<a href="/zh/pages/national-vision-strategy">国家愿景战略</a>
-<a href="/zh/pages/special-projects">特别项目</a>
-<a href="/zh/pages/digital-transformation">数字化转型</a>
+<a href="/zh/pages/services">核心能力</a>
+<a class="mn-sub" href="/zh/pages/real-estate-strategy">房地产战略</a>
+<a class="mn-sub" href="/zh/pages/tourism-development">旅游发展</a>
+<a class="mn-sub" href="/zh/pages/national-vision-strategy">国家愿景战略</a>
+<a class="mn-sub" href="/zh/pages/special-projects">特别项目</a>
+<a class="mn-sub" href="/zh/pages/digital-transformation">数字化转型</a>
+<a href="/zh/pages/reports">研究</a>
 <a href="/zh/pages/experience">项目经验</a>
-<a href="/zh/pages/reports">研究报告</a>
-<a href="/zh/pages/insights">洞见</a>
 <a href="/zh/pages/about">关于我们</a>
-<a href="/zh/pages/services">服务</a>
+<a href="/zh/pages/insights">洞见</a>
 <a href="/zh/pages/contact">联系我们</a>
 <!-- i18n:mswitch --><div aria-label="语言" class="mobile-lang" data-i18n-skip=""><a data-lang="en" href="/" hreflang="en" lang="en">English</a><a data-lang="ar" href="/ar/" hreflang="ar" lang="ar">العربية</a><a aria-current="true" data-lang="zh" href="/zh/" hreflang="zh-Hans" lang="zh-Hans">中文</a><a data-lang="ja" href="/ja/" hreflang="ja" lang="ja">日本語</a><a data-lang="ko" href="/ko/" hreflang="ko" lang="ko">한국어</a><a data-lang="id" href="/id/" hreflang="id" lang="id">Bahasa Indonesia</a><a data-lang="ms" href="/ms/" hreflang="ms" lang="ms">Bahasa Melayu</a><a data-lang="es" href="/es/" hreflang="es" lang="es">Español</a><a data-lang="fr" href="/fr/" hreflang="fr" lang="fr">Français</a><a data-lang="it" href="/it/" hreflang="it" lang="it">Italiano</a><a data-lang="pt" href="/pt/" hreflang="pt" lang="pt">Português</a><a data-lang="el" href="/el/" hreflang="el" lang="el">Ελληνικά</a><a data-lang="de" href="/de/" hreflang="de" lang="de">Deutsch</a><a data-lang="nl" href="/nl/" hreflang="nl" lang="nl">Nederlands</a><a data-lang="fi" href="/fi/" hreflang="fi" lang="fi">Suomi</a><a data-lang="da" href="/da/" hreflang="da" lang="da">Dansk</a><a data-lang="no" href="/no/" hreflang="no" lang="no">Norsk</a><a data-lang="ro" href="/ro/" hreflang="ro" lang="ro">Română</a><a data-lang="pl" href="/pl/" hreflang="pl" lang="pl">Polski</a><a data-lang="sk" href="/sk/" hreflang="sk" lang="sk">Slovenčina</a><a data-lang="hr" href="/hr/" hreflang="hr" lang="hr">Hrvatski</a><a data-lang="sw" href="/sw/" hreflang="sw" lang="sw">Kiswahili</a><a data-lang="ru" href="/ru/" hreflang="ru" lang="ru">Русский</a><a data-lang="ky" href="/ky/" hreflang="ky" lang="ky">Кыргызча</a><a data-lang="kk" href="/kk/" hreflang="kk" lang="kk">Қазақша</a><a data-lang="tr" href="/tr/" hreflang="tr" lang="tr">Türkçe</a></div><!-- /i18n:mswitch -->
 </div>
-<main id="main">
-<!-- HERO -->
-<section class="hero">
-<div aria-hidden="true" class="hero-slides">
-<div class="hero-slide active" style="background-image:url('/Media/hero-1.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-2.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-3.webp')"></div>
-<div class="hero-slide" style="background-image:url('/Media/hero-4.webp')"></div>
-</div>
-<div aria-hidden="true" class="hero-overlay"></div>
-<div class="hero-content">
-<p class="hero-kicker">咨询与战略顾问 — 迪拜 · 开罗</p>
-<h1>面向不透明且充满雄心的市场的专业咨询机构。</h1>
-<p>在传统咨询框架失灵之处，Heirstone 为主权机构、机构资本和开发商提供咨询，将国家愿景转化为在中东和北非、非洲及中亚具有商业可行性且可落地执行的战略。</p>
-<div class="hero-actions">
-<a class="btn-primary" href="#services">了解我们的专长</a>
-<a class="btn-secondary" href="/zh/pages/contact">联系我们</a>
-</div>
-</div>
-<div aria-hidden="true" class="hero-ticker">
-<div class="tick-track"><span class="tick-item">最高最佳使用</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">可行性研究</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">全球对标</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">市场研究</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">目的地战略</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">国家愿景</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">PPP 战略</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">机场与港口战略</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">品牌住宅</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">招商引资</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">数字化审批</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">政治风险</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">最高最佳使用</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">可行性研究</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">全球对标</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">市场研究</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">目的地战略</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">国家愿景</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">PPP 战略</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">机场与港口战略</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">品牌住宅</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">招商引资</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">数字化审批</span><span aria-hidden="true" class="tick-dot"></span><span class="tick-item">政治风险</span><span aria-hidden="true" class="tick-dot"></span></div>
-</div>
-</section>
-<!-- FACTS BAR -->
-<section aria-label="公司概况" class="facts-bar">
-<div class="facts-inner">
-<div class="fact">
-<span class="fact-label">办事处</span>
-<span class="fact-value">迪拜 · 开罗</span>
-</div>
-<div class="fact">
-<span class="fact-label">专业背景</span>
-<span class="fact-value">一流咨询机构背景</span>
-</div>
-<div class="fact">
-<span class="fact-label">委托类型</span>
-<span class="fact-value">主权与机构</span>
-</div>
-<div class="fact">
-<span class="fact-label">覆盖区域</span>
-<span class="fact-value">海湾国家 · 中东和北非 · 非洲 · 中亚</span>
-</div>
-</div>
-</section>
-<!-- SELECTED ENGAGEMENTS (carousel) -->
-<section aria-label="团队精选项目经验" aria-roledescription="轮播" class="eng" id="engagements">
-<div class="eng-head">
+<header class="hero" id="main">
+<div aria-label="内罗毕天际线" class="hero-img" role="img"></div>
+<div class="hero-body">
 <div>
-<p class="eyebrow eyebrow-light">团队精选项目经验</p>
-<h2>服务主权、机构及私人资本的项目委托。</h2>
-</div>
-<div class="eng-controls">
-<span class="eng-count"><b class="eng-cur">01</b> / 07</span>
-<button aria-label="上一个项目" class="eng-btn eng-prev" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
-<button aria-label="下一个项目" class="eng-btn eng-next" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
-</div>
-</div>
-<div class="eng-track" tabindex="0">
-<article aria-label="第 1 项，共 7 项" aria-roledescription="幻灯片" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="水畔的标志性历史城区" height="480" loading="eager" src="/Media/exp-giza.webp" width="800"/>
-<span class="eng-num">01</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">主权机构 — 埃及</p>
-<h3>吉萨金字塔总体规划</h3>
-<p class="eng-desc">为毗邻全球游客最多的遗产地之一的标志性综合用途项目开展市场评估并制定开发战略：按客源市场、出行目的和季节性进行需求预测，并转化为土地用途、功能配比与开发分期。</p>
-<p class="eng-outcome"><span>成果</span>为项目定位、商业战略及国家层面的长期游客基础设施规划奠定基础。</p>
-</div>
-</article>
-<article aria-label="第 2 项，共 7 项" aria-roledescription="幻灯片" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="撒哈拉以南非洲城市的街头生活" height="480" loading="eager" src="/Media/exp-tourism.webp" width="800"/>
-<span class="eng-num">02</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">国家政府 — 撒哈拉以南非洲</p>
-<h3>国家旅游发展计划</h3>
-<p class="eng-desc">覆盖多个目的地集群的端到端旅游战略：需求预测、目的地定位、产品开发框架及招商引资战略。</p>
-<p class="eng-outcome"><span>成果</span>被确立为国家旅游发展框架，助力政策协同与私营部门投资动员。</p>
-</div>
-</article>
-<article aria-label="第 3 项，共 7 项" aria-roledescription="幻灯片" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="当代玻璃塔楼项目" height="480" loading="lazy" src="/Media/exp-giga.webp" width="800"/>
-<span class="eng-num">03</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">主权背景开发商 — 沙特阿拉伯</p>
-<h3>超大型项目战略与咨询</h3>
-<p class="eng-desc">为超大型项目环境中由政府支持的大型开发项目提供住宅战略、品牌住宅定位及最高最佳使用分析。</p>
-<p class="eng-outcome"><span>成果</span>为符合主权投资目标的项目定位与产品战略提供依据。</p>
-</div>
-</article>
-<article aria-label="第 4 项，共 7 项" aria-roledescription="幻灯片" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="海滨天际线上的现代综合用途塔楼" height="480" loading="lazy" src="/Media/exp-northcoast.webp" width="800"/>
-<span class="eng-num">04</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">机构投资者 — 埃及</p>
-<h3>开罗及北海岸投资咨询</h3>
-<p class="eng-desc">为一家中亚机构投资者提供多资产类别市场研究与投资咨询：涵盖大开罗地区及北海岸 / 拉斯赫克马的住宅、办公、零售和酒店业态。</p>
-<p class="eng-outcome"><span>成果</span>构建结构化投资框架，支持跨境资本投向该地区增长最快的综合用途及滨海市场之一。</p>
-</div>
-</article>
-<article aria-label="第 5 项，共 7 项" aria-roledescription="幻灯片" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="中央商务区的写字楼" height="480" loading="lazy" src="/Media/exp-office.webp" width="800"/>
-<span class="eng-num">05</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">机构 / 咨询平台 — 埃及</p>
-<h3>开罗写字楼市场情报平台</h3>
-<p class="eng-desc">设计并搭建覆盖大开罗写字楼市场的房地产数据平台：租赁数据、出租率、价格基准及市场指标。</p>
-<p class="eng-outcome"><span>成果</span>为机构级市场情报与咨询奠定基础，支持投资决策和季度市场报告。</p>
-</div>
-</article>
-<article aria-label="第 6 项，共 7 项" aria-roledescription="幻灯片" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="前沿市场新建基础设施鸟瞰" height="480" loading="lazy" src="/Media/exp-frontier.webp" width="800"/>
-<span class="eng-num">06</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">开发商 — 撒哈拉以南非洲</p>
-<h3>前沿市场可行性与最高最佳使用分析</h3>
-<p class="eng-desc">在数据稀缺的城市环境中，基于一手调研为大型综合用途项目开展最高最佳使用分析和可行性研究。</p>
-<p class="eng-outcome"><span>成果</span>重塑开发方案，并在前沿市场条件下支持资本结构设计与投资可行性。</p>
-</div>
-</article>
-<article aria-label="第 7 项，共 7 项" aria-roledescription="幻灯片" class="eng-card" role="group">
-<div class="eng-media">
-<img alt="正在进行城市更新的历史街区鸟瞰" height="480" loading="lazy" src="/Media/exp-heritage.webp" width="800"/>
-<span class="eng-num">07</span>
-</div>
-<div class="eng-body">
-<p class="eng-label">政府与机构 — 中东和北非</p>
-<h3>遗产保护与城市更新战略</h3>
-<p class="eng-desc">遗产地活化利用与城市更新战略，将旅游、零售和文化功能整合进具有商业可行性的开发框架。</p>
-<p class="eng-outcome"><span>成果</span>在文化保护、收入创造与长期城市活力之间取得平衡。</p>
-</div>
-</article>
-</div>
-<div class="eng-foot">
-<div aria-hidden="true" class="eng-progress"><span></span></div>
-<a class="eng-all" href="/zh/pages/experience">查看全部项目 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</section>
-<!-- PRACTICES (explorer: tabs on desktop, accordion on mobile) -->
-<section class="px-section" id="services">
-<div class="px-head">
-<p class="eyebrow">我们的业务</p>
-<h2>五大业务领域。<em>同一标准。</em></h2>
-<p class="px-intro">每一项委托均由合伙人主导、以证据为本，专为需要向董事会、政府部门和资本方负责的决策者打造。</p>
-</div>
-<div aria-label="业务领域" class="px" role="tablist">
-<div class="px-item is-active">
-<button aria-controls="px-panel-0" aria-expanded="true" aria-selected="true" class="px-tab" id="px-tab-0" role="tab" type="button">
-<span class="px-n">01</span>
-<span class="px-text"><span class="px-name">房地产战略</span><span class="px-tag">从地块到投资组合。</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-0" class="px-panel" id="px-panel-0" role="tabpanel">
-<div class="px-media"><img alt="按总体规划开发的综合用途房地产项目鸟瞰" height="384" loading="lazy" src="/Media/cap-realestate.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">通过市场情报、财务建模和开发战略，释放土地、资产与投资组合的价值。</p>
-<p class="px-sublabel">7 项能力</p>
-<div class="px-chips"><a class="px-chip" href="/zh/pages/highest-and-best-use">最高最佳使用分析</a><a class="px-chip" href="/zh/pages/development-strategy">开发战略与分期</a><a class="px-chip" href="/zh/pages/market-research">市场研究与机会识别</a><a class="px-chip" href="/zh/pages/commercial-feasibility">商业可行性研究</a><a class="px-chip" href="/zh/pages/investment-attraction">招商引资与交易结构设计</a><a class="px-chip" href="/zh/pages/competitive-benchmarking">竞争对标</a><a class="px-chip" href="/zh/pages/branded-residences">品牌住宅战略咨询</a></div>
-<a class="px-cta" href="/zh/pages/real-estate-strategy">了解该业务领域 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<p class="eyebrow">战略咨询 · 迪拜与开罗</p>
+<h1>以证据为本的房地产、旅游与国家发展战略。</h1>
+<p class="hero-lead">我们为中东、非洲和中亚的政府、主权与机构投资者以及开发商提供咨询。每一项委托均由资深顾问主导，并以一手研究为基础。</p>
+<div class="hero-cta">
+<a class="btn btn--light" href="/zh/pages/contact">探讨项目委托 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="link link--light" href="/zh/pages/reports">阅读我们的研究 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
 </div>
+<a class="latest" href="/zh/pages/report-airport-cities">
+<img alt="Heirstone 报告《跑道红利》封面" height="116" src="/Media/reports/airport-cities.webp" width="82"/>
+<div class="latest-text">
+<p class="latest-label">最新报告</p>
+<p class="latest-title">机场城市：跑道红利</p>
+<p class="latest-stat"><span class="rp-n">11 比 1</span> 2025 年迪拜南城公寓期房销售额与二手转售额之比：AED 102.3 亿对 AED 9.1 亿</p>
 </div>
-<div class="px-item">
-<button aria-controls="px-panel-1" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-1" role="tab" type="button">
-<span class="px-n">02</span>
-<span class="px-text"><span class="px-name">旅游与目的地</span><span class="px-tag">具有全球竞争力的目的地。</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-1" class="px-panel" id="px-panel-1" role="tabpanel">
-<div class="px-media"><img alt="拥有度假村和游艇码头的海滨旅游目的地" height="384" loading="lazy" src="/Media/cap-tourism.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">具有竞争力和投资价值的目的地战略：在连贯的访客经济框架内开展需求预测、产品开发与定位。</p>
-<p class="px-sublabel">4 项能力</p>
-<div class="px-chips"><a class="px-chip" href="/zh/pages/destination-strategy">目的地战略与定位</a><a class="px-chip" href="/zh/pages/tourism-market-research">旅游市场研究与需求预测</a><a class="px-chip" href="/zh/pages/visitor-economy">访客经济战略</a><a class="px-chip" href="/zh/pages/airport-port-strategy">机场、港口与门户枢纽商业战略</a></div>
-<a class="px-cta" href="/zh/pages/tourism-development">了解该业务领域 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+</a>
 </div>
+</header>
+<main>
+<section aria-labelledby="shelfTitle" class="shelf">
+<div class="wrap">
+<div class="shelf-head">
+<h2 id="shelfTitle">32 份关于我们所服务市场的独立报告，可免费阅读。</h2>
+<a class="link" href="/zh/pages/reports">浏览全部研究 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-2" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-2" role="tab" type="button">
-<span class="px-n">03</span>
-<span class="px-text"><span class="px-name">国家愿景与行业战略</span><span class="px-tag">让愿景可以落地。</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-2" class="px-panel" id="px-panel-2" role="tabpanel">
-<div class="px-media"><img alt="黎明时分的现代首都天际线" height="384" loading="lazy" src="/Media/cap-national.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">将国家抱负转化为结构清晰、可付诸行动的计划，协调政策、投资与执行机制。</p>
-<p class="px-sublabel">7 项能力</p>
-<div class="px-chips"><a class="px-chip" href="/zh/pages/national-vision">国家愿景与战略框架</a><a class="px-chip" href="/zh/pages/sector-transformation">行业转型咨询</a><a class="px-chip" href="/zh/pages/ppp-strategy">政府和社会资本合作（PPP）战略</a><a class="px-chip" href="/zh/pages/policy-framework">政策与制度框架咨询</a><a class="px-chip" href="/zh/pages/global-benchmarking">国家转型计划全球对标</a><a class="px-chip" href="/zh/pages/monitoring-frameworks">监测与调整框架</a><a class="px-chip" href="/zh/pages/political-risk-assessment">政治风险与投资环境评估</a></div>
-<a class="px-cta" href="/zh/pages/national-vision-strategy">了解该业务领域 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-3" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-3" role="tab" type="button">
-<span class="px-n">04</span>
-<span class="px-text"><span class="px-name">特别项目与战略咨询</span><span class="px-tag">量身定制的委托，复杂多元的范围。</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-3" class="px-panel" id="px-panel-3" role="tabpanel">
-<div class="px-media"><img alt="壮阔天空下的标志性大型项目" height="384" loading="lazy" src="/Media/cap-special.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">从主权资产盘活到跨境扩张及大型赛事战略——在传统方法力有不逮之处发挥作用。</p>
-<p class="px-sublabel">6 项能力</p>
-<div class="px-chips"><a class="px-chip" href="/zh/pages/asset-monetization">大规模资产盘活战略</a><a class="px-chip" href="/zh/pages/destination-brand">目的地品牌发展咨询</a><a class="px-chip" href="/zh/pages/investor-outreach">投资者拓展与沟通规划</a><a class="px-chip" href="/zh/pages/cross-border-expansion">跨境扩张咨询</a><a class="px-chip" href="/zh/pages/innovation-ecosystem">创新生态系统战略</a><a class="px-chip" href="/zh/pages/sports-culture">体育、文化与大型赛事战略</a></div>
-<a class="px-cta" href="/zh/pages/special-projects">了解该业务领域 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
-</div>
-<div class="px-item">
-<button aria-controls="px-panel-4" aria-expanded="false" aria-selected="false" class="px-tab" id="px-tab-4" role="tab" type="button">
-<span class="px-n">05</span>
-<span class="px-text"><span class="px-name">数字化转型</span><span class="px-tag">服务全流程数字化。</span></span>
-<span aria-hidden="true" class="px-caret"></span>
-</button>
-<div aria-labelledby="px-tab-4" class="px-panel" id="px-panel-4" role="tabpanel">
-<div class="px-media"><img alt="配备城市规划与审批看板的政府数字运营中心" height="384" loading="lazy" src="/Media/cap-digital.webp" width="640"/></div>
-<div class="px-copy">
-<p class="px-lead">将房地产和建筑业所依赖的政府服务——审批、不动产登记、许可与资产数据——全面数字化，让资本以决策的速度流动。</p>
-<p class="px-sublabel">4 项能力</p>
-<div class="px-chips"><a class="px-chip" href="/zh/pages/digital-permitting">数字化施工许可与建设审批</a><a class="px-chip" href="/zh/pages/land-registry-digitization">不动产登记与房产交易数字化</a><a class="px-chip" href="/zh/pages/digital-service-design">数字化服务设计与公民体验</a><a class="px-chip" href="/zh/pages/bim-digital-twins">BIM、数字孪生与资产信息标准</a></div>
-<a class="px-cta" href="/zh/pages/digital-transformation">了解该业务领域 <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
-</div>
-</div>
+<div class="shelf-row">
+<a class="cover" href="/zh/pages/report-airport-cities"><div class="cover-img"><img alt="Heirstone 报告《跑道红利》封面" height="1273" loading="lazy" src="/Media/reports/airport-cities.webp" width="900"/></div><p class="cover-tag">机场城市</p><p class="cover-title">跑道红利</p></a>
+<a class="cover" href="/zh/pages/report-africa-construction-costs"><div class="cover-img"><img alt="Heirstone 报告《九座城市，一平方米》封面" height="1273" loading="lazy" src="/Media/reports/africa-construction-costs.webp" width="900"/></div><p class="cover-tag">建造成本与建筑技术</p><p class="cover-title">九座城市，一平方米</p></a>
+<a class="cover" href="/zh/pages/report-airports-terminals"><div class="cover-img"><img alt="Heirstone 报告《最繁忙的一小时》封面" height="1273" loading="lazy" src="/Media/reports/airports-terminals.webp" width="900"/></div><p class="cover-tag">机场与航站楼</p><p class="cover-title">最繁忙的一小时</p></a>
+<a class="cover" href="/zh/pages/report-uzbekistan-new-cities"><div class="cover-img"><img alt="Heirstone 报告《日间之城》封面" height="1273" loading="lazy" src="/Media/reports/uzbekistan-new-cities.webp" width="900"/></div><p class="cover-tag">乌兹别克斯坦新城</p><p class="cover-title">日间之城</p></a>
+<a class="cover" href="/zh/pages/report-africa-real-estate-capital"><div class="cover-img"><img alt="Heirstone 报告《资金早已在此》封面" height="1273" loading="lazy" src="/Media/reports/africa-real-estate-capital.webp" width="900"/></div><p class="cover-tag">非洲房地产资本</p><p class="cover-title">资金早已在此</p></a>
+<a class="cover" href="/zh/pages/report-branded-residences"><div class="cover-img"><img alt="Heirstone 报告《溢价归谁》封面" height="1273" loading="lazy" src="/Media/reports/branded-residences.webp" width="900"/></div><p class="cover-tag">品牌住宅</p><p class="cover-title">溢价归谁</p></a>
 </div>
 </div>
 </section>
-<!-- ENGAGEMENT MODEL (timeline) -->
-<section class="tl-section">
-<div class="tl-head">
+<section aria-labelledby="prTitle" class="principles">
+<div class="wrap">
 <p class="eyebrow">我们的工作方式</p>
-<h2>四步合作模式。</h2>
-<p>不套用现成框架。每一项委托都根据具体背景、目标和约束量身打造，并由资深合伙人亲自领衔。</p>
+<h2 class="h2" id="prTitle">贯穿每一项委托的四个要素。</h2>
+<div class="p-grid">
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
+<h3>一手研究优先</h3>
+<p>在数据匮乏的地方，我们会在构建任何模型之前自行收集数据：问卷调查、访谈、实地考察和交易记录。</p>
 </div>
-<div class="tl-wrap">
-<span aria-hidden="true" class="tl-line"><span class="tl-fill"></span></span>
-<ol class="tl">
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">01</span>
-<h3>理解</h3>
-<p>深度诊断。我们深入了解客户的背景、市场环境和战略目标，并在必要时对任务设定提出质疑。</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">02</span>
-<h3>分析</h3>
-<p>严谨的定量与定性分析——市场研究、财务建模、对标分析和利益相关方梳理——形成以证据为本的洞见。</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">03</span>
-<h3>制定战略</h3>
-<p>让分析成为战略。分阶段的建议、明确优先级的举措，以及对风险、实施顺序和资本影响的清醒判断。</p>
-</li>
-<li class="tl-step">
-<span aria-hidden="true" class="tl-dot"></span>
-<span class="tl-n">04</span>
-<h3>交付</h3>
-<p>为决策者打造的成果——简明扼要、可直接提交董事会，并可在主权、部委和投资委员会层面进行汇报。</p>
-</li>
-</ol>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"></path></svg>
+<h3>资深顾问全程参与</h3>
+<p>界定委托范围的人员会全程跟进，从首次研讨会直至董事会汇报。</p>
+</div>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 3v18M5 7h14M5 7l-3 7h6l-3-7zM19 7l-3 7h6l-3-7zM8 21h8"></path></svg>
+<h3>独立建议</h3>
+<p>我们不存在利益冲突，因此我们的建议以证据和客户目标为依据。</p>
+</div>
+<div class="p-item">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
+<h3>深耕区域</h3>
+<p>我们在迪拜和开罗设有办事处，业务覆盖海湾地区、北非、撒哈拉以南非洲和中亚。</p>
+</div>
+</div>
 </div>
 </section>
-<!-- ABOUT SECTION -->
-<section class="about-section">
-<div class="about-inner">
-<div class="about-image">
-<img alt="新建塔楼与基础设施林立的发展中城区鸟瞰" height="801" loading="lazy" src="/Media/about.webp" width="1400"/>
+<section aria-labelledby="pracTitle" class="practices">
+<div class="wrap pr-grid">
+<div class="pr-intro">
+<p class="eyebrow">核心能力</p>
+<h2 class="h2" id="pracTitle">五大业务领域。</h2>
+<p class="lead">每个业务领域都将市场研究、财务分析与战略制定运用于一类决策，使我们的建议经得起董事会、政府部委或投资委员会的审视。</p>
+<a class="link" href="/zh/pages/services">全部能力 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
 </div>
-<div class="about-text">
-<h2>关于 Heirstone Consulting &amp; Strategic Advisory</h2>
-<p>Heirstone 是一家专注于前沿市场和高增长市场的战略咨询机构——这些市场数据有限、决策风险高，传统咨询框架往往失灵。</p>
-<p>公司在迪拜和开罗设有办事处，将一流咨询机构的专业积淀与深厚的区域洞察相结合。我们立足于商业抱负与制度现实的交汇点，业务范围涵盖单一资产定位到国家转型计划。</p>
-<a class="btn-primary" href="/zh/pages/about" style="margin-top:8px;">进一步了解我们</a>
+<div class="pr-cards">
+<a class="pr-card" href="/zh/pages/real-estate-strategy">
+<h3>房地产战略</h3>
+<p>建什么、在哪里建、按什么顺序建：最高最佳使用分析、可行性研究、开发战略与投资结构设计。</p>
+<span class="pr-foot"><span class="pr-count">7 项能力</span><span class="link">了解详情 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/zh/pages/tourism-development">
+<h3>旅游发展</h3>
+<p>投资者和政府可据以行动的需求预测、目的地定位与访客经济规划。</p>
+<span class="pr-foot"><span class="pr-count">4 项能力</span><span class="link">了解详情 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/zh/pages/national-vision-strategy">
+<h3>国家愿景战略</h3>
+<p>将国家抱负转化为计划、合作伙伴关系和政策，并配备实现目标所需的机构与资金。</p>
+<span class="pr-foot"><span class="pr-count">7 项能力</span><span class="link">了解详情 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/zh/pages/special-projects">
+<h3>特别项目</h3>
+<p>超越单一资产的委托：资产盘活、跨境扩张、投资者拓展与大型赛事。</p>
+<span class="pr-foot"><span class="pr-count">6 项能力</span><span class="link">了解详情 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card" href="/zh/pages/digital-transformation">
+<h3>数字化转型</h3>
+<p>审批、不动产登记与许可服务，让房地产和建设项目以决策的速度推进。</p>
+<span class="pr-foot"><span class="pr-count">4 项能力</span><span class="link">了解详情 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
+<a class="pr-card pr-card--ink" href="/zh/pages/contact">
+<h3>不确定您的问题属于哪个领域？</h3>
+<p>请告诉我们您面临的决策。我们会说明将如何着手，以及我们是否是合适的咨询机构。</p>
+<span class="pr-foot"><span class="pr-count">迪拜 · 开罗</span><span class="link link--light">联系我们 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></span>
+</a>
 </div>
 </div>
-<div class="profile-strip">
-<a class="profile-cover" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf"><img alt="Heirstone Consulting 公司简介封面" height="405" loading="lazy" src="/Media/docs/company-profile-cover.webp" width="720"/></a>
-<div class="profile-text">
+</section>
+<section aria-labelledby="exTitle" class="experience">
+<div class="wrap">
+<div class="ex-head">
+<div>
+<p class="eyebrow">团队精选项目经验</p>
+<h2 class="h2" id="exTitle">为政府、投资者和开发商完成的项目。</h2>
+<p class="lead">由 Heirstone 团队成员完成的委托项目。应客户要求，客户名称不予披露。</p>
+</div>
+<div class="ex-ctrl">
+<button aria-label="上一个" data-dir="-1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></button>
+<button aria-label="下一个" data-dir="1" type="button"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></button>
+</div>
+</div>
+<div class="ex-track" id="exTrack">
+<article class="ex-card">
+<p class="ex-client">主权机构 · 埃及</p>
+<h3>吉萨金字塔总体规划</h3>
+<p class="ex-label">委托内容</p>
+<p>为毗邻全球游客最多的遗产地之一的综合用途项目开展市场评估并制定开发战略，内容涵盖按客源市场和季节划分的需求，以及土地用途、规模配置与开发分期。</p>
+<div class="ex-out"><p class="ex-label">成果</p><p>为项目定位、商业战略及长期游客基础设施规划奠定基础。</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">国家政府 · 撒哈拉以南非洲</p>
+<h3>国家旅游发展计划</h3>
+<p class="ex-label">委托内容</p>
+<p>覆盖多个目的地集群的旅游战略：需求预测、定位、产品开发与招商引资。</p>
+<div class="ex-out"><p class="ex-label">成果</p><p>被采纳为国家旅游发展框架，为政策制定和私营投资提供指引。</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">主权背景开发商 · 沙特阿拉伯</p>
+<h3>超大型项目战略</h3>
+<p class="ex-label">委托内容</p>
+<p>为政府支持的大型开发项目提供住宅战略、品牌住宅定位及最高最佳使用分析。</p>
+<div class="ex-out"><p class="ex-label">成果</p><p>与主权投资方目标相一致的项目定位与产品战略。</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">机构投资者 · 埃及</p>
+<h3>开罗及北海岸投资咨询</h3>
+<p class="ex-label">委托内容</p>
+<p>为一家中亚机构投资者提供市场研究与投资建议，涵盖大开罗地区和拉斯赫克马的住宅、办公、零售及酒店业态。</p>
+<div class="ex-out"><p class="ex-label">成果</p><p>构建投资框架，支持跨境资本投向该地区增长最快的滨海市场之一。</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">咨询平台 · 埃及</p>
+<h3>开罗写字楼市场情报</h3>
+<p class="ex-label">委托内容</p>
+<p>为大开罗写字楼市场设计并搭建数据平台：租赁、出租率、价格基准及市场指标。</p>
+<div class="ex-out"><p class="ex-label">成果</p><p>为投资决策和季度报告提供支撑的机构级市场情报。</p></div>
+</article>
+<article class="ex-card">
+<p class="ex-client">开发商 · 撒哈拉以南非洲</p>
+<h3>数据稀缺环境下的可行性研究</h3>
+<p class="ex-label">委托内容</p>
+<p>基于一手研究，为数据稀缺城市中的大型综合用途项目开展最高最佳使用分析与可行性研究。</p>
+<div class="ex-out"><p class="ex-label">成果</p><p>重塑开发方案，并在前沿市场条件下支持资本结构设计。</p></div>
+</article>
+</div>
+<p class="ex-more"><a class="link" href="/zh/pages/experience">全部精选项目经验 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a></p>
+</div>
+</section>
+<section aria-labelledby="rsTitle" class="research">
+<div class="wrap">
+<div class="rs-head">
+<div>
+<p class="eyebrow">研究</p>
+<h2 class="h2" id="rsTitle">我们公开分享研究所得。</h2>
+</div>
+<p class="lead">涵盖房地产、基础设施和旅游的免费报告，每份报告都有独立的对标基准，每个数字均注明出处。提供英文、法文、俄文和阿拉伯文版本。</p>
+</div>
+<div class="rs-grid">
+<a class="rs-card" href="/zh/pages/report-airport-cities">
+<div class="rs-art"><img alt="Heirstone 报告《跑道红利》封面" height="1273" loading="lazy" src="/Media/reports/airport-cities.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">机场城市</p>
+<h3 class="rs-title">跑道红利</h3>
+<p class="rs-stat"><span class="rp-n">11 比 1</span> 2025 年迪拜南城公寓期房销售额与二手转售额之比：AED 102.3 亿对 AED 9.1 亿</p>
+</div>
+</a>
+<a class="rs-card" href="/zh/pages/report-africa-construction-costs">
+<div class="rs-art"><img alt="Heirstone 报告《九座城市，一平方米》封面" height="1273" loading="lazy" src="/Media/reports/africa-construction-costs.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">建造成本与建筑技术</p>
+<h3 class="rs-title">九座城市，一平方米</h3>
+<p class="rs-stat"><span class="rp-n">2.9 倍</span> 按 AECOM 2024/25 年指南，拉各斯多层住宅楼造价相当于内罗毕的倍数：每平方米 2,330 美元对 796 美元</p>
+</div>
+</a>
+<a class="rs-card" href="/zh/pages/report-africa-hotel-development">
+<div class="rs-art"><img alt="Heirstone 报告《纸上酒店》封面" height="1273" loading="lazy" src="/Media/reports/africa-hotel-development.webp" width="900"/></div>
+<div class="rs-body">
+<p class="rs-tag">非洲酒店开发</p>
+<h3 class="rs-title">纸上酒店</h3>
+<p class="rs-stat"><span class="rp-n">123,846</span> 间客房，分布在 2026 年初连锁酒店在非洲开发储备中的 675 家酒店内，创下纪录，比一年前增长 19%</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<section aria-labelledby="pfTitle" class="profile">
+<div class="wrap">
+<div class="pf-card">
+<img alt="Heirstone Consulting 公司简介封面" height="405" loading="lazy" src="/Media/docs/company-profile-cover.webp" width="720"/>
+<div>
 <p class="eyebrow">公司简介</p>
-<h3>21 页了解 Heirstone</h3>
-<p>我们的五大业务领域、工作方式，以及团队在中东、非洲和中亚的部分项目经验。免费下载，无需填写表单。</p>
-<div class="profile-actions">
-<a class="btn-primary" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">下载英文版</a>
-<a class="btn-outline" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
+<h2 class="h2" id="pfTitle">21 页了解 Heirstone</h2>
+<p class="lead">我们的五大业务领域、工作方式，以及团队在中东、非洲和中亚的部分项目经验。免费下载，无需填写表单。</p>
+<div class="pf-actions">
+<a class="btn" download="Heirstone Consulting - Company Profile - EN.pdf" href="/Media/docs/heirstone-consulting-company-profile-en.pdf">下载英文版</a>
+<a class="btn btn--ghost" data-i18n-skip="" download="Heirstone Consulting - Presentation du cabinet - FR.pdf" href="/Media/docs/heirstone-consulting-company-profile-fr.pdf" hreflang="fr" lang="fr">Télécharger en français</a>
 </div>
-<p class="profile-meta">PDF · 21 页 · 约 8 MB</p>
+<p class="pf-meta">PDF · 21 页 · 约 8 MB</p>
 </div>
-</div>
-</section>
-<!-- WHO WE ADVISE + WHERE WE ARE DIFFERENT -->
-<section class="band">
-<div class="band-inner">
-<div class="band-col">
-<p class="eyebrow eyebrow-light">我们服务的客户</p>
-<h2>为配置土地、政策与资本的决策者提供咨询。</h2>
-<ul class="who">
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<path d="M3 21h18M4 21V8l8-5 8 5v13M8 21v-8h8v8M12 3v2"></path>
-</svg><div><h3>政府与公共机构</h3><p>制定并推行变革性国家发展战略的政府部委、旅游局和规划机构。</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="9"></circle><path d="M12 7v10M8.5 9.5c0-1.1 1.4-2 3.5-2s3.5.9 3.5 2-1 1.8-3.5 2.3-3.5 1.2-3.5 2.2 1.4 2 3.5 2 3.5-.9 3.5-2"></path>
-</svg><div><h3>主权与机构投资者</h3><p>需要独立市场情报与投资战略的主权财富基金、养老基金和机构资本。</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<path d="M2 21h20M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16M10 7h4M10 11h4M10 15h4"></path>
-</svg><div><h3>房地产开发商</h3><p>需要为资产和总体规划开展最高最佳使用分析、制定开发战略及评估商业可行性的各类开发商。</p></div></li>
-<li class="who-item"><svg aria-hidden="true" class="who-icon" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="10"></circle><path d="M12 2v20M2 12h20M4.9 5.5c4.3 3 9.9 3 14.2 0M4.9 18.5c4.3-3 9.9-3 14.2 0"></path>
-</svg><div><h3>跨国企业</h3><p>进入或拓展中东和北非市场的国际企业：市场进入、选址及竞争对标。</p></div></li>
-</ul>
-</div>
-<div class="band-col">
-<p class="eyebrow eyebrow-light">Heirstone 的不同之处</p>
-<h2>专为传统框架失灵的市场而打造。</h2>
-<ol class="why2">
-<li class="why2-item"><span class="why2-n">01</span><div><h3>合伙人主导，天生敏捷</h3><p>资深合伙人亲自参与每一项委托，带来数十年的战略规划经验，并以交易节奏高效推进。</p></div></li>
-<li class="why2-item"><span class="why2-n">02</span><div><h3>前沿市场专长</h3><p>专为不透明、数据稀缺的市场而打造——在这些市场，商业判断与一线情报具有决定性作用。</p></div></li>
-<li class="why2-item"><span class="why2-n">03</span><div><h3>主权与政府咨询</h3><p>在主权委托、政府部委及国家转型计划方面拥有直接经验。</p></div></li>
-<li class="why2-item"><span class="why2-n">04</span><div><h3>立足商业现实的专业建议</h3><p>我们的建议不仅经得起分析推敲，更具商业可行性，兼顾资本考量并紧贴市场。</p></div></li>
-<li class="why2-item"><span class="why2-n">05</span><div><h3>独立客观，无利益冲突</h3><p>作为独立咨询机构，我们始终以客户为先，建议立足事实与真实的市场动态。</p></div></li>
-<li class="why2-item"><span class="why2-n">06</span><div><h3>全球视野</h3><p>跨境投资咨询，源自在全球各大市场的一线咨询经验。</p></div></li>
-</ol>
-</div>
-</div>
-</section>
-<!-- CONTACT -->
-<section class="contact-section">
-<div class="section-inner-narrow">
-<h2 class="section-title">联系我们</h2>
-<p class="section-lead">将您的愿景转化为有说服力的战略。欢迎联系我们，与资深合伙人探讨您的项目委托。</p>
-<div class="contact-inner">
-<div class="contact-info">
-<h3>联系方式</h3>
-<div class="contact-item">
-<svg aria-hidden="true" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-</svg>
-<span>阿联酋迪拜 · 埃及开罗</span>
-</div>
-<div class="contact-item">
-<svg aria-hidden="true" class="contact-icon" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-<a class="contact-link" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
-</div>
-</div>
-<form class="contact-form" novalidate="">
-<div class="form-field">
-<label for="cf-name">姓名</label>
-<input autocomplete="name" class="form-input" id="cf-name" name="name" required="" type="text"/>
-</div>
-<div class="form-field">
-<label for="cf-email">电子邮箱</label>
-<input autocomplete="email" class="form-input" id="cf-email" name="email" required="" type="email"/>
-</div>
-<div class="form-field">
-<label for="cf-subject">主题</label>
-<input class="form-input" id="cf-subject" name="_subject" type="text"/>
-</div>
-<div class="form-field">
-<label for="cf-message">留言</label>
-<textarea class="form-input" id="cf-message" name="message" required="" rows="4"></textarea>
-</div>
-<input aria-hidden="true" autocomplete="off" class="honeypot" name="_honey" tabindex="-1" type="text"/>
-<button class="btn-primary btn-submit" type="submit">发送留言</button>
-<p aria-live="polite" class="form-status" role="status"></p>
-</form>
 </div>
 </div>
 </section>
 </main>
-<!-- FOOTER -->
+<section aria-labelledby="clTitle" class="closing">
+<div class="cl-inner">
+<h2 class="h2" id="clTitle">您需要在这些市场做出决策吗？</h2>
+<div>
+<p>请告诉我们您正在考虑的决策及时间节点。资深顾问将在一个工作日内回复。</p>
+<div class="cl-actions">
+<a class="btn btn--light" href="/zh/pages/contact">联系我们 <svg aria-hidden="true" class="v2-arrow" fill="none" stroke="currentColor" stroke-width="1.8" viewbox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></a>
+<a class="link link--light" href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
+</div>
+</div>
+</div>
+</section>
 <footer class="footer">
-<div style="max-width:1200px;margin:0 auto;">
-<div class="footer-grid">
-<div class="footer-brand">
-<h3>Heirstone Consulting &amp;<br/>Strategic Advisory</h3>
-<p>专注于中东和北非、非洲及中亚前沿市场和高增长市场的专业战略咨询机构。</p>
-<div class="footer-social">
-<a aria-label="Heirstone Consulting 领英主页" href="https://www.linkedin.com/company/heirstoneconsulting" rel="noopener" target="_blank">
-<svg aria-hidden="true" fill="currentColor" height="16" viewbox="0 0 24 24" width="16">
-<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle>
-</svg>
+<div class="ft-wrap">
+<div class="ft-grid">
+<div>
+<a aria-label="Heirstone Consulting" class="ft-brand" href="/zh/">
+<svg aria-hidden="true" class="navbar-logo" fill="none" viewbox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><rect height="34" stroke="#5D6E82" stroke-width="2" width="34" x="13" y="13"></rect><rect height="34" stroke="#5D6E82" stroke-width="2" transform="rotate(45 30 30)" width="34" x="13" y="13"></rect></svg>
+<span class="navbar-brand-text"><span class="brand-name">Heirstone</span><span class="brand-sub">Consulting</span></span>
 </a>
+<p class="ft-about">为中东、非洲和中亚的房地产、旅游和国家发展提供战略咨询。</p>
 </div>
+<div class="ft-col"><h4>业务领域</h4><a href="/zh/pages/real-estate-strategy">房地产战略</a><a href="/zh/pages/tourism-development">旅游发展</a><a href="/zh/pages/national-vision-strategy">国家愿景战略</a><a href="/zh/pages/special-projects">特别项目</a><a href="/zh/pages/digital-transformation">数字化转型</a></div>
+<div class="ft-col"><h4>公司</h4><a href="/zh/pages/about">关于我们</a><a href="/zh/pages/experience">项目经验</a><a href="/zh/pages/reports">研究</a><a href="/zh/pages/insights">洞见</a><a href="/zh/pages/services">服务</a><a href="/zh/pages/contact">联系我们</a></div>
+<div class="ft-col"><h4>办事处</h4><span>阿联酋迪拜</span><span>埃及开罗</span><a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a><a data-i18n-skip="" href="https://www.linkedin.com/company/heirstoneconsulting" rel="noopener" target="_blank">LinkedIn</a></div>
 </div>
-<div class="footer-col">
-<h4>核心能力</h4>
-<ul>
-<li><a href="/zh/pages/real-estate-strategy">房地产战略</a></li>
-<li><a href="/zh/pages/tourism-development">旅游发展</a></li>
-<li><a href="/zh/pages/national-vision-strategy">国家愿景战略</a></li>
-<li><a href="/zh/pages/special-projects">特别项目</a></li><li><a href="/zh/pages/digital-transformation">数字化转型</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>公司</h4>
-<ul>
-<li><a href="/zh/pages/about">关于我们</a></li>
-<li><a href="/zh/pages/services">服务</a></li>
-<li><a href="/zh/pages/experience">项目经验</a></li><li><a href="/zh/pages/reports">研究报告</a></li><li><a href="/zh/pages/insights">洞见</a></li>
-<li><a href="/zh/pages/contact">联系我们</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>联系信息</h4>
-<div class="footer-contact-item">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-</svg>
-<span>阿联酋迪拜 · 埃及开罗</span>
-</div>
-<div class="footer-contact-item">
-<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-</svg>
-<a href="mailto:info@heirstoneconsulting.com">info@heirstoneconsulting.com</a>
-</div>
-</div>
-</div>
-<div class="footer-bottom">
-<p>© 2026 Heirstone Consulting &amp; Strategic Advisory。保留所有权利。</p>
-</div>
+<div class="ft-base"><span data-i18n-skip="">© 2026 Heirstone Consulting L.L.C-FZ</span><span>提供 26 种语言版本</span></div>
 </div>
 </footer>
 <script>window.HS_I18N={"Sending…": "发送中…", "Message Sent": "留言已发送", "Thank you — your message has been sent. We typically respond within one business day.": "感谢您的留言，我们已成功收到。我们通常会在一个工作日内回复。", "Something went wrong and your message was not sent. Please email us directly at <a href=\"mailto:info@heirstoneconsulting.com\">info@heirstoneconsulting.com</a>.": "出现错误，您的留言未能发送。请直接发送邮件至 <a href=\"mailto:info@heirstoneconsulting.com\">info@heirstoneconsulting.com</a>。", "Open menu": "打开菜单", "Close menu": "关闭菜单", "Language": "语言"};</script><script src="/js/main.js"></script>
-<script src="/js/home.js"></script>
 </body>
 </html>
