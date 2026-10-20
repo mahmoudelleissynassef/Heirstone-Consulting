@@ -181,4 +181,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Company profile downloads: the link carries the device's time zone, languages and regional format, so the
+  // owner's download alert can show a likely country. Set just before use (click, middle or right click).
+  const tagProfile = (e) => {
+    const a = e.target.closest && e.target.closest('a[href*="company-profile-"]');
+    if (!a || !/company-profile-[a-z]{2}\.pdf/.test(a.getAttribute('href') || '')) return;
+    try {
+      const opts = Intl.DateTimeFormat().resolvedOptions();
+      const u = new URL(a.href, location.href);
+      u.searchParams.set('tz', opts.timeZone || '');
+      u.searchParams.set('ul', (navigator.languages || [navigator.language]).slice(0, 4).join(','));
+      u.searchParams.set('loc', opts.locale || '');
+      a.href = u.pathname + u.search;
+    } catch (err) { /* the download works without the extra details */ }
+  };
+  document.addEventListener('pointerdown', tagProfile, true);
+  document.addEventListener('click', tagProfile, true);
+
 });

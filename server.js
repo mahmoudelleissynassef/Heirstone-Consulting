@@ -466,6 +466,13 @@ const PROFILE_RE = /^\/Media\/docs\/heirstone-consulting-company-profile-([a-z]{
 const NOTIFY_PROFILE = !/^(0|off|false|no)$/i.test(process.env.NOTIFY_PROFILE || '');
 const PROFILE_REPEAT_MS = 30 * 60 * 1000;
 const profileSeen = new Map();
+// IANA time zone -> ISO country, from the tz database's zone.tab (private/tz-country.json; regenerate yearly from
+// Python's tzdata package). The profile link sends the device's time zone, so the alert can name a likely country.
+let TZ_COUNTRY = {};
+try { TZ_COUNTRY = JSON.parse(fs.readFileSync(path.join(ROOT, 'private', 'tz-country.json'), 'utf8')); }
+catch (e) { console.error('Time zone table missing:', e.message); }
+const regionName = (cc) => { try { return new Intl.DisplayNames(['en'], { type: 'region' }).of(cc) || cc; } catch (e) { return cc; } };
+const tagName = (tag) => { try { return new Intl.DisplayNames(['en'], { type: 'language' }).of(tag) || tag; } catch (e) { return tag; } };
 
 function deviceOf(ua) {
   const os = /iPad/.test(ua) ? 'iPad' : /iPhone/.test(ua) ? 'iPhone' : /Android/.test(ua) ? 'Android'
@@ -476,8 +483,14 @@ function deviceOf(ua) {
   return `${browser} on ${os} (${kind})`;
 }
 
-function notifyProfileDownload(req, edition) {
+function notifyProfileDownload(req, edition, query = '') {
   if (req.method !== 'GET') return;
+  // details the page script adds to the link: device time zone, languages, regional format (absent without JavaScript)
+  const q = new URLSearchParams(query);
+  const tz = /^[A-Za-z][A-Za-z0-9_+\-\/]{1,40}$/.test(q.get('tz') || '') ? q.get('tz') : '';
+  const langs = String(q.get('ul') || '').split(',').map((x) => x.trim()).filter((x) => /^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$/.test(x)).slice(0, 4);
+  const loc = /^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$/.test(q.get('loc') || '') ? q.get('loc') : '';
+  const cc = TZ_COUNTRY[tz] || '';
   const ua = String(req.headers['user-agent'] || '');
   const range = String(req.headers.range || '');
   if (BOTS.test(ua) || (range && !/^bytes=0-/.test(range))) return;
@@ -491,7 +504,8 @@ function notifyProfileDownload(req, edition) {
       if (LANGS.includes(first)) siteLang = first;
     }
   } catch (e) { /* no or foreign referrer */ }
-  saveLead({ ts: new Date(now).toISOString(), event: 'profile_download', report: 'company-profile', edition, lang: siteLang, page: page || '(direct link)' });
+  saveLead({ ts: new Date(now).toISOString(), event: 'profile_download', report: 'company-profile', edition, lang: siteLang, page: page || '(direct link)',
+    ...(cc ? { country: cc } : {}), ...(tz ? { tz } : {}), ...(langs.length ? { languages: langs.join(',') } : {}) });
   const ip = String(req.headers['x-forwarded-for'] || req.socket.remoteAddress || '').split(',')[0].trim();
   const key = `${ip}|${edition}`;
   if (!NOTIFY_PROFILE || !process.env.RESEND_API_KEY || now - (profileSeen.get(key) || 0) < PROFILE_REPEAT_MS) return;
@@ -504,10 +518,13 @@ function notifyProfileDownload(req, edition) {
     rows: [['Edition', `${langName(edition)} company profile`], ['Downloaded', when(now)],
       ['From page', page ? `${PUBLIC_ORIGIN}${page.split('?')[0]} (${langName(siteLang)} site)` : 'A direct link to the PDF (no page)'],
       ['Came from', page ? cameFrom(page) : 'Unknown'],
-      ['Browser language', visitorLang ? langName(visitorLang.split('-')[0]) + ` (${visitorLang})` : 'Not sent'],
+      ['Likely country', cc ? `${regionName(cc)} (device time zone ${tz})` : tz ? `Unknown (device time zone ${tz})` : 'Not reported (direct link or JavaScript off)'],
+      ['Device languages', langs.length ? langs.map((t) => `${tagName(t)} (${t})`).join(', ')
+        : visitorLang ? `${langName(visitorLang.split('-')[0])} (${visitorLang})` : 'Not sent'],
+      ['Regional format', loc ? `${tagName(loc)} (${loc})` : 'Not reported'],
       ['Device', deviceOf(ua)]],
-    note: { html: 'The profile is a free download with no form, so the visitor is anonymous. Repeat downloads by the same visitor within 30 minutes are not emailed.',
-      text: 'The profile is a free download with no form, so the visitor is anonymous. Repeat downloads by the same visitor within 30 minutes are not emailed.' },
+    note: { html: 'The profile is a free download with no form, so the visitor is anonymous. The country comes from the time zone set on their device, so a traveller may show their home country. Repeat downloads by the same visitor within 30 minutes are not emailed.',
+      text: 'The profile is a free download with no form, so the visitor is anonymous. The country comes from the time zone set on their device, so a traveller may show their home country. Repeat downloads by the same visitor within 30 minutes are not emailed.' },
   });
 }
 
@@ -921,7 +938,7 @@ const server = http.createServer((req, res) => {
     const profile = PROFILE_RE.exec(urlPath);
     if (profile) {  // a browser re-asks each time, so every download reaches the alert
       headers['Cache-Control'] = 'no-cache';
-      notifyProfileDownload(req, profile[1].toLowerCase());
+      notifyProfileDownload(req, profile[1].toLowerCase(), query);
     }
     if (ext === '.html') return sendText(req, res, 200, headers, renderPage(req, data));
     if (COMPRESSIBLE.has(ext)) return sendText(req, res, 200, headers, data);
