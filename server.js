@@ -457,6 +457,60 @@ function notifyDownload(tok, r, el, ua) {
   });
 }
 
+// ------------------------------------------------------------------ company profile downloads
+// The profiles on the homepage (Media/docs/heirstone-consulting-company-profile-<lang>.pdf, any language) are free
+// downloads with no form, so the alert can say which edition, when, from which page and on what device, but not who.
+// Crawlers, later chunks of a download and repeats by the same visitor within 30 minutes don't alert; every
+// download is still recorded in the leads export. NOTIFY_PROFILE=off turns the alerts off.
+const PROFILE_RE = /^\/Media\/docs\/heirstone-consulting-company-profile-([a-z]{2})\.pdf$/i;
+const NOTIFY_PROFILE = !/^(0|off|false|no)$/i.test(process.env.NOTIFY_PROFILE || '');
+const PROFILE_REPEAT_MS = 30 * 60 * 1000;
+const profileSeen = new Map();
+
+function deviceOf(ua) {
+  const os = /iPad/.test(ua) ? 'iPad' : /iPhone/.test(ua) ? 'iPhone' : /Android/.test(ua) ? 'Android'
+    : /Windows/.test(ua) ? 'Windows' : /Mac OS X/.test(ua) ? 'Mac' : /CrOS/.test(ua) ? 'ChromeOS' : /Linux/.test(ua) ? 'Linux' : 'an unknown system';
+  const browser = /Edg\//.test(ua) ? 'Edge' : /OPR\//.test(ua) ? 'Opera' : /SamsungBrowser/.test(ua) ? 'Samsung Internet'
+    : /Chrome\//.test(ua) ? 'Chrome' : /Firefox\//.test(ua) ? 'Firefox' : /Safari\//.test(ua) ? 'Safari' : 'an unknown browser';
+  const kind = /iPad|Tablet/.test(ua) || (/Android/.test(ua) && !/Mobile/.test(ua)) ? 'tablet' : /Mobi|iPhone/.test(ua) ? 'phone' : 'computer';
+  return `${browser} on ${os} (${kind})`;
+}
+
+function notifyProfileDownload(req, edition) {
+  if (req.method !== 'GET') return;
+  const ua = String(req.headers['user-agent'] || '');
+  const range = String(req.headers.range || '');
+  if (BOTS.test(ua) || (range && !/^bytes=0-/.test(range))) return;
+  const now = Date.now();
+  let page = '', siteLang = 'en';
+  try {
+    const ref = new URL(String(req.headers.referer || ''));
+    if (/heirstoneconsulting\.com$|^localhost$/.test(ref.hostname)) {
+      page = ref.pathname + ref.search;
+      const first = ref.pathname.split('/')[1];
+      if (LANGS.includes(first)) siteLang = first;
+    }
+  } catch (e) { /* no or foreign referrer */ }
+  saveLead({ ts: new Date(now).toISOString(), event: 'profile_download', report: 'company-profile', edition, lang: siteLang, page: page || '(direct link)' });
+  const ip = String(req.headers['x-forwarded-for'] || req.socket.remoteAddress || '').split(',')[0].trim();
+  const key = `${ip}|${edition}`;
+  if (!NOTIFY_PROFILE || !process.env.RESEND_API_KEY || now - (profileSeen.get(key) || 0) < PROFILE_REPEAT_MS) return;
+  if (profileSeen.size > 5000) profileSeen.clear();
+  profileSeen.set(key, now);
+  const visitorLang = String(req.headers['accept-language'] || '').split(',')[0].split(';')[0].trim();
+  notifyOwner({
+    subject: `Company profile downloaded (${langName(edition)})`,
+    heading: 'Company profile downloaded',
+    rows: [['Edition', `${langName(edition)} company profile`], ['Downloaded', when(now)],
+      ['From page', page ? `${PUBLIC_ORIGIN}${page.split('?')[0]} (${langName(siteLang)} site)` : 'A direct link to the PDF (no page)'],
+      ['Came from', page ? cameFrom(page) : 'Unknown'],
+      ['Browser language', visitorLang ? langName(visitorLang.split('-')[0]) + ` (${visitorLang})` : 'Not sent'],
+      ['Device', deviceOf(ua)]],
+    note: { html: 'The profile is a free download with no form, so the visitor is anonymous. Repeat downloads by the same visitor within 30 minutes are not emailed.',
+      text: 'The profile is a free download with no form, so the visitor is anonymous. Repeat downloads by the same visitor within 30 minutes are not emailed.' },
+  });
+}
+
 function readJsonBody(req, res, json, done) {
   let raw = '', tooBig = false;
   req.on('data', chunk => {
@@ -864,6 +918,11 @@ const server = http.createServer((req, res) => {
     const headers = { 'Content-Type': mimeTypes[ext] || 'application/octet-stream' };
     if (ext === '.html') headers['Vary'] = 'Accept-Language, Cookie';
     if (STATIC_CACHE[ext]) headers['Cache-Control'] = `public, max-age=${STATIC_CACHE[ext]}`;
+    const profile = PROFILE_RE.exec(urlPath);
+    if (profile) {  // a browser re-asks each time, so every download reaches the alert
+      headers['Cache-Control'] = 'no-cache';
+      notifyProfileDownload(req, profile[1].toLowerCase());
+    }
     if (ext === '.html') return sendText(req, res, 200, headers, renderPage(req, data));
     if (COMPRESSIBLE.has(ext)) return sendText(req, res, 200, headers, data);
     headers['Content-Length'] = data.length;
