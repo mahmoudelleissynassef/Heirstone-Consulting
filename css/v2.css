@@ -92,7 +92,12 @@ html[dir="rtl"] .navbar-nav .lang-menu { left: 0; }
 .ph-media img { border-radius: var(--r-lg); animation: none; box-shadow: 0 40px 80px -36px rgba(0, 0, 0, .7); }
 .ph:not(.rp-head) .ph-media img { filter: grayscale(1) contrast(1.08) brightness(.9); }
 .rp-head .ph-media img { border-radius: 6px; }
-.ph--photo { background-color: var(--ink); background-blend-mode: luminosity; }
+.ph--photo { background-color: var(--ink); }
+/* photo headers: a real, pre-rendered monochrome image (Media/mono) instead of a CSS background */
+.ph-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.ph--photo::before { z-index: 1; }
+.ph--photo::after { z-index: 1; }
+.ph--photo .ph-inner { z-index: 2; }
 
 /* ---------------- buttons: one pill, light or dark ---------------- */
 .btn-primary, .btn-secondary, .btn-outline, .btn-submit {
