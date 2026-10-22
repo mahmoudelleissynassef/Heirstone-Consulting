@@ -258,7 +258,7 @@ function handleContact(req, res) {
     if (rateLimited(ip)) return json(429, { ok: false, error: 'rate_limited' });
     if (!process.env.RESEND_API_KEY) return json(503, { ok: false, fallback: true });
 
-    const rows = [['Name', name], ['Email', email], ['Subject', subject || '—'], ['Page', page || '—'], ['Language', lang || 'en']];
+    const rows = [['Name', name], ['Email', email], ['Subject', subject || '—'], ['Page', page || '—'], ['Language', lang || 'en'], countryRow(ipCountry(req))];
     const html = '<div style="font-family:Arial,sans-serif;font-size:14px;color:#1b2430">'
       + '<h2 style="font-size:18px;margin:0 0 16px">New website enquiry</h2>'
       + '<table cellpadding="6" style="border-collapse:collapse">'
@@ -414,6 +414,13 @@ function cameFrom(page) {
   if (src === 'newsletter') return `Newsletter: ${q.get('utm_campaign') || 'issue unknown'}`;
   return [src, q.get('utm_medium'), q.get('utm_campaign')].filter(Boolean).join(' / ');
 }
+// Cloudflare (proxied www record) adds the visitor's country, looked up from their IP address, to every request:
+// an ISO code, XX when unknown, T1 for Tor. Absent on localhost and on the *.up.railway.app address.
+function ipCountry(req) {
+  const c = String(req.headers['cf-ipcountry'] || '').toUpperCase();
+  return c === 'T1' || (/^[A-Z]{2}$/.test(c) && c !== 'XX') ? c : '';
+}
+const countryRow = (cc) => ['Country (from IP)', cc === 'T1' ? 'Hidden (Tor network)' : cc ? `${regionName(cc)} (${cc})` : 'Unknown'];
 const NL_STATUS = {
   added: (l) => `Added to the newsletter list (${langName(l)} edition)`,
   existing: () => 'Already on the newsletter list',
@@ -438,11 +445,12 @@ function notifyOwner({ subject, heading, rows, note, replyTo }) {
 // Opens that quick are logged but don't trigger an alert, so the alert reflects a person clicking.
 const SCAN_WINDOW_MS = 20 * 1000;
 const alerted = new Map();
-function notifyDownload(tok, r, el, ua) {
+function notifyDownload(tok, r, el, ua, cc) {
   const now = Date.now();
   const requested = tok.x - LINK_DAYS * 864e5;
   const scan = now - requested < SCAN_WINDOW_MS || BOTS.test(ua || '');
-  saveLead({ ts: new Date(now).toISOString(), event: 'download', email: tok.e, report: tok.r, edition: el, ...(scan ? { likely_scan: true } : {}) });
+  saveLead({ ts: new Date(now).toISOString(), event: 'download', email: tok.e, report: tok.r, edition: el,
+    ...(cc ? { ip_country: cc } : {}), ...(scan ? { likely_scan: true } : {}) });
   const key = `${tok.e}|${tok.r}|${el}`;
   if (scan || !NOTIFY_DOWNLOADS || alerted.has(key)) return;
   if (alerted.size > 5000) alerted.clear();
@@ -452,7 +460,7 @@ function notifyDownload(tok, r, el, ua) {
     subject: `Report downloaded: ${r.sector} (${langName(el)}) — ${tok.n || tok.e}`,
     heading: 'Report downloaded',
     rows: [['Name', tok.n || '—'], ['Email', tok.e], ['Report', title], ['Language', `${langName(el)} edition`],
-      ['Downloaded', when(now)], ['Link sent', when(requested)]],
+      ['Downloaded', when(now)], ['Link sent', when(requested)], countryRow(cc)],
     replyTo: tok.e,
   });
 }
@@ -490,7 +498,7 @@ function notifyProfileDownload(req, edition, query = '') {
   const tz = /^[A-Za-z][A-Za-z0-9_+\-\/]{1,40}$/.test(q.get('tz') || '') ? q.get('tz') : '';
   const langs = String(q.get('ul') || '').split(',').map((x) => x.trim()).filter((x) => /^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$/.test(x)).slice(0, 4);
   const loc = /^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$/.test(q.get('loc') || '') ? q.get('loc') : '';
-  const cc = TZ_COUNTRY[tz] || '';
+  const cc = TZ_COUNTRY[tz] || '', ipc = ipCountry(req);
   const ua = String(req.headers['user-agent'] || '');
   const range = String(req.headers.range || '');
   if (BOTS.test(ua) || (range && !/^bytes=0-/.test(range))) return;
@@ -505,26 +513,29 @@ function notifyProfileDownload(req, edition, query = '') {
     }
   } catch (e) { /* no or foreign referrer */ }
   saveLead({ ts: new Date(now).toISOString(), event: 'profile_download', report: 'company-profile', edition, lang: siteLang, page: page || '(direct link)',
-    ...(cc ? { country: cc } : {}), ...(tz ? { tz } : {}), ...(langs.length ? { languages: langs.join(',') } : {}) });
+    ...(ipc ? { ip_country: ipc } : {}), ...(cc ? { country: cc } : {}), ...(tz ? { tz } : {}), ...(langs.length ? { languages: langs.join(',') } : {}) });
   const ip = String(req.headers['x-forwarded-for'] || req.socket.remoteAddress || '').split(',')[0].trim();
   const key = `${ip}|${edition}`;
   if (!NOTIFY_PROFILE || !process.env.RESEND_API_KEY || now - (profileSeen.get(key) || 0) < PROFILE_REPEAT_MS) return;
   if (profileSeen.size > 5000) profileSeen.clear();
   profileSeen.set(key, now);
   const visitorLang = String(req.headers['accept-language'] || '').split(',')[0].split(';')[0].trim();
+  const known = ipc && ipc !== 'T1';
+  const tzText = !tz ? 'Not reported (direct link or JavaScript off)' : `${cc ? regionName(cc) : 'Unknown country'} (${tz})`
+    + (cc && known && cc !== ipc ? '; not the IP country, so travel, a VPN or a company network' : '');
   notifyOwner({
-    subject: `Company profile downloaded (${langName(edition)})`,
+    subject: `Company profile downloaded (${langName(edition)})${known ? ' from ' + regionName(ipc) : ''}`,
     heading: 'Company profile downloaded',
     rows: [['Edition', `${langName(edition)} company profile`], ['Downloaded', when(now)],
       ['From page', page ? `${PUBLIC_ORIGIN}${page.split('?')[0]} (${langName(siteLang)} site)` : 'A direct link to the PDF (no page)'],
       ['Came from', page ? cameFrom(page) : 'Unknown'],
-      ['Likely country', cc ? `${regionName(cc)} (device time zone ${tz})` : tz ? `Unknown (device time zone ${tz})` : 'Not reported (direct link or JavaScript off)'],
+      countryRow(ipc), ['Device time zone', tzText],
       ['Device languages', langs.length ? langs.map((t) => `${tagName(t)} (${t})`).join(', ')
         : visitorLang ? `${langName(visitorLang.split('-')[0])} (${visitorLang})` : 'Not sent'],
       ['Regional format', loc ? `${tagName(loc)} (${loc})` : 'Not reported'],
       ['Device', deviceOf(ua)]],
-    note: { html: 'The profile is a free download with no form, so the visitor is anonymous. The country comes from the time zone set on their device, so a traveller may show their home country. Repeat downloads by the same visitor within 30 minutes are not emailed.',
-      text: 'The profile is a free download with no form, so the visitor is anonymous. The country comes from the time zone set on their device, so a traveller may show their home country. Repeat downloads by the same visitor within 30 minutes are not emailed.' },
+    note: { html: 'The profile is a free download with no form, so the visitor is anonymous. The IP country is where their internet connection is; a VPN or a company network can place them elsewhere. The time zone is what their device is set to, so a traveller may show their home country. Repeat downloads by the same visitor within 30 minutes are not emailed.',
+      text: 'The profile is a free download with no form, so the visitor is anonymous. The IP country is where their internet connection is; a VPN or a company network can place them elsewhere. The time zone is what their device is set to, so a traveller may show their home country. Repeat downloads by the same visitor within 30 minutes are not emailed.' },
   });
 }
 
@@ -752,7 +763,8 @@ function handleReportRequest(req, res) {
     }
 
     const now = Date.now(), ts = new Date(now).toISOString();
-    saveLead({ ts, event: 'request', name, email, org, report: slug, edition: l, lang, page });
+    const cc = ipCountry(req);
+    saveLead({ ts, event: 'request', name, email, org, report: slug, edition: l, lang, page, ...(cc ? { ip_country: cc } : {}) });
     json(200, { ok: true });
 
     // After replying: add them to the newsletter list, then tell the owner (with the list outcome)
@@ -765,7 +777,7 @@ function handleReportRequest(req, res) {
       subject: `Report request: ${r.sector} (${langName(l)}) — ${name}${org ? ' (' + org + ')' : ''}`,
       heading: 'New report request',
       rows: [['Name', name], ['Email', email], ['Organisation', org || '—'], ['Report', `${r.sector}: ${r.title}`], ['Language', `${langName(l)} edition`],
-        ['Requested', when(now)], ['Newsletter', NL_STATUS[nl.status](l, nl.detail)], ['Came from', cameFrom(page)], ['Page', page.split('?')[0] || '—'], ['Site language', `${langName(site)} (${site})`]],
+        ['Requested', when(now)], ['Newsletter', NL_STATUS[nl.status](l, nl.detail)], ['Came from', cameFrom(page)], ['Page', page.split('?')[0] || '—'], ['Site language', `${langName(site)} (${site})`], countryRow(cc)],
       note: {
         html: `${sent} <a href="${exportLink}">Download all report leads (CSV)</a> &mdash; keep this link private.`,
         text: `${sent}\nAll report leads (CSV, keep private): ${exportLink}`,
@@ -813,7 +825,7 @@ function handleReportDownload(req, res, qs) {
       'Cache-Control': 'private, no-store', 'X-Robots-Tag': 'noindex',
     });
     if (req.method === 'HEAD') return res.end();
-    if (!req.headers.range) notifyDownload(tok, r, editionLang(r, tok.l || 'en'), req.headers['user-agent']);
+    if (!req.headers.range) notifyDownload(tok, r, editionLang(r, tok.l || 'en'), req.headers['user-agent'], ipCountry(req));
     fs.createReadStream(file).pipe(res);
   });
 }
@@ -826,9 +838,9 @@ function handleLeadsExport(req, res, qs) {
   }
   let lines = [];
   try { lines = fs.readFileSync(LEADS_FILE, 'utf8').split('\n').filter(Boolean).map((l) => { try { return JSON.parse(l); } catch (e) { return null; } }).filter(Boolean); } catch (e) {}
-  const cols = ['ts', 'event', 'name', 'email', 'org', 'report', 'edition', 'lang', 'page', 'likely_scan'];
+  const cols = ['ts', 'event', 'name', 'email', 'org', 'report', 'edition', 'lang', 'page', 'ip_country', 'likely_scan'];
   const cell = (v) => `"${String(v == null ? '' : v).replace(/"/g, '""')}"`;
-  const csv = '﻿' + ['time,event,name,email,organisation,report,edition,site language,page,mail-filter scan'].concat(lines.map((o) => cols.map((c) => cell(o[c])).join(','))).join('\r\n');
+  const csv = '﻿' + ['time,event,name,email,organisation,report,edition,site language,page,country (from IP),mail-filter scan'].concat(lines.map((o) => cols.map((c) => cell(o[c])).join(','))).join('\r\n');
   send(res, 200, { 'Content-Type': 'text/csv; charset=utf-8', 'Content-Disposition': 'attachment; filename="heirstone-report-leads.csv"', 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex' }, csv);
 }
 
